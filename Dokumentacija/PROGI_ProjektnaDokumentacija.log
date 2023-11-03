@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.2)  2 NOV 2023 15:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.2)  3 NOV 2023 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1145,7 +1145,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...{Indeks slika i dijagrama}{36}{chapter*.6}
+l.30 ...{Indeks slika i dijagrama}{35}{chapter*.6}
                                                   % [1
 
 ])
@@ -1724,30 +1724,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-
- []
-
 <./slike/dijagramKlasa-PROGI.png, id=395, 943.57518pt x 586.74207pt>
 File: ./slike/dijagramKlasa-PROGI.png Graphic file (type png)
 <use ./slike/dijagramKlasa-PROGI.png>
-Package pdftex.def Info: ./slike/dijagramKlasa-PROGI.png  used on input line 60
+Package pdftex.def Info: ./slike/dijagramKlasa-PROGI.png  used on input line 58
 .
 (pdftex.def)             Requested size: 435.6108pt x 270.87154pt.
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 60--62
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
-
- []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1758,10 +1740,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [25 <./slike/dijagramKlasa-PROGI.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1771,10 +1749,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1783,12 +1757,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-
- []
-
-)
+[27])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1821,15 +1790,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1848,10 +1808,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1865,11 +1821,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (Zakljucak.tex
 Poglavlje 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1886,19 +1837,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ])
 \openout2 = `Literatura.aux'.
 
- (Literatura.tex
-Overfull \hbox (8.89293pt too wide) in paragraph at lines 12--13
-[]\OT1/jkp/m/n/12 Programsko in[]zenjerstvo, FER ZE-MRIS, [][]$\OT1/jkptt/m/n/1
-2 http : / / www . fer . hr / predmet / proinz$[][] 
- []
-
-
-Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
-\OT1/jkp/m/n/12 ter En-gi-ne-ering, Rut-gers Uni-ver-sity, [][]$\OT1/jkptt/m/n/
-12 http : / / www . ece . rutgers . edu / []marsic /
- []
-
-)
+ (Literatura.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1933,10 +1872,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 \openout2 = `Dodatak.aux'.
 
  (Dodatak.tex
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1949,10 +1884,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
-
- []
-
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1961,6 +1892,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1978,12 +1910,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-
- []
-
-)
+[38])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2011,24 +1938,16 @@ anged.
 (rerunfilecheck)             Checksum: 1D6B12D79CFB6CAA3A467A232718D463;4565.
  ) 
 Here is how much of TeX's memory you used:
- 17791 strings out of 474718
- 319060 string characters out of 5748457
- 2063036 words of memory out of 5000000
+ 17789 strings out of 474718
+ 319043 string characters out of 5748457
+ 2070036 words of memory out of 5000000
  39308 multiletter control sequences out of 15000+600000
  624176 words of font info for 177 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,14n,115p,908b,1145s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-pdfTeX warning (dest): name{figure.4.1} has been referenced but does not exist,
- replaced by a fixed one
-
-
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.40} has been referenced but does not exist, re
-placed by a fixed one
 
 <C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/public/kpfonts/jkpbit
 8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/public/kpfonts
@@ -2038,9 +1957,9 @@ ic/kpfonts/jkpmit8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/kpfonts/jkpmn8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/kpfonts/jkpsy.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (40 pages, 625314 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (40 pages, 623964 bytes).
 PDF statistics:
- 573 PDF objects out of 1000 (max. 8388607)
- 186 named destinations out of 1000 (max. 500000)
+ 568 PDF objects out of 1000 (max. 8388607)
+ 184 named destinations out of 1000 (max. 500000)
  237 words of extra memory for PDF output out of 10000 (max. 10000000)
 
