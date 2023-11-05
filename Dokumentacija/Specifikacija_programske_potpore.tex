@@ -6,14 +6,17 @@
 			
 			\begin{packed_enum}
 				
+				\item Klijent
 				\item Registrirani korisnik/Ponuditelj		
-				\item Strani izdavač
-                \item Izdavač
-                \item Antikvarijat
-                \item Preprodavač
-                \item Razvojni tim
+				\begin{packed_enum}
+                    			\item Izdavač
+                    			\item Preprodavač
+                    			\item Antikvarijat
+                		\end{packed_enum}
+                		\item Strani izdavač
+                		\item Razvojni tim
     
-			\end{packed_enum}
+				\end{packed_enum}
 			
 			\noindent \textbf{Aktori i njihovi funkcionalni zahtjevi:}
 			
@@ -25,8 +28,8 @@
 					
 					\item Pretraživati knjige po njihovim atributima
 					\item Pretraživati na karti izdavače
-                    \item Pretraživati izdavače po imenu
-                    \item Tražiti strane izdavače da se knjiga prevede
+                    			\item Pretraživati izdavače po imenu
+                    			\item Tražiti strane izdavače da se knjiga prevede
 					%\begin{packed_enum}
 						
 						%\item  podfunkcionalnost 1 
@@ -42,27 +45,27 @@
 					
 					\item Stavljati objave za knjige
 					\item Mijenjati objave za knjige
-                    \item Brisati objave za knjige
-                    \item Tražiti stranog izdavača za prijevod knjige
-                    \item Birati u koju kategoriju ponuditelja će spadati
+                    			\item Brisati objave za knjige
+                    			\item Tražiti stranog izdavača za prijevod knjige
+                    			\item Birati u koju kategoriju ponuditelja će spadati
 					
 				\end{packed_enum}
 
-                \item \underbar{Administrator(sudionik):}
-                \begin{packed_enum}
-                    \item Prima zahtjev za registraciju i na temelju unesenih podataka potvrđuje ili odbija registraciju
-                \end{packed_enum}
+                		\item \underbar{Administrator(sudionik):}
+                		\begin{packed_enum}
+                    			\item Prima zahtjev za registraciju i na temelju unesenih podataka potvrđuje ili odbija registraciju
+                		\end{packed_enum}
 
-                \item \underbar{Strani izdavač(sudionik):}
-                \begin{packed_enum}
-                    \item Prima zahtjev od strane izdavača za prijevod knjige
-                \end{packed_enum}
+                		\item \underbar{Strani izdavač(sudionik):}
+                		\begin{packed_enum}
+                    			\item Prima zahtjev od strane izdavača za prijevod knjige
+                		\end{packed_enum}
 
-                \item \underbar{Baza podataka(sudionik):}
-                \begin{packed_enum}
-                    \item Pohranjuje podatke o korisnicima i njihovim ovlastima
-                    \item Pohranjuje podatke o objavljenim knjigama
-                \end{packed_enum}
+                		\item \underbar{Baza podataka(sudionik):}
+                		\begin{packed_enum}
+                    			\item Pohranjuje podatke o korisnicima i njihovim ovlastima
+                    			\item Pohranjuje podatke o objavljenim knjigama
+                		\end{packed_enum}
 			\end{packed_enum}
 			
 			\eject 
@@ -85,7 +88,7 @@
 						\item[] \begin{packed_enum}
 	
 							\item Ponuditelj bira opciju registracije
-                            \item Ponuditelj unosi podatke potrebne za registraciju
+                            				\item Ponuditelj unosi podatke potrebne za registraciju
 							\item Web obavještava ponuditelja da je registracija uspješna
 						\end{packed_enum}
 						
@@ -103,7 +106,7 @@
 						\end{packed_item}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC2- Prijava}}
+                    			\noindent \underbar{\textbf{UC2- Prijava}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -116,7 +119,7 @@
 	
 							\item Ponuditelj bira opciju prijave
 							\item Ponuditelj unosi korisničko ime i lozinku
-                            \item Ponuditelj dobiva pristup svom korisničkom računu
+                            				\item Ponuditelj dobiva pristup svom korisničkom računu
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -133,7 +136,7 @@
 						\end{packed_item}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC3 - Potvrda registracije}}
+                    			\noindent \underbar{\textbf{UC3 - Potvrda registracije}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Administrator
@@ -146,7 +149,7 @@
 	
 							\item Nakon što ponuditelj unese podatke za registraciju, zahtjev za registraciju se šalje administratoru na pregled
 							\item Provjerava se da su uneseni podaci dobrog oblika i da ne postoje u bazi podataka
-                            \item Administrator potvrđuje unesene podatke i informira da je registracija uspješna
+                           				 \item Administrator potvrđuje unesene podatke i informira da je registracija uspješna
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -160,7 +163,7 @@
 						\end{packed_item}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC4 - Biranje kategorije ponuditelja}}
+                    			\noindent \underbar{\textbf{UC4 - Biranje kategorije ponuditelja}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -179,7 +182,7 @@
 					
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC5 - Pregled korisničkog računa}}
+                    			\noindent \underbar{\textbf{UC5 - Pregled korisničkog računa}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -198,7 +201,7 @@
 						
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC6 - Promjena podataka}}
+                    			\noindent \underbar{\textbf{UC6 - Promjena podataka}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -211,9 +214,9 @@
 	
 							\item Ponuditelj bira opciju "Moj račun"
 							\item Ponuditelj bira opciju "Uredi račun"
-                            \item Ponuditelj mijenja podatke
-                            \item Ponuditelj sprema izmjene
-                            \item Baza podataka se ažurira
+                            				\item Ponuditelj mijenja podatke
+                            				\item Ponuditelj sprema izmjene
+                            				\item Baza podataka se ažurira
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -227,14 +230,14 @@
 								\item Ponuditelj opet pokušava promjeniti podatke ili odustaje
 							\end{packed_enum}
 
-                            \item[2.b] Ponuditelj upisuje nove podatke ali ne klikne na opciju spremanja promjena
-                            \item[] \begin{packed_enum}
-                                \item Aplikacija obavještava da promjene nisu pohranjene
-                            \end{packed_enum}
+                            				\item[2.b] Ponuditelj upisuje nove podatke ali ne klikne na opciju spremanja promjena
+                            				\item[] \begin{packed_enum}
+                                				\item Aplikacija obavještava da promjene nisu pohranjene
+                            				\end{packed_enum}
 						\end{packed_item}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC7 - Brisanje korisničkog računa}}
+                    			\noindent \underbar{\textbf{UC7 - Brisanje korisničkog računa}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -246,17 +249,17 @@
 						\item[] \begin{packed_enum}
 	
 							\item Ponuditelj bira opciju "Moj račun"
-                            \item Ponuditelj bira opciju brisanja korisničkog računa
+                            				\item Ponuditelj bira opciju brisanja korisničkog računa
 							\item Aplikacija traži potvrdu brisanja
-                            \item Ponuditelj potvrđuje brisanje korisničkog računa
-                            \item Miču se podaci o računu iz baze podataka
-                            \item Ponuditelj je vraćen na stranicu za upis
+                            				\item Ponuditelj potvrđuje brisanje korisničkog računa
+                            				\item Miču se podaci o računu iz baze podataka
+                            				\item Ponuditelj je vraćen na stranicu za upis
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC8 - Dodavane objave knjige}}
+                    			\noindent \underbar{\textbf{UC8 - Dodavane objave knjige}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -268,10 +271,10 @@
 						\item[] \begin{packed_enum}
 	
 							\item Ponuditelj bira opciju "Nova objava"
-                            \item Aplikacija otvara stranicu za novu objavu
-                            \item Ponuditelj unosi potrebne podatke
+                            				\item Aplikacija otvara stranicu za novu objavu
+                           				 \item Ponuditelj unosi potrebne podatke
 							\item Ponuditelj klikne opciju "Objavi"
-                            \item Objava knjige je vidljiva na web stranici i u bazi podataka
+                            				\item Objava knjige je vidljiva na web stranici i u bazi podataka
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -284,15 +287,15 @@
 								\item Aplikacija obavještava da je format kriv i gdje
 								\item Ponuditelj unosi prihvatljive podatke ili odustaje od objave
 							\end{packed_enum}
-                            \item[2.b] Ponuditelj ne unosi sve potrebne podatke da se napravi objava
-                             \item[] \begin{packed_enum}
-                                 \item Aplikacija obavještava koje polje nije popunjeno
-                                 \item Ponuditelj popunjuje prazna polja ili odustaje od objave
-                             \end{packed_enum}
+                            				\item[2.b] Ponuditelj ne unosi sve potrebne podatke da se napravi objava
+                             				\item[] \begin{packed_enum}
+                                 				\item Aplikacija obavještava koje polje nije popunjeno
+                                 				\item Ponuditelj popunjuje prazna polja ili odustaje od objave
+                             				\end{packed_enum}
 						\end{packed_item}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC9 - Mijenjanje objave}}
+                    			\noindent \underbar{\textbf{UC9 - Mijenjanje objave}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -304,11 +307,11 @@
 						\item[] \begin{packed_enum}
 	
 							\item Ponuditelj klikne na objavu koju želi promjeniti
-                            \item Aplikacija otvara stranicu objave
+                            				\item Aplikacija otvara stranicu objave
 							\item Ponuditelj bira opciju mijenjanja podataka
-                            \item Ponuditelj izmjenjue podatke
-                            \item Ponuditelj sprema izmjene
-                            \item Novi podaci su zapisani u bazu podataka
+	                            			\item Ponuditelj izmjenjue podatke
+                            				\item Ponuditelj sprema izmjene
+                            				\item Novi podaci su zapisani u bazu podataka
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -323,15 +326,15 @@
 								
 							\end{packed_enum}
 
-                            \item[2.b] Ponuditelj ne sprema izmjene
-                            \item[] \begin{packed_enum}
+                           				\item[2.b] Ponuditelj ne sprema izmjene
+                            				\item[] \begin{packed_enum}
 
-                                \item Aplikacija obavještava da promjene nisu pohranjene
-                            \end{packed_enum}
+                                				\item Aplikacija obavještava da promjene nisu pohranjene
+                            				\end{packed_enum}
 						\end{packed_item}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC10 - Brisanje objave}}
+                    			\noindent \underbar{\textbf{UC10 - Brisanje objave}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -343,16 +346,16 @@
 						\item[] \begin{packed_enum}
 	
 							\item Ponuditelj klikne na objavu koju želi izbrisati
-                            \item Ponuditelj bira opciju brisanja objave
+                            				\item Ponuditelj bira opciju brisanja objave
 							\item Aplikacija pita za potvrdu brisanja
-                            \item Ponuditelj potvrđuje
-                            \item Briše se objava iz baze podataka
+                            				\item Ponuditelj potvrđuje
+                            				\item Briše se objava iz baze podataka
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC11 - Pregled objave}}
+                    			\noindent \underbar{\textbf{UC11 - Pregled objave}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Neregistrirani korisnik
@@ -364,13 +367,13 @@
 						\item[] \begin{packed_enum}
 	
 							\item Neregistrirani korisnik klikne na objavu
-                            \item Aplikacija prikazuje objavu i podatke o knjizi
+                            				\item Aplikacija prikazuje objavu i podatke o knjizi
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC12 - Pregled profila ponuditelja}}
+                    			\noindent \underbar{\textbf{UC12 - Pregled profila ponuditelja}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Neregistrirani korisnik
@@ -382,13 +385,13 @@
 						\item[] \begin{packed_enum}
 	
 							\item Neregistrirani korisnik klikne na opciju pregledavanja računa ponuditelja
-                            \item Aplikacija otvara stranicu na kojoj prikazuje podatke o računu ponuditelja
+                            				\item Aplikacija otvara stranicu na kojoj prikazuje podatke o računu ponuditelja
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC13 - Zahtjev da se prevede knjiga}}
+                   			 \noindent \underbar{\textbf{UC13 - Zahtjev da se prevede knjiga}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Neregistrirani korisnik
@@ -400,15 +403,15 @@
 						\item[] \begin{packed_enum}
 	
 							\item Neregistrirani korisnik klikne na objavu za knjigu
-                            \item Aplikacija otvara stranicu objave 
+                            				\item Aplikacija otvara stranicu objave 
 							\item Neregistrirani korisnik klikne na opciju "Zatraži prijevod knjige"
-                            \item U bazi podataka se inkrementira broj zatraženih prijevoda za tu knjigu
+                           				\item U bazi podataka se inkrementira broj zatraženih prijevoda za tu knjigu
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC14 - Zahtjev stranom izdavaču za prijevod knjige}}
+                    			\noindent \underbar{\textbf{UC14 - Zahtjev stranom izdavaču za prijevod knjige}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Izdavač
@@ -420,13 +423,13 @@
 						\item[] \begin{packed_enum}
 	
 							\item Ponuditelj na svojoj objavi klikne opciju "Zatraži stranog izdavača za prijevod"
-                            \item U bazi podataka se inkrementira broj zatraženih prijevoda od strane izdavača
+                            				\item U bazi podataka se inkrementira broj zatraženih prijevoda od strane izdavača
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC15 - Pretraživanje po lokaciji}}
+                    			\noindent \underbar{\textbf{UC15 - Pretraživanje po lokaciji}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Neregistrirani korisnik
@@ -438,13 +441,13 @@
 						\item[] \begin{packed_enum}
 	
 							\item Na glavnoj stranici je karta na kojoj se vide označene adrese ponuditelja
-                            \item Neregistrirani korisnik može biranjem lokacije vidjeti ponuditelja/e koji se tamo nalaze
+                            				\item Neregistrirani korisnik može biranjem lokacije vidjeti ponuditelja/e koji se tamo nalaze
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC16 - Detaljna pretraga objava knjiga}}
+                    			\noindent \underbar{\textbf{UC16 - Detaljna pretraga objava knjiga}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Neregistrirani korisnik
@@ -456,14 +459,14 @@
 						\item[] \begin{packed_enum}
 	
 							\item Neregistrirani korisnik klikne na opciju pretraživanja objava
-                            \item NAPOMENA: daljnji koraci nisu obavezni, ali povećavaju vjerojatnost pronalaska tražene knjige
+                            				\item NAPOMENA: daljnji koraci nisu obavezni, ali povećavaju vjerojatnost pronalaska tražene knjige
 							\item Korisnik ispunjuje sljedeća polja: naziv knjige, naziv autora, godina izdanja, redni broj izdanja, kategorija izdavača, žanr knjige, ISBN, oznaka vrste knjige
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC17 - Pretraga ponuditelja}}
+                    			\noindent \underbar{\textbf{UC17 - Pretraga ponuditelja}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Neregistrirani korisnik
@@ -475,38 +478,34 @@
 						\item[] \begin{packed_enum}
 	
 							\item Neregistrirani korisnik bira opciju pretraživanja po ponuditeljima
-                            \item Korisnik upisuje ime ponuditelja
+                            				\item Korisnik upisuje ime ponuditelja
 							\item Aplikacija izbacuje rezultate koji se poklapaju
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
+				\eject	
 				
 				\subsubsection{Dijagrami obrazaca uporabe}
 					
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width = \textwidth]{slike/DO1}
-    \caption{Dijagram obrazaca 1}
-    \label{fig:Dijagram obrazaca 1}
-\end{figure}
+				\begin{figure}
+    					\centering
+    					\includegraphics[width = \textwidth]{slike/DO1}
+    					\caption{Dijagram obrazaca 1}
+    					\label{fig:Dijagram obrazaca 1}
+				\end{figure}
 
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width = \textwidth]{slike/DO2}
-    \caption{Dijagram obrazaca 2}
-    \label{fig:Dijagram obrazaca 2}
-\end{figure}
+				\begin{figure}
+    					\centering
+    					\includegraphics[width = \textwidth]{slike/DO2}
+    					\caption{Dijagram obrazaca 2}
+    					\label{fig:Dijagram obrazaca 2}
+				\end{figure}
 				\eject	
 					
-				\subsubsection{Dijagrami obrazaca uporabe}
-					
-					\textit{Prikazati odnos aktora i obrazaca uporabe odgovarajućim UML dijagramom. Nije nužno nacrtati sve na jednom dijagramu. Modelirati po razinama apstrakcije i skupovima srodnih funkcionalnosti.}
-				\eject		
+	
 				
 			\subsection{Sekvencijski dijagrami}
 				
