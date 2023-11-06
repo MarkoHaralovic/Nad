@@ -488,7 +488,7 @@ Dijagram obrazaca 1
 
 \begin{figure}
     \centering
-    \includegraphics[width = \textwidth]{.slike/DO1}
+    \includegraphics[width = \textwidth]{slike/DO1.png}
     \caption{Caption}
     \label{fig:enter-label}
 \end{figure}
@@ -510,10 +510,123 @@ Dijagram obrazaca 2
 				
 			\subsection{Sekvencijski dijagrami}
 				
-				\textbf{\textit{dio 1. revizije}}\\
-				
-				\textit{Nacrtati sekvencijske dijagrame koji modeliraju najvažnije dijelove sustava (max. 4 dijagrama). Ukoliko postoji nedoumica oko odabira, razjasniti s asistentom. Uz svaki dijagram napisati detaljni opis dijagrama.}
+				\textbf{Obrazac uporabe UC15 – Pretraživanje po lokaciji i UC13 – Zahtjev da se prevede knjiga}\\\\
+				Neregistrirani korisnik šalje zahtjev za pregled karte ponuditelja knjiga. Poslužitelj dohvaća ponuditelje knjiga iz baze i vraća prikaz karte sa označenim adresama ponuditelja. Korisnik odabire ponuditelja koi je izdavač na karti. Poslužitelj dohvaća podatke o odabranom ponuditelju iz baze. Vraća korisniku listu svih knjiga dotičnog ponuditelja. Korisnik traži prijevod od izdavača. U bazi podataka se inkrementira broj zatraženih prijevoda za tu knjigu.\\
+				\begin{center}
+				\begin{adjustbox}{max width=\textwidth}
+					\begin{sequencediagram}
+						\newthread{A}{Neregistrirani korisnik}{}
+						\newinst[5]{B}{Poslužitelj}{}
+						\newinst[5]{C}{Baza podataka}{}
+						\begin{call}{A}{1: zatražiPrikazKarte()}{B}{Prikaz ponuditelja}
+							\begin{call}{B}{1.1: dohvatiPonuditelje()}{C}{Vrati ponuditelje}
+							\end{call}
+						\end{call}
+						\postlevel
+						\begin{call}{A}{2: odaberiPonuditelja()}{B}{Prikaz liste knjiga}
+							\begin{call}{B}{2.1: dohvatiPodatkeOPonuditelju()}{C}{Podatci o ponuditelju}
+							\end{call}
+						\end{call}
+						\postlevel
+						\begin{call}{A}{3: odaberiKnjigu()}{B}{Prikaz podataka o knjizi}
+							\begin{call}{B}{3.1: dohvatiPodatkeOKnjizi()}{C}{Podatci o knjizi}
+							\end{call}
+						\end{call}
+						\postlevel
+						\begin{messcall}{A}{3: zatražiPrijevod()}{B}
+							\begin{messcall}{B}{3.1: spremiZahtjevZaPrijevodom()}{C}
+							\end{messcall}
+						\end{messcall}
+						
+					\end{sequencediagram}
+				\end{adjustbox}
+				\end{center}
 				\eject
+				
+				\textbf{Obrazac uporabe UC1 – Registracija i UC3 – Potvrda registracie}\\\\
+				Ponuditelj šalje zahtjev za registraciju. Poslužitelj sprema zahtjev u bazu. Administrator pregledava zahtjeve za registraciju i odobrava zahtjev našeg ponuditelja. Antikvarijat je uspješno registriran. Sada ima pristup potpunoj funkcionalnosti svojeg korisničkog računa.\\
+				\begin{center}
+					\begin{adjustbox}{max width=\textwidth}
+						\begin{sequencediagram}
+							\newthread{A}{Ponuditelj}{}
+							\newinst[5]{B}{Poslužitelj}{}
+							\newinst[5]{C}{Baza podataka}{}
+							\newthread{D}{Administratfor}{}
+							\begin{messcall}{A}{1: zatražiRegistraciju()}{B}
+								\begin{messcall}{B}{1.1: spremiNeOdobrenogKorisnika()}{C}
+								\end{messcall}
+							\end{messcall}
+							\begin{call}{A}{2: zatražiDodavanjeKnjiga()}{B}{Prikaz ograničene stranice}
+								\begin{call}{B}{2.1: dohvatiPonuditelja()}{C}{Vrati ponuditelja}
+								\end{call}
+							\end{call}
+							\begin{call}{D}{3: zatražiZahtjeveZaRegistraciju()}{B}{Prikaz zahtjeva za registraciju}
+								\begin{call}{B}{3.1: dohvatiNeOdobreneKorisnike()}{C}{Vrati ne odobrene korisnike}
+								\end{call}
+							\end{call}
+							\postlevel
+							\begin{messcall}{D}{4: odobriZahtjevZaRegistraciju()}{B}
+								\begin{messcall}{B}{4.1: odobriKorisnika()}{C}
+								\end{messcall}
+							\end{messcall}
+							\begin{call}{A}{5: zatražiDodavanjeKnjiga()}{B}{Prikaz stranice za dodavanje knjiga}
+								\begin{call}{B}{5.1: dohvatiPonuditelje()}{C}{Vrati ponuditelje}
+								\end{call}
+							\end{call}
+						\end{sequencediagram}
+					\end{adjustbox}
+				\end{center}
+				\eject
+				
+				\textbf{Obrazac uporabe UC8 – Dodavanje objave knjige}\\\\
+				Preprodavač na stranici za dodavanje knjiga dodaje novi naslov. Poslužitelj sprema taj naslov knjige u bazu i sada ponuditelj dobiva opciju ponuditi primjerke tog naslova. Ponuditelj nudi primjerke tog naslova.\\
+				\begin{center}
+					\begin{adjustbox}{max width=\textwidth}
+						\begin{sequencediagram}
+							\newthread{A}{Preprodavač}{}
+							\newinst[5]{B}{Poslužitelj}{}
+							\newinst[5]{C}{Baza podataka}{}
+							\begin{call}{A}{1: zatražiDodavanjeKnjiga()}{B}{Prikaz stranice za dodavanje knjiga}
+								\begin{call}{B}{1.1: dohvatiPonuditelja()}{C}{Vrati ponuditelja}
+								\end{call}
+							\end{call}
+							\postlevel
+							\begin{messcall}{A}{2: dodajNaslovKnjige}{B}
+								\begin{messcall}{B}{2.1: dodajNaslovKnjige()}{C}
+								\end{messcall}
+							\end{messcall}
+							\begin{messcall}{A}{3: dodajPrimjerkeKnjige()}{B}
+								\begin{messcall}{B}{3.1: dodajPrimjerkeKnjige()}{C}
+								\end{messcall}
+							\end{messcall}
+						\end{sequencediagram}
+					\end{adjustbox}
+				\end{center}
+				\eject
+				
+				\textbf{Obrazac uporabe UC16 - Detaljna pretraga objava knjiga i UC11 - pregled objave}\\\\
+				Neregistrirani korisnik pretražuje knjige po sljedećim značajkama: naziv knjige, naziv autora, godina izdanja, redni broj izdanja, kategorija izdavača, žanr knjige, ISBN, oznaka vrste knjige. Poslužitelj postavlja upit prema bazi i vraća rezultat. Korisnik pregledava podatke pronađene knjige.\\
+				\begin{center}
+					\begin{adjustbox}{max width=\textwidth}
+						\begin{sequencediagram}
+							\newthread{A}{Neregistrirani korisnik}{}
+							\newinst[5]{B}{Poslužitelj}{}
+							\newinst[5]{C}{Baza podataka}{}
+							\begin{call}{A}{1: pretražiKnjige(značajke)}{B}{Prikaz liste knjiga}
+								
+								\begin{call}{B}{1.1: dohvatiFiltriraneKnjige(značajke)}{C}{Lista knjiga}
+								\end{call}
+							\end{call}
+							\postlevel
+							\begin{call}{A}{2: odaberiKnjigu()}{B}{Prikaz podataka o knjizi}
+								\begin{call}{B}{2.1: dohvatiPodatkeOKnjizi()}{C}{Podatci o knjizi}
+								\end{call}
+							\end{call}
+						\end{sequencediagram}
+					\end{adjustbox}
+				\end{center}
+				\eject
+	
 	
 		\section{Ostali zahtjevi}
 		
