@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Nad/Nad/izvorniKod/public/styles/main.css">
+    <title>trazilica</title>
+</head>
+
+<body>
+
+    <div id="top">
+    
+        <div id="logo" class="ot">
+          <a href="index.html" style="text-decoration: none; color: white;"> Logo </a> 
+        </div>
+
+
+        <div id="krug" class="kr">
+
+            <a href="trazi.html"><img id="povecalo" src="slike/traziLogo.png" alt="" width="100px"> </a>
+        </div>
+
+        <div id="logIn" class="ot">
+              log in
+        </div>
+    </div>
+
+    <div id="main">
+    
+        <div id="left"> 
+
+            <div id="mapa">
+                MAPA
+            </div>
+
+            <div id="listaZanr">
+                <a href="objave.html"> <button class="btnZanr"> KOMEDIJA </button></a>
+                <button class="btnZanr"> AKCIJA </button>
+                <button class="btnZanr"> DRAMA </button>
+                <button class="btnZanr"> SCI-FI </button>
+                <button class="btnZanr"> AVANTURISTICKI </button>
+            </div>
+
+            <div id="listaTop">
+                <button class="btnZanr"> 1. KNJIGA </button>
+                <button class="btnZanr"> 2. KNJIGA </button>
+                <button class="btnZanr"> 3. KNJIGA </button>
+                <button class="btnZanr"> 4. KNJIGA </button>
+                <button class="btnZanr"> 5. KNJIGA </button>
+            </div>
+
+            <div id="rek">
+                <button onclick="showZanr()" id="zarn" class="reklame"> žarn </button>
+                <button onclick="showTop()" class="reklame"> top knjige </button>
+
+            </div>
+        </div>
+
+        <div id="right"> 
+
+            <div id="trazi">
+              
+              <div class="inp">
+                <label for="nazivk" class="lb"> naziv knjige: </label>
+                <input type="text" id="nazivk" class="in">
+              </div>
+
+              <div class="inp">
+                <label for="naziva" class="lb"> naziv autora: </label>
+                <input type="text" id="naziva" class="in">
+              </div>
+
+              <div class="inp">
+                <label for="godina" class="lb"> godina nastanka knjige: </label>
+                <input type="number" min="1500" max="2023" id="godina" class="in">
+              </div>
+
+              <div class="inp">
+                <label for="redni" class="lb"> redni broj izdanja knjige: </label>
+                <input type="number" min="1" id="redni" class="in">
+              </div>
+
+              <div class="inp">
+                <label for="nazivi" class="lb"> naziv izdavača: </label>
+                <input type="text" id="nazivi" class="in">
+              </div>
+
+              <div class="inp">
+                <label for="kategorijai" class="lb"> kategorija izdavača: </label>
+                <input type="text" id="kategorijai" class="in">
+              </div>
+
+              <div class="inp">
+                <label for="zarn" class="lb"> žanr: </label>
+                <input type="text" id="zarn" class="in">
+              </div>
+
+              <div class="inp">
+                <label for="isbn" class="lb"> ISBN: </label>
+                <input type="text" id="isbn" class="in">
+              </div>
+
+              <div class="inp">
+                <label for="oznaka" class="lb"> oznaka vrste knjige: </label>
+                <input type="text" id="oznaka" class="in">
+              </div>
+
+              <div id="btnTrazi">
+             <a href="objave.html"> <button class="searchbtn"> trazi </button> </a>
+              </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="main.js"></script>
+</html>
