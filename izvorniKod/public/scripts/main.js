@@ -1,7 +1,9 @@
 let rezZanr = 0;
 let rezTop = 0;
+
 let btnZarn = document.getElementById('zarn');
 let mapa = document.getElementById('mapa');
+
 let listaZ = document.getElementById('listaZanr');
 let listaT = document.getElementById('listaTop');
 
