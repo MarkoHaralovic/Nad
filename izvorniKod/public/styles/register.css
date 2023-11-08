@@ -90,6 +90,16 @@ body {
     margin-bottom: 10px;
 }
 
+#reg-map {
+    min-width: 500px;
+    min-height: 500px;
+    
+}
+
+.category-label{
+    padding-bottom: 10px;
+}
+
 .inputs input {
     display: block;
     margin-bottom:5px;
@@ -119,6 +129,7 @@ body {
     font-size:x-large;
     cursor: pointer;
 }
+
 .buttons button:hover{
 
     background-color: blue;

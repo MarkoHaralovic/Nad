@@ -4,77 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/styles/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <title>Main page</title>
 </head>
 
 <body>
 
-    <div id="top">
-    
-        <div id="logo" class="ot">
-          <a href="index.html" style="text-decoration: none; color: white;"> Logo </a> 
+    <div class="main">
+        <div class="header-container">   
+            
         </div>
-
-
-        <div id="krug" class="kr">
-
-            <a href="trazi.html"><img id="povecalo" src="/Nad/Nad/izvorniKod/public/slike/traziLogo.png" alt="" width="100px"> </a>
-        </div>
-
-        <div id="logIn" class="ot">
-              <a href="/Nad/Nad/izvorniKod/views/login.html" style="text-decoration: none; color: white;">log in</a>
-        </div>
-        <div id="plus" class="ot">
-            <a href="/Nad/Nad/izvorniKod/views/regUser.html">
-              <img width="70px" src="/Nad/Nad/izvorniKod/public/slike/plusLogo.png" alt="">
-            </a>
-      </div>
-    </div>
-
-    <div id="main">
-       
-        <div id="left"> 
-
-             <div id="miniTraz">
-                <label for="mini">Naziv knjige:</label> 
-                <input type="text" class="in" id="mini">
-                <a href="/Nad/Nad/izvorniKod/views/objave.html">
-                <img id="min" style="margin-bottom: -3px;" width="25px" src="/Nad/Nad/izvorniKod/public/slike/miniTraziLogo.png" alt=""> 
-                </a>
-             </div>
-              
-            <div id="mapa">
-                MAPA
+        <div id="center"> 
+            <div id="left">
+                <!--inicijalno prazan-->
             </div>
+            <div id="center-top"> 
+                 <!--<div id="miniTraz">
+                    <label for="mini">Naziv knjige:</label> 
+                    <input type="text" class="in" id="mini">
+                    <a href="/Nad/Nad/izvorniKod/views/objave.html">
+                    <img id="min" style="margin-bottom: -3px;" width="25px" src="/Nad/Nad/izvorniKod/public/slike/miniTraziLogo.png" alt=""> 
+                    </a>
+                 </div> -->
+                <h2 id="map-text">Lokacije ponuditelja</h2>
+                <div id="map" style="width: 900px; height: 600px;">
+                    <script>
+                        var map = L.map('map').setView([44.22, 18.3], 7); 
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(map);
 
-            <div id="listaZanr">
-               <a href="objave.html"> 
-                <button class="btnZanr"> KOMEDIJA </button></a>
-                <button class="btnZanr"> AKCIJA </button>
-                <button class="btnZanr"> DRAMA </button>
-                <button class="btnZanr"> SCI-FI </button>
-                <button class="btnZanr"> AVANTURISTICKI </button>
-            </div>
+                        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(map);
 
-            <div id="listaTop">
-                <button class="btnZanr"> 1. KNJIGA </button>
-                <button class="btnZanr"> 2. KNJIGA </button>
-                <button class="btnZanr"> 3. KNJIGA </button>
-                <button class="btnZanr"> 4. KNJIGA </button>
-                <button class="btnZanr"> 5. KNJIGA </button>
+                      </script>     
+                </div>   
+                <div id="listaZanr">
+                   
+                </div>
+                <div id="rek">
+                    <button onclick="showZanr()" id="zanr" class="reklame"> Traži po žanru </button>
+                </div>
             </div>
-
-            <div id="rek">
-                <button onclick="showZanr()" id="zarn" class="reklame"> žanr </button>
-                <button onclick="showTop()" class="reklame"> top knjige </button>
-                
+            <div id="right"> 
+                <!--inicijalno prazan-->
             </div>
-        </div>
-        <div id="right"> 
         </div>
     </div>
-
 </body>
-
-<script src="/Nad/Nad/izvorniKod/public/scripts/main.js"></script>
+<script src="../public/scripts/main.js"></script>
 </html>

@@ -4,7 +4,7 @@ let uredK = JSON.parse(localStorage.getItem("urediKnjigu")) || 0;
 let ispis = function() {
 
     if (uredK == 2) {
-       let str = "Promjena podataka <br> knjige " + tk; 
+       let str = "Promjena podataka <br>. knjige " + tk; 
        document.getElementById('h2').style.display = "flex";
        document.getElementById('h22').style.display = "none";
        document.getElementById('h2').innerHTML = str;

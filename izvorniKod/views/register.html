@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/styles/register.css">
-    <title>Epski dućan</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <title>Title</title>
 </head>
 <body>
 
@@ -16,25 +18,21 @@
 
 
         <div id="krug" class="kr">
-
-            <a href="trazi.html"><img id="povecalo" src="/Nad/Nad/izvorniKod/public/slike/traziLogo.png" alt="" width="100px"> </a>
+            <a href="trazi.html"><img id="povecalo" src="../public/images/traziLogo.png" alt="" width="100px"> </a>
         </div>
 
         <div id="logIn" class="ot">
-              <a href="/Nad/Nad/izvorniKod/views/login.html" style="text-decoration: none; color: white;">log in</a>
+              <a href="login.html"text-decoration: none; color: white;">log in</a>
         </div>
         <div id="plus" class="ot">
-            <a href="/Nad/Nad/izvorniKod/views/regUser.html">
-              <img width="70px" src="/Nad/Nad/izvorniKod/public/slike/plusLogo.png" alt="">
+            <a href="regUser.html">
+              <img width="70px" src="../public/slike/plusLogo.png" alt="">
             </a>
       </div>
     </div>
 
-
     <div class="main">
-        
             <div class="center-box">
-            
                 <div class="center">
                     <div class="inputs">
                         <div class="inputDiv">
@@ -64,8 +62,23 @@
                         <div class="inputDiv">
                             <label for="address">
                                 Adresa
-                                <input type="text" class="input-class" id="address" name="address">
+                                <div id="reg-map">
+                                    
+                                </div>
+                                <button id="send-location">Potvrdi lokaciju</button>
+                                <!--<input type="text" class="input-class" id="address" name="address">-->
                             </label>
+                        </div>
+                        <div class="inputDiv">
+                            <label for="category" class="category-label">
+                                Kategorija
+                                <div class="category-div">
+                                    <select class="categories">
+                                        <option value="izdavač">Izdavač</option>
+                                        <option value="Preprodavač">Preprodavač</option>
+                                        <option value="Antikvarijat">Antikvarijat</option>
+                                    </select>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -81,5 +94,8 @@
     </div>
 </body>
 
- <script src="/Nad/Nad/izvorniKod/public/scripts/main.js"></script>
+ <script src="../public/scripts/main.js"></script>
+ <script src="../public/scripts/regScript.js"></script>
+
+
 </html>

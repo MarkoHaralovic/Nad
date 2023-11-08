@@ -7,7 +7,16 @@ body{
 
     background-color: white;
 }
-#top {
+
+.header-container {
+    background-color: rgb(75, 190, 250);
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header {
 
     background-color: rgb(75, 190, 250);
     width: 100vw;
@@ -17,7 +26,6 @@ body{
 }
 
 .kr{
-
     width: 200px;
     height: 200px;
     background-color: rgb(75, 190, 250);
@@ -25,10 +33,11 @@ body{
     margin-top: -80px;
 }
 
-#main{
+#center{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #logIn{
  
@@ -40,29 +49,86 @@ body{
     display: none;
 }
 
-#left{
+#left {
+    width: 35vw;
+}
 
-    min-width: 300px;
-    width: 300px;
-    height: 550px;
+#center-top{
     margin-top: 70px;
-    margin-left: 110px;
-    
-    display: flex;
+    text-align: center;
+    /*display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between;*/
 
 }
 
 #right{
+    width: 35vw;
+}
 
-    width: 60vw;
-    height: 550px;
-    margin-top: 70px;
-    margin-right: 75px;
+.objava{
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    max-width: 580px;
+    height: 120px;
+    border: 2px solid #cae5ef;
+    margin-top: 15px;
+    border-radius: 3px;
+    justify-content: space-between;
+    font-size: 18px;
+    color: white;
+    background-color: #0077B6;
+}
+
+.profil{
+
+    width: 90%;
+    max-width: 600px;
+    height: 200px;
+    background-color: #0077B6;
+    border: 2px solid #0077B6;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 14px;
+}
+.foto{
+
+    height: 100%;
+    width: 200px;
+}
+.info{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.profile-left{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    width: 30%;
+}
+.profile-mid{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+   
+    width: 30%;
+}
+.profile-right{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 30%;
 }
 
 .ot{
@@ -73,11 +139,12 @@ body{
     color: white;
 }
 
-#mapa{
+#map{
 
     width: 100%;
     height: 300px;
     border-radius: 4px;
+    border:1px solid #ccc;
     background-color: #9ED8DB;
     display: flex;
     font-size: 55px;
@@ -98,7 +165,7 @@ body{
     align-items: center;
     display: none;
 }
-#listaTop{
+/*#listaTop{
 
     width: 100%;
     height: 600px;
@@ -110,7 +177,7 @@ body{
     justify-content: center;
     align-items: center;
     display: none;
-}
+}*/
 .btnZanr{
 
     width: 200px;

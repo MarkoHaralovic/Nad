@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/styles/login.css">
+    <link rel="stylesheet" href="http://localhost:5500/public/styles/login.css">
     <title>Login page</title>
 </head>
 <body>
@@ -18,12 +18,9 @@
     
             <div id="krug" class="kr">
     
-                <a href="trazi.html"><img id="povecalo" src="/Nad/Nad/izvorniKod/public/slike/traziLogo.png" alt="" width="100px"> </a>
+                <!--<a href="trazi.html"><img id="povecalo" src="../public/images/traziLogo.png" alt="" width="100px"> </a> -->
             </div>
     
-            <div id="logIn" class="ot">
-                  <a href="/Nad/Nad/izvorniKod/views/login.html" style="text-decoration: none; color: white;">log in</a>
-            </div>
             <div id="plus" class="ot">
                 <a href="/Nad/Nad/izvorniKod/views/regUser.html">
                   <img width="70px" src="/Nad/Nad/izvorniKod/public/slike/plusLogo.png" alt="">
@@ -32,35 +29,35 @@
         </div>
 
         
-            <div class="center-box">
+        <div class="center-box">
             
-                <div class="center">
-                    <div class="inputs">
-                        <div class="inputDiv">
-                            <label for="username" >
-                                Korisničko ime
-                                <input type="text" class="input-class" id="username" name="username">
-                            </label>
-                        </div>
-                        <div class="inputDiv">
-                            <label for="password">
-                                Lozinka
-                                <input type="password" class="input-class" id="password" name="password">
-                            </label>
-                        </div>
+            <div class="center">
+                <div class="inputs">
+                    <div class="inputDiv">
+                        <label for="username" >
+                            Korisničko ime
+                            <input type="text" class="input-class" id="username" name="username">
+                        </label>
                     </div>
-                </div>
-                <div class="bottom">
-                    <div class="buttons">
-                        <button onclick="login()" id="logInBtn" class="login-button">
-                          Prijavi se
-                        </button>
-                        
-                        <p>Nemate račun? <a href="register.html">Registrirajte se!</a></p>
-                        <p>Zaboravili ste lozinku?<a href="">Resetirajte ovdje!</a></p>
+                    <div class="inputDiv">
+                        <label for="password">
+                            Lozinka
+                            <input type="password" class="input-class" id="password" name="password">
+                        </label>
                     </div>
                 </div>
             </div>
+            <div class="bottom">
+                <div class="buttons">
+                    <button onclick="login()" id="logInBtn" class="login-button">
+                        Prijavi se
+                    </button>
+                        
+                    <p>Nemate račun? <a href="register.html">Registrirajte se!</a></p>
+                    <p>Zaboravili ste lozinku?<a href="">Resetirajte ovdje!</a></p>
+                </div>
+            </div>
+        </div>
         
     </div>
 </body>
