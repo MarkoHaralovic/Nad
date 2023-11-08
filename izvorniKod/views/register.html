@@ -7,12 +7,34 @@
     <title>Epski dućan</title>
 </head>
 <body>
+
+    <div id="top">
+    
+        <div id="logo" class="ot">
+          <a href="index.html" style="text-decoration: none; color: white;"> Logo </a> 
+        </div>
+
+
+        <div id="krug" class="kr">
+
+            <a href="trazi.html"><img id="povecalo" src="/Nad/Nad/izvorniKod/public/slike/traziLogo.png" alt="" width="100px"> </a>
+        </div>
+
+        <div id="logIn" class="ot">
+              <a href="/Nad/Nad/izvorniKod/views/login.html" style="text-decoration: none; color: white;">log in</a>
+        </div>
+        <div id="plus" class="ot">
+            <a href="/Nad/Nad/izvorniKod/views/regUser.html">
+              <img width="70px" src="/Nad/Nad/izvorniKod/public/slike/plusLogo.png" alt="">
+            </a>
+      </div>
+    </div>
+
+
     <div class="main">
-        <form>
+        
             <div class="center-box">
-                <div class="top">
-                    <h2>Dobrodošli!</h2>
-                </div>
+            
                 <div class="center">
                     <div class="inputs">
                         <div class="inputDiv">
@@ -49,13 +71,15 @@
                 </div>
                 <div class="bottom">
                     <div class="buttons">
-                        <button class="register-button">
+                        <button onclick="login()" class="register-button">
                             Registriraj se
                         </button>
                     </div>
                 </div>
             </div>
-        </form>
+        
     </div>
 </body>
+
+ <script src="/Nad/Nad/izvorniKod/public/scripts/main.js"></script>
 </html>

@@ -1,6 +1,7 @@
 *{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: xx-large;
+    margin: 0px;
 }
 
 body {
@@ -9,23 +10,58 @@ body {
     align-items : center;
 
 }
+#top {
+
+    background-color: rgb(75, 190, 250);
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ot{
+
+    font-size: 35px;
+    align-self: center;
+    padding: 50px;
+    color: white;
+}
+.kr{
+
+    width: 200px;
+    height: 200px;
+    background-color: rgb(75, 190, 250);
+    border-radius: 50%;
+    margin-top: -80px;
+}
+
+#povecalo{
+
+    margin-top: 80px;
+    margin-left: 50px;
+}
+#trazi{
+
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
 
 .center-box{
     /*border : 2px solid #000;*/
     padding : 5px;
     display: inline-block;
     box-sizing: border-box;
-   /* display: flex; /* flex sjebe gumb
+    /*display: flex; 
     justify-content : center; 
-    align-items : center; */
-
+    align-items : center;*/
+    margin-left: 35%;
+    margin-right: 35%;
     width: 30vh;
 }    
 
-.top {
-    text-align: center;
-    margin : 10%;
-}
 
 .inputs{
    margin-top:60px;
@@ -72,5 +108,18 @@ body {
     align-self: center;
     margin-top: 15px;
     font-size:x-large;
+    cursor: pointer;
+}
+.buttons button:hover{
+
+    background-color: blue;
 }
 
+@media screen and (max-width: 520px) {
+
+    #povecalo{
+
+        margin-top: 80px;
+        margin-left: 32px;
+    }  
+} 
