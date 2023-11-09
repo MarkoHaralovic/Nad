@@ -40,11 +40,9 @@ body{
     align-items: center;
 }
 #logIn{
- 
     display: flex;
 }
 #plus{
-
     font-size: 30px;
     display: none;
 }

@@ -1,6 +1,7 @@
 let rezZanr = 0;
 //let rezTop = 0;
-let logIn = JSON.parse(localStorage.getItem("logIn"));
+//let logIn = JSON.parse(localStorage.getItem("logIn")); //za sad neka bude zakomentirano, simulirat cemo logiranje samo kroz gumbe na login i register
+let logIn = 0;
 let uredKn = JSON.parse(localStorage.getItem("urediKnjigu"));
 var kos = JSON.parse(localStorage.getItem("obrisani"));
 
@@ -19,8 +20,8 @@ let center = document.getElementById('center');
 let listaZ = document.getElementById('listaZanr');
 //let listaT = document.getElementById('listaTop');
 
-let plusLog = document.getElementById("plus");
-let logoLog = document.getElementById("logIn");
+let plusLog //= document.getElementById("plus"); //null
+let logoLog //= document.getElementById("logIn");
 
 let container = document.querySelector('.header-container');
 
@@ -29,51 +30,72 @@ let loadHeader = function() {
             .then(response => response.text())
             .then(html => {
                 container.innerHTML = html;
-                searchButton();
+                if(logIn) plusLog = document.getElementById('plus');
+                else logoLog = document.getElementById('logIn');
+                if(logIn) console.log(plusLog.innerHTML);
+                else console.log(logoLog.innerHTML);
+                searchButton();               
+            })
+            .then(() => {
+                log();
             }).catch(error => {
                 console.error("Error loading content:", error);
             });
 }
 
 let searchButton = function() {
+    console.log("in searchButton");
     searchImg = document.getElementById('povecalo');
     searchImg.addEventListener('click', () => {
-        fetch('../views/trazi.html')
-        .then(data => data.text())
-        .then(html => {
-            //center.innerHTML = '';
-            centerTop.innerHTML = html;
-        });
+        searchButtonClicked();
     });
 }
 
-let log = function() {
+let searchButtonClicked = function() {
+    console.log("in searchButtonClicked");
+    fetch('../views/trazi.html')
+        .then(data => data.text())
+        .then(html => {
+            //center.innerHTML = '';
+            leftSide.innerHTML = '';
+            rightSide.innerHTML = '';
+            centerTop.innerHTML = html;
+            centerTop.style.display = 'flex';
+        })
+        .catch(error => {
+            console.log("Error while loading element: "+error);
+        });
+}
 
+let log = function() {
+    console.log("login u log je:" + logIn);
     if (logIn == null) {
     
         logIn = 0;
     }
 
     if (logIn == 0) {
-        
-        plusLog.style.display = "none";
+        //logoLog = document.getElementById('logIn');
+        //plusLog.style.display = "none";
         logoLog.style.display = "flex";
 
-    } else if (logIn == 1) {
-    
+    } else {
+        console.log("else");
+        //plusLog = document.getElementById('plus');
         plusLog.style.display = "flex";
-        logoLog.style.display = "none";
+        //logoLog.style.display = "none";
     }
-
+    console.log("tu sam");
     console.log(logIn + " logIn");
 }
 
 let login = function() {
 
     logIn = 1;
-    localStorage.setItem("logIn", JSON.stringify(logIn));
-    log();
-    window.location.href = "../views/index.html";
+    localStorage.setItem("logIn", JSON.stringify(logIn)); //na backend se salje login request
+    
+    console.log("login u login je:" + logIn);
+    if(logIn) {window.location.href = "../views/userProfile.html";}
 }
 
 let logout = function() {
@@ -204,6 +226,6 @@ let publicationEventListener = function() {
 }
 
 loadHeader();
-log();
+
 
 
