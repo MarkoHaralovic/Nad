@@ -89,13 +89,77 @@ let log = function() {
     console.log(logIn + " logIn");
 }
 
-let login = function() {
-
+let login = function() { //placeholder za simuliranje logina i registracije, koristit cemo loginReq za pravu funkcionalnost
     logIn = 1;
     localStorage.setItem("logIn", JSON.stringify(logIn)); //na backend se salje login request
     
     console.log("login u login je:" + logIn);
     if(logIn) {window.location.href = "../views/userProfile.html";}
+}
+
+let regReq = function() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+    const number = document.getElementById('number').value;
+    const cat = document.querySelector('.categories').value;
+
+    if(!(username && password && email && number && cat)) {
+        /*const errMsg = document.createElement('p');
+        const parent = document.querySelector('.center-box');
+        parent.appendChild(errMsg)
+        //uredit u css
+        errMsg.textContent = 'Popunite sva polja';*/
+        alert("Jedno ili više polja je prazno");
+        
+        return; 
+    }
+
+    fetch('', {
+        method: "POST",
+        headers: {
+
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        //podaci sa backenda
+    })
+    .catch(error => { 
+        console.log("Error: ",error);
+    })
+
+}
+
+let loginReq = function() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if(!username || !password) {
+        /*const errMsg = document.createElement('p');
+        errMsg.textContent = 'Popunite sva polja';
+        const parent = document.querySelector('.center-box');
+        parent.appendChild(errMsg);*/
+        alert("Jedno ili više polja je prazno");
+        return; 
+    }
+
+    fetch('', {
+        method: "POST",
+        headers: {
+
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        //podaci sa backenda
+    })
+    .catch(error => { 
+        console.log("Error: ",error);
+    })
+
 }
 
 let logout = function() {
