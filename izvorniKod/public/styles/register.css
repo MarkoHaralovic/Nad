@@ -1,28 +1,26 @@
 *{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: xx-large;
+    font-size: normal;
     margin: 0px;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    justify-content : center;
-    align-items : center;
+    justify-content: center;
+    align-items: center;
 
 }
-#logIn{
- 
+#logIn {
     display: none;
 }
-#plus{
 
+#plus {
     font-size: 30px;
     display: flex;
 }
 
 #top {
-
     background-color: rgb(75, 190, 250);
     width: 100vw;
     height: 100px;
@@ -30,15 +28,14 @@ body {
     justify-content: space-between;
 }
 
-.ot{
-
+.ot {
     font-size: 35px;
     align-self: center;
     padding: 50px;
     color: white;
 }
-.kr{
 
+.kr {
     width: 200px;
     height: 200px;
     background-color: rgb(75, 190, 250);
@@ -46,54 +43,56 @@ body {
     margin-top: -80px;
 }
 
-#povecalo{
-
+#povecalo {
     margin-top: 80px;
     margin-left: 50px;
 }
-#trazi{
 
+#trazi {
     font-size: 18px;
     display: flex;
     flex-direction: column;
-    
-    
 }
-.center-box{
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-box {
     /*border : 2px solid #000;*/
     padding : 5px;
     display: inline-block;
     box-sizing: border-box;
-   /* display: flex; /* flex sjebe gumb
+    display: flex; 
     justify-content : center; 
-    align-items : center; */
-
-    width: 30vh;
+    align-items : center;
+    flex-direction: column;
 }    
 
 .top {
     text-align: center;
-    margin : 10%;
+    margin: 10%;
 }
 
-.inputs{
-   margin-top:50px;
-   margin-right:2px;
-  /* display: flex;
+.inputs {
+    margin-top: 50px;
+    margin-right: 2px;
+    display: flex;
     justify-content : center;
-    align-items : center; */
+    align-items : center;
+    flex-direction: column;
 }
 
 .inputs label {
-    
-    padding-bottom:5px;
+    padding-bottom: 5px;
     margin-bottom: 10px;
 }
 
 #reg-map {
-    min-width: 500px;
+    width: 90vw;
     min-height: 500px;
-    
 }
 
 .category-label{
@@ -102,11 +101,13 @@ body {
 
 .inputs input {
     display: block;
-    margin-bottom:5px;
-    margin-top:10px;
+    margin-bottom: 5px;
+    margin-top: 10px;
     background-color: white;
     border-color: #4BBEFA;
     border-radius: 7px;
+    min-width: 250px;
+    line-height: 150%;
 }
 
 .buttons {
@@ -114,8 +115,8 @@ body {
 }
 
 .buttons button {
-    width: 250px;
-    height: 80px;
+    width: 150px;
+    height: 60px;
     border-radius: 7px;
     font-size: 12px;
     background-color: #4BBEFA;
@@ -126,22 +127,18 @@ body {
     justify-self: center;
     align-self: center;
     margin-top: 15px;
-    font-size:x-large;
     cursor: pointer;
 }
 
 .buttons button:hover{
-
     background-color: blue;
 }
-@media screen and (max-width: 900px) {
-    
-}
+
 @media screen and (max-width: 520px) {
 
     #povecalo{
-
         margin-top: 80px;
         margin-left: 32px;
     }  
+    
 } 
