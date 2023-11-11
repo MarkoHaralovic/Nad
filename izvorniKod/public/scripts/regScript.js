@@ -10,6 +10,7 @@ function onMapClick(e) {
         map.removeLayer(marker);
     }
     marker = L.marker(e.latlng).addTo(map);
+    
 }
 
 map.on('click',onMapClick);
@@ -20,6 +21,7 @@ document.getElementById('send-location').addEventListener('click', function () {
         var latlng = marker.getLatLng();
         alert('Latitude: ' + latlng.lat + ', Longitude: ' + latlng.lng);
         // You can send the location data to your server or handle it as needed.
+        window.marker = marker;
     } else {
         alert('Please mark a location on the map first.');
     }

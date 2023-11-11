@@ -103,8 +103,21 @@ let regReq = function() {
     const email = document.getElementById('email').value;
     const number = document.getElementById('number').value;
     const cat = document.querySelector('.categories').value;
+    const marker = window.marker;
+    console.log(marker.getLatLng() + ": marker");
 
-    if(!(username && password && email && number && cat)) {
+    const data = {
+        username : username,
+        passwrod : password,
+        email : email,
+        number : number,
+        cat : cat,
+        marker : marker
+    }
+
+    //marker.getLanLng()
+
+    if(!(username && password && email && number && cat && marker)) {
         /*const errMsg = document.createElement('p');
         const parent = document.querySelector('.center-box');
         parent.appendChild(errMsg)
