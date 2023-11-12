@@ -127,8 +127,8 @@ let regReq = function() {
         
         return; 
     }
-
-    fetch('', {
+    url = 'neki url'
+    fetch(url, {
         method: "POST",
         headers: {
 
