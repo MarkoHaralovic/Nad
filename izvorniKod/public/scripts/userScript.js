@@ -24,26 +24,17 @@ let pubsForUser = function() {
     
 }
 
-function dropdown() {
-    console.log("help")
-    let drop = document.getElementById('dropdown-content');
-    drop.style.display = 'flex';
-    drop.classList.toggle('show');
+let logout = function() {
+    localStorage.setItem('sessionToken',null);
+    window.location.href('../views/index.html');
+}
+
+let isLoggedIn = function() {
+    return localStorage.getItem('sessionToken') !== null;
 }
 
 loadHeader2();
 pubsForUser();
 
-window.onclick = function(event) {
-    if (!event.target.matches('#dropdown-button')) {
-      let dropdowns = document.getElementsByClassName('dropdowns');
-      for (i = 0; i < dropdowns.length; i++) {
-        let openDrop = dropdowns[i];
-        if (openDrop.classList.contains('show')) {
-          openDrop.classList.remove('show');
-        }
-      }
-    }
-}
 
   
