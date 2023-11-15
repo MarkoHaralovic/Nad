@@ -14,59 +14,48 @@
 
         <div id="center" style="justify-content: center; height: 100%; width:100%;">
             <div id="new-pub">
-                <form>
-                    <div class="pub-inputs">
-                        <label>naziv</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>autor</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>god izdanja</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>izdavač</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>kategorija izdavača</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>žanr</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>ISBN</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>broj izdanja</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>stanje očuvanosti</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>tekstni opis</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>slika korica</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>ozn vrsta knjige</label>
-                        <input type="text">
-                    </div>
-                    <div class="pub-inputs">
-                        <label>lista ponuda?</label>
-                        <input type="text">
-                    </div>
+                <form id="pub-form" style="display:flex; flex-direction: column;">
+                    <label>naziv</label>
+                    <input type="text">
+
+                    <label>autor</label>
+                    <input type="text">
+
+                    <label>god izdanja</label>
+                    <input type="text">
+
+                    <label>izdavac</label>
+                    <input type="text">
+
+                    <label>kategorija izdavaca</label>
+                    <input type="text">
+
+                    <label>žanr</label>
+                    <input type="text">
+
+                    <label>ISBN</label>
+                    <input type="text">
+
+                    <label>Br. izdanja</label>
+                    <input type="text">
+
+                    <label>Stanje</label>
+                    <input type="text">
+
+                    <label>Opis</label>
+                    <input type="text">
+
+                    <label>Oznaka vrsta knjige</label>
+                    <input type="text">
+
+                    <label for="imageInput">Slika korica</label>
+                    <input type="file" id="imageInput" name="image" accept="image/jpeg, image/png">
+                    <!--dodat image preview?-->
+                    <label>Lista ponuda?</label>
+                    <input type="text">
+
+                    <button id="pub-button" style="margin-top: 30px; width: 40%" >Dodaj objavu</button>
+                    <!--dodat js za novu objavu-->
                 </form>
             </div>
         </div>
