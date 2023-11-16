@@ -1,0 +1,98 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="header-container">
+            
+        </div>
+            <div class="center-box">
+                <div class="center">
+                    <div class="inputs">
+                        <div class="inputDiv">
+                            <label for="username" >
+                                Korisničko ime
+                                <input type="text" class="input-class" id="username" name="username">
+                            </label>
+                        </div>
+                        <div class="inputDiv">
+                            <label for="display-name" >
+                                Naziv
+                                <input type="text" class="input-class" id="display-name" name="display-name">
+                            </label>
+                        </div>
+                        <div class="inputDiv">
+                            <label for="password">
+                                Lozinka
+                                <input type="password" class="input-class" id="password" name="password">
+                            </label>    
+                        </div>
+                        <div class="inputDiv">
+                            <label for="email">
+                                Elektronička pošta
+                                <input type="email" class="input-class" id="email" name="email">
+                            </label>
+                        </div>
+                        <div class="inputDiv">
+                            <label for="phone">
+                                Broj mobitela
+                                <input type="tel" class="input-class" id="number" name="number">
+                            </label>
+                        </div>
+                        <div class="inputDiv">
+                            <label for="category" class="category-label">
+                                Kategorija
+                                <div class="category-div">
+                                    <select class="categories">
+                                        <option value="izdavač">Izdavač</option>
+                                        <option value="Preprodavač">Preprodavač</option>
+                                        <option value="Antikvarijat">Antikvarijat</option>
+                                    </select>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputDiv">
+                            <label for="address">
+                                Ulica i kućni broj
+                                <input type="text" class="input-class" id="address" name="address">
+                            </label>
+                        </div>
+                        <div class="inputDiv">
+                            <label for="address">
+                                Grad
+                                <input type="text" class="input-class" id="city" name="city">
+                            </label>
+                        </div>
+                        <div class="inputDiv">
+                            <label for="address">
+                                Država
+                                <input type="text" class="input-class" id="country" name="country">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="buttons">
+                        <button id="regBtn" onclick="regReq()" class="searchbtn"> 
+                            Registriraj se
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</body>
+<script src="js/main.js"></script>
+</html>

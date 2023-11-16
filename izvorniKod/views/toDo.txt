@@ -1,7 +1,0 @@
-Hitno (do zadnjeg petka):
-osposobit login i reg
-
-manje hitno:
-uljepsat stranicu
-izbrisat header1,header2
-izbrisat ot1,ot2

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<User>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+    <script src="https://unpkg.com/htmx.org@1.9.8" integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr" crossorigin="anonymous"></script>
+</head>
+<body>
+<div>
+    <ul>
+        @{
+            foreach (User user in Model)
+            {
+                <li>
+                    <p>
+                        Korisničko ime: @user.Username,
+                        Lozinka: @user.Password,
+                        Naziv korisnika: @user.DisplayName,
+                        Vrsta korisnika: @user.DisplayUserType,
+                        Email: @user.Email,
+                        Broj mobitela: @user.PhoneNumber,
+                        Adresa: @user.Address
+                    </p>
+                    <button hx-delete="user/@user.Id" hx-target="closest li" hx-swap="outerHTML">Odbij</button>
+                    <button hx-put="user/approve/@user.Id" hx-target="closest li" hx-swap="outerHTML">Odobri</button>
+                </li>
+            }
+        }
+    </ul>
+</div>
+</body>
+</html>
