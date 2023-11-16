@@ -13,26 +13,20 @@ public class UserController : Controller
         this.npgsqlRepository = npgsqlRepository;
     }
     
-    //User registration page.
-    //Leads to registration message page once the request is submitted.
     [HttpGet("/register")]
-    public async Task<IActionResult> Register()
+    public async Task<IActionResult> RegisterPage()
     {
         return View();
     }
     
-    //User log in page.
-    //Leads to home page once logged in.
     [HttpGet("/login")]
-    public async Task<IActionResult> Login()
+    public async Task<IActionResult> LoginPage()
     {
         return View();
     }
-
-
-    //Shows registration requests to the admin.
+    
     [HttpGet("/registration-requests")]
-    public async Task<IActionResult> RegistrationRequests()
+    public async Task<IActionResult> RegistrationRequestsPage()
     {
         IEnumerable<User> unapprovedUsers = await npgsqlRepository.GetUnapprovedUsers();
         
@@ -46,8 +40,8 @@ public class UserController : Controller
         return View();
     }
     
-    [HttpPost("/user/{userId:int}")]
-    public async Task<IActionResult> AddUser(int userId)
+    [HttpPost("/user")]
+    public async Task<IActionResult> AddUser(int userId, )
     {
         // await npgsqlRepository.AddUser();
         return Ok();
