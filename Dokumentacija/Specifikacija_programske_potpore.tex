@@ -28,8 +28,7 @@
                         				\item Pretraživati knjige po njihovim atributima i po ponuditeljima
                         				\item Pregledavati objave
                         				\item Pregledavati profil ponuditelja
-					      	\item Pretraživati na karti ponuditelje
-                       				\item Slati zahtjev izdavačima da se knjiga na stranom jeziku prevede
+					      	\item Pretraživati na karti ponuditelje                      				
                     				\end{packed_enum}
 				\item  \underbar{Neregistrirani korisnik(inicijator) može:}
 				
@@ -37,7 +36,7 @@
 					
 					\item Napraviti korisnički račun registracijom za što mu treba korisničko ime, lozinka, e-mail, broj mobitela i adresa i može birati u koju će kategoriju ponuditelja spadati
 					%\begin{packed_enum}
-						
+					\item Slati zahtjev izdavačima da se knjiga na stranom jeziku prevede	
 						%\item  podfunkcionalnost 1 
 						%\item  podfunkcionalnost 2
 				
@@ -402,11 +401,11 @@
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC13 - Zahtjev od korisnika da se knjiga prevede}}
+                    \noindent \underbar{\textbf{UC13 - Zahtjev od neregistriranog korisnika da se knjiga prevede}}
 					\begin{packed_item}
 	
-						\item \textbf{Glavni sudionik: } Korisnik
-						\item  \textbf{Cilj:} Korisnik traži izdavača da se knjiga prevede
+						\item \textbf{Glavni sudionik: } Neregistrirani korisnik
+						\item  \textbf{Cilj:} Neregistrirani korisnik traži izdavača da se knjiga prevede
 						\item  \textbf{Sudionici:} Baza podataka, izdavač
 						\item  \textbf{Preduvjet:} - Postoji objava za knjigu
 						\item  \textbf{Opis osnovnog tijeka:}
@@ -426,9 +425,9 @@
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Izdavač
-						\item  \textbf{Cilj:} Izrada korisničkog računa za web stranicu
+						\item  \textbf{Cilj:} Izdavač šalje zahtjev stranom izdavaču da se knjiga prevede
 						\item  \textbf{Sudionici:} Baza podataka, strani izdavač
-						\item  \textbf{Preduvjet:} -
+						\item  \textbf{Preduvjet:} Postoji objava za knjigu
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{packed_enum}
