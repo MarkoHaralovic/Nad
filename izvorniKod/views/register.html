@@ -10,31 +10,25 @@
 </head>
 <body>
 
-    <div id="top">
-    
-        <div id="logo" class="ot">
-          <a href="index.html" style="text-decoration: none; color: white;"> Logo </a> 
-        </div>
-
-
-        <div id="krug" class="kr">
-          <!--  <img id="povecalo" src="../public/images/traziLogo.png" alt="" width="100px" onclick="searchButton()"> za sad neka ovako bude, kasnije se dogovorimo ak zelimo ovo-->
-        </div>
-
-        <div id="logIn" class="ot">
-             <!-- <a href="login.html"text-decoration: none; color: white;">log in</a> -->
-        </div>
-        <div id="plus" class="ot">
-           <!-- <a href="regUser.html">
-              <img width="70px" src="../public/slike/plusLogo.png" alt="">
-            </a> -->
-       </div>
-    </div>
-
     <div class="main">
+        <div class="header-container">
+            
+        </div>
             <div class="center-box">
                 <div class="center">
                     <div class="inputs">
+                        <div class="inputDiv">
+                            <label for="name">
+                                Ime
+                                <input type="text" class="input-class" id="name" name="name">
+                            </label>    
+                        </div>
+                        <div class="inputDiv">
+                            <label for="name">
+                                Prezime
+                                <input type="text" class="input-class" id="last-name" name="last-name">
+                            </label>    
+                        </div>
                         <div class="inputDiv">
                             <label for="username" >
                                 Korisničko ime
@@ -73,10 +67,10 @@
                         <div class="inputDiv">
                             <label for="address">
                                 Adresa
-                                <div id="reg-map">
+                                <div id="reg-map" style="max-width: 40vw;">
                                     
                                 </div>
-                                <button id="srcBtn" class="searchbtn">Potvrdi lokaciju</button>
+                                <button id="send-location" class="searchbtn">Potvrdi lokaciju</button>
                                 <!--<input type="text" class="input-class" id="address" name="address">-->
                             </label>
                         </div>

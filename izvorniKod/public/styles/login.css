@@ -9,7 +9,15 @@ body {
     flex-direction: column;
 }
 
-#top {
+.header-container {
+    background-color: rgb(75, 190, 250);
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header {
     background-color: rgb(75, 190, 250);
     width: 100vw;
     height: 100px;
@@ -41,11 +49,11 @@ body {
     flex-direction: column;
 }
 
-.main {
+/*.main {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 .center-box{
     /*border : 2px solid #000;*/

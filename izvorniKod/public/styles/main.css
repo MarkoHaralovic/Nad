@@ -23,6 +23,11 @@ body{
     justify-content: space-between;
 }
 
+#header-right {
+    margin: 20px;
+    margin-right:20px;
+}
+
 .kr{
     width: 200px;
     height: 200px;

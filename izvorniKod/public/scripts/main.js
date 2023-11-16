@@ -23,17 +23,30 @@ let listaZ = document.getElementById('listaZanr');
 let plusLog //= document.getElementById("plus"); //null
 let logoLog //= document.getElementById("logIn");
 
-let container = document.querySelector('.header-container');
+let container; //header container
+let hrUnreg = document.createElement('div');
+hrUnreg.innerHTML = '<a href="login.html" style="text-decoration: none; color: white; font-size: 25px;"><p>log in</p></a>'
+
+let hrReg = document.createElement('div');
+hrReg.innerHTML = '<p id="myAcc" onclick="logout()">Moj profil</p>';
 
 let loadHeader = function() {
-    fetch('../views/header1.html')
+    fetch('../views/header.html')
             .then(response => response.text())
             .then(html => {
+                container = document.querySelector('.header-container');
+                console.log(container);
                 container.innerHTML = html;
-                if(logIn) plusLog = document.getElementById('plus');
-                else logoLog = document.getElementById('logIn');
-                if(logIn) console.log(plusLog.innerHTML);
-                else console.log(logoLog.innerHTML);
+                let hr = document.getElementById('header-right');
+                if(logIn) {
+                    hr.appendChild(hrReg);
+                } else {
+                    hr.appendChild(hrUnreg);
+                }
+                //if(logIn) plusLog = document.getElementById('plus');
+                //else logoLog = document.getElementById('logIn');
+                //if(logIn) console.log(plusLog.innerHTML);
+                //else console.log(logoLog.innerHTML);
                 searchButton();               
             })
             .then(() => {
@@ -44,7 +57,7 @@ let loadHeader = function() {
 }
 
 let searchButton = function() {
-    console.log("in searchButton");
+    //console.log("in searchButton");
     searchImg = document.getElementById('povecalo');
     searchImg.addEventListener('click', () => {
         searchButtonClicked();
@@ -69,20 +82,16 @@ let searchButtonClicked = function() {
 
 let log = function() {
     console.log("login u log je:" + logIn);
-    if (logIn == null) {
-    
-        logIn = 0;
-    }
 
     if (logIn == 0) {
         //logoLog = document.getElementById('logIn');
         //plusLog.style.display = "none";
-        logoLog.style.display = "flex";
+        //logoLog.style.display = "flex";
 
     } else {
         console.log("else");
         //plusLog = document.getElementById('plus');
-        plusLog.style.display = "flex";
+        //plusLog.style.display = "flex";
         //logoLog.style.display = "none";
     }
     console.log("tu sam");
@@ -98,6 +107,8 @@ let login = function() { //placeholder za simuliranje logina i registracije, kor
 }
 
 let regReq = function() {
+    const name = document.getElementById('name').value;
+    const lastname = document.getElementById('last-name').value;
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const email = document.getElementById('email').value;
@@ -107,6 +118,8 @@ let regReq = function() {
     console.log(marker.getLatLng() + ": marker");
 
     const data = {
+        name : name,
+        lastname : lastname,
         username : username,
         passwrod : password,
         email : email,
@@ -117,7 +130,7 @@ let regReq = function() {
 
     //marker.getLanLng()
 
-    if(!(username && password && email && number && cat && marker)) {
+    if(!(name && lastname && username && password && email && number && cat && marker)) {
         /*const errMsg = document.createElement('p');
         const parent = document.querySelector('.center-box');
         parent.appendChild(errMsg)
@@ -208,47 +221,6 @@ let showZanr = function() {
         rezZanr = 0;
     }
 };
-/*let showTop = function() {
-
-    if (rezTop == 0) {
-    
-        mapa.style.display = "none";
-        listaZ.style.display = "none"
-        listaT.style.display = "flex"
-        rezZanr = 0;
-        rezTop = 1;
-
-    } else if (rezTop == 1) {
-    
-        mapa.style.display = "flex";
-        listaZ.style.display = "none";
-        listaT.style.display = "none"
-        rezZanr = 0;
-        rezTop = 0;
-    }
-};*/
-
-let brisiKnjigu = function() {
-
-    uredKn = 1;
-    localStorage.setItem("urediKnjigu", JSON.stringify(uredKn));
-
-    window.location.href = "/Nad/Nad/izvorniKod/views/urediKnjigu.html";
-}
-
-let urediKnjigu = function() {
-
-    uredKn = 2;
-    localStorage.setItem("urediKnjigu", JSON.stringify(uredKn));
-    window.location.href = "/Nad/Nad/izvorniKod/views/urediKnjigu.html";
-}
-
-let dodajKnjigu = function() {
-
-    uredKn = 3;
-    localStorage.setItem("urediKnjigu", JSON.stringify(uredKn));
-    window.location.href = "/Nad/Nad/izvorniKod/views/promjenaKnjige.html";
-}
 
 let zanrButtonListener = function() {
     btnZanrs = document.querySelectorAll('.btnZanr');

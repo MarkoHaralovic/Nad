@@ -1,4 +1,7 @@
 Hitno (do zadnjeg petka):
-responzivnost
-malo uljepsat stranicu (pogotovo newPub)
 osposobit login i reg
+
+manje hitno:
+uljepsat stranicu
+izbrisat header1,header2
+izbrisat ot1,ot2
