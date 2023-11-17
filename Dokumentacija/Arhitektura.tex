@@ -30,8 +30,7 @@
 		\subsection{Opis tablica}
 		
 		Ova tablica sadrži sve potrebne informacije o korisniku, kao što su:
-		korisničko ime, lozinku korisnika, korisnikovo ime i prezime, koja je vrsta korisnika, njegov e-mail, broj mobitela, stanje odobrenosti, adresu, grad i državau u kojoj se nalazi. Ona je u
-		u One-to-Many vezi s tablicom Knjiga preko svojeg ID-a.
+		korisničko ime, lozinku korisnika, korisnikovo ime i prezime, koja je vrsta korisnika, njegov e-mail, broj mobitela, stanje odobrenosti, adresu, grad i državu u kojoj se nalazi. Ona je u "One-to-Many" vezi s tablicom Knjiga preko svojeg ID-a.
 		\begin{longtblr}[
 			label=none,
 			entry=none
@@ -41,7 +40,7 @@
 				rowhead = 1,
 			} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
 			\hline \SetCell[c=3]{c}{\textbf{Korisnik}}	 \\ \hline[3pt]
-			\SetCell{LightGreen}ID ponuditelj & INT	&  Jedinstveni identificator korisnika u tablici	\\ \hline
+			\SetCell{LightGreen}ID ponuditelj & INT	&  Jedinstveni identifikator korisnika u tablici	\\ \hline
 			korisnicko ime	& VARCHAR & korisničko ime izdavača, antikvarijata ili preprodavača  	\\ \hline 
 			lozinka & VARCHAR & lozinka korisnika  \\ \hline 
 			naziv korisnika & VARCHAR	& ime i prezime korisnika 		\\ \hline 
@@ -58,7 +57,7 @@
 		Ova tablica sadrži sve potrebne informacije o knjigama, kao što su:
 		naziv, ime i prezime autora, godina izdanja, naziv i vrstu izdavača, ISBN, broj
 		izdanja, opis knjige, jezik na kojem je izdan i dostupnost. Ona je u
-		One-to-One vezi s tablicom Korica preko svojeg ID-a, u Many-To-One vezi s tablicom Korisnik preko njezinog ID-a i u One-to-Many vezi s tablicom Ponuda preko svojeg ID-a.
+		One-to-One vezi s tablicom Korica preko svojeg ID-a, u "Many-To-One" vezi s tablicom Korisnik preko njezinog ID-a i u "One-to-Many" vezi s tablicom Ponuda preko svojeg ID-a.
 		
 		
 		\begin{longtblr}[
@@ -70,7 +69,7 @@
 				rowhead = 1,
 			} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
 			\hline \SetCell[c=3]{c}{\textbf{Knjiga}}	 \\ \hline[3pt]
-			\SetCell{LightGreen}ID naslov & INT	&  Jedinstveni identificator knjige u tablici	\\ \hline
+			\SetCell{LightGreen}ID naslov & INT	&  Jedinstveni identifikator knjige u tablici	\\ \hline
 			naziv	& VARCHAR & naziv knjige   	\\ \hline 
 			autor & VARCHAR & ime i prezime autora  \\ \hline 
 			godina izdavanja & INT	& godina u kojoj je izdana knjiga 		\\ \hline 
@@ -82,7 +81,7 @@
 			opis & VARCHAR	& kratki opis o radnji knjige		\\ \hline
 			jezik & VARCHAR	& jezik na kojem je izdana knjiga 		\\ \hline
 			dostupnost & VARCHAR & trenutna dostupnost knjige \\ \hline
-			\SetCell{LightBlue} ID ponuditelj	& INT &  Identificator korisnika iz tablice Korisnik 	\\ \hline 
+			\SetCell{LightBlue} ID ponuditelj	& INT &  Identifikator korisnika iz tablice Korisnik 	\\ \hline 
 			
 			
 		\end{longtblr}
@@ -91,7 +90,7 @@
 		
 		Ova tablica sadrži sve potrebne informacije o dostupnim ponudama, kao što su:
 		cijena knjige i broj dostupnih knjiga. Ona je u
-		u Many-to-One vezi s tablicom Knjiga preko njezinog ID-a.
+		u "Many-to-One" vezi s tablicom Knjiga preko njezinog ID-a.
 		\begin{longtblr}[
 			label=none,
 			entry=none
@@ -101,15 +100,15 @@
 				rowhead = 1,
 			} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
 			\hline \SetCell[c=3]{c}{\textbf{Ponuda}}	 \\ \hline[3pt]
-			\SetCell{LightGreen}ID & INT	&  Jedinstveni identificator ponude u tablici	\\ \hline
+			\SetCell{LightGreen}ID & INT	&  Jedinstveni identifikator ponude u tablici	\\ \hline
 			cijena	& FLOAT & cijena u eurima po kojoj se knjiga nudi	\\ \hline
 			stanje & VARCHAR	& trenutno stanje očuvanosti knjige \\ \hline 
 			broj primjeraka	& INT & trenutni broj dostupnih knjiga	\\ \hline 
-			\SetCell{LightBlue} ID knjige	& INT &  Identificator knjige iz tablice Knjiga  	\\ \hline 
+			\SetCell{LightBlue} ID knjige	& INT &  Identifikator knjige iz tablice Knjiga  	\\ \hline 
 			
 		\end{longtblr}
 		Ova tablica sadrži slike korica knjiga. Ona je u 
-		One-to-One vezi s tablicom Knjiga ID-a od knjige.
+		"One-to-One" vezi s tablicom Knjiga ID-a od knjige.
 		\begin{longtblr}[
 			label=none,
 			entry=none
@@ -119,9 +118,9 @@
 				rowhead = 1,
 			} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
 			\hline \SetCell[c=3]{c}{\textbf{Korica}}	 \\ \hline[3pt]
-			\SetCell{LightGreen}ID & INT	&  Jedinstveni identificator korice u tablici	\\ \hline
+			\SetCell{LightGreen}ID & INT	&  Jedinstveni identifikator korice u tablici	\\ \hline
 			slika	& BLOB & Slika korice (spremljeno u bazi u BLOB formatu)	\\ \hline 
-			\SetCell{LightBlue} ID naslov	& INT &  Identificator knjige iz tablice Knjiga  	\\ \hline 
+			\SetCell{LightBlue} ID naslov	& INT &  Identifikator knjige iz tablice Knjiga  	\\ \hline 
 			
 		\end{longtblr}
 		

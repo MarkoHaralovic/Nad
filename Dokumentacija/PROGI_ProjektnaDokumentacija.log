@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.22)  17 NOV 2023 19:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.22)  17 NOV 2023 19:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1392,39 +1392,41 @@ Package hyperref Info: Link coloring ON on input line 86.
 \@outlinefile=\write4
 \openout4 = `PROGI_ProjektnaDokumentacija.out'.
 
+
+[1
+
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2023/
+texmf-dist/fonts/enc/dvips/base/8r.enc}] (./PROGI_ProjektnaDokumentacija.toc
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
-99.
+5.
 
 (c:/texlive/2023/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
-99.
+5.
 
 (c:/texlive/2023/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 9
-9.
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 5
+.
 
 (c:/texlive/2023/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
-99.
+5.
 
 (c:/texlive/2023/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
-99.
+5.
 
 (c:/texlive/2023/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
-) [1
-
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2023/
-texmf-dist/fonts/enc/dvips/base/8r.enc}] (./PROGI_ProjektnaDokumentacija.toc
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -1459,11 +1461,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (./Dnevnik_promjena_dokumentacije.tex
 Poglavlje 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1472,113 +1469,113 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 30.10.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 29.10.2023. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 Agejev,
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 02.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 03.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 05.11.2023. 
  []
 
 
-Overfull \hbox (2.34468pt too wide) in paragraph at lines 28--28
+Overfull \hbox (2.34468pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 Lovrinovi[]c 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 14.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 16.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 17.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 17.11.2023. 
  []
 
 > Step: build the whole table.
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 30.10.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 29.10.2023. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 Agejev,
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 02.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 03.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 05.11.2023. 
  []
 
 
-Overfull \hbox (2.34468pt too wide) in paragraph at lines 28--28
+Overfull \hbox (2.34468pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 Lovrinovi[]c 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 14.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 16.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 17.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 26--26
 []\OT1/jkp/m/n/12 17.11.2023. 
  []
 
@@ -1630,12 +1627,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-<slike/naklada-znanje.PNG, id=193, 301.125pt x 271.0125pt>
+<slike/naklada-znanje.PNG, id=191, 301.125pt x 271.0125pt>
 File: slike/naklada-znanje.PNG Graphic file (type png)
 <use slike/naklada-znanje.PNG>
 Package pdftex.def Info: slike/naklada-znanje.PNG  used on input line 25.
 (pdftex.def)             Requested size: 301.12425pt x 271.01183pt.
-<slike/Eknjiga.PNG, id=195, 455.301pt x 217.41225pt>
+<slike/Eknjiga.PNG, id=193, 455.301pt x 217.41225pt>
 File: slike/Eknjiga.PNG Graphic file (type png)
 <use slike/Eknjiga.PNG>
 Package pdftex.def Info: slike/Eknjiga.PNG  used on input line 38.
@@ -1814,12 +1811,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
 [17]
-<slike/DO1.jpg, id=374, 766.66425pt x 452.892pt>
+<slike/DO1.jpg, id=372, 766.66425pt x 452.892pt>
 File: slike/DO1.jpg Graphic file (type jpg)
 <use slike/DO1.jpg>
 Package pdftex.def Info: slike/DO1.jpg  used on input line 472.
 (pdftex.def)             Requested size: 435.6108pt x 257.32875pt.
-<slike/DO2.jpg, id=375, 653.44125pt x 471.56175pt>
+<slike/DO2.jpg, id=373, 653.44125pt x 471.56175pt>
 File: slike/DO2.jpg Graphic file (type jpg)
 <use slike/DO2.jpg>
 Package pdftex.def Info: slike/DO2.jpg  used on input line 479.
@@ -2022,10 +2019,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-<slike/Relacijska shema.png, id=432, 570.933pt x 266.1945pt>
+<slike/Relacijska shema.png, id=430, 570.933pt x 266.1945pt>
 File: slike/Relacijska shema.png Graphic file (type png)
 <use slike/Relacijska shema.png>
-Package pdftex.def Info: slike/Relacijska shema.png  used on input line 134.
+Package pdftex.def Info: slike/Relacijska shema.png  used on input line 133.
 (pdftex.def)             Requested size: 435.6108pt x 203.11009pt.
 
 
@@ -2041,12 +2038,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.139 		\eject
+l.138 		\eject
                <./slike/Relacijska shema.png>]
-<slike/dijagramKlasa.PNG, id=440, 967.51462pt x 585.387pt>
+<slike/dijagramKlasa.PNG, id=438, 967.51462pt x 585.387pt>
 File: slike/dijagramKlasa.PNG Graphic file (type png)
 <use slike/dijagramKlasa.PNG>
-Package pdftex.def Info: slike/dijagramKlasa.PNG  used on input line 147.
+Package pdftex.def Info: slike/dijagramKlasa.PNG  used on input line 146.
 (pdftex.def)             Requested size: 435.6108pt x 263.56462pt.
 
 
@@ -2062,7 +2059,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.159 			\eject
+l.158 			\eject
                 <./slike/dijagramKlasa.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2271,22 +2268,16 @@ L3 programming layer <2023-10-10>
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `PROGI_ProjektnaDokumentacija.out' has cha
-nged.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `PROGI_ProjektnaDokumentacija.out':
-(rerunfilecheck)             Before: C6894A541A6F8E0E0CEF62DEA284626F;4445
-(rerunfilecheck)             After:  B400BABF613DD36682E3DFEA3F6CD11D;4419.
+Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija.out' has not ch
+anged.
+(rerunfilecheck)             Checksum: B400BABF613DD36682E3DFEA3F6CD11D;4419.
  ) 
 Here is how much of TeX's memory you used:
- 29724 strings out of 474503
- 571907 string characters out of 5756704
+ 29712 strings out of 474503
+ 571713 string characters out of 5756704
  2068043 words of memory out of 5000000
- 50912 multiletter control sequences out of 15000+600000
- 624227 words of font info for 174 fonts, out of 8000000 for 9000
+ 50902 multiletter control sequences out of 15000+600000
+ 619257 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,115p,906b,1050s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -2295,14 +2286,14 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 
 <c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpbit8a.pfb><c:/texlive
 /2023/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2023/texmf-
-dist/fonts/type1/public/kpfonts/jkpmi.pfb><c:/texlive/2023/texmf-dist/fonts/typ
-e1/public/kpfonts/jkpmit8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/k
-pfonts/jkpmn8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpmn
-c.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (45 pages, 1084695 bytes).
+dist/fonts/type1/public/kpfonts/jkpmit8a.pfb><c:/texlive/2023/texmf-dist/fonts/
+type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
+/kpfonts/jkpmnc.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpt
+tmn8a.pfb>
+Output written on PROGI_ProjektnaDokumentacija.pdf (45 pages, 1082153 bytes).
 PDF statistics:
- 633 PDF objects out of 1000 (max. 8388607)
- 540 compressed objects within 6 object streams
+ 628 PDF objects out of 1000 (max. 8388607)
+ 537 compressed objects within 6 object streams
  198 named destinations out of 1000 (max. 500000)
  347 words of extra memory for PDF output out of 10000 (max. 10000000)
 

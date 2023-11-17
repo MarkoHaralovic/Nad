@@ -17,12 +17,12 @@
                 			\item Razvojni tim
 			\end{packed_enum}
 			
-			\noindent \textbf{Aktori i njihovi funkcionalni zahtjevi:}
+			\noindent \textbf{Akteri i njihovi funkcionalni zahtjevi:}
 			
 			
 			\begin{packed_enum}
 
-				 \item \underbar{Korisnik(inicijator) može:}
+				 \item \underbar{Korisnik (inicijator) može:}
                 
                     				\begin{packed_enum}
                         				\item Pretraživati knjige po njihovim atributima i po ponuditeljima
@@ -306,7 +306,7 @@
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{packed_enum}	
-							\item Ponuditelj klikne na objavu koju želi promjeniti
+							\item Ponuditelj klikne na objavu koju želi promijeniti
                             					\item Aplikacija otvara stranicu objave
 							\item Ponuditelj bira opciju mijenjanja podataka
                             					\item Ponuditelj izmjenjuje podatke
@@ -403,7 +403,7 @@
 							\item Korisnik klikne na objavu za knjigu
                             					\item Aplikacija otvara stranicu objave 
 							\item Korisnik klikne na opciju "Zatraži prijevod knjige"
-                            					\item U bazi podataka se inkrementira broj zatraženih prijevoda od neregistriranih korisnika za tu knjigu
+                            					\item U bazi podataka se povećava broj zatraženih prijevoda od neregistriranih korisnika za tu knjigu
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
@@ -421,7 +421,7 @@
 						\item[] \begin{packed_enum}
 	
 							\item Ponuditelj na svojoj objavi klikne opciju "Zatraži stranog izdavača za prijevod"
-                            					\item U bazi podataka se inkrementira broj zatraženih prijevoda od strane izdavača
+                            					\item U bazi podataka se povećava broj zatraženih prijevoda od strane izdavača
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
@@ -456,7 +456,7 @@
 						\item[] \begin{packed_enum}
 	
 							\item Korisnik klikne na opciju pretraživanja objava
-							\item Korisnik ispunjuje barem jedno od sljedećih polja: naziv knjige, naziv autora, godina izdanja, redni broj izdanja, kategorija izdavača, žanr knjige, ISBN, oznaka vrste knjige i ime ponuditelja
+							\item Korisnik ispunjava barem jedno od sljedećih polja: naziv knjige, naziv autora, godina izdanja, redni broj izdanja, kategorija izdavača, žanr knjige, ISBN, oznaka vrste knjige i ime ponuditelja
                             					\item Stranica izbacuje knjige koje se poklapaju sa upisanim karakteristikama
 						\end{packed_enum}
 						
@@ -467,7 +467,7 @@
 				
 				\subsubsection{Dijagrami obrazaca uporabe}
 					
-				\begin{figure}
+				\begin{figure}[H]
     					\centering
     					\includegraphics[width = \textwidth]{slike/DO1}
     					\caption{Dijagram obrazaca 1}
@@ -487,7 +487,7 @@
 			\subsection{Sekvencijski dijagrami}
 				
 				\textbf{Obrazac uporabe UC15 – Pretraživanje po lokaciji i UC13 – Zahtjev da se prevede knjiga}\\\\
-				Neregistrirani korisnik šalje zahtjev za pregled karte ponuditelja knjiga. Poslužitelj dohvaća ponuditelje knjiga iz baze i vraća prikaz karte sa označenim adresama ponuditelja. Korisnik odabire ponuditelja koji je izdavač. Poslužitelj dohvaća podatke o odabranom ponuditelju iz baze. Vraća korisniku listu svih knjiga dotičnog ponuditelja. Korisnik dodatno filtrira ponudu knjiga po želji. Korisnik traži prijevod od izdavača. U bazi podataka se inkrementira broj zatraženih prijevoda za tu knjigu.\\
+				Neregistrirani korisnik šalje zahtjev za pregled karte ponuditelja knjiga. Poslužitelj dohvaća ponuditelje knjiga iz baze i vraća prikaz karte sa označenim adresama ponuditelja. Korisnik odabire ponuditelja koji je izdavač. Poslužitelj dohvaća podatke o odabranom ponuditelju iz baze. Vraća korisniku listu svih knjiga dotičnog ponuditelja. Korisnik dodatno filtrira ponudu knjiga po želji. Korisnik traži prijevod od izdavača. U bazi podataka povećava se broj zatraženih prijevoda za tu knjigu.\\
 				\begin{center}
 				\begin{adjustbox}{max width=\textwidth}
 					\begin{sequencediagram}
@@ -526,7 +526,7 @@
 				\end{center}
 				\eject
 				
-				\textbf{Obrazac uporabe UC1 – Registracija i UC3 – Potvrda registracie}\\\\
+				\textbf{Obrazac uporabe UC1 – Registracija i UC3 – Potvrda registracije}\\\\
 				Ponuditelj šalje zahtjev za registraciju. Poslužitelj sprema zahtjev u bazu. Administrator pregledava zahtjeve za registraciju i odobrava zahtjev našeg ponuditelja. Ponuditelj je uspješno registriran, pa ima pristup potpunoj funkcionalnosti svojeg korisničkog računa.\\
 				\begin{center}
 					\begin{adjustbox}{max width=\textwidth}
