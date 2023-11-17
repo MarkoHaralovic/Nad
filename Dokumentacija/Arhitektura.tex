@@ -1,19 +1,26 @@
 \chapter{Arhitektura i dizajn sustava}
+
+		Na najvišoj razini apstrakcije naš sustav podijeljen je na klijenta i poslužitelja koji komunicira s bazom podataka.
 		
-		\textbf{\textit{dio 1. revizije}}\\
-
-		\textit{ Potrebno je opisati stil arhitekture te identificirati: podsustave, preslikavanje na radnu platformu, spremišta podataka, mrežne protokole, globalni upravljački tok i sklopovsko-programske zahtjeve. Po točkama razraditi i popratiti odgovarajućim skicama:}
-	\begin{itemize}
-		\item 	\textit{izbor arhitekture temeljem principa oblikovanja pokazanih na predavanjima (objasniti zašto ste baš odabrali takvu arhitekturu)}
-		\item 	\textit{organizaciju sustava s najviše razine apstrakcije (npr. klijent-poslužitelj, baza podataka, datotečni sustav, grafičko sučelje)}
-		\item 	\textit{organizaciju aplikacije (npr. slojevi frontend i backend, MVC arhitektura) }		
-	\end{itemize}
-
+		Pomoću web preglednika korisnik se povezuje na web stranicu preko HTTP-a na kojoj interagira s klijentskim dijelom sustava, dakle korisničkim sučeljem. Zahtjevi koje šalje korisnik obrađuje poslužitelj koji po potrebi sprema i preuzima podatke iz baze te vraća korisniku preko klijenta povratnu informaciju.
 	
-		
+		Arhitektura sustava našeg programskog rješenja dizajnirana je suvremenim pristupom, rabeći Model-View-Controller (MVC) paradigmu koja osigurava smislenu podjelu sustava na manje cjeline prema funkcionalnosti i povezuje backend pisan u C\#-u uz ASP.NET radni okvir, frontend razvijen u htmx-u i JavaScriptu i bazu podataka ostvarenu PostgreSQL-om.
 
-		
 
+		\begin{itemize}
+			\item \textbf{Model:} Mozak sustava, zadužen je za procesuiranje, spremanje i obradu podataka, izvođenje funkcija i općenitog rada sustava. 
+			\item \textbf{Controller:} Poput mosta, povezuje sustav s korisničkim unosima. Provodi preliminarnu obradu zahtjeva i prosljeđuje ih modelu i pogledu.
+			\item \textbf{View:} Sadrži stvari koje se prikazuju korisniku preko sučelja aplikacije te površinske funkcionalnosti interakcije s korisnikom i promjena prikaza.
+		\end{itemize}
+		
+		\subsection*{Radni tijek}
+		
+		\begin{itemize}
+			\item Korisnik rabi web aplikaciju preko sučelja, šaljući zahtjeve poput unosa teksta u tražilicu.
+			\item Kontroler prima zahtjeve, obrađuje ih i prenosi ih modelu.
+			\item Model prema potrebi komunicira s bazom podataka, dohvaća potrebne podatke i ispunjava zahtjev.
+			\item Kontroler prima procesuirane podatke od modela i prosljeđuje ih pogledu gdje se podaci dinamički predstavljaju korisniku.
+		\end{itemize}
 				
 		\section{Baza podataka}
 		

@@ -9,8 +9,8 @@
 \contentsline {subsection}{\numberline {3.1.2}Sekvencijski dijagrami}{21}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Ostali zahtjevi}{25}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Arhitektura i dizajn sustava}{26}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Baza podataka}{26}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Opis tablica}{26}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.1}Baza podataka}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Opis tablica}{27}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Dijagram baze podataka}{29}{subsection.4.1.2}%
 \contentsline {section}{\numberline {4.2}Dijagram razreda}{30}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Dijagram stanja}{31}{section.4.3}%
