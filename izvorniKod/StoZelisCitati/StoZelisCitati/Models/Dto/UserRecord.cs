@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using StoZelisCitati.Helpers;
 
 namespace StoZelisCitati.Models.Dto;
 
@@ -26,14 +27,7 @@ public class UserRecord
             Username = korisnicko_ime,
             Password = lozinka,
             DisplayName = naziv_korisnika,
-            UserType = vrsta_korisnika switch
-            {
-                "antikvarijat" => UserType.Antiquarian,
-                "preprodavač" => UserType.Middleman,
-                "izdavač" => UserType.Publisher,
-                "admin" => UserType.Admin,
-                _ => throw new ArgumentOutOfRangeException(nameof(vrsta_korisnika))
-            },
+            UserType = vrsta_korisnika,
             Email = email,
             PhoneNumber = broj_mobitela,
             Address = adresa,

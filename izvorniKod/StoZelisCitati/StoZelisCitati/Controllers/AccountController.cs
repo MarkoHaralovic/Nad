@@ -40,7 +40,7 @@ public class AccountController : Controller
         var identity = new ClaimsIdentity(new List<Claim>
         {
             new(ClaimTypes.Name, username),
-            new(ClaimTypes.Role, user.DisplayUserType)
+            new(ClaimTypes.Role, user.UserType)
         }, "Cookies");
         await HttpContext.SignInAsync(new ClaimsPrincipal(identity));
 
