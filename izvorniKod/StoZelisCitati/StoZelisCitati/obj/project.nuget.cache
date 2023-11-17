@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "+PARWg2Zrdc7ybNrJhwAjVliveWu/+h+IVcGs1kKpsdDlGpT5BhXBU28jjlBP3TUW9G08UfT/kovktENEK+ChA==",
+  "success": true,
+  "projectFilePath": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\StoZelisCitati.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lovri\\.nuget\\packages\\dapper\\2.1.21\\dapper.2.1.21.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}

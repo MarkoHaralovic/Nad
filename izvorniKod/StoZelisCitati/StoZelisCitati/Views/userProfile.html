@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/styles/user.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <div class="header-container">
+
+        </div>
+        <div id="center">
+            <div id="left">
+
+            </div>
+            <div id="right">
+                <div id="user-container">
+                    <div id="user-left">
+                        <div id="gen-div" class="user-info">
+                            <h2>Korisnik:</h2>
+                        </div>
+                        <div id="name-div" class="user-info">
+                            <h2>Ime prezime</h2>
+                        </div>
+                        <div id="email-div" class="user-info">
+                            <h2>email</h2>
+                        </div>
+                        <div id="phone-div" class="user-info">
+                            <h2>mobitel</h2>
+                        </div>
+                        <div id="change-btn-div" class="user-info">
+                            <button id="change-btn" class="searchbtn" style="width:100px; height:35px;">Uredi profil</button>
+                        </div>
+                        <div id="logout-btn-div" class="user-info">
+                            <button id="change-btn" class="searchbtn" style="width:100px; height:35px;">Odjava</button> 
+                        </div>
+                    </div>
+                    <div id="user-right">
+                        <div id="map" style="width: 90%; height: 90%; margin-top: 3%; margin-left: 6%;">
+                            <script>
+                                var map = L.map('map').setView([44.22, 18.3], 9); 
+                                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                }).addTo(map);
+
+                                L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                }).addTo(map);
+                                //ovdje ce bit oznacena lokacija ponuditelja
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../public/scripts/userScript.js"></script>
+</html>
