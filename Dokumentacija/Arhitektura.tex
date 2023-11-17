@@ -1,16 +1,10 @@
 \chapter{Arhitektura i dizajn sustava}
-		
-		\textbf{\textit{dio 1. revizije}}\\
 
-		\textit{ Potrebno je opisati stil arhitekture te identificirati: podsustave, preslikavanje na radnu platformu, spremišta podataka, mrežne protokole, globalni upravljački tok i sklopovsko-programske zahtjeve. Po točkama razraditi i popratiti odgovarajućim skicama:}
-	\begin{itemize}
-		\item 	\textit{izbor arhitekture temeljem principa oblikovanja pokazanih na predavanjima (objasniti zašto ste baš odabrali takvu arhitekturu)}
-		\item 	\textit{organizaciju sustava s najviše razine apstrakcije (npr. klijent-poslužitelj, baza podataka, datotečni sustav, grafičko sučelje)}
-		\item 	\textit{organizaciju aplikacije (npr. slojevi frontend i backend, MVC arhitektura) }		
-	\end{itemize}
+		Na najvišoj razini apstrakcije naš sustav podijeljen je na klijenta i poslužitelja koji komunicira s bazom podataka.
+		
+		Pomoću web preglednika korisnik se povezuje na web stranicu preko HTTP-a na kojoj interagira s klijentskim dijelom sustava, dakle korisničkim sučeljem. Zahtjevi koje šalje korisnik obrađuje poslužitelj koji po potrebi sprema i preuzima podatke iz baze te vraća korisniku preko klijenta povratnu informaciju.
 	
-	
-		Arhitektura sustava naše web aplikacije dizajnirana je suvremenim pristupom, rabeći Model-View-Controller (MVC) paradigmu koja osigurava smislenu podjelu sustava na manje cjeline prema funkcionalnosti i povezuje backend pisan u C#-u uz ASP.NET radni okvir, frontend razvijen u htmx-u i JavaScriptu i bazu podataka ostvarenu PostgreSQL-om.
+		Arhitektura sustava našeg programskog rješenja dizajnirana je suvremenim pristupom, rabeći Model-View-Controller (MVC) paradigmu koja osigurava smislenu podjelu sustava na manje cjeline prema funkcionalnosti i povezuje backend pisan u C\#-u uz ASP.NET radni okvir, frontend razvijen u htmx-u i JavaScriptu i bazu podataka ostvarenu PostgreSQL-om.
 
 
 		\begin{itemize}
