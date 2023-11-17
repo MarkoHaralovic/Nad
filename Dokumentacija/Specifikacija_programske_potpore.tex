@@ -33,15 +33,8 @@
 				\item  \underbar{Neregistrirani korisnik(inicijator) može:}
 				
 				\begin{packed_enum}
-					
 					\item Napraviti korisnički račun registracijom za što mu treba korisničko ime, lozinka, e-mail, broj mobitela i adresa i može birati u koju će kategoriju ponuditelja spadati
-					%\begin{packed_enum}
-					\item Slati zahtjev izdavačima da se knjiga na stranom jeziku prevede	
-						%\item  podfunkcionalnost 1 
-						%\item  podfunkcionalnost 2
-				
-					%\end{packed_enum}
-		
+					\item Slati zahtjev izdavačima da se knjiga na stranom jeziku prevede		
 				\end{packed_enum}
 			
 				\item  \underbar{Registrirani korisnik tj. ponuditelj (izdavač/antikvarijat/preprodavač)(inicijator) može:}
@@ -98,8 +91,8 @@
 						\item[] \begin{packed_enum}
 	
 							\item Neregistrirani korisnik bira opciju registracije
-                            \item Unosi podatke potrebne za registraciju
-							\item Web obavještava korisnika da je registracija uspješna
+                           					\item Unosi podatke potrebne za registraciju
+							\item Web obavještava korisnika da će zahtjev za registraciju pregledati administrator
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -119,17 +112,16 @@
                     \noindent \underbar{\textbf{UC2- Prijava}}
 					\begin{packed_item}
 	
-						  \item \textbf{Glavni sudionik: } Ponuditelj
+						\item \textbf{Glavni sudionik: } Ponuditelj
 						\item  \textbf{Cilj:} Dobiti pristup web stranici sa postojećim korisničkim računom
 						\item  \textbf{Sudionici:} Baza podataka
 						\item  \textbf{Preduvjet:} - Ponuditelj ima izrađen korisnički račun
 						\item  \textbf{Opis osnovnog tijeka:}
 						
-						\item[] \begin{packed_enum}
-	
+						\item[] \begin{packed_enum}	
 							\item Ponuditelj bira opciju prijave
 							\item Ponuditelj unosi korisničko ime i lozinku
-                            \item Ponuditelj dobiva pristup svom korisničkom računu
+                            					\item Ponuditelj dobiva pristup svom korisničkom računu
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -151,15 +143,14 @@
 	
 						\item \textbf{Glavni sudionik: } Administrator
 						\item  \textbf{Cilj:} Potvrđivanje uspješne/neuspješne registracije ponuditelja
-						\item  \textbf{Sudionici:} Baza podataka, Neregistrirani korisnik
+						\item  \textbf{Sudionici:} Baza podataka, neregistrirani korisnik
 						\item  \textbf{Preduvjet:} - Neregistrirani korisnik pokušava izvršiti registraciju
 						\item  \textbf{Opis osnovnog tijeka:}
 						
-						\item[] \begin{packed_enum}
-	
+						\item[] \begin{packed_enum}	
 							\item Nakon što korisnik unese podatke za registraciju, zahtjev za registraciju se šalje administratoru na pregled
 							\item Provjerava se da su uneseni podaci dobrog oblika i da ne postoje u bazi podataka
-                            \item Administrator potvrđuje unesene podatke i informira da je registracija uspješna
+                           					\item Administrator potvrđuje unesene podatke i informira da je registracija uspješna
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -224,9 +215,9 @@
 	
 							\item Ponuditelj bira opciju "Moj račun"
 							\item Ponuditelj bira opciju "Uredi račun"
-                            \item Ponuditelj mijenja podatke
-                            \item Ponuditelj sprema izmjene
-                            \item Baza podataka se ažurira
+	                            				\item Ponuditelj mijenja podatke
+                            					\item Ponuditelj sprema izmjene
+                            					\item Baza podataka se ažurira
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -237,13 +228,13 @@
 							\item[] \begin{packed_enum}
 								
 								\item Aplikacija obavještava da je došlo do greške i zašto
-								\item Ponuditelj opet pokušava promjeniti podatke ili odustaje
+								\item Ponuditelj opet pokušava promijeniti podatke ili odustaje
 							\end{packed_enum}
 
-                            \item[2.b] Ponuditelj upisuje nove podatke ali ne klikne na opciju spremanja promjena
-                            \item[] \begin{packed_enum}
-                                \item Aplikacija obavještava da promjene nisu pohranjene
-                            \end{packed_enum}
+                            					\item[2.b] Ponuditelj upisuje nove podatke ali ne klikne na opciju spremanja promjena
+                            					\item[] \begin{packed_enum}
+                                					\item Aplikacija obavještava da promjene nisu pohranjene
+                            					\end{packed_enum}
 						\end{packed_item}
 					\end{packed_item}
 
@@ -259,11 +250,11 @@
 						\item[] \begin{packed_enum}
 	
 							\item Ponuditelj bira opciju "Moj račun"
-                            \item Ponuditelj bira opciju brisanja korisničkog računa
+                            					\item Ponuditelj bira opciju brisanja korisničkog računa
 							\item Aplikacija traži potvrdu brisanja
-                            \item Ponuditelj potvrđuje brisanje korisničkog računa
-                            \item Miču se podaci o računu iz baze podataka
-                            \item Ponuditelj je vraćen na stranicu za upis
+                            					\item Ponuditelj potvrđuje brisanje korisničkog računa
+                            					\item Miču se podaci o računu iz baze podataka
+                            					\item Ponuditelj je vraćen na stranicu za upis
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
@@ -281,10 +272,10 @@
 						\item[] \begin{packed_enum}
 	
 							\item Ponuditelj bira opciju "Nova objava"
-                            \item Aplikacija otvara stranicu za novu objavu
-                            \item Ponuditelj unosi potrebne podatke
+                            					\item Aplikacija otvara stranicu za novu objavu
+                            					\item Ponuditelj unosi potrebne podatke
 							\item Ponuditelj klikne opciju "Objavi"
-                            \item Objava knjige je vidljiva na web stranici i u bazi podataka
+                            					\item Objava knjige je vidljiva na web stranici i u bazi podataka
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -297,11 +288,11 @@
 								\item Aplikacija obavještava da je format kriv i gdje
 								\item Ponuditelj unosi prihvatljive podatke ili odustaje od objave
 							\end{packed_enum}
-                            \item[2.b] Ponuditelj ne unosi sve potrebne podatke da se napravi objava
-                             \item[] \begin{packed_enum}
-                                 \item Aplikacija obavještava da jedno ili više polja nije popunjeno
-                                 \item Ponuditelj popunjuje prazna polja ili odustaje od objave
-                             \end{packed_enum}
+                            					\item[2.b] Ponuditelj ne unosi sve potrebne podatke da se napravi objava
+                             					\item[] \begin{packed_enum}
+                                 					\item Aplikacija obavještava da jedno ili više polja nije popunjeno
+                                 					\item Ponuditelj popunjuje prazna polja ili odustaje od objave
+                             					\end{packed_enum}
 						\end{packed_item}
 					\end{packed_item}
 
@@ -314,14 +305,13 @@
 						\item  \textbf{Preduvjet:} - Postoji objava za knjigu
 						\item  \textbf{Opis osnovnog tijeka:}
 						
-						\item[] \begin{packed_enum}
-	
+						\item[] \begin{packed_enum}	
 							\item Ponuditelj klikne na objavu koju želi promjeniti
-                            \item Aplikacija otvara stranicu objave
+                            					\item Aplikacija otvara stranicu objave
 							\item Ponuditelj bira opciju mijenjanja podataka
-                            \item Ponuditelj izmjenjuje podatke
-                            \item Ponuditelj sprema izmjene
-                            \item Novi podaci su zapisani u bazu podataka
+                            					\item Ponuditelj izmjenjuje podatke
+                            					\item Ponuditelj sprema izmjene
+                            					\item Novi podaci su zapisani u bazu podataka
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -336,11 +326,10 @@
 								
 							\end{packed_enum}
 
-                            \item[2.b] Ponuditelj ne sprema izmjene
-                            \item[] \begin{packed_enum}
-
-                                \item Aplikacija obavještava da promjene nisu pohranjene
-                            \end{packed_enum}
+                            					\item[2.b] Ponuditelj ne sprema izmjene
+                            					\item[] \begin{packed_enum}
+                                					\item Aplikacija obavještava da promjene nisu pohranjene	
+                            					\end{packed_enum}
 						\end{packed_item}
 					\end{packed_item}
 
@@ -355,11 +344,11 @@
 						
 						\item[] \begin{packed_enum}
 	
-							\item Ponuditelj klikne na objavu koju želi izbrisati
-                            \item Ponuditelj bira opciju brisanja objave
+							\item Ponuditelj klikne na svoju objavu koju želi izbrisati
+                            					\item Ponuditelj bira opciju brisanja objave
 							\item Aplikacija pita za potvrdu brisanja
-                            \item Ponuditelj potvrđuje
-                            \item Briše se objava iz baze podataka
+                            					\item Ponuditelj potvrđuje
+                            					\item Briše se objava iz baze podataka
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
@@ -370,14 +359,13 @@
 	
 						\item \textbf{Glavni sudionik: } Korisnik
 						\item  \textbf{Cilj:} Pregledavanje objave za knjigu
-						\item  \textbf{Sudionici:} Baza podataka, Ponuditelj
+						\item  \textbf{Sudionici:} Baza podataka, ponuditelj
 						\item  \textbf{Preduvjet:} - Ponuditelj ima objavu knjige
 						\item  \textbf{Opis osnovnog tijeka:}
 						
-						\item[] \begin{packed_enum}
-	
+						\item[] \begin{packed_enum}	
 							\item Korisnik klikne na objavu
-                            \item Aplikacija prikazuje objavu i podatke o knjizi
+                            					\item Aplikacija prikazuje objavu i podatke o objavi
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
@@ -387,15 +375,15 @@
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Korisnik
-						\item  \textbf{Cilj:} Korisnik pregledava korisnički račun ponuditelja
+						\item  \textbf{Cilj:} Korisnik pregledava korisnički račun nekog ponuditelja
 						\item  \textbf{Sudionici:} Baza podataka
 						\item  \textbf{Preduvjet:} - Ponuditelj ima izrađen korisnički račun
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{packed_enum}
 	
-							\item Korisnik klikne na opciju pregledavanja računa ponuditelja
-                            \item Aplikacija otvara stranicu na kojoj prikazuje podatke o računu ponuditelja
+							\item Korisnik klikne na opciju pregledavanja korisničkog računa ponuditelja
+                            					\item Aplikacija otvara stranicu na kojoj prikazuje podatke o korisničkom računu ponuditelja
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
@@ -413,9 +401,9 @@
 						\item[] \begin{packed_enum}
 	
 							\item Korisnik klikne na objavu za knjigu
-                            \item Aplikacija otvara stranicu objave 
+                            					\item Aplikacija otvara stranicu objave 
 							\item Korisnik klikne na opciju "Zatraži prijevod knjige"
-                            \item U bazi podataka se inkrementira broj zatraženih prijevoda za tu knjigu
+                            					\item U bazi podataka se inkrementira broj zatraženih prijevoda od neregistriranih korisnika za tu knjigu
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
@@ -433,7 +421,7 @@
 						\item[] \begin{packed_enum}
 	
 							\item Ponuditelj na svojoj objavi klikne opciju "Zatraži stranog izdavača za prijevod"
-                            \item U bazi podataka se inkrementira broj zatraženih prijevoda od strane izdavača
+                            					\item U bazi podataka se inkrementira broj zatraženih prijevoda od strane izdavača
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
@@ -448,10 +436,9 @@
 						\item  \textbf{Preduvjet:} - Ponuditelj ima objavljenu lokaciju
 						\item  \textbf{Opis osnovnog tijeka:}
 						
-						\item[] \begin{packed_enum}
-	
+						\item[] \begin{packed_enum}	
 							\item Na glavnoj stranici je karta na kojoj se vide označene adrese ponuditelja
-                            \item Korisnik može biranjem lokacije vidjeti ponuditelja/e koji se tamo nalaze
+                            					\item Korisnik može biranjem lokacije vidjeti ponuditelja/e koji se tamo nalaze
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
@@ -469,9 +456,8 @@
 						\item[] \begin{packed_enum}
 	
 							\item Korisnik klikne na opciju pretraživanja objava
-                            \item NAPOMENA: u sljedećem koraku nije obavezno popuniti sva polja, ali povećavaju vjerojatnost pronalaska tražene knjige
-							\item Korisnik ispunjuje sljedeća polja: naziv knjige, naziv autora, godina izdanja, redni broj izdanja, kategorija izdavača, žanr knjige, ISBN, oznaka vrste knjige i ime ponuditelja
-                            \item Stranica izbacuje knjige koje se poklapaju sa upisanim karakteristikama
+							\item Korisnik ispunjuje barem jedno od sljedećih polja: naziv knjige, naziv autora, godina izdanja, redni broj izdanja, kategorija izdavača, žanr knjige, ISBN, oznaka vrste knjige i ime ponuditelja
+                            					\item Stranica izbacuje knjige koje se poklapaju sa upisanim karakteristikama
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja: -}
