@@ -2,16 +2,17 @@
 
 public class Book
 {
-    public string title;
-    public string author;
-    public string isbn;
-    public string publisher;
-
-    public Book(string title, string author, string isbn, string publisher)
-    {
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.publisher = publisher;
-    }
+    public required int Id { get; set; }
+    public required string Title { get; set; }
+    public required string Author { get; set; }
+    public required string Isbn { get; set; }
+    public required int YearOfPublishing { get; set; }
+    public required string Publisher { get; set; }
+    public required string TypeOfPublisher { get; set; }
+    public required int EditionNumber { get; set; }
+    public required string Description { get; set; }
+    public required string Language { get; set; }
+    public required string Availability { get; set; }
+    public required int UserId { get; set; }
+    public required string Genre { get; set; }
 }

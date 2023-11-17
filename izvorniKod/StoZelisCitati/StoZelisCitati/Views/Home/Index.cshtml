@@ -43,10 +43,10 @@
                 }).addTo(map);
             </script>
         </div>   
-        <div id="listaZanr"></div>
         <div id="rek">
-            <button onclick="showZanr()" id="zanr" class="reklame"> Traži po žanru </button>
+            <button hx-get="/genres" hx-target="#center-top" id="zanr" class="reklame"> Traži po žanru </button>
         </div>
+        <div id="listaZanr"></div>
     </div>
     <div id="right"> 
         <!--inicijalno prazan-->

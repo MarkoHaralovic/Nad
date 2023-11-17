@@ -30,7 +30,9 @@
                         Vrsta korisnika: @user.UserType,
                         Email: @user.Email,
                         Broj mobitela: @user.PhoneNumber,
-                        Adresa: @user.Address
+                        Adresa: @user.Address,
+                        Grad: @user.City,
+                        Država: @user.Country
                     </p>
                     <button hx-delete="/account/@user.Id" hx-target="closest li" hx-swap="outerHTML">Odbij</button>
                     <button hx-put="/account/approve/@user.Id" hx-target="closest li" hx-swap="outerHTML">Odobri</button>

@@ -80,4 +80,15 @@ public class NpgsqlRepository
         UserRecord? user = await npgsqlConnection.QuerySingleOrDefaultAsync<UserRecord>(query, new {username});
         return user?.ToDomainObject();
     }
+
+    public async Task<IEnumerable<Book>> GetBooksWithGenre(string genre)
+    {
+        string query = """
+                       select *
+                       from knjiga
+                       where zanr = @genre
+                       """;
+        return (await npgsqlConnection.QueryAsync<BookRecord>(query, new {genre}))
+            .Select(x => x.ToDomainObject());
+    }
 }

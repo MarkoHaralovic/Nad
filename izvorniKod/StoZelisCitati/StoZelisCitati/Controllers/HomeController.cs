@@ -20,4 +20,27 @@ public class HomeController : Controller
         HttpContext.User.IsInRole("admin");
         return View();
     }
+
+    [HttpGet("/genres")]
+    public async Task<IActionResult> Genres()
+    {
+        List<string> genres = new List<string>()
+        {
+            "komedija",
+            "akcija",
+            "drama",
+            "sci-fi",
+            "avantura"
+        };
+
+        return View(genres);
+    }
+
+    [HttpGet("genre/{genre}")]
+    public async Task<IActionResult> Genre(string genre)
+    {
+         List<Book> books = (await npgsqlRepository.GetBooksWithGenre(genre)).ToList();
+
+         return View("Books", books);
+    }
 }
