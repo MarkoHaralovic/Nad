@@ -1,0 +1,32 @@
+﻿@model dynamic
+
+@{
+    var user = Context.User;
+}
+
+<div class="header-container">   
+    <div id="header">
+        <div id="logo" class="ot">
+            <a href="/" style="text-decoration: none; color: white;"> Logo </a> 
+        </div>
+        <div id="krug" class="kr">
+            <img id="povecalo" src="/images/traziLogo.png" alt="" width="100px" onclick="searchButtonClicked()">
+        </div>
+        <div id="header-right">
+            @if (user.Identity?.IsAuthenticated == true)
+            {
+                <p>Logged in.</p>
+                <a href="/account/logout">Logout</a>
+                @if (user.IsInRole("admin"))
+                {
+                    <a href="/account/requests">Registration requests</a>
+                }
+            }
+            else
+            {
+                <a href="/account/login">Login</a>
+                <a href="/account/register">Register</a>
+            }
+        </div>
+    </div>
+</div>
