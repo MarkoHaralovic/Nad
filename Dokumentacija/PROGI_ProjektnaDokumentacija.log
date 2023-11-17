@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.22)  17 NOV 2023 11:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.22)  17 NOV 2023 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1279,9 +1279,6 @@ File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 
 LaTeX Warning: Label `fig:enter-label' multiply defined.
 
-
-LaTeX Warning: Label `fig:enter-label' multiply defined.
-
 ) (./Implementacija.aux) (./Zakljucak.aux) (./Literatura.aux) (./Dodatak.aux))
 \openout1 = `PROGI_ProjektnaDokumentacija.aux'.
 
@@ -1441,7 +1438,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...{Indeks slika i dijagrama}{43}{chapter*.5}
+l.29 ...: Prikaz aktivnosti grupe}{40}{chapter*.6}
                                                   % [1
 
 ])
@@ -1475,171 +1472,107 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 30.10.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 29.10.2023. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 Agejev,
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 02.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 03.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 05.11.2023. 
  []
 
 
-Overfull \hbox (2.34468pt too wide) in paragraph at lines 40--40
+Overfull \hbox (2.34468pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 Lovrinovi[]c 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 14.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 16.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 28.08.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 07.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 08.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 09.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 10.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 11.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 11.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 14.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 15.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 15.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 19.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 20.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 28.09.2013. 
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+[]\OT1/jkp/m/n/12 17.11.2023. 
  []
 
 > Step: build the whole table.
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 30.10.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 29.10.2023. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 Agejev,
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 02.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 03.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 05.11.2023. 
  []
 
 
-Overfull \hbox (2.34468pt too wide) in paragraph at lines 40--40
+Overfull \hbox (2.34468pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 Lovrinovi[]c 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 14.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
 []\OT1/jkp/m/n/12 16.11.2023. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 28.08.2013. 
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 28--28
+[]\OT1/jkp/m/n/12 17.11.2023. 
  []
 
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 07.09.2013. 
- []
-
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -1652,61 +1585,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 08.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 09.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 10.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 11.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 11.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 14.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 15.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 15.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 19.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 20.09.2013. 
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 28.09.2013. 
- []
-
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -1751,12 +1629,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-<slike/naklada-znanje.PNG, id=203, 301.125pt x 271.0125pt>
+<slike/naklada-znanje.PNG, id=198, 301.125pt x 271.0125pt>
 File: slike/naklada-znanje.PNG Graphic file (type png)
 <use slike/naklada-znanje.PNG>
 Package pdftex.def Info: slike/naklada-znanje.PNG  used on input line 25.
 (pdftex.def)             Requested size: 301.12425pt x 271.01183pt.
-<slike/Eknjiga.PNG, id=205, 455.301pt x 217.41225pt>
+<slike/Eknjiga.PNG, id=200, 455.301pt x 217.41225pt>
 File: slike/Eknjiga.PNG Graphic file (type png)
 <use slike/Eknjiga.PNG>
 Package pdftex.def Info: slike/Eknjiga.PNG  used on input line 38.
@@ -1820,26 +1698,7 @@ Overfull \hbox (6.35765pt too wide) in paragraph at lines 88--89
 rte na ko-joj []ce biti ozna[]ceni
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
-
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 1
-06.
-(c:/texlive/2023/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
-File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
 )
-LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
- 106.
-
-(c:/texlive/2023/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
-File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -1849,72 +1708,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
 [9]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[10]
-<slike/aktivnost.PNG, id=253, 670.75594pt x 689.57625pt>
-File: slike/aktivnost.PNG Graphic file (type png)
-<use slike/aktivnost.PNG>
-Package pdftex.def Info: slike/aktivnost.PNG  used on input line 181.
-(pdftex.def)             Requested size: 268.2976pt x 275.8256pt.
-File: slike/aktivnost.PNG Graphic file (type png)
-<use slike/aktivnost.PNG>
-Package pdftex.def Info: slike/aktivnost.PNG  used on input line 188.
-(pdftex.def)             Requested size: 435.6108pt x 447.82993pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[11
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) 
-has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.192 		
-         <./slike/aktivnost.PNG>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[12
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4}) 
-has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.195 		\eject
-              ])
 \openout2 = `Specifikacija_programske_potpore.aux'.
 
  (./Specifikacija_programske_potpore.tex
@@ -1932,12 +1725,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[13
+[10
 
 
 
 
 ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.02403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.02403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
+
+[11]
+LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 9
+2.
+ (c:/texlive/2023/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
+File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.02403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.02403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
+
+[12]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.02403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.02403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
+
+[13]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -1983,39 +1808,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
 [18]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[19]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[20]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[21]
-<slike/DO1.jpg, id=417, 766.66425pt x 452.892pt>
+<slike/DO1.jpg, id=381, 766.66425pt x 452.892pt>
 File: slike/DO1.jpg Graphic file (type jpg)
 <use slike/DO1.jpg>
 Package pdftex.def Info: slike/DO1.jpg  used on input line 486.
 (pdftex.def)             Requested size: 435.6108pt x 257.32875pt.
-<slike/DO2.jpg, id=418, 653.44125pt x 471.56175pt>
+<slike/DO2.jpg, id=382, 653.44125pt x 471.56175pt>
 File: slike/DO2.jpg Graphic file (type jpg)
 <use slike/DO2.jpg>
 Package pdftex.def Info: slike/DO2.jpg  used on input line 493.
@@ -2029,7 +1827,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[22
+[19
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2044,7 +1842,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[23
+[20
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2072,67 +1870,62 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 543--545
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--545
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.02403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.02403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 575--577
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--577
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.02403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.02403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 601--603
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--603
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.02403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.02403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
+
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 543--545
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 543--545
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 575--577
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 575--577
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 601--603
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 601--603
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 627--628
-
- []
-
-
-Overfull \hbox (20.36592pt too wide) in paragraph at lines 633--634
+Overfull \hbox (20.36592pt too wide) in paragraph at lines 630--631
 []\OT1/jkp/m/n/12 Korisni[]cko su[]celje mora biti res-pon-zivno, dakle prilago
 []deno i stol-nim ra[]cunalima
  []
@@ -2146,7 +1939,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[28]
+[25]
 \openout2 = `Arhitektura.aux'.
 
  (./Arhitektura.tex
@@ -2184,7 +1977,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[29
+[26
 
 
 
@@ -2207,7 +2000,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[30]
+[27]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2224,7 +2017,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-<slike/Relacijska shema.png, id=469, 795.97375pt x 401.5pt>
+<slike/Relacijska shema.png, id=433, 795.97375pt x 401.5pt>
 File: slike/Relacijska shema.png Graphic file (type png)
 <use slike/Relacijska shema.png>
 Package pdftex.def Info: slike/Relacijska shema.png  used on input line 123.
@@ -2238,8 +2031,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[31]
-<slike/dijagramKlasa.PNG, id=475, 967.51462pt x 585.387pt>
+[28]
+<slike/dijagramKlasa.PNG, id=439, 967.51462pt x 585.387pt>
 File: slike/dijagramKlasa.PNG Graphic file (type png)
 <use slike/dijagramKlasa.PNG>
 Package pdftex.def Info: slike/dijagramKlasa.PNG  used on input line 136.
@@ -2256,12 +2049,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[32
+[29
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.147 			\eject
+l.148 			\eject
                 <./slike/Relacijska shema.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2271,12 +2064,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[33
+[30
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.157 			\eject
+l.158 			\eject
                 <./slike/dijagramKlasa.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2286,7 +2079,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[34])
+[31])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2295,7 +2088,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[35]
+[32]
 \openout2 = `Implementacija.aux'.
 
  (./Implementacija.tex
@@ -2313,12 +2106,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[36
+[33
 
 
 
 
 ]
+LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
+ 28.
+ (c:/texlive/2023/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
+File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2327,7 +2125,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[37]
+[34]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2336,7 +2134,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[38]
+[35]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2345,7 +2143,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[39])
+[36])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -2358,7 +2156,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[40
+[37
 
 
 
@@ -2375,7 +2173,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[41
+[38
 
 
 
@@ -2393,7 +2191,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[42
+[39
 
 
 
@@ -2409,7 +2207,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[43
+[40
 
 
 ]
@@ -2430,7 +2228,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[44]
+[41]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2439,7 +2237,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[45])
+[42])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2448,7 +2246,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[46] 
+[43] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./PROGI_ProjektnaDokumentacija.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -2462,46 +2260,32 @@ L3 programming layer <2023-10-10>
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `PROGI_ProjektnaDokumentacija.out' has cha
-nged.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `PROGI_ProjektnaDokumentacija.out':
-(rerunfilecheck)             Before: 1FE32163DFC435AAFA118EF99A4FE263;4592
-(rerunfilecheck)             After:  73DC96050B1C6E228BBC05CE1994BB16;4565.
+Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija.out' has not ch
+anged.
+(rerunfilecheck)             Checksum: B400BABF613DD36682E3DFEA3F6CD11D;4419.
  ) 
 Here is how much of TeX's memory you used:
- 29761 strings out of 474503
- 572697 string characters out of 5756704
+ 29729 strings out of 474503
+ 572136 string characters out of 5756704
  2068043 words of memory out of 5000000
- 50942 multiletter control sequences out of 15000+600000
- 627217 words of font info for 180 fonts, out of 8000000 for 9000
+ 50921 multiletter control sequences out of 15000+600000
+ 624023 words of font info for 174 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,115p,906b,1082s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{figure.3.3} has been referenced but does not exist,
- replaced by a fixed one
-
+ 99i,13n,115p,906b,1050s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.47} has been referenced but does not exist, re
-placed by a fixed one
 
 <c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpbit8a.pfb><c:/texlive
 /2023/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2023/texmf-
 dist/fonts/type1/public/kpfonts/jkpmi.pfb><c:/texlive/2023/texmf-dist/fonts/typ
 e1/public/kpfonts/jkpmit8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/k
-pfonts/jkpmn8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpsy
-.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (47 pages, 1082306 bytes).
+pfonts/jkpmn8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkptt
+mn8a.pfb>
+Output written on PROGI_ProjektnaDokumentacija.pdf (44 pages, 1042118 bytes).
 PDF statistics:
- 665 PDF objects out of 1000 (max. 8388607)
- 568 compressed objects within 6 object streams
- 205 named destinations out of 1000 (max. 500000)
- 360 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 620 PDF objects out of 1000 (max. 8388607)
+ 530 compressed objects within 6 object streams
+ 194 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 
