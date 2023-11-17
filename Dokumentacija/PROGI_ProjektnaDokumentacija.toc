@@ -7,24 +7,24 @@
 \contentsline {subsection}{\numberline {3.1.1}Obrasci uporabe}{15}{subsection.3.1.1}%
 \contentsline {subsubsection}{Opis obrazaca uporabe}{15}{subsubsection*.2}%
 \contentsline {subsubsection}{Dijagrami obrazaca uporabe}{22}{subsubsection*.3}%
-\contentsline {subsection}{\numberline {3.1.2}Sekvencijski dijagrami}{25}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Ostali zahtjevi}{29}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Arhitektura i dizajn sustava}{30}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Baza podataka}{30}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Opis tablica}{30}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Dijagram baze podataka}{32}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Dijagram razreda}{33}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Dijagram stanja}{34}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Dijagram aktivnosti}{35}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Dijagram komponenti}{36}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Implementacija i korisničko sučelje}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Korištene tehnologije i alati}{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Ispitivanje programskog rješenja}{38}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Ispitivanje komponenti}{38}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Ispitivanje sustava}{38}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Dijagram razmještaja}{39}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Upute za puštanje u pogon}{40}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Zaključak i budući rad}{41}{chapter.6}%
-\contentsline {chapter}{Popis literature}{42}{chapter*.4}%
-\contentsline {chapter}{Indeks slika i dijagrama}{43}{chapter*.5}%
-\contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{44}{chapter*.6}%
+\contentsline {subsection}{\numberline {3.1.2}Sekvencijski dijagrami}{24}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Ostali zahtjevi}{28}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Arhitektura i dizajn sustava}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Baza podataka}{29}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Opis tablica}{29}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Dijagram baze podataka}{31}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Dijagram razreda}{32}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Dijagram stanja}{33}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Dijagram aktivnosti}{34}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Dijagram komponenti}{35}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Implementacija i korisničko sučelje}{36}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Korištene tehnologije i alati}{36}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Ispitivanje programskog rješenja}{37}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Ispitivanje komponenti}{37}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Ispitivanje sustava}{37}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Dijagram razmještaja}{38}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Upute za puštanje u pogon}{39}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Zaključak i budući rad}{40}{chapter.6}%
+\contentsline {chapter}{Popis literature}{41}{chapter*.4}%
+\contentsline {chapter}{Indeks slika i dijagrama}{42}{chapter*.5}%
+\contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{43}{chapter*.6}%
