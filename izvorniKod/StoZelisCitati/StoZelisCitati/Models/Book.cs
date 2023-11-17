@@ -1,4 +1,4 @@
-﻿namespace MvcTest.Models;
+﻿namespace StoZelisCitati.Models;
 
 public class Book
 {

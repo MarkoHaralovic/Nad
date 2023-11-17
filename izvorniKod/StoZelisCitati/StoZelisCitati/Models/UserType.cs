@@ -1,9 +1,9 @@
-﻿namespace MvcTest.Models;
+﻿namespace StoZelisCitati.Models;
 
 public enum UserType
 {
     Middleman,
     Publisher,
     Antiquarian,
-    Administrator
+    Admin
 }

@@ -16,26 +16,38 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\FAKS\semestar5\progi\Nad\izvorniKod\StoZelisCitati\StoZelisCitati
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/Account/Registered.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlcmVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/Account/RegistrationRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RyYXRpb25SZXF1ZXN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/User/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/User/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/User/RegistrationRequests.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3RyYXRpb25SZXF1ZXN0cy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/User/UserRegistration.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyUmVnaXN0cmF0aW9uLmNzaHRtbA==
+[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/FAKS/semestar5/progi/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

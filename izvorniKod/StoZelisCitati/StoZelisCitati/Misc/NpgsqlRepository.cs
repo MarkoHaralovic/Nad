@@ -1,9 +1,9 @@
 ﻿using Dapper;
-using MvcTest.Models;
-using MvcTest.Models.Dto;
 using Npgsql;
+using StoZelisCitati.Models;
+using StoZelisCitati.Models.Dto;
 
-namespace MvcTest.Misc;
+namespace StoZelisCitati.Misc;
 
 public class NpgsqlRepository
 {
@@ -20,30 +20,32 @@ public class NpgsqlRepository
                        where odobren = false
                        """;
 
-        return (await npgsqlConnection.QueryAsync<Korisnik>(query)).Select(x => x.ToDomainObject());
+        return (await npgsqlConnection.QueryAsync<UserRecord>(query)).Select(x => x.ToDomainObject());
     }
 
-    public async Task AddUser(string userName, string password, string displayName, string userType,
-        string email, string phoneNumber, string address, bool approved)
+    public async Task AddUser(string username, string password, string displayName, string userType,
+        string email, string phoneNumber, string address, string city, string country, bool approved)
     {
         string query = """
                        insert into korisnik
-                       values 
+                       values
                        (
                                default,
-                               @userName,
+                               @username,
                                @password,
                                @displayName,
                                @userType,
                                @email,
                                @phoneNumber,
                                @address,
+                               @city,
+                               @country,
                                @approved
                        )
                        """;
 
-        await npgsqlConnection.ExecuteAsync(query, 
-            new {userName, password, displayName, userType, email, phoneNumber, address, approved});
+        await npgsqlConnection.ExecuteAsync(query,
+            new {username, password, displayName, userType, email, phoneNumber, address, city, country, approved});
     }
     
     public async Task ApproveUser(int userId)
@@ -65,5 +67,17 @@ public class NpgsqlRepository
                        """;
 
         await npgsqlConnection.ExecuteAsync(query, new {userId});
+    }
+    
+    public async Task<User?> GetUser(string username)
+    {
+        string query = """
+                       select *
+                       from korisnik
+                       where korisnicko_ime = @username
+                       """;
+
+        UserRecord? user = await npgsqlConnection.QuerySingleOrDefaultAsync<UserRecord>(query, new {username});
+        return user?.ToDomainObject();
     }
 }

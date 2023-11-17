@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using MvcTest.Models.Dto;
+using StoZelisCitati.Models.Dto;
 
-namespace MvcTest.Models;
+namespace StoZelisCitati.Models;
 
 public class User
 {
@@ -13,11 +13,13 @@ public class User
     public required string Email { get; set; }
     public required string PhoneNumber { get; set; }
     public required string Address { get; set; }
+    public required string City { get; set; }
+    public required string Country { get; set; }
     public required bool Approved { get; set; }
 
     public string DisplayUserType => UserType switch
     {
-        UserType.Administrator => "administrator",
+        UserType.Admin => "admin",
         UserType.Antiquarian => "antikvarijat",
         UserType.Middleman => "preprodavač",
         UserType.Publisher => "izdavač",

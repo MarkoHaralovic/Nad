@@ -1,0 +1,44 @@
+﻿@model IEnumerable<User>
+
+@{
+    ViewData["Title"] = "Registration Requests";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/main.css">
+}
+
+@section ScriptsBody
+{
+    <script src="/js/main.js"></script>
+}
+
+<div id="center">
+    <div id="left">
+        <!--inicijalno prazan-->
+    </div>
+    <div id="center-top">
+        <ul>
+            @foreach (User user in Model)
+            {
+                <li>
+                    <p>
+                        Korisničko ime: @user.Username,
+                        Lozinka: @user.Password,
+                        Naziv korisnika: @user.DisplayName,
+                        Vrsta korisnika: @user.DisplayUserType,
+                        Email: @user.Email,
+                        Broj mobitela: @user.PhoneNumber,
+                        Adresa: @user.Address
+                    </p>
+                    <button hx-delete="/account/@user.Id" hx-target="closest li" hx-swap="outerHTML">Odbij</button>
+                    <button hx-put="/account/approve/@user.Id" hx-target="closest li" hx-swap="outerHTML">Odobri</button>
+                </li>
+            }
+        </ul>
+    </div>
+    <div id="right">
+        <!--inicijalno prazan-->
+    </div>
+</div>

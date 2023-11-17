@@ -1,10 +1,16 @@
-using MvcTest.Misc;
+using StoZelisCitati.Misc;
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication() // Sets the default scheme to cookies
+    .AddCookie(options =>
+    {
+        options.AccessDeniedPath = "/account/denied";
+        options.LoginPath = "/account/login";
+    });
 
 builder.Services.AddScoped<NpgsqlConnection>(_ =>
     new NpgsqlConnection(builder.Configuration.GetConnectionString("Default")));
@@ -25,6 +31,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

@@ -1,9 +1,10 @@
 ﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using MvcTest.Misc;
-using MvcTest.Models;
+using StoZelisCitati.Models;
+using StoZelisCitati.Misc;
 
-namespace MvcTest.Controllers;
+namespace StoZelisCitati.Controllers;
 
 public class HomeController : Controller
 {
@@ -13,13 +14,10 @@ public class HomeController : Controller
     {
         this.npgsqlRepository = npgsqlRepository;
     }
-
-    //Should have log in and register buttons.
-    //Once the user is logged in, the buttons disappear.
-    //For the admin, a new button appears instead.
-    //It leads to the registration requests page.
+    
     public async Task<IActionResult> Index()
     {
+        HttpContext.User.IsInRole("admin");
         return View();
     }
 }

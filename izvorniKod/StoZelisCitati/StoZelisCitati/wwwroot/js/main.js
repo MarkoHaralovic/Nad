@@ -23,39 +23,6 @@ let listaZ = document.getElementById('listaZanr');
 let plusLog //= document.getElementById("plus"); //null
 let logoLog //= document.getElementById("logIn");
 
-let container; //header container
-let hrUnreg = document.createElement('div');
-hrUnreg.innerHTML = '<a href="login.html" style="text-decoration: none; color: white; font-size: 25px;"><p>log in</p></a>'
-
-let hrReg = document.createElement('div');
-hrReg.innerHTML = '<p id="myAcc" onclick="logout()">Moj profil</p>';
-
-let loadHeader = function() {
-    fetch('../views/header.html')
-            .then(response => response.text())
-            .then(html => {
-                container = document.querySelector('.header-container');
-                console.log(container);
-                container.innerHTML = html;
-                let hr = document.getElementById('header-right');
-                if(logIn) {
-                    hr.appendChild(hrReg);
-                } else {
-                    hr.appendChild(hrUnreg);
-                }
-                //if(logIn) plusLog = document.getElementById('plus');
-                //else logoLog = document.getElementById('logIn');
-                //if(logIn) console.log(plusLog.innerHTML);
-                //else console.log(logoLog.innerHTML);
-                searchButton();               
-            })
-            .then(() => {
-                log();
-            }).catch(error => {
-                console.error("Error loading content:", error);
-            });
-}
-
 let searchButton = function() {
     //console.log("in searchButton");
     searchImg = document.getElementById('povecalo');
@@ -98,98 +65,7 @@ let log = function() {
     console.log(logIn + " logIn");
 }
 
-let login = function() { //placeholder za simuliranje logina i registracije, koristit cemo loginReq za pravu funkcionalnost
-    logIn = 1;
-    localStorage.setItem("logIn", JSON.stringify(logIn)); //na backend se salje login request
-    
-    console.log("login u login je:" + logIn);
-    if(logIn) {window.location.href = "../views/userProfile.html";}
-}
-
-let regReq = function() {
-    const name = document.getElementById('name').value;
-    const lastname = document.getElementById('last-name').value;
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    const email = document.getElementById('email').value;
-    const number = document.getElementById('number').value;
-    const cat = document.querySelector('.categories').value;
-    const marker = window.marker;
-    console.log(marker.getLatLng() + ": marker");
-
-    const data = {
-        name : name,
-        lastname : lastname,
-        username : username,
-        passwrod : password,
-        email : email,
-        number : number,
-        cat : cat,
-        marker : marker
-    }
-
-    //marker.getLanLng()
-
-    if(!(name && lastname && username && password && email && number && cat && marker)) {
-        /*const errMsg = document.createElement('p');
-        const parent = document.querySelector('.center-box');
-        parent.appendChild(errMsg)
-        //uredit u css
-        errMsg.textContent = 'Popunite sva polja';*/
-        alert("Jedno ili više polja je prazno");
-        
-        return; 
-    }
-    url = 'neki url'
-    fetch(url, {
-        method: "POST",
-        headers: {
-
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        //podaci sa backenda
-    })
-    .catch(error => { 
-        console.log("Error: ",error);
-    })
-
-}
-
-let loginReq = function() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if(!username || !password) {
-        /*const errMsg = document.createElement('p');
-        errMsg.textContent = 'Popunite sva polja';
-        const parent = document.querySelector('.center-box');
-        parent.appendChild(errMsg);*/
-        alert("Jedno ili više polja je prazno");
-        return; 
-    }
-
-    fetch('', {
-        method: "POST",
-        headers: {
-
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        //podaci sa backenda
-    })
-    .catch(error => { 
-        console.log("Error: ",error);
-    })
-
-}
-
 let logout = function() {
-
     logIn = 0;
     localStorage.setItem("logIn", JSON.stringify(logIn));
     log();
@@ -273,8 +149,5 @@ let publicationEventListener = function() {
         });
     });
 }
-
-loadHeader();
-
 
 

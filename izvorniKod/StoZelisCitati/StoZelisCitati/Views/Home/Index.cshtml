@@ -1,64 +1,54 @@
-﻿@model dynamic
-
-@{
-    Layout = null;
+﻿@{
+    ViewData["Title"] = "Home";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+@section Styles
+{
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+}
+
+@section ScriptsHead
+{
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <title>Main page</title>
-</head>
+}
 
-<body>
+@section ScriptsBody
+{
+    <script src="/js/main.js"></script>
+}
 
-    <div class="main">
-        <div class="header-container">   
-            
-        </div>
-        <div id="center"> 
-            <div id="left">
-                <!--inicijalno prazan-->
-            </div>
-            <div id="center-top"> 
-                 <!--<div id="miniTraz">
-                    <label for="mini">Naziv knjige:</label> 
-                    <input type="text" class="in" id="mini">
-                    <a href="/Nad/Nad/izvorniKod/views/objave.html">
-                    <img id="min" style="margin-bottom: -3px;" width="25px" src="/Nad/Nad/izvorniKod/public/slike/miniTraziLogo.png" alt=""> 
-                    </a>
-                 </div> -->
-                <h2 id="map-text">Lokacije ponuditelja</h2>
-                <div id="map">
-                    <script>
-                        var map = L.map('map').setView([44.22, 18.3], 7); 
-                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        }).addTo(map);
+<div id="center"> 
+    <div id="left">
+        <!--inicijalno prazan-->
+    </div>
+    <div id="center-top"> 
+        <!--<div id="miniTraz">
+            <label for="mini">Naziv knjige:</label> 
+            <input type="text" class="in" id="mini">
+            <a href="/Nad/Nad/izvorniKod/views/objave.html">
+                <img id="min" style="margin-bottom: -3px;" width="25px" src="/Nad/Nad/izvorniKod/public/slike/miniTraziLogo.png" alt=""> 
+            </a>
+        </div> -->
+        <h2 id="map-text">Lokacije ponuditelja</h2>
+        <div id="map">
+            <script>
+                var map = L.map('map').setView([44.22, 18.3], 7); 
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
 
-                        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        }).addTo(map);
-
-                      </script>     
-                </div>   
-                <div id="listaZanr">
-                   
-                </div>
-                <div id="rek">
-                    <button onclick="showZanr()" id="zanr" class="reklame"> Traži po žanru </button>
-                </div>
-            </div>
-            <div id="right"> 
-                <!--inicijalno prazan-->
-            </div>
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+            </script>
+        </div>   
+        <div id="listaZanr"></div>
+        <div id="rek">
+            <button onclick="showZanr()" id="zanr" class="reklame"> Traži po žanru </button>
         </div>
     </div>
-</body>
-<script src="js/main.js"></script>
-</html>
+    <div id="right"> 
+        <!--inicijalno prazan-->
+    </div>
+</div>
