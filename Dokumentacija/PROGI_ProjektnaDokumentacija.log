@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.22)  17 NOV 2023 19:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.22)  17 NOV 2023 20:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2273,11 +2273,11 @@ anged.
 (rerunfilecheck)             Checksum: B400BABF613DD36682E3DFEA3F6CD11D;4419.
  ) 
 Here is how much of TeX's memory you used:
- 29711 strings out of 474503
- 571705 string characters out of 5756704
- 2068043 words of memory out of 5000000
- 50902 multiletter control sequences out of 15000+600000
- 619257 words of font info for 162 fonts, out of 8000000 for 9000
+ 29787 strings out of 474503
+ 574513 string characters out of 5756704
+ 2091043 words of memory out of 5000000
+ 50978 multiletter control sequences out of 15000+600000
+ 619620 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,115p,906b,1050s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -2290,7 +2290,7 @@ dist/fonts/type1/public/kpfonts/jkpmit8a.pfb><c:/texlive/2023/texmf-dist/fonts/
 type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
 /kpfonts/jkpmnc.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpt
 tmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (45 pages, 1081905 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (45 pages, 1082145 bytes).
 PDF statistics:
  628 PDF objects out of 1000 (max. 8388607)
  537 compressed objects within 6 object streams
