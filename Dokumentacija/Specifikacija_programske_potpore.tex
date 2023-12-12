@@ -22,7 +22,7 @@
 			
 			\begin{packed_enum}
 
-				 \item \underbar{Korisnik (inicijator) može:}
+				 \item \underbar{(Bilo koji) Korisnik (inicijator) može:}
                 
                     				\begin{packed_enum}
                         				\item Pretraživati knjige po njihovim atributima i po ponuditeljima
@@ -33,11 +33,11 @@
 				\item  \underbar{Neregistrirani korisnik(inicijator) može:}
 				
 				\begin{packed_enum}
-					\item Napraviti korisnički račun registracijom za što mu treba korisničko ime, lozinka, e-mail, broj mobitela i adresa i može birati u koju će kategoriju ponuditelja spadati
+					\item Napraviti korisnički račun registracijom za što mu treba korisničko ime, naziv, lozinka, e-mail, broj mobitela i adresa i može birati u koju će kategoriju ponuditelja spadati
 					\item Slati zahtjev izdavačima da se knjiga na stranom jeziku prevede		
 				\end{packed_enum}
 			
-				\item  \underbar{Registrirani korisnik tj. ponuditelj (izdavač/antikvarijat/preprodavač)(inicijator) može:}
+				\item  \underbar{Registrirani korisnik tj. ponuditelj (izdavač/antikvarijat/preprodavač)(inicijator) može:} %bilo bi pozeljno za svaku vrstu reg korisnika napisati sto moze?
 				
 				\begin{packed_enum}
 					
@@ -67,6 +67,7 @@
                 			\begin{packed_enum}
                     				\item Pohranjuje podatke o korisnicima i njihovim ovlastima
                     				\item Pohranjuje podatke o objavljenim knjigama
+					\item Pohranjuje podatke o zahtjevima
                 			\end{packed_enum}
 			\end{packed_enum}
 			
@@ -85,7 +86,7 @@
 						\item  \textbf{Glavni sudionik: } Neregistrirani korisnik
 						\item  \textbf{Cilj:} Izrada korisničkog računa za web stranicu
 						\item  \textbf{Sudionici:} Baza podataka
-						\item  \textbf{Preduvjet:} -
+						\item  \textbf{Preduvjet:} Pristup aplikaciji
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{packed_enum}
@@ -357,7 +358,7 @@
                     \noindent \underbar{\textbf{UC11 - Pregled objave}}
 					\begin{packed_item}
 	
-						\item \textbf{Glavni sudionik: } Korisnik
+						\item \textbf{Glavni sudionik: } Korisnik (registrirani i neregistrirani)
 						\item  \textbf{Cilj:} Pregledavanje objave za knjigu
 						\item  \textbf{Sudionici:} Baza podataka, ponuditelj
 						\item  \textbf{Preduvjet:} - Ponuditelj ima objavu knjige
@@ -460,7 +461,17 @@
                             					\item Stranica izbacuje knjige koje se poklapaju sa upisanim karakteristikama
 						\end{packed_enum}
 						
-						\item  \textbf{Opis mogućih odstupanja: -}
+						\item  \textbf{Opis mogućih odstupanja: }
+						
+						\item[] \begin{packed_item}
+	
+							\item[2.a] Ne postoji objava koja ispunjuje kriterije
+							\item[] \begin{packed_enum}
+								
+								\item Aplikacija ne prikazuje niti jednu objavu s tekstom koij obavještava da nema objava sa danim atributima 
+							\end{packed_enum}
+                            					
+						\end{packed_item}
 					\end{packed_item}
 
 				\eject	
