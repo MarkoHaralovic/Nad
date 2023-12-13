@@ -31,7 +31,13 @@
                     <input type="text" class="in" required>
 
                     <label>žanr</label>
-                    <input type="text" class="in" required>
+                    <select class="genres" form="pub-form">
+                        <option value="Komedija">Komedija</option>
+                        <option value="Akcija">Akcija</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Sci-fi">Sci-fi</option>
+                        <option value="Avanturistički">vanturistički</option>
+                    </select>
 
                     <label>ISBN</label>
                     <input type="text" class="in" required>
@@ -53,7 +59,7 @@
                     
                     <!--dodat image preview?-->
 
-                    <button id="pub-button" class="searchbtn">Dodaj objavu</button>
+                    <button id="pub-button" class="searchbtn" value="Submit" form="pub-form">Dodaj objavu</button>
                 </form>
             </div>
         </div>
