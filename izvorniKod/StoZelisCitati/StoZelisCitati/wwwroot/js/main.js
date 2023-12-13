@@ -33,7 +33,7 @@ let searchButton = function() {
 
 let searchButtonClicked = function() {
     console.log("in searchButtonClicked");
-    fetch('../views/trazi.html')
+    fetch('../../views/trazi.html')
         .then(data => data.text())
         .then(html => {
             //center.innerHTML = '';

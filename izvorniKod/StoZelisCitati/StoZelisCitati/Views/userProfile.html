@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/styles/user.css">
+    <link rel="stylesheet" href="../wwwroot/css/user.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <title>Document</title>
@@ -15,7 +15,7 @@
         </div>
         <div id="center">
             <div id="left">
-
+                ovdje ce ici objave korisnika
             </div>
             <div id="right">
                 <div id="user-container">
@@ -24,19 +24,22 @@
                             <h2>Korisnik:</h2>
                         </div>
                         <div id="name-div" class="user-info">
-                            <h2>Ime prezime</h2>
+                            <h2>Izdavač:</h2>
                         </div>
                         <div id="email-div" class="user-info">
-                            <h2>email</h2>
+                            <h2>Email:</h2>
                         </div>
                         <div id="phone-div" class="user-info">
-                            <h2>mobitel</h2>
+                            <h2>Mobitel:</h2>
+                        </div>
+                        <div id="new-pub-btn-div" class="user-info">
+                            <a href="../Views/newPub.html"><button id="new-pub-btn" class="searchbtn">Novi oglas</button></a>
                         </div>
                         <div id="change-btn-div" class="user-info">
                             <button id="change-btn" class="searchbtn" style="width:100px; height:35px;">Uredi profil</button>
                         </div>
                         <div id="logout-btn-div" class="user-info">
-                            <button id="change-btn" class="searchbtn" style="width:100px; height:35px;">Odjava</button> 
+                            <button id="logut-btn" class="searchbtn" style="width:100px; height:35px;">Odjava</button> 
                         </div>
                     </div>
                     <div id="user-right">
@@ -59,5 +62,5 @@
         </div>
     </div>
 </body>
-<script src="../public/scripts/userScript.js"></script>
+<script src="../wwwroot/js/userScript.js"></script>
 </html>

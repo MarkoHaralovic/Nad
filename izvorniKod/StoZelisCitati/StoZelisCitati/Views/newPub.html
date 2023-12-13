@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/styles/user.css">
+    <link rel="stylesheet" href="../wwwroot/css/main.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,52 +14,50 @@
 
         <div id="center" style="justify-content: center; height: 100%; width:100%;">
             <div id="new-pub">
-                <form id="pub-form" style="display:flex; flex-direction: column;">
+                <form id="pub-form" style="display:flex; flex-direction: column;" hx-post="" hx-target="" hx-indicator="">
                     <label>naziv</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
                     <label>autor</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
                     <label>god izdanja</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
                     <label>izdavac</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
                     <label>kategorija izdavaca</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
                     <label>žanr</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
                     <label>ISBN</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
                     <label>Br. izdanja</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
                     <label>Stanje</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
                     <label>Opis</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
-                    <label>Oznaka vrsta knjige</label>
-                    <input type="text">
+                    <label>Jezik</label>
+                    <input type="text" class="in" required>
 
                     <label for="imageInput">Slika korica</label>
-                    <input type="file" id="imageInput" name="image" accept="image/jpeg, image/png">
+                    <button><input type="file" id="imageInput"  class="in" name="image" accept="image/jpeg, image/png" required></button>
+                    
                     <!--dodat image preview?-->
-                    <label>Lista ponuda?</label>
-                    <input type="text">
 
-                    <button id="pub-button" style="margin-top: 30px; width: 40%" >Dodaj objavu</button>
-                    <!--dodat js za novu objavu-->
+                    <button id="pub-button" class="searchbtn">Dodaj objavu</button>
                 </form>
             </div>
         </div>
     </div>
 </body>
-<script src="../public/scripts/userScript.js"></script>
+<script src="../wwwroot/js/userScript.js"></script>
 </html>

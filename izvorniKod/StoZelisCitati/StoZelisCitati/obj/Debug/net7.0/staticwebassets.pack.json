@@ -1,79 +1,79 @@
 {
   "Files": [
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\book.css",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\book.css",
       "PackagePath": "staticwebassets\\css\\book.css"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\common.css",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\common.css",
       "PackagePath": "staticwebassets\\css\\common.css"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\login.css",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\main.css",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\main.css",
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\objava.css",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\objava.css",
       "PackagePath": "staticwebassets\\css\\objava.css"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\reg.css",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\reg.css",
       "PackagePath": "staticwebassets\\css\\reg.css"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\register.css",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\register.css",
       "PackagePath": "staticwebassets\\css\\register.css"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\user.css",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\css\\user.css",
       "PackagePath": "staticwebassets\\css\\user.css"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\images\\bars.svg",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\images\\bars.svg",
       "PackagePath": "staticwebassets\\images\\bars.svg"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\images\\miniTraziLogo.png",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\images\\miniTraziLogo.png",
       "PackagePath": "staticwebassets\\images\\miniTraziLogo.png"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\images\\plusLogo.png",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\images\\plusLogo.png",
       "PackagePath": "staticwebassets\\images\\plusLogo.png"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\images\\traziLogo.png",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\images\\traziLogo.png",
       "PackagePath": "staticwebassets\\images\\traziLogo.png"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\book.js",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\book.js",
       "PackagePath": "staticwebassets\\js\\book.js"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\main.js",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\ot1.js",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\ot1.js",
       "PackagePath": "staticwebassets\\js\\ot1.js"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\ot2.js",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\ot2.js",
       "PackagePath": "staticwebassets\\js\\ot2.js"
     },
     {
-      "Id": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\userScript.js",
+      "Id": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\userScript.js",
       "PackagePath": "staticwebassets\\js\\userScript.js"
     },
     {

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+PARWg2Zrdc7ybNrJhwAjVliveWu/+h+IVcGs1kKpsdDlGpT5BhXBU28jjlBP3TUW9G08UfT/kovktENEK+ChA==",
+  "dgSpecHash": "nTZp/6UuM66YFbZobE4nKMtFK4u8zHvHR++CWyGmkKwyd8c0ryjK+x08yRP5pvYTR5Bc7AA+orl06kvw7doAMw==",
   "success": true,
-  "projectFilePath": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\StoZelisCitati.csproj",
+  "projectFilePath": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\StoZelisCitati.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\lovri\\.nuget\\packages\\dapper\\2.1.21\\dapper.2.1.21.nupkg.sha512",
-    "C:\\Users\\lovri\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\lovri\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512"
+    "C:\\Users\\Ivan\\.nuget\\packages\\dapper\\2.1.21\\dapper.2.1.21.nupkg.sha512",
+    "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ivan\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512"
   ],
   "logs": []
 }
