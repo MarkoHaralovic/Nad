@@ -538,7 +538,7 @@
 				\eject
 				
 				\textbf{Obrazac uporabe UC1 – Registracija i UC3 – Potvrda registracije}\\\\
-				Ponuditelj šalje zahtjev za registraciju. Poslužitelj sprema zahtjev u bazu. Administrator pregledava zahtjeve za registraciju i odobrava zahtjev našeg ponuditelja. Ponuditelj je uspješno registriran, pa ima pristup potpunoj funkcionalnosti svojeg korisničkog računa.\\
+				Neregistrirani korisnik šalje zahtjev za registraciju. Poslužitelj mu vraća formu za registraciju. Nakon što neregistrirani korisnik unese potrebne podatke za registraciju, poslužitelj ga obavještava da će administrator pregledati njegove podatke i šalje ih administratoru. Ako administrator utvrdi da je sve u redu, obavještava neregistriranog korisnika da je uspješno registriran.\\
 				
 				\begin{figure}[h]
 					\centering
@@ -549,52 +549,25 @@
 				\eject
 				
 				\textbf{Obrazac uporabe UC8 – Dodavanje objave knjige}\\\\
-				Preprodavač na stranici za dodavanje knjiga dodaje novi naslov. Poslužitelj sprema taj naslov u bazu pa ponuditelj dobiva opciju ponuditi primjerke tog naslova. Ponuditelj nudi primjerke tog naslova.\\
-				\begin{center}
-					\begin{adjustbox}{max width=\textwidth}
-						\begin{sequencediagram}
-							\newthread{A}{Preprodavač}{}
-							\newinst[5]{B}{Poslužitelj}{}
-							\newinst[5]{C}{Baza podataka}{}
-							\begin{call}{A}{1: zatražiDodavanjeKnjiga()}{B}{Prikaz stranice za dodavanje knjiga}
-								\begin{call}{B}{1.1: dohvatiPodatkeOPonuditelju()}{C}{Vrati podatke o ponuditelju}
-								\end{call}
-							\end{call}
-							\postlevel
-							\begin{messcall}{A}{2: dodajNaslov}{B}
-								\begin{messcall}{B}{2.1: dodajNaslov()}{C}
-								\end{messcall}
-							\end{messcall}
-							\begin{messcall}{A}{3: dodajPrimjerkeKnjige()}{B}
-								\begin{messcall}{B}{3.1: dodajPrimjerkeKnjige()}{C}
-								\end{messcall}
-							\end{messcall}
-						\end{sequencediagram}
-					\end{adjustbox}
-				\end{center}
+				Ponuditelj odabire opciju za dodavanje novog naslova. Poslužitelj mu otvara stranicu za dodavanje knjiga. Nakon što ponuditelj unese sve potrebne podatke u dobrom obliku, naslov se dodaje u bazu podataka te javlja ponuditelju da je knjiga uspješno dodana. Ako želi, ponuditelj može dodati primjerke tog naslova.\\
+				
+				\begin{figure}[h]
+					\centering
+					\includegraphics[width = \textwidth]{slike/sekvUC8.PNG}
+					\caption{Sekvencijski dijagram obrasca uporabe UC8}
+					\label{fig:enter-label}
+				\end{figure}
 				\eject
 				
 				\textbf{Obrazac uporabe UC16 - Detaljna pretraga objava knjiga i UC11 - pregled objave}\\\\
-				Neregistrirani korisnik pretražuje knjige po sljedećim značajkama: naziv knjige, naziv autora, godina izdanja, redni broj izdanja, kategorija izdavača, žanr knjige, ISBN, oznaka vrste knjige. Poslužitelj postavlja upit prema bazi i vraća rezultat. Korisnik pregledava podatke pronađene knjige.\\
-				\begin{center}
-					\begin{adjustbox}{max width=\textwidth}
-						\begin{sequencediagram}
-							\newthread{A}{Neregistrirani korisnik}{}
-							\newinst[5]{B}{Poslužitelj}{}
-							\newinst[5]{C}{Baza podataka}{}
-							\begin{call}{A}{1: pretražiKnjige(značajke)}{B}{Prikaz liste knjiga}
-								
-								\begin{call}{B}{1.1: dohvatiFiltriraneKnjige(značajke)}{C}{Lista knjiga}
-								\end{call}
-							\end{call}
-							\postlevel
-							\begin{call}{A}{2: odaberiKnjigu()}{B}{Prikaz podataka o knjizi}
-								\begin{call}{B}{2.1: dohvatiPodatkeOKnjizi()}{C}{Podatci o knjizi}
-								\end{call}
-							\end{call}
-						\end{sequencediagram}
-					\end{adjustbox}
-				\end{center}
+				Neregistrirani korisnik odabire opciju pretraživanja objava, a poslužitelj mu vraća formu za pretragu. Korisnik unosi potrebne podatke koje poslužitelj uspoređuje s onima u bazi podataka. Ako postoji barem jedna takva knjiga, poslužitelj prikazuje listu knjiga koje odgovaraju podatcima koje je unio neregistrirani korisnik. Ako korisnik to želi, može detaljnije pregledati podatke o nekoj objavi knjige klikom na tu objavu. Poslužitelj dohvaća potrebne podatke iz baze i prikazuje ih korisniku.\\
+				
+				\begin{figure}[h]
+					\centering
+					\includegraphics[width = \textwidth]{slike/sekvUC16.PNG}
+					\caption{Sekvencijski dijagram obrazaca uporabe UC11 i UC16}
+					\label{fig:enter-label}
+				\end{figure}
 				\eject
 	
 	
