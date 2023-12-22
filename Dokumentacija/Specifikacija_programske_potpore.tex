@@ -539,34 +539,13 @@
 				
 				\textbf{Obrazac uporabe UC1 – Registracija i UC3 – Potvrda registracije}\\\\
 				Ponuditelj šalje zahtjev za registraciju. Poslužitelj sprema zahtjev u bazu. Administrator pregledava zahtjeve za registraciju i odobrava zahtjev našeg ponuditelja. Ponuditelj je uspješno registriran, pa ima pristup potpunoj funkcionalnosti svojeg korisničkog računa.\\
-				\begin{center}
-					\begin{adjustbox}{max width=\textwidth}
-						\begin{sequencediagram}
-							\newthread{A}{Ponuditelj}{}
-							\newinst[5]{B}{Poslužitelj}{}
-							\newinst[5]{C}{Baza podataka}{}
-							\newthread{D}{Administrator}{}
-							\begin{messcall}{A}{1: zatražiRegistraciju()}{B}
-								\begin{messcall}{B}{1.1: spremiZahtjevZaRegistraciju()}{C}
-								\end{messcall}
-							\end{messcall}
-							\begin{call}{D}{2: zatražiZahtjeveZaRegistraciju()}{B}{Prikaz zahtjeva za registraciju}
-								\postlevel
-								\begin{call}{B}{2.1: dohvatiZahtjeveZaRegistraciju()}{C}{Vrati zahtjeve za registraciju}
-								\end{call}
-								\postlevel
-							\end{call}
-							\postlevel
-							\begin{messcall}{D}{3: odobriZahtjevZaRegistraciju()}{B}
-								\postlevel
-								\begin{messcall}{B}{3.1: spremiOdobrenogKorisnika()}{C}
-								\end{messcall}
-								\begin{messcall}{B}{3.2: izbrišiZahtjevZaRegistraciju()}{C}
-								\end{messcall}
-							\end{messcall}
-						\end{sequencediagram}
-					\end{adjustbox}
-				\end{center}
+				
+				\begin{figure}[h]
+					\centering
+					\includegraphics[width = \textwidth]{slike/sekvUC1UC3.PNG}
+					\caption{Sekvencijski dijagram obrazaca uporabe UC1 i UC3}
+					\label{fig:enter-label}
+				\end{figure}
 				\eject
 				
 				\textbf{Obrazac uporabe UC8 – Dodavanje objave knjige}\\\\
