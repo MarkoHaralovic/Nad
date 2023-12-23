@@ -7,7 +7,7 @@
 \contentsline {subsubsection}{Opis obrazaca uporabe}{11}{subsubsection*.2}%
 \contentsline {subsubsection}{Dijagrami obrazaca uporabe}{18}{subsubsection*.3}%
 \contentsline {subsection}{\numberline {3.1.2}Sekvencijski dijagrami}{20}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Ostali zahtjevi}{24}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Ostali zahtjevi}{25}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Arhitektura i dizajn sustava}{26}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Baza podataka}{27}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Opis tablica}{27}{subsection.4.1.1}%

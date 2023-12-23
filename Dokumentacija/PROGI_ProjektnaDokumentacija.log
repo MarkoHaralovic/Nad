@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  22 DEC 2023 21:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  23 DEC 2023 16:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1343,6 +1343,9 @@ LaTeX Warning: Label `fig:enter-label' multiply defined.
 
 LaTeX Warning: Label `fig:enter-label' multiply defined.
 
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
 ) (Arhitektura.aux
 
 LaTeX Warning: Label `fig:enter-label' multiply defined.
@@ -1937,10 +1940,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 500--502
 
  []
 
-\pgf@layerbox@umlsd@background=\box98
-\pgf@layerboxsaved@umlsd@background=\box99
-\pgf@layerbox@umlsd@threadlayer=\box100
-\pgf@layerboxsaved@umlsd@threadlayer=\box101
+<slike/sekvUC15UC13.PNG, id=387, 1585.925pt x 1301.86375pt>
+File: slike/sekvUC15UC13.PNG Graphic file (type png)
+<use slike/sekvUC15UC13.PNG>
+Package pdftex.def Info: slike/sekvUC15UC13.PNG  used on input line 505.
+(pdftex.def)             Requested size: 435.6108pt x 357.58655pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -1949,20 +1953,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 540--542
+[20
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.509 				\eject
+                 <./slike/sekvUC15UC13.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 511--513
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--542
+Underfull \hbox (badness 10000) in paragraph at lines 511--513
 
  []
 
-<slike/sekvUC1UC3.PNG, id=392, 2007.5pt x 1343.0175pt>
+<slike/sekvUC1UC3.PNG, id=395, 2007.5pt x 1343.0175pt>
 File: slike/sekvUC1UC3.PNG Graphic file (type png)
 <use slike/sekvUC1UC3.PNG>
-Package pdftex.def Info: slike/sekvUC1UC3.PNG  used on input line 545.
+Package pdftex.def Info: slike/sekvUC1UC3.PNG  used on input line 516.
 (pdftex.def)             Requested size: 435.6108pt x 291.4072pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1973,25 +1983,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
 [21
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3}) 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.549 				\eject
+l.520 				\eject
                  <./slike/sekvUC1UC3.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 551--553
+Underfull \hbox (badness 10000) in paragraph at lines 522--524
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--553
+Underfull \hbox (badness 10000) in paragraph at lines 522--524
 
  []
 
-<slike/sekvUC8.PNG, id=400, 1585.925pt x 1301.86375pt>
+<slike/sekvUC8.PNG, id=403, 1585.925pt x 1301.86375pt>
 File: slike/sekvUC8.PNG Graphic file (type png)
 <use slike/sekvUC8.PNG>
-Package pdftex.def Info: slike/sekvUC8.PNG  used on input line 556.
+Package pdftex.def Info: slike/sekvUC8.PNG  used on input line 527.
 (pdftex.def)             Requested size: 435.6108pt x 357.58655pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2002,29 +2012,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
 [22
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}) 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.560 				\eject
+l.531 				\eject
                  <./slike/sekvUC8.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 562--564
+Underfull \hbox (badness 10000) in paragraph at lines 533--535
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 562--564
+Underfull \hbox (badness 10000) in paragraph at lines 533--535
 
  []
 
-<slike/sekvUC16.PNG, id=408, 1385.175pt x 1543.7675pt>
+<slike/sekvUC16.PNG, id=411, 1385.175pt x 1543.7675pt>
 File: slike/sekvUC16.PNG Graphic file (type png)
 <use slike/sekvUC16.PNG>
-Package pdftex.def Info: slike/sekvUC16.PNG  used on input line 567.
+Package pdftex.def Info: slike/sekvUC16.PNG  used on input line 538.
 (pdftex.def)             Requested size: 435.6108pt x 485.48843pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2034,7 +2041,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
 [23]
-Overfull \hbox (20.36592pt too wide) in paragraph at lines 579--580
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.02403pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.02403pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
+
+[24
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.542 				\eject
+                 <./slike/sekvUC16.PNG>]
+Overfull \hbox (20.36592pt too wide) in paragraph at lines 550--551
 []\OT1/jkp/m/n/12 Korisni[]cko su[]celje mora biti res-pon-zivno, dakle prilago
 []deno i stol-nim ra[]cunalima
  []
@@ -2048,26 +2070,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[24]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[25
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5}) 
-has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.125 	\include{Specifikacija_programske_potpore}
-                                                  <./slike/sekvUC16.PNG>]
+[25]
 \openout2 = `Arhitektura.aux'.
 
-
-(Arhitektura.tex
+ (Arhitektura.tex
 Poglavlje 4.
 
 Overfull \hbox (4.74959pt too wide) in paragraph at lines 7--8
@@ -2141,7 +2147,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-<slike/Relacijska shema.png, id=442, 570.933pt x 266.1945pt>
+<slike/Relacijska shema.png, id=445, 570.933pt x 266.1945pt>
 File: slike/Relacijska shema.png Graphic file (type png)
 <use slike/Relacijska shema.png>
 Package pdftex.def Info: slike/Relacijska shema.png  used on input line 133.
@@ -2162,7 +2168,7 @@ has been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.138 		\eject
                <./slike/Relacijska shema.png>]
-<slike/dijagramKlasa.PNG, id=450, 967.51462pt x 585.387pt>
+<slike/dijagramKlasa.PNG, id=453, 967.51462pt x 585.387pt>
 File: slike/dijagramKlasa.PNG Graphic file (type png)
 <use slike/dijagramKlasa.PNG>
 Package pdftex.def Info: slike/dijagramKlasa.PNG  used on input line 146.
@@ -2396,11 +2402,11 @@ anged.
 (rerunfilecheck)             Checksum: B400BABF613DD36682E3DFEA3F6CD11D;4419.
  ) 
 Here is how much of TeX's memory you used:
- 29848 strings out of 474495
- 586675 string characters out of 5743934
- 2094460 words of memory out of 5000000
- 51330 multiletter control sequences out of 15000+600000
- 619620 words of font info for 162 fonts, out of 8000000 for 9000
+ 29472 strings out of 474495
+ 579454 string characters out of 5743934
+ 2095460 words of memory out of 5000000
+ 50955 multiletter control sequences out of 15000+600000
+ 617842 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,115p,908b,1166s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -2414,9 +2420,9 @@ pfonts/jkpmit8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/kpfonts/jkpmn8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/kpfonts/jkpmnc.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fo
 nts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (46 pages, 1434771 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (46 pages, 1518701 bytes).
 PDF statistics:
- 641 PDF objects out of 1000 (max. 8388607)
- 203 named destinations out of 1000 (max. 500000)
- 362 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 645 PDF objects out of 1000 (max. 8388607)
+ 204 named destinations out of 1000 (max. 500000)
+ 367 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -499,42 +499,13 @@
 				
 				\textbf{Obrazac uporabe UC15 – Pretraživanje po lokaciji i UC13 – Zahtjev da se prevede knjiga}\\\\
 				Neregistrirani korisnik šalje zahtjev za pregled karte ponuditelja knjiga. Poslužitelj dohvaća ponuditelje knjiga iz baze i vraća prikaz karte sa označenim adresama ponuditelja. Korisnik odabire ponuditelja koji je izdavač. Poslužitelj dohvaća podatke o odabranom ponuditelju iz baze. Vraća korisniku listu svih knjiga dotičnog ponuditelja. Korisnik dodatno filtrira ponudu knjiga po želji. Korisnik traži prijevod od izdavača. U bazi podataka povećava se broj zatraženih prijevoda za tu knjigu.\\
-				\begin{center}
-				\begin{adjustbox}{max width=\textwidth}
-					\begin{sequencediagram}
-						\newthread{A}{Neregistrirani korisnik}{}
-						\newinst[5]{B}{Poslužitelj}{}
-						\newinst[5]{C}{Baza podataka}{}
-						\begin{call}{A}{1: zatražiPrikazKarte()}{B}{Prikaz ponuditelja na karti}
-							\begin{call}{B}{1.1: dohvatiPonuditelje()}{C}{Vrati ponuditelje}
-							\end{call}
-						\end{call}
-						\postlevel
-						\begin{call}{A}{2: odaberiPonuditelja()}{B}{Prikaz liste knjiga}
-							\begin{call}{B}{2.1: dohvatiPodatkeOPonuditelju()}{C}{Vrati podatke o ponuditelju}
-							\end{call}
-						\end{call}
-						\postlevel
-						\begin{sdblock}{opt}{[Korisnik želi dodatno filtrirati knjige]}
-							\begin{call}{A}{pretražiKnjige(značajke)}{B}{Prikaz liste knjiga}
-								\begin{call}{B}{dohvatiFiltriraneKnjige(značajke)}{C}{Vrati listu knjiga}
-								\end{call}
-							\end{call}
-						\end{sdblock}
-						\postlevel
-						\begin{call}{A}{3: odaberiKnjigu()}{B}{Prikaz podataka o knjizi}
-							\begin{call}{B}{3.1: dohvatiPodatkeOKnjizi()}{C}{Vrati podatke o knjizi} 
-							\end{call}
-						\end{call}
-						\postlevel
-						\begin{messcall}{A}{3: zatražiPrijevod()}{B}
-							\begin{messcall}{B}{3.1: spremiZahtjevZaPrijevodom()}{C}
-							\end{messcall}
-						\end{messcall}
-						
-					\end{sequencediagram}
-				\end{adjustbox}
-				\end{center}
+				
+				\begin{figure}[h]
+					\centering
+					\includegraphics[width = \textwidth]{slike/sekvUC15UC13.PNG}
+					\caption{Sekvencijski dijagram obrazaca uporabe UC13 i UC15}
+					\label{fig:enter-label}
+				\end{figure}
 				\eject
 				
 				\textbf{Obrazac uporabe UC1 – Registracija i UC3 – Potvrda registracije}\\\\
@@ -549,7 +520,7 @@
 				\eject
 				
 				\textbf{Obrazac uporabe UC8 – Dodavanje objave knjige}\\\\
-				Ponuditelj odabire opciju za dodavanje novog naslova. Poslužitelj mu otvara stranicu za dodavanje knjiga. Nakon što ponuditelj unese sve potrebne podatke u dobrom obliku, naslov se dodaje u bazu podataka te javlja ponuditelju da je knjiga uspješno dodana. Ako želi, ponuditelj može dodati primjerke tog naslova.\\
+				Ponuditelj odabire opciju za dodavanje nove objave. Poslužitelj mu otvara stranicu za dodavanje knjiga. Nakon što ponuditelj unese sve potrebne podatke u dobrom obliku, naslov se dodaje u bazu podataka te javlja ponuditelju da je knjiga uspješno dodana. Ako želi, ponuditelj može dodati primjerke tog naslova.\\
 				
 				\begin{figure}[h]
 					\centering
@@ -562,7 +533,7 @@
 				\textbf{Obrazac uporabe UC16 - Detaljna pretraga objava knjiga i UC11 - pregled objave}\\\\
 				Neregistrirani korisnik odabire opciju pretraživanja objava, a poslužitelj mu vraća formu za pretragu. Korisnik unosi potrebne podatke koje poslužitelj uspoređuje s onima u bazi podataka. Ako postoji barem jedna takva knjiga, poslužitelj prikazuje listu knjiga koje odgovaraju podatcima koje je unio neregistrirani korisnik. Ako korisnik to želi, može detaljnije pregledati podatke o nekoj objavi knjige klikom na tu objavu. Poslužitelj dohvaća potrebne podatke iz baze i prikazuje ih korisniku.\\
 				
-				\begin{figure}[h]
+				\begin{figure}[htbp]
 					\centering
 					\includegraphics[width = \textwidth]{slike/sekvUC16.PNG}
 					\caption{Sekvencijski dijagram obrazaca uporabe UC11 i UC16}
