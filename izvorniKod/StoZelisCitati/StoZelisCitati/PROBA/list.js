@@ -12,10 +12,9 @@ let lis = function(broj){
     const br = document.querySelectorAll('.mb');
 
     for (let i = poc; i < kraj; i++) {
-
         pom += `<div id="o${i}" class="objava">
                 <div class="fot">
-                   <img width="100%" height="100%" src="/Nad/Nad/izvorniKod/StoZelisCitati/StoZelisCitati/wwwroot/images/traziLogo.png" alt="">
+                   <img width="100%" height="100%" src="../wwwroot/images/traziLogo.png" alt="">
                 </div>
 
                 <div class="inf">
@@ -37,10 +36,19 @@ let lis = function(broj){
                 </div> 
 
                </div>`
-
-    
+        /*fetch('../Views/miniBook.html')
+            .then(data => data.text())
+            .then(html => {
+                console.log(html)
+                pom += html;
+                //console.log(pom);
+            })
+            .catch(error => {
+                console.log("Error while loading element: " + error);
+            });*/
     }
     polje.innerHTML = pom;
+    //console.log(polje.innerHTML)
     
     broj = broj + 1;
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pC0hQNZHN7OSYjQlBozFZax9WnNwZPfkHNt183ZPBGE=",
+  "Hash": "algn6AghShcR3/V/yi4ra3TsJmYzNNZEmURfjtReSrs=",
   "Source": "StoZelisCitati",
   "BasePath": "_content/StoZelisCitati",
   "Mode": "Default",
@@ -287,40 +287,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\main.js"
-    },
-    {
-      "Identity": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\ot1.js",
-      "SourceId": "StoZelisCitati",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\",
-      "BasePath": "_content/StoZelisCitati",
-      "RelativePath": "js/ot1.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\ot1.js"
-    },
-    {
-      "Identity": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\ot2.js",
-      "SourceId": "StoZelisCitati",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\",
-      "BasePath": "_content/StoZelisCitati",
-      "RelativePath": "js/ot2.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\ot2.js"
     },
     {
       "Identity": "C:\\Users\\Ivan\\Desktop\\progiP\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\wwwroot\\js\\userScript.js",

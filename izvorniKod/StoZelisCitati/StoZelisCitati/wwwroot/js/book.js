@@ -1,7 +1,7 @@
 let container = document.querySelector('.header-container');
 
 let loadHeader = function() {
-    fetch('../views/header1.html')
+    fetch('../Views/header.html')
             .then(response => response.text())
             .then(html => {
                 container.innerHTML = html;
