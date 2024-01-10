@@ -241,9 +241,9 @@ body{
     width: 90%;
     max-width: 580px;
     height: 120px;
-    border: 2px solid #cae5ef;
+    border: 3px solid white;
     margin-top: 15px;
-    border-radius: 3px;
+    border-radius: 10px;
     justify-content: space-between;
     font-size: 18px;
     color: white;
@@ -543,7 +543,7 @@ body{
         width: 80vw;
         height: 300px;
         margin-top: 70px;
-        margin-left: 30px;
+        margin-left: 80px;
         
         display: flex;
         flex-direction: row;
@@ -559,7 +559,8 @@ body{
     #right{
 
         width: 80vw;
-        margin-top: 0px;
+        margin-top: 220px;
+        margin-left: 0px;
         display: flex;
         justify-self: center;
         align-self: center;
@@ -604,8 +605,8 @@ body{
     
             
             
-            margin-top: 70px;
-            
+            margin-top: 80px;
+            margin-left: 0px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -616,7 +617,8 @@ body{
         #right{
     
             width: 80vw;
-            margin-top: 0px;
+            margin-top: 220px;
+            margin-left: 20px;
             display: flex;
             justify-self: center;
             align-self: center;
