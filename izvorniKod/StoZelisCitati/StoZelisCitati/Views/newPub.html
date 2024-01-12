@@ -14,35 +14,35 @@
 
         <div id="center" style="justify-content: center; height: 100%; width:100%;">
             <div id="new-pub">
-                <form id="pub-form" style="display:flex; flex-direction: column;" hx-post="" hx-target="" hx-indicator="">
-                    <label>naziv</label>
+                <form id="pub-form" style="display:flex; flex-direction: column; padding-top: 30px" hx-post="" hx-target="" hx-indicator="">
+                    <label>Naziv</label>
                     <input type="text" class="in" required>
 
-                    <label>autor</label>
+                    <label>Autor</label>
                     <input type="text" class="in" required>
-
-                    <label>god izdanja</label>
-                    <input type="text" class="in" required>
-
-                    <label>izdavac</label>
-                    <input type="text" class="in" required>
-
-                    <label>kategorija izdavaca</label>
-                    <input type="text" class="in" required>
-
-                    <label>žanr</label>
-                    <select class="genres" form="pub-form">
-                        <option value="Komedija">Komedija</option>
-                        <option value="Akcija">Akcija</option>
-                        <option value="Drama">Drama</option>
-                        <option value="Sci-fi">Sci-fi</option>
-                        <option value="Avanturistički">vanturistički</option>
-                    </select>
 
                     <label>ISBN</label>
                     <input type="text" class="in" required>
 
-                    <label>Br. izdanja</label>
+                    <label>Izdavač</label>
+                    <input type="text" class="in" required>
+
+                    <label>Kategorija izdavaca</label>
+                    <input type="text" class="in" required>
+
+                    <label>žanr</label>
+                    <select class="in" form="pub-form">
+                        <option value="Komedija">Komedija</option>
+                        <option value="Akcija">Akcija</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Sci-fi">Sci-fi</option>
+                        <option value="Avanturisticki">Avanturistički</option>
+                    </select>
+
+                    <label>Godina izdanja</label>
+                    <input type="text" class="in" required>
+
+                    <label>Broj izdanja</label>
                     <input type="text" class="in" required>
 
                     <label>Stanje</label>
@@ -54,8 +54,8 @@
                     <label>Jezik</label>
                     <input type="text" class="in" required>
 
-                    <label for="imageInput">Slika korica</label>
-                    <button><input type="file" id="imageInput"  class="in" name="image" accept="image/jpeg, image/png" required></button>
+                    <label for="imageInput">Slika/e korica</label>
+                    <input type="file" id="imageInput"  class="in" name="images" accept="image/*" multiple required>
                     
                     <!--dodat image preview?-->
 

@@ -31,7 +31,7 @@ let lis = function(broj){
 
                       <div class="miniDiv"> godina: 2002 </div>
                 
-                      <div class="miniDiv"> izdavac: dučan </div>
+                      <div class="miniDiv"> Izdavač: xyz </div>
                    </div>
                 </div> 
 

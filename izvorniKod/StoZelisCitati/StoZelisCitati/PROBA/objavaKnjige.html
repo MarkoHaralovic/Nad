@@ -65,85 +65,93 @@
             </div> HTML DIO SA MINI TRAZILICOM  -->
 
             <div id="trazi">
-                <div class="inp">
-                    <label for="naziv" class="lb"> Naziv: </label>
-                    <input type="text" id="naziv" class="in">
-                </div>
-                <div class="inp">
-                  <label for="godinaOd" class="lb"> Godina od: </label>
-                  <input type="number" min="1500" max="2023" id="godinaOd" class="in">
-                </div>
-                <div class="inp">
-                    <label for="godinaDo" class="lb"> Godina do: </label>
-                    <input type="number" min="1500" max="2023" id="godinaDo" class="in">
-                </div>
-                <div class="inp">
-                    <label for="autor" class="lb"> Autor: </label>
-                    <input type="text" id="autor" class="in">
-                </div>
-                <div class="inp">
-                    <label for="izdavac" class="lb"> Izdavač: </label> <!-- više autora? -->
-                    <input type="text" id="izdavac" class="in">
-                </div>
-                <div class="inp">
-                  <label for="redni" class="lb"> Izdanje: </label>
-                  <input type="number" min="1" id="redni" class="in">
-                </div>
-                <div class="inp">
-                  <label for="kategorija-izdavaca-select" class="lb"> Kategorija izdavača: </label>
-                  <select id="kategorija-izdavaca-select" name="Kategorija izdavaca" class="in">
-                      <option> Domaći </option>
-                      <option> Strani </option>
-                  </select>    
-                </div>
-                <div class="inp">
-                  <label for="zarn" class="lb"> Žanr: </label>
-                  <input type="text" id="zarn" class="in">
-                </div>
-                <div class="inp">
-                    <label for="isbn" class="lb"> ISBN: </label>
-                    <input type="number" id="isbn" class="in">
-                </div>
-                <div class="inp">
-                  <label for="oznaka" class="lb"> Oznaka: </label>
-                  <input type="text" id="oznaka" class="in">
-                </div>
-                <div class="inp">
-                    <label for="stanje" class="lb"> Stanje: </label>
-                    <select type="text" id="stanje" class="in">
-                        <option> Novo </option>
-                        <option> Polovno </option>
-                    </select>
-                </div>
-                <div id="btnTrazi">
-                  <button class="searchbtn"> Traži </button>
-                </div>
-                <div id="str">
-                    <div onclick="lis(id)" id="1" class="mb"> 1 </div>
-                    <div onclick="lis(id)" id="2" class="mb"> 2 </div>
-                    <div onclick="lis(id)" id="3" class="mb"> 3 </div>
-                    <div onclick="lis(id)" id="4" class="mb"> 4 </div>
-                    <div onclick="lis(id)" id="5" class="mb"> 5 </div>
-                    <div onclick="lis(id)" id="6" class="mb"> 6 </div>
-                    <div onclick="lis(id)" id="7" class="mb"> 7 </div>
+                <form hx-post="" hx-target="" hx-indicator="" id="filter-form">
+                    <div class="inp">
+                        <label for="naziv" class="lb"> Naziv: </label>
+                        <input type="text" id="naziv" class="in">
+                    </div>
+                    <div class="inp">
+                        <label for="godinaOd" class="lb"> Godina od: </label>
+                        <input type="number" min="1500" max="2023" id="godinaOd" class="in">
+                    </div>
+                    <div class="inp">
+                        <label for="godinaDo" class="lb"> Godina do: </label>
+                        <input type="number" min="1500" max="2023" id="godinaDo" class="in">
+                    </div>
+                    <div class="inp">
+                        <label for="autor" class="lb"> Autor: </label>
+                        <input type="text" id="autor" class="in">
+                    </div>
+                    <div class="inp">
+                        <label for="izdavac" class="lb"> Izdavač: </label> <!-- više autora? -->
+                        <input type="text" id="izdavac" class="in">
+                    </div>
+                    <div class="inp">
+                        <label for="redni" class="lb"> Izdanje: </label>
+                        <input type="number" min="1" id="redni" class="in">
+                    </div>
+                    <div class="inp">
+                        <label for="kategorija-izdavaca-select" class="lb"> Kategorija izdavača: </label>
+                        <select id="kategorija-izdavaca-select" name="Kategorija izdavaca" class="in">
+                            <option>    Sve </option>
+                            <option> Domaći </option>
+                            <option> Strani </option>
+                        </select>
+                    </div>
+                    <div class="inp">
+                        <label for="zanr" class="lb"> Žanr: </label>
+                        <input type="text" id="zanr" class="in">
+                    </div>
+                    <div class="inp">
+                        <label for="isbn" class="lb"> ISBN: </label>
+                        <input type="number" id="isbn" class="in">
+                    </div>
+                    <div class="inp">
+                        <label for="vrsta" class="lb"> Vrsta: </label>
+                        <select id="vrsta" class="in" style="max-width:187.2px">
+                            <option> Isključivo na stranom jeziku </option>
+                            <option> Na hrvatskom i dobavljiva u HR </option>
+                            <option> Na hrvatskom, nije dobavljiva u HR </option>
+                            <option> Na srodnom jeziku (e.g. bosanski), dobavljiva u toj državi </option>
+                            <option>Isključivo na srodnom jeziku, dobavljiva u HR</option>
+                        </select>    
+                    </div>
+                    <div class="inp">
+                        <label for="stanje" class="lb"> Stanje: </label>
+                        <select type="text" id="stanje" class="in">
+                            <option> Sve </option>
+                            <option> Novo </option>
+                            <option> Polovno </option>
+                        </select>
+                    </div>
+                    <div id="btnTrazi">
+                        <button class="searchbtn" type="submit" form="filter-form"> Traži </button>
+                    </div>
+                    <div id="str">
+                        <div onclick="lis(id)" id="1" class="mb"> 1 </div>
+                        <div onclick="lis(id)" id="2" class="mb"> 2 </div>
+                        <div onclick="lis(id)" id="3" class="mb"> 3 </div>
+                        <div onclick="lis(id)" id="4" class="mb"> 4 </div>
+                        <div onclick="lis(id)" id="5" class="mb"> 5 </div>
+                        <div onclick="lis(id)" id="6" class="mb"> 6 </div>
+                        <div onclick="lis(id)" id="7" class="mb"> 7 </div>
 
-                     <!-- <select class="mbLis" onchange="lis(value)" name="2" id="broj">
-                    
-                       <option value="1"> 1 </option>
-                       <option value="2"> 2 </option>
-                       <option value="3"> 3 </option>
-                       <option value="4"> 4 </option>
-                       <option value="5"> 5 </option>
-                       <option value="6" selected> 6 </option>
-                       <option value="7"> 7 </option>
-                       <option value="8"> 8 </option>
-                       <option value="9"> 9 </option>
-                       <option value="10"> 10 </option>
-
-                    </select> OPCIJA SA ODABIROM SVIH STRANICA ODJEDNOM -->
-                </div>
-            
-                  
+                        <!-- <select class="mbLis" onchange="lis(value)" name="2" id="broj">
+                       
+                          <option value="1"> 1 </option>
+                          <option value="2"> 2 </option>
+                          <option value="3"> 3 </option>
+                          <option value="4"> 4 </option>
+                          <option value="5"> 5 </option>
+                          <option value="6" selected> 6 </option>
+                          <option value="7"> 7 </option>
+                          <option value="8"> 8 </option>
+                          <option value="9"> 9 </option>
+                          <option value="10"> 10 </option>
+   
+                       </select> OPCIJA SA ODABIROM SVIH STRANICA ODJEDNOM -->
+                    </div>
+                </form>
               </div>
         </div>
         <div id="right"> 
