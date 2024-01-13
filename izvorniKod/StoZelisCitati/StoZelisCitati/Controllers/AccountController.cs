@@ -17,7 +17,7 @@ public class AccountController : Controller
     {
         this.npgsqlRepository = npgsqlRepository;
     }
-    
+
     [HttpGet("login")]
     public async Task<IActionResult> Login()
     {
@@ -72,7 +72,6 @@ public class AccountController : Controller
         
         if (userType != UserHelper.Antiquarian && userType != UserHelper.Middleman && userType != UserHelper.Publisher)
             return Ok("Izaberite jednu od punuđenih kategorija.");
-        
         
         await npgsqlRepository.AddUser(username, password, displayName, userType,
             email, phoneNumber, address, city, country, false);

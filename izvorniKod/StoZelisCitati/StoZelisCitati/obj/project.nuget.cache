@@ -1,12 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "+PARWg2Zrdc7ybNrJhwAjVliveWu/+h+IVcGs1kKpsdDlGpT5BhXBU28jjlBP3TUW9G08UfT/kovktENEK+ChA==",
+  "dgSpecHash": "GEzSodstZS97wUpOWsn84zZKrEX6iGEDNbc8rmCR6a4zlkl91u5o7oP1Uac7CapgCVr2BuJ+FzZtcPqCf4sNBw==",
   "success": true,
   "projectFilePath": "C:\\FAKS\\semestar5\\progi\\Nad\\izvorniKod\\StoZelisCitati\\StoZelisCitati\\StoZelisCitati.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lovri\\.nuget\\packages\\dapper\\2.1.21\\dapper.2.1.21.nupkg.sha512",
     "C:\\Users\\lovri\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\lovri\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512"
+    "C:\\Users\\lovri\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }
