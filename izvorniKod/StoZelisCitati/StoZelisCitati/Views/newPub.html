@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/styles/user.css">
+    <link rel="stylesheet" href="../wwwroot/css/main.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,52 +14,56 @@
 
         <div id="center" style="justify-content: center; height: 100%; width:100%;">
             <div id="new-pub">
-                <form id="pub-form" style="display:flex; flex-direction: column;">
-                    <label>naziv</label>
-                    <input type="text">
+                <form id="pub-form" style="display:flex; flex-direction: column; padding-top: 30px" hx-post="" hx-target="" hx-indicator="">
+                    <label>Naziv</label>
+                    <input type="text" class="in" required>
 
-                    <label>autor</label>
-                    <input type="text">
-
-                    <label>god izdanja</label>
-                    <input type="text">
-
-                    <label>izdavac</label>
-                    <input type="text">
-
-                    <label>kategorija izdavaca</label>
-                    <input type="text">
-
-                    <label>žanr</label>
-                    <input type="text">
+                    <label>Autor</label>
+                    <input type="text" class="in" required>
 
                     <label>ISBN</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
-                    <label>Br. izdanja</label>
-                    <input type="text">
+                    <label>Izdavač</label>
+                    <input type="text" class="in" required>
+
+                    <label>Kategorija izdavaca</label>
+                    <input type="text" class="in" required>
+
+                    <label>žanr</label>
+                    <select class="in" form="pub-form">
+                        <option value="Komedija">Komedija</option>
+                        <option value="Akcija">Akcija</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Sci-fi">Sci-fi</option>
+                        <option value="Avanturisticki">Avanturistički</option>
+                    </select>
+
+                    <label>Godina izdanja</label>
+                    <input type="text" class="in" required>
+
+                    <label>Broj izdanja</label>
+                    <input type="text" class="in" required>
 
                     <label>Stanje</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
                     <label>Opis</label>
-                    <input type="text">
+                    <input type="text" class="in" required>
 
-                    <label>Oznaka vrsta knjige</label>
-                    <input type="text">
+                    <label>Jezik</label>
+                    <input type="text" class="in" required>
 
-                    <label for="imageInput">Slika korica</label>
-                    <input type="file" id="imageInput" name="image" accept="image/jpeg, image/png">
+                    <label for="imageInput">Slika/e korica</label>
+                    <input type="file" id="imageInput"  class="in" name="images" accept="image/*" multiple required>
+                    
                     <!--dodat image preview?-->
-                    <label>Lista ponuda?</label>
-                    <input type="text">
 
-                    <button id="pub-button" style="margin-top: 30px; width: 40%" >Dodaj objavu</button>
-                    <!--dodat js za novu objavu-->
+                    <button id="pub-button" class="searchbtn" value="Submit" form="pub-form">Dodaj objavu</button>
                 </form>
             </div>
         </div>
     </div>
 </body>
-<script src="../public/scripts/userScript.js"></script>
+<script src="../wwwroot/js/userScript.js"></script>
 </html>

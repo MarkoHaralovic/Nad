@@ -1,13 +1,13 @@
-*{
+* {
     margin: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-body{
 
+body {
     background-color: white;
 }
 
-.header-container {
+.header-container, #header {
     background-color: rgb(75, 190, 250);
     width: 100vw;
     height: 100px;
@@ -15,15 +15,7 @@ body{
     justify-content: space-between;
 }
 
-#header {
-    background-color: rgb(75, 190, 250);
-    width: 100vw;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-}
-
-#center{
+#center {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,50 +24,62 @@ body{
     height: 100%;
 }
 
-.profil{
-
+.profil {
     width: 50vw;
     height: 60vh;
     background-color: #0077B6;
     border: 2px solid #0077B6;
     border-radius: 5px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     color: white;
-    font-size: 14px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
-.foto{
 
-    height: 60%;
-
+.profil .foto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
-.info{
 
+table.info {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.info th, table.info td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table.info th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+table.info tr:nth-child(even) {
+    background-color: #da560a;
+}
+
+.image-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #0077B6; /* Add a border */
+    padding: 20px; /* Add some padding */
+    border-radius: 5px; /* Optional: round the corners */
 }
-.profile-left{
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    
-    width: 30%;
+.image-container img {
+    transition: transform 0.3s ease-in-out;
+    margin:5px;
 }
-.profile-mid{
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-   
-    width: 30%;
-}
-.profile-right{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-
-    width: 30%;
+.image-container img:hover {
+    transform: scale(1.1);
 }
