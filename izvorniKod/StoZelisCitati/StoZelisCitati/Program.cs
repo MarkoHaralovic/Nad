@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddAuthentication() // Sets the default scheme to cookies
+builder.Services.AddAuthentication()
     .AddCookie(options =>
     {
         options.AccessDeniedPath = "/account/denied";

@@ -1,4 +1,4 @@
-﻿@model List<Book>
+﻿@model IEnumerable<Book>
 
 @{
     Layout = null;
@@ -15,7 +15,7 @@
                 Godina izdanja: @book.YearOfPublishing,
                 Izdavač: @book.Publisher,
                 Kategorija izdavača: @book.TypeOfPublisher,
-                Broj izdanja: @book.EditionNumber,
+                Broj izdanja: @book.Edition,
                 Jezik: @book.Language,
                 Dostupnost: @book.Availability,
                 Žanr: @book.Genre

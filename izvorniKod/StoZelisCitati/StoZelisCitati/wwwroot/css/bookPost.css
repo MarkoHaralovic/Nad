@@ -1,113 +1,55 @@
-body {
+body{
+
     background-color: white;
 }
 
-#center{
+#main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#logIn{
+ 
+    display: none;
+}
+#plus{
+
+    font-size: 30px;
+    display: flex;
+}
+
+#left{
+
+    min-width: 300px;
+    width: 300px;
+    height: 550px;
+    margin-top: 70px;
+    margin-left: 110px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+#right{
+
+    width: 60vw;
+    min-height: 550px;
+    margin-top: 70px;
+    margin-right: 75px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#logIn{
-    display: flex;
-}
-#plus{
-    font-size: 30px;
-    display: none;
-}
 
-#left {
-    width: 35vw;
-    min-width: 500px;
-    margin-top: 50px;
-}
-
-#center-top{
-    margin-top: 70px;
-    text-align: center;
-    /*display: flex;
-    flex-direction: column;
-    justify-content: space-between;*/
-
-}
-
-#right{
-    width: 35vw;
-    min-width: 500px;
-    margin-top: 50px;
-}
-
-.objava{
-
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    max-width: 580px;
-    height: 120px;
-    border: 2px solid #cae5ef;
-    margin-top: 15px;
-    border-radius: 3px;
-    justify-content: space-between;
-    font-size: 18px;
-    color: white;
-    background-color: #0077B6;
-}
-
-.profil{
-
-    width: 90%;
-    max-width: 600px;
-    height: 200px;
-    background-color: #0077B6;
-    border: 2px solid #0077B6;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    color: white;
-    font-size: 14px;
-}
-.foto{
-
-    height: 100%;
-    width: 200px;
-}
-.info{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.profile-left{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    
-    width: 30%;
-}
-.profile-mid{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-   
-    width: 30%;
-}
-.profile-right{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-
-    width: 30%;
-}
-
-#map{
+#mapa{
 
     width: 100%;
     height: 300px;
     border-radius: 4px;
-    border:1px solid #ccc;
     background-color: #9ED8DB;
     display: flex;
     font-size: 55px;
@@ -128,7 +70,7 @@ body {
     align-items: center;
     display: none;
 }
-/*#listaTop{
+#listaTop{
 
     width: 100%;
     height: 600px;
@@ -140,7 +82,7 @@ body {
     justify-content: center;
     align-items: center;
     display: none;
-}*/
+}
 .btnZanr{
 
     width: 200px;
@@ -185,6 +127,23 @@ body {
 
     background-color: blue;
 }
+
+#trazi{
+
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+#btnTrazi{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchbtn:hover{
+
+    background-color: blue;
+}
 #mini{
 
     width: 140px;
@@ -193,11 +152,18 @@ body {
 
     cursor: pointer;
 }
-/* DIO ZA MAIN STANICU GORE, ako bude potrebno rasclaniti na vise css file*/
+#trazi{
+
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
 
 .inp{
 
-    margin-top: 10px;
+    margin-top: 5px;
     padding: 5px;
     display: flex;
     justify-content: space-between;
@@ -207,7 +173,6 @@ body {
     background-color: white;
     border-color: #4BBEFA;
     border-radius: 7px;
-    margin-top:5px
 
 }
 
@@ -235,28 +200,134 @@ body {
     margin-top: 15px;
     cursor: pointer;
 }
-#btnTrazi{
+.objava{
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    max-width: 580px;
+    height: 120px;
+    border: 3px solid white;
+    margin-top: 15px;
+    border-radius: 10px;
+    justify-content: space-between;
+    font-size: 18px;
+    color: white;
+    background-color: #0077B6;
 }
-#btnTrazi1{
+.fot{
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    
 }
-#btnTrazi2{
+.inf{
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
 }
-.searchbtn:hover{
+.left{
 
-    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 120px;
+    margin-left: 10px;
+    justify-content: space-around;
 }
+
+.rig{
+
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 120px;
+    margin-left: 10px;
+    justify-content: space-around;
+}
+.obr{
+
+    padding-right: 10px;
+    color: red;
+    cursor: pointer;
+    font-size: 24px;
+}
+.obr2{
+
+    padding-right: 10px;
+    color: yellow;
+    cursor: pointer;
+    font-size: 24px;
+}
+.extra{
+
+    display: none;
+}
+.extra2{
+
+    display: none;
+}
+/* LISTA OBJAVA KNJIGA, gore */
+
+.profil{
+
+    width: 90%;
+    max-width: 600px;
+    height: 200px;
+    background-color: #0077B6;
+    border: 2px solid #0077B6;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 14px;
+}
+.foto{
+
+    height: 100%;
+    width: 200px;
+}
+.info{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.left{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30%;
+}
+.mid{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+   
+    width: 30%;
+}
+.right{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 30%;
+}
+
+.izdavaci{
+
+    max-width: 600px;
+    width: 100%;
+    margin-left: 28px;
+    margin-top: 10px;
+}
+
 .iz{
 
     width: 90%;
@@ -292,52 +363,53 @@ body {
 #prevedi{
     margin-top: 30px;
 }
-.objava{
+
+/* PROFIL KNJIGE, gore, sve ovo bi se trebalo rasclaniti na vise css file zbog preglednsoti */
+
+#str {
+
+    width: 280px;
+    border-radius: 5px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
-    width: 90%;
-    max-width: 580px;
-    height: 120px;
-    border: 2px solid #cae5ef;
-    margin-top: 15px;
-    border-radius: 3px;
-    justify-content: space-between;
-    font-size: 18px;
-    color: white;
-    background-color: #0077B6;
-}
-#translate-button{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-top: 20px;    
-}
-.translate-button-container{
 
+}
+.mb{
+    width: 40px;
+    height: 50px;
+    border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #4BBEFA;
+    color: white;
+    cursor: pointer;
 }
-#map{
-    width: 720px;
-    height: 480px;
+.mbLis{
+    width: 40px;
+    height: 50px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4BBEFA;
+    color: white;
+    cursor: pointer;
 }
-#center-top{
+.mb:hover{
 
-    margin-top: 0px;
+    background-color: blue;
 }
-/* DIO ZA TRAZILICA STRANICU GORE, ako bude potrebno rasclaniti na vise css file*/
-
+/* ODABIR STRANICE, gore */
 
 @media screen and (max-width: 1240px) {
 
     #left{
 
-        margin-left: -35px;
-    }
-    #map{
-        width: 600px;
-        height: 400px;
+        margin-left: 75px;
     }
    
 } 
@@ -346,58 +418,62 @@ body {
 
     #left{
 
-        margin-left: 30px;
-        justify-self: center;
-       align-self: center;
+        margin-left: 50px;
+        
+    
     }
     
     #right{
 
-        margin-right: 70px;
+        margin-right: 50px;
         
+    }
+    .profil{
+    
+        font-size: 10px;
+        margin-top: -100px;
     }
 }  
 @media screen and (max-width: 1000px) {
 
     #left{
 
-        margin-left: 20vw;
+        margin-left: 25px;
         
     
     }
     
     #right{
 
-        margin-left: 20vw;
+        margin-right: 25px;
         
-    }
-    #center{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
     }
 }  
 
 @media screen and (max-width: 870px) {
 
     #left{
+
+        margin-left: 5px;
+        
     
-        margin-left: 20vw;
     }
+    
     #right{
-    
-        margin-left: 20vw;
+
+        margin-right: 5px;
+        
     }
-    #map{
-        width: 450px;
-        height: 400px;
+    .objava{
+    
+        font-size: 16px;
     }
 } 
 @media screen and (max-width: 740px) {
 
+
     #miniTraz{
+        
     
         display: none;
     }
@@ -412,8 +488,17 @@ body {
    #listaTop{
     min-width: 300px;
     height: 300px;
-}
-
+    }
+    .objava{
+    
+        width: 90%;
+    }
+    .profil{
+    
+        font-size: 10px;
+        width: 110%;
+    }
+  
     #main{
         
         flex-direction: column;
@@ -421,43 +506,44 @@ body {
     }
 
     #left{
-    
-        margin-left: 5vw;
-    }
-    #right{
-    
-        margin-left: 5vw;
-    }
-
-
-    /*#left{
 
         width: 80vw;
         height: 300px;
         margin-top: 70px;
-        margin-left: 30px;
+        margin-left: 80px;
         
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     
     }
-    
+    #trazi{
+        margin-top: -50px;
+        
+        margin-left: 20%;
+        
+    }
     #right{
 
         width: 80vw;
-        margin-top: 0px;
+        margin-top: 220px;
+        margin-left: 0px;
         display: flex;
         justify-self: center;
         align-self: center;
         justify-content: center;
         align-items: center;
     }
-    */
-    #map{
-        width: 450px;
-        height: 400px;
-        margin-left: -50px;
+    #mapa{
+
+        min-width: 300px;
+        height: 300px;
+        border-radius: 4px;
+        background-color: #9ED8DB;
+        display: flex;
+        font-size: 55px;
+        justify-self: center;
+        align-self: center;
     }
     .reklame{
     
@@ -472,7 +558,6 @@ body {
 }   
 @media screen and (max-width: 645px) {
 
-
     #top{
         width: 100vw;
        }
@@ -483,12 +568,12 @@ body {
             flex-wrap: wrap;
         }
     
-        /*#left{
+        #left{
     
-            width: 80vw;
             
-            margin-top: 70px;
             
+            margin-top: 80px;
+            margin-left: 0px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -496,18 +581,28 @@ body {
             align-self: center;
         
         }
-        
         #right{
     
             width: 80vw;
-            margin-top: 0px;
+            margin-top: 220px;
+            margin-left: 20px;
             display: flex;
             justify-self: center;
             align-self: center;
             justify-content: center;
             align-items: center;
         }
-        */
+        #mapa{
+    
+            min-width: 300px;
+            height: 300px;
+            border-radius: 4px;
+            background-color: #9ED8DB;
+            display: flex;
+            font-size: 55px;
+            justify-self: center;
+            align-self: center;
+        }
         .reklame{
         
             margin-top: 5px;
@@ -516,10 +611,15 @@ body {
             margin-left: 10px;
             margin-top: -50px;
         }
-        .in{
-        
-            width: 100px;
-        }
-}
+      
+} 
+@media screen and (max-width: 520px) {
+
+    #povecalo{
+
+        margin-top: 80px;
+        margin-left: 32px;
+    }  
+} 
 
 /* DIO ZA RESPOIVNI DIZAJN GORE, ako bude potrebno rasclaniti na vise css file*/

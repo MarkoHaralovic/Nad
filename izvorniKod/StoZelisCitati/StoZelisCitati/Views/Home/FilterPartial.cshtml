@@ -1,0 +1,8 @@
+﻿@model (IEnumerable<BookListElementRecord> books, int pageCount)
+
+@{
+    Layout = null;
+}
+
+@await Html.PartialAsync("PageButtons", Model.pageCount)
+@await Html.PartialAsync("BookList", Model.books)

@@ -1,0 +1,85 @@
+﻿@model (IEnumerable<BookListElementRecord> books, int pageCount)
+@{
+    ViewData["Title"] = "Book Post";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/bookPost.css">
+}
+
+<div id="main">
+    <div id="left">
+        <div id="trazi">
+            <form hx-get="/filter" hx-target="#right" hx-swap="outerHTML" hx-push-url="true" hx-indicator="#ind" id="filter-form">
+                <div class="inp">
+                    <label for="title" class="lb">Naslov:</label>
+                    <input type="text" class="in" id="title" name="title">
+                </div>
+                <div class="inp">
+                    <label for="year-from" class="lb">Godina od:</label>
+                    <input type="number" min="1500" max="@DateTime.Today.Year" class="in" id="year-from" name="yearFrom">
+                </div>
+                <div class="inp">
+                    <label for="year-to" class="lb">Godina do:</label>
+                    <input type="number" min="1500" max="@DateTime.Today.Year" class="in" id="year-to" name="yearTo">
+                </div>
+                <div class="inp">
+                    <label for="author" class="lb">Autor:</label>
+                    <input type="text" class="in" id="author" name="author">
+                </div>
+                <div class="inp">
+                    <label for="publisher" class="lb">Izdavač:</label>
+                    <input type="text" class="in" id="publisher" name="publisher">
+                </div>
+                <div class="inp">
+                    <label for="edition" class="lb">Izdanje:</label>
+                    <input type="number" min="1" class="in" id="edition" name="edition">
+                </div>
+                <div class="inp">
+                    <label for="type-of-publisher" class="lb">Kategorija izdavača:</label>
+                    <select class="in" id="type-of-publisher" name="typeOfPublisher">
+                        <option value="">Sve</option>
+                        <option value="domaci">Domaći</option>
+                        <option value="strani">Strani</option>
+                    </select>
+                </div>
+                <div class="inp">
+                    <label for="genre" class="lb">Žanr:</label>
+                    <input type="text" class="in" id="genre" name="genre">
+                </div>
+                <div class="inp">
+                    <label for="isbn" class="lb">ISBN:</label>
+                    <input type="number" class="in" id="isbn" name="isbn">
+                </div>
+                <div class="inp">
+                    <label for="language" class="lb">Jezik:</label>
+                    <input type="text" class="in" id="language" name="language">
+                </div>
+                <div class="inp">
+                    <label for="availability" class="lb">Dostupnost:</label>
+                    <select class="in" id="availability" name="availability">
+                        <option value="">Sve</option>
+                        <option value="hrvatska">Hrvatska</option>
+                        <option value="srodne zemlje">Srodne zemlje</option>
+                        <option value="strane zemlje">Strane zemlje</option>
+                    </select>
+                </div>
+                <div class="inp">
+                    <label for="state" class="lb">Stanje:</label>
+                    <select type="text" class="in" id="state" name="state">
+                        <option value="">Sve</option>
+                        <option value="novo">Novo</option>
+                        <option value="polovno">Polovno</option>
+                    </select>
+                </div>
+                <div id="btnTrazi">
+                    <button class="searchbtn" type="submit" form="filter-form" name="page" value="1"> Traži </button>
+                </div>
+                <img id="ind" src="/images/bars.svg" alt="loading indicator" class="htmx-indicator">
+                @await Html.PartialAsync("PageButtons", Model.pageCount)
+            </form>
+        </div>
+    </div>
+    @await Html.PartialAsync("BookList", Model.books)
+</div>

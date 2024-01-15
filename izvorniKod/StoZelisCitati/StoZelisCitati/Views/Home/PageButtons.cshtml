@@ -1,0 +1,12 @@
+﻿@model int
+
+@{
+    Layout = null;
+}
+
+<div id="str" hx-swap-oob="true">
+    @for (int i = 1; i <= Model; i++)
+    {
+        <button class="mb" type="submit" form="filter-form" name="page" value="@i">@i</button>
+    }
+</div>

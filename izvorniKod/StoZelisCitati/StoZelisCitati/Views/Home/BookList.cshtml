@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BookListElementRecord>
+
+@{
+    Layout = null;
+}
+
+<div id="right">
+    @foreach (BookListElementRecord book in Model)
+    {
+        <div id="o1" class="objava">
+            <div class="fot">
+                <a href="/book/@book.id_knjiga">
+                    <img width="100%" height="129%" src="/images/traziLogo.png" alt="">
+                </a>
+            </div>
+
+            <div class="inf">
+                <div class="left">
+
+                    <div class="miniDiv"> naziv: @book.naslov </div>
+
+                    <div class="miniDiv"> autor: @book.autor </div>
+
+                </div>
+
+
+                <div class="rig">
+
+                    <div class="miniDiv"> žanr: @book.zanr </div>
+
+                    <div class="miniDiv"> izdavac: @book.izdavac </div>
+                </div>
+
+                <div class="extra">
+
+                    <div class="obr"> x </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

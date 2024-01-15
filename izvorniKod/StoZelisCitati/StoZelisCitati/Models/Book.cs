@@ -9,7 +9,7 @@ public class Book
     public required int YearOfPublishing { get; set; }
     public required string Publisher { get; set; }
     public required string TypeOfPublisher { get; set; }
-    public required int EditionNumber { get; set; }
+    public required int Edition { get; set; }
     public required string Description { get; set; }
     public required string Language { get; set; }
     public required string Availability { get; set; }

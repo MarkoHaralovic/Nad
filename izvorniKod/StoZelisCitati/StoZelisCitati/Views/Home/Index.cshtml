@@ -43,10 +43,22 @@
                 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
+                
+                var marker = L.marker([45.799716858751, 15.913563808864556]).addTo(map);
+                
+                marker.bindPopup("I am a popup.")
+                
+                function onMarkerClick(e) {
+                    alert("You clicked the marker");
+                }
+                
+                marker.on('click', onMarkerClick);
             </script>
         </div>   
         <div id="rek">
-            <button hx-get="/genres" hx-target="#center-top" id="zanr" class="reklame"> Traži po žanru </button>
+            <button hx-get="/genres" hx-target="#center-top" hx-push-url="true" id="zanr" class="reklame">
+                 Traži po žanru
+            </button>
         </div>
         <div id="listaZanr"></div>
     </div>

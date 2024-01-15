@@ -6,7 +6,7 @@
     @foreach (string genre in Model)
     {
         <li>
-            <button hx-get="/genre/@genre" hx-target="#center-top">@genre</button>
+            <button hx-get="/genre/@genre" hx-target="#center-top" hx-push-url="true">@genre</button>
         </li>
     }
 </ul>

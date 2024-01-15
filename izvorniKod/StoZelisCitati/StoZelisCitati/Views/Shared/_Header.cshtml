@@ -10,7 +10,9 @@
             <a href="/" style="text-decoration: none; color: white;"> Logo </a> 
         </div>
         <div id="krug" class="kr">
-            <img id="povecalo" src="/images/traziLogo.png" alt="" width="100px" onclick="searchButtonClicked()">
+            <a href="/filter">
+                <img id="povecalo" src="/images/traziLogo.png" alt="" width="100px" onclick="searchButtonClicked()">
+            </a>
         </div>
         <div id="header-right">
             @if (user.Identity?.IsAuthenticated == true)
