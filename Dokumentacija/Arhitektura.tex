@@ -139,7 +139,9 @@
 			
 		\section{Dijagram razreda}
 		
-			\raggedright{Razred Knjiga predstavlja jednu knjigu koja se može pronaći na stranici. Razred Neregistrirani predstavlja korisnika koji može samo pretraživati knjige. Razred registrirani predstavlja korisnika koji sustav koristi za ponudu knjiga. Izdavač, Antikvarijat i Preprodavač su razredi koji predstavljaju različite vrste registriranog korisnika. Svaki registrirani korisnik je jedna od tih tri vrste i zbog toga je razred Registrirani apstraktan. Razred Ponuda predstavlja ponudu jedne knjige. Razred VrstaKnjige predstavlja vrstu svake knjige.}\\
+			\raggedright{Paket Model preslikava bazu podataka u aplikaciji. Razred Book predstavlja knjigu koja je objavljena na stranici. Razred User predstavlja registriranog korisnika koji može stvarati nove objave na stranici. Razred UserHelper sadži različite vrste registriranih korisnika koji imaju istoimenu vrijednost. Paket Controller sadrži klase NpgsqlRepository, AccountController i HomeController. U razredu AccountController nalaze se sve metode potrebne za prijavu ili registraciju korisnika. U klasi HomeController nalaze se metode potrebne za korištenje web-aplikacije. U razredu NpgsqlRepository nalaze se metode potrebne za upravljanje knjigama i korisnicima, npr. brisanje, dodavanje ili dohvat.}\\
+			
+			\eject
 			
 			\begin{figure}[h]
 				\centering
@@ -147,13 +149,6 @@
 				\caption{Dijagram razreda}
 				\label{fig:enter-label}
 			\end{figure}
-			
-			
-			\textbf{\textit{dio 2. revizije}}\\			
-			
-			\textit{Prilikom druge predaje projekta dijagram razreda i opisi moraju odgovarati stvarnom stanju implementacije}
-			
-			
 			
 			\eject
 		
