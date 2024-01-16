@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  23 DEC 2023 16:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  16 JAN 2024 01:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1353,6 +1353,9 @@ LaTeX Warning: Label `fig:enter-label' multiply defined.
 
 LaTeX Warning: Label `fig:enter-label' multiply defined.
 
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
 ) (Implementacija.aux) (Zakljucak.aux) (Literatura.aux) (Dodatak.aux))
 \openout1 = `PROGI_ProjektnaDokumentacija.aux'.
 
@@ -1519,7 +1522,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...: Prikaz aktivnosti grupe}{41}{chapter*.6}
+l.29 ...: Prikaz aktivnosti grupe}{42}{chapter*.6}
                                                   % [1
 
 ])
@@ -2198,6 +2201,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
 [31]
+<slike/dijagram_akt.PNG, id=468, 2127.95pt x 1927.2pt>
+File: slike/dijagram_akt.PNG Graphic file (type png)
+<use slike/dijagram_akt.PNG>
+Package pdftex.def Info: slike/dijagram_akt.PNG  used on input line 175.
+(pdftex.def)             Requested size: 435.6108pt x 394.49043pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2206,7 +2215,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[32])
+[32
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.179 			\eject
+                <./slike/dijagram_akt.PNG>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2402,16 +2417,20 @@ anged.
 (rerunfilecheck)             Checksum: B400BABF613DD36682E3DFEA3F6CD11D;4419.
  ) 
 Here is how much of TeX's memory you used:
- 29472 strings out of 474495
- 579454 string characters out of 5743934
- 2095460 words of memory out of 5000000
- 50955 multiletter control sequences out of 15000+600000
+ 29481 strings out of 474495
+ 579673 string characters out of 5743934
+ 2094460 words of memory out of 5000000
+ 50962 multiletter control sequences out of 15000+600000
  617842 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,115p,908b,1166s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
+
+
+pdfTeX warning (dest): name{page.46} has been referenced but does not exist, re
+placed by a fixed one
 
 <C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/public/kpfonts/jkpbit
 8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/public/kpfonts
@@ -2420,9 +2439,9 @@ pfonts/jkpmit8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/kpfonts/jkpmn8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/kpfonts/jkpmnc.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fo
 nts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (46 pages, 1518701 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (46 pages, 1668728 bytes).
 PDF statistics:
- 645 PDF objects out of 1000 (max. 8388607)
- 204 named destinations out of 1000 (max. 500000)
- 367 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 651 PDF objects out of 1000 (max. 8388607)
+ 206 named destinations out of 1000 (max. 500000)
+ 372 words of extra memory for PDF output out of 10000 (max. 10000000)
 
