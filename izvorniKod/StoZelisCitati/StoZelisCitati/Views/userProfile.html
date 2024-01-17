@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,66 +9,74 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="main">
-        <div class="header-container">
+<div id="main">
+    <div class="header-container">
 
-        </div>
-        <div id="center">
-            <div id="left">
-                ovdje ce ici objave korisnika
-            </div>
-            <div id="right">
-                <div id="user-container">
-                    <div id="user-left">
-                        <div id="gen-div" class="user-info">
-                            <h2>Korisnik:</h2>
-                            <p>Blabla</p>
-                        </div>
-                        <div id="name-div" class="user-info">
-                            <h2>Izdavač:</h2>
-                            <p>Blabla</p>
-                        </div>
-                        <div id="email-div" class="user-info">
-                            <h2>Email:</h2>
-                            <p>Blabla</p>
-                        </div>
-                        <div id="phone-div" class="user-info">
-                            <h2>Mobitel:</h2>
-                            <p>00000</p>
-                        </div>
-                        <div id="addy-div" class="user-info">
-                            <h2>Adresa:</h2>
-                            <p>Ulica xyz, Grad, 10xxx</p>
-                        </div>
-                        <div id="new-pub-btn-div" class="user-info">
-                            <a href="../Views/newPub.html"><button id="new-pub-btn" class="searchbtn">Novi oglas</button></a>
-                        </div>
-                        <div id="change-btn-div" class="user-info">
-                            <button id="change-btn" class="searchbtn" style="width:100px; height:35px;">Uredi profil</button>
-                        </div>
-                        <div id="logout-btn-div" class="user-info">
-                            <button id="logut-btn" class="searchbtn" style="width:100px; height:35px;">Odjava</button> 
-                        </div>
+    </div>
+    <div id="center">
+        <div id="left">
+            <div id="pub-container">
+                <div id="o1" class="objava">
+                    <div class="fot">
+                        <img width="100%" height="100%" src="/Nad/Nad/izvorniKod/public/images/traziLogo.png" alt="">
+                        </a>
                     </div>
-                    <div id="user-right">
-                        <div id="map" style="width: 90%; height: 90%; margin-top: 3%; margin-left: 6%;">
-                            <script>
-                                var map = L.map('map').setView([44.22, 18.3], 9); 
-                                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                }).addTo(map);
-
-                                L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-                                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                }).addTo(map);
-                                //ovdje ce bit oznacena lokacija ponuditelja
-                            </script>
+                    <div class="inf">
+                        <div class="pub-left">
+                            <div class="miniDiv"> naziv: knjiga </div>
+                            <div class="miniDiv"> autor: pisac </div>
+                        </div>
+                        <div class="pub-right">
+                            <div class="miniDiv"> žanr: komedija </div>
+                            <div class="miniDiv"> izdavac: dučan </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="right">
+            <div id="user-container">
+                <div id="user-left">
+                    <div id="gen-div" class="user-info">
+                        <h2>Korisnik:</h2>
+                        <p>Blabla</p>
+                    </div>
+                    <div id="name-div" class="user-info">
+                        <h2>Izdavač:</h2>
+                        <p>Blabla</p>
+                    </div>
+                    <div id="email-div" class="user-info">
+                        <h2>Email:</h2>
+                        <p>Blabla</p>
+                    </div>
+                    <div id="phone-div" class="user-info">
+                        <h2>Mobitel:</h2>
+                        <p>00000</p>
+                    </div>
+                    <div id="addy-div" class="user-info">
+                        <h2>Adresa:</h2>
+                        <p>Ulica xyz, Grad, 10xxx</p>
+                    </div>
+                </div>
+                <div id="user-right">
+                    <div id="map" style="width: 90%; height: 90%; margin-top: 3%; margin-left: 6%;">
+                        <script>
+                            var map = L.map('map').setView([44.22, 18.3], 9);
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            }).addTo(map);
+
+                            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            }).addTo(map);
+                            //ovdje ce bit oznacena lokacija ponuditelja
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 </body>
 <script src="../wwwroot/js/userScript.js"></script>
 </html>

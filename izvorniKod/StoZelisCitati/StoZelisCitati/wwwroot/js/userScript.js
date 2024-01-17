@@ -2,7 +2,7 @@ let head = document.querySelector('.header-container');
 let leftSide = document.querySelector('#left');
 let rightSide = document.querySelector('#right');
 let loadHeader2 = function() {
-    fetch('../views/header.html')
+    fetch('../Views/header.html')
         .then(response => response.text())
         .then(html => {
             head.innerHTML = html;
