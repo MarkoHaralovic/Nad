@@ -17,16 +17,17 @@ body {
 
 #center {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     margin-top: 5%;
     height: 100%;
 }
 
 .profil {
-    width: 50vw;
-    height: 60vh;
+    width: 500px;
+    height: 400px;
+    margin-left: 100px;
     background-color: #0077B6;
     border: 2px solid #0077B6;
     border-radius: 5px;
@@ -67,6 +68,9 @@ table.info tr:nth-child(even) {
 
 .image-container {
     display: flex;
+    margin-right: 100px;
+    height: 405px;
+    margin-bottom: 15px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -82,4 +86,53 @@ table.info tr:nth-child(even) {
 
 .image-container img:hover {
     transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 1250px) {
+
+    .profil {
+    
+        margin-left: 50px;
+    }
+    .image-container {
+    
+        margin-right: 50px;
+    }
+}
+@media screen and (max-width: 1140px) {
+
+    .profil {
+    
+        margin-left: 20px;
+    }
+    .image-container {
+    
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 1050px) {
+
+    #center{
+    
+        display: flex;
+        flex-direction: column;
+    }
+    .profil{
+    
+        width: 700px;
+    }
+    .image-container {
+    
+        margin-right: -20px;
+    }
+   
+}
+@media screen and (max-width: 800px) {
+
+    .profil{
+    
+        width: 400px;
+    }
+   
 }
