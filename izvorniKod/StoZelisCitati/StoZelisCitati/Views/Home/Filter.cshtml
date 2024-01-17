@@ -1,6 +1,14 @@
-﻿@model (IEnumerable<BookListElementRecord> books, int pageCount)
+﻿@model (BookQuery bookQuery, IEnumerable<BookListElementRecord> books, int pageCount)
 @{
     ViewData["Title"] = "Book Post";
+
+    async Task RenderOptions(string? actualValue, params (string? value, string display)[] options)
+    {
+        @foreach ((string? value, string display) in options)
+        {
+            <option value="@(value ?? "")" selected=@(actualValue == value)>@display</option>
+        }
+    }
 }
 
 @section Styles
@@ -14,64 +22,77 @@
             <form hx-get="/filter" hx-target="#right" hx-swap="outerHTML" hx-push-url="true" hx-indicator="#ind" id="filter-form">
                 <div class="inp">
                     <label for="title" class="lb">Naslov:</label>
-                    <input type="text" class="in" id="title" name="title">
+                    <input type="text" class="in" id="title" name="title" value="@Model.bookQuery.Title">
                 </div>
                 <div class="inp">
                     <label for="year-from" class="lb">Godina od:</label>
-                    <input type="number" min="1500" max="@DateTime.Today.Year" class="in" id="year-from" name="yearFrom">
+                    <input type="number" min="1500" max="@DateTime.Today.Year" class="in" id="year-from" name="yearFrom" value="@Model.bookQuery.YearFrom">
                 </div>
                 <div class="inp">
                     <label for="year-to" class="lb">Godina do:</label>
-                    <input type="number" min="1500" max="@DateTime.Today.Year" class="in" id="year-to" name="yearTo">
+                    <input type="number" min="1500" max="@DateTime.Today.Year" class="in" id="year-to" name="yearTo" value="@Model.bookQuery.YearTo">
                 </div>
                 <div class="inp">
                     <label for="author" class="lb">Autor:</label>
-                    <input type="text" class="in" id="author" name="author">
+                    <input type="text" class="in" id="author" name="author" value="@Model.bookQuery.Author">
                 </div>
                 <div class="inp">
                     <label for="publisher" class="lb">Izdavač:</label>
-                    <input type="text" class="in" id="publisher" name="publisher">
+                    <input type="text" class="in" id="publisher" name="publisher" value="@Model.bookQuery.Publisher">
                 </div>
                 <div class="inp">
                     <label for="edition" class="lb">Izdanje:</label>
-                    <input type="number" min="1" class="in" id="edition" name="edition">
+                    <input type="number" min="1" class="in" id="edition" name="edition" value="@Model.bookQuery.Edition">
                 </div>
                 <div class="inp">
                     <label for="type-of-publisher" class="lb">Kategorija izdavača:</label>
                     <select class="in" id="type-of-publisher" name="typeOfPublisher">
-                        <option value="">Sve</option>
-                        <option value="domaci">Domaći</option>
-                        <option value="strani">Strani</option>
+                        @{
+                            await RenderOptions(Model.bookQuery.TypeOfPublisher,
+                                (null, "Sve"),
+                                ("domaci", "Domaći"),
+                                ("strani", "Strani"));
+                        }
                     </select>
                 </div>
                 <div class="inp">
                     <label for="genre" class="lb">Žanr:</label>
-                    <input type="text" class="in" id="genre" name="genre">
+                    <input type="text" class="in" id="genre" name="genre" value="@Model.bookQuery.Genre">
                 </div>
                 <div class="inp">
                     <label for="isbn" class="lb">ISBN:</label>
-                    <input type="number" class="in" id="isbn" name="isbn">
+                    <input type="number" class="in" id="isbn" name="isbn" value="@Model.bookQuery.Isbn">
                 </div>
                 <div class="inp">
                     <label for="language" class="lb">Jezik:</label>
-                    <input type="text" class="in" id="language" name="language">
+                    <input type="text" class="in" id="language" name="language" value="@Model.bookQuery.Language">
                 </div>
                 <div class="inp">
                     <label for="availability" class="lb">Dostupnost:</label>
-                    <select class="in" id="availability" name="availability">
-                        <option value="">Sve</option>
-                        <option value="hrvatska">Hrvatska</option>
-                        <option value="srodne zemlje">Srodne zemlje</option>
-                        <option value="strane zemlje">Strane zemlje</option>
+                    <select class="in" id="availability" name="availability" value="@Model.bookQuery.Availability">
+                        @{
+                            await RenderOptions(Model.bookQuery.Availability,
+                                (null, "Sve"),
+                                ("hrvatska", "Hrvatska"),
+                                ("srodne zemlje", "Srodne Zemlje"),
+                                ("strane zemlje", "Strane zemlje"));
+                        }
                     </select>
                 </div>
                 <div class="inp">
                     <label for="state" class="lb">Stanje:</label>
-                    <select type="text" class="in" id="state" name="state">
-                        <option value="">Sve</option>
-                        <option value="novo">Novo</option>
-                        <option value="polovno">Polovno</option>
+                    <select class="in" id="state" name="state" value="@Model.bookQuery.State">
+                        @{
+                            await RenderOptions(Model.bookQuery.State,
+                                (null, "Sve"),
+                                ("novo", "Novo"),
+                                ("polovno", "Polovno"));
+                        }
                     </select>
+                </div>
+                <div class="inp">
+                    <label for="seller" class="lb">Ponuditelj:</label>
+                    <input type="text" class="in" id="seller" name="seller" value="@Model.bookQuery.Seller">
                 </div>
                 <div id="btnTrazi">
                     <button class="searchbtn" type="submit" form="filter-form" name="page" value="1"> Traži </button>

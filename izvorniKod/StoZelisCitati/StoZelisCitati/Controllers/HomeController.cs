@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using StoZelisCitati.Helpers;
 using StoZelisCitati.Models;
 using StoZelisCitati.Misc;
@@ -20,15 +18,22 @@ public class HomeController : Controller
     {
         return View();
     }
-    
-    
+
+    [HttpGet("/markers")]
+    public async Task<ActionResult<IEnumerable<MapMarker>>> Markers()
+    {
+        return Ok(await npgsqlRepository.GetMapMarkers());
+    } 
     
     [HttpGet("/filter")]
     public async Task<IActionResult> Filter(BookQuery bookQuery)
     {
-        var filter = await npgsqlRepository.FilterBooks(bookQuery);
+        (IEnumerable<BookListElementRecord> books, int pageCount) = await npgsqlRepository.FilterBooks(bookQuery);
+
+        if (HttpContext.Request.PartialHtmx())
+            return View("FilterPartial", (books, pageCount));
         
-        return HttpContext.Request.PartialHtmx() ? View("FilterPartial", filter) : View(filter);
+        return View((bookQuery, books, pageCount));
     }
     
     [HttpGet("/genres")]

@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
+using Geocoding;
+using Geocoding.Google;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -72,9 +74,12 @@ public class AccountController : Controller
         
         if (userType != UserHelper.Antiquarian && userType != UserHelper.Middleman && userType != UserHelper.Publisher)
             return Ok("Izaberite jednu od punuđenih kategorija.");
+
+        IGeocoder geocoder = new GoogleGeocoder {ApiKey = "AIzaSyDhmDNo6RQm3LO4JG_mjYWQFYkJhQjfgNY"};
+        Address a = (await geocoder.GeocodeAsync(address, city, "", "", country)).First();
         
         await npgsqlRepository.AddUser(username, password, displayName, userType,
-            email, phoneNumber, address, city, country, false);
+            email, phoneNumber, address, city, country, false, a.Coordinates.Latitude, a.Coordinates.Longitude);
         
         HttpContext.Response.Headers["HX-Redirect"] = "/account/registered";
         return Ok("Uspješna registracija");

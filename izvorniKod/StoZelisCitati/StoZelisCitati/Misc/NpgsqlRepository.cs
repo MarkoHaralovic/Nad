@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Npgsql;
+using NpgsqlTypes;
 using StoZelisCitati.Models;
 using StoZelisCitati.Models.Dto;
 
@@ -23,9 +24,10 @@ public class NpgsqlRepository
         return (await npgsqlConnection.QueryAsync<UserRecord>(query)).Select(x => x.ToDomainObject());
     }
 
-    public async Task AddUser(string username, string password, string displayName, string userType,
-        string email, string phoneNumber, string address, string city, string country, bool approved)
+    public async Task AddUser(string username, string password, string displayName, string userType, string email,
+        string phoneNumber, string address, string city, string country, bool approved, double latitude, double longitude)
     {
+
         string query = """
                        insert into korisnik
                        values
@@ -40,12 +42,14 @@ public class NpgsqlRepository
                                @address,
                                @city,
                                @country,
-                               @approved
+                               @approved,
+                               point(@longitude, @latitude)
                        )
                        """;
 
         await npgsqlConnection.ExecuteAsync(query,
-            new {username, password, displayName, userType, email, phoneNumber, address, city, country, approved});
+            new {username, password, displayName, userType, email, phoneNumber, address, city, country, approved,
+                longitude, latitude});
     }
     
     public async Task ApproveUser(int userId)
@@ -81,6 +85,18 @@ public class NpgsqlRepository
         return user?.ToDomainObject();
     }
 
+    public async Task<IEnumerable<MapMarker>> GetMapMarkers()
+    {
+        string query = """
+                       select naziv_korisnika, koordinate
+                       from korisnik
+                       where odobren = true
+                       """;
+
+        IEnumerable<MapMarkerRecord> markers = await npgsqlConnection.QueryAsync<MapMarkerRecord>(query);
+        return markers.Select(x => x.ToDomainObject());
+    }
+    
     public async Task<IEnumerable<Book>> GetBooksWithGenre(string genre)
     {
         string query = """
@@ -101,7 +117,7 @@ public class NpgsqlRepository
 
         string query = """
                        select id_knjiga, naslov, autor, zanr, izdavac
-                       from knjiga natural join ponuda
+                       from korisnik natural join knjiga natural join ponuda
                        /**where**/
                        order by naslov, godina_izdavanja desc
                        limit @booksPerPage
@@ -110,8 +126,9 @@ public class NpgsqlRepository
         
         var selectTemplate = builder.AddTemplate(query,
             new { offset = (bookQuery.Page - 1) * booksPerPage , booksPerPage });
-
-        var countTemplate = builder.AddTemplate("select count(*) from knjiga natural join ponuda /**where**/");
+        
+        var countTemplate = builder
+            .AddTemplate("select count(*) from korisnik natural join knjiga natural join ponuda /**where**/");
         
         if (bookQuery.Title != null)
             builder.Where("naslov = @title", new {title = bookQuery.Title});
@@ -125,7 +142,7 @@ public class NpgsqlRepository
             builder.Where("izdavac = @publisher", new {publisher = bookQuery.Publisher});
         if (bookQuery.Edition != null)
             builder.Where("broj_izdanja = @edition", new {edition = bookQuery.Edition});
-        if (bookQuery.TypeOfPublisher != "")
+        if (bookQuery.TypeOfPublisher != null)
             builder.Where("kategorija_izdavaca = @pType", new {pType = bookQuery.TypeOfPublisher});
         if (bookQuery.Genre != null)
             builder.Where("zanr = @genre", new {genre = bookQuery.Genre});
@@ -133,10 +150,12 @@ public class NpgsqlRepository
             builder.Where("isbn = @isbn", new {isbn = bookQuery.Isbn});
         if (bookQuery.Language != null)
             builder.Where("jezik = @language", new {language = bookQuery.Language});
-        if (bookQuery.Availability != "")
+        if (bookQuery.Availability != null)
             builder.Where("dostupnost = @availability", new {availability = bookQuery.Availability});
-        if (bookQuery.State != "")
+        if (bookQuery.State != null)
             builder.Where("stanje = @state", new {state = bookQuery.State});
+        if (bookQuery.Seller != null)
+            builder.Where("naziv_korisnika = @seller", new {seller = bookQuery.Seller});
 
         IEnumerable<BookListElementRecord> books =
             await npgsqlConnection.QueryAsync<BookListElementRecord>(selectTemplate.RawSql, selectTemplate.Parameters);

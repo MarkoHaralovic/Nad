@@ -13,6 +13,5 @@ public record BookQuery(
     string? Language = null,
     string? Availability = null,
     string? State = null,
-    int Page = 1)
-{
-}
+    string? Seller = null,
+    int Page = 1);

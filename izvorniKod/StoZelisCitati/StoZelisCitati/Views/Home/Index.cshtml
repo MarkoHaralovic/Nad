@@ -5,7 +5,7 @@
 @section Styles
 {
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
 }
 
 @section ScriptsHead
@@ -18,51 +18,20 @@
     <script src="/js/main.js"></script>
 }
 
-<div id="center"> 
+<div id="center">
     <div id="left">
         <!--inicijalno prazan-->
     </div>
-    <div id="center-top"> 
-        <form id="mainSearch-form" onsubmit="">
+    <div id="center-top">
+        <form id="main-search-form" action="/filter">
             <div id="miniTraz">
-                <label for="mini">Što tražite?</label> 
-                <input type="text" class="in" id="mini">
-                <a href="">
-                    <img id="min" style="" width="25px" src="images/miniTraziLogo.png" alt="">
-                </a>
-                </div> 
+                <label for="mini">Što tražite?</label>
+                <input type="text" class="in" id="mini" name="title">
+                <input type="image" alt="Search" src="images/miniTraziLogo.png" width="25px">
+            </div>
         </form>
         <h3 id="map-text" style="padding-top: 10px">Lokacije ponuditelja</h3>
-        <div id="map">
-            <script>
-                var map = L.map('map').setView([44.22, 18.3], 7); 
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                }).addTo(map);
-
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                }).addTo(map);
-                
-                var marker = L.marker([45.799716858751, 15.913563808864556]).addTo(map);
-                
-                marker.bindPopup("I am a popup.")
-                
-                function onMarkerClick(e) {
-                    alert("You clicked the marker");
-                }
-                
-                marker.on('click', onMarkerClick);
-            </script>
-        </div>   
-        <div id="rek">
-            <button hx-get="/genres" hx-target="#center-top" hx-push-url="true" id="zanr" class="reklame">
-                 Traži po žanru
-            </button>
-        </div>
-        <div id="listaZanr"></div>
-    </div>
-    <div id="right"> 
-        <!--inicijalno prazan-->
+        <div id="map"></div>
+        <div id="rek"></div>
     </div>
 </div>

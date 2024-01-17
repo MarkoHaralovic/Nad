@@ -16,5 +16,13 @@
       <jdbc-url>jdbc:postgresql://test-db.postgres.database.azure.com:5432/StoZelisCitati?password=boingo%231&amp;user=niram</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="nad@nad.postgres.database.azure.com" uuid="61b6c2a2-1112-45dd-bb98-67acad0f38c4">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://nad.postgres.database.azure.com:5432/nad?password=Nad1234%40&amp;user=marin</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
