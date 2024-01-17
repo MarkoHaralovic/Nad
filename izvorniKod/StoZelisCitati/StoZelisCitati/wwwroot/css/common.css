@@ -25,6 +25,21 @@
     margin-right:20px;
 }
 
+.user-btn {
+    color: #4a505c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.user-btn:hover, .user-btn:focus {
+    color: #0056b3;
+}
+
+#my-account {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}    
+
 .kr {
     width: 200px;
     height: 200px;
