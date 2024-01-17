@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  17 JAN 2024 18:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  17 JAN 2024 19:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2180,11 +2180,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
 [30]
-<slike/dijagramKlasa.PNG, id=459, 2502.34875pt x 2609.75pt>
+<slike/dijagramKlasa.PNG, id=459, 2502.34875pt x 2669.975pt>
 File: slike/dijagramKlasa.PNG Graphic file (type png)
 <use slike/dijagramKlasa.PNG>
 Package pdftex.def Info: slike/dijagramKlasa.PNG  used on input line 148.
-(pdftex.def)             Requested size: 435.6108pt x 454.28398pt.
+(pdftex.def)             Requested size: 435.6108pt x 464.76747pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2444,7 +2444,7 @@ pfonts/jkpmit8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/kpfonts/jkpmn8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/kpfonts/jkpmnc.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fo
 nts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (47 pages, 1829344 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (47 pages, 1840565 bytes).
 PDF statistics:
  655 PDF objects out of 1000 (max. 8388607)
  206 named destinations out of 1000 (max. 500000)
