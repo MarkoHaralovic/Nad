@@ -14,17 +14,11 @@ public class HomeController : Controller
     {
         this.npgsqlRepository = npgsqlRepository;
     }
-    public async Task<IActionResult> Index()
-    {
-        return View();
-    }
+    public async Task<IActionResult> Index() => View();
 
     [HttpGet("/markers")]
-    public async Task<ActionResult<IEnumerable<MapMarker>>> Markers()
-    {
-        return Ok(await npgsqlRepository.GetMapMarkers());
-    } 
-    
+    public async Task<ActionResult<IEnumerable<MapMarker>>> Markers() => Ok(await npgsqlRepository.GetMapMarkers());
+
     [HttpGet("/filter")]
     public async Task<IActionResult> Filter(BookQuery bookQuery)
     {
@@ -36,24 +30,5 @@ public class HomeController : Controller
         return View((bookQuery, books, pageCount));
     }
     
-    [HttpGet("/genres")]
-    public async Task<IActionResult> Genres()
-    {
-        List<string> genres = new List<string>
-        {
-            "komedija",
-            "akcija",
-            "drama",
-            "sci-fi",
-            "avantura"
-        };
-
-        return View(genres);
-    }
-
-    [HttpGet("/genre/{genre}")]
-    public async Task<IActionResult> Genre(string genre)
-    {
-         return View("Books", await npgsqlRepository.GetBooksWithGenre(genre));
-    }
+    
 }

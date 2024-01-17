@@ -21,15 +21,12 @@ public class AccountController : Controller
     }
 
     [HttpGet("login")]
-    public async Task<IActionResult> Login()
-    {
-        return View();
-    }
-    
+    public async Task<IActionResult> Login() => View();
+
     [HttpPost("login")]
     public async Task<IActionResult> Login([Required] string username, [Required] string password)
     {
-        Models.User? user = await npgsqlRepository.GetUser(username);
+        User? user = await npgsqlRepository.GetUser(username);
         if (user == null)
             return Ok("Nepostojeće korisničko ime.");
         
@@ -58,11 +55,8 @@ public class AccountController : Controller
     }
     
     [HttpGet("register")]
-    public async Task<IActionResult> Register()
-    {
-        return View();
-    }
-    
+    public async Task<IActionResult> Register() => View();
+
     [HttpPost("register")]
     public async Task<IActionResult> Register([Required] string username, [Required] string password,
         [Required] string displayName, [Required] string userType, [Required] string email,
@@ -86,17 +80,13 @@ public class AccountController : Controller
     }
     
     [HttpGet("registered")]
-    public async Task<IActionResult> Registered()
-    {
-        return View();
-    }
-    
+    public async Task<IActionResult> Registered() => View();
+
     [Authorize(Roles = UserHelper.Admin)]
     [HttpGet("requests")]
     public async Task<IActionResult> RegistrationRequests()
     {
-        IEnumerable<Models.User> unapprovedUsers = await npgsqlRepository.GetUnapprovedUsers();
-        
+        IEnumerable<User> unapprovedUsers = await npgsqlRepository.GetUnapprovedUsers();
         return View(unapprovedUsers.ToList());
     }
     
