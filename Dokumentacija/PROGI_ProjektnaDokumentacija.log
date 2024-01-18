@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  17 JAN 2024 23:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  18 JAN 2024 13:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1525,7 +1525,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...: Prikaz aktivnosti grupe}{42}{chapter*.6}
+l.29 ...: Prikaz aktivnosti grupe}{44}{chapter*.6}
                                                   % [1
 
 ])
@@ -2183,11 +2183,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
 [30]
-<slike/dijagramKlasa.PNG, id=459, 2502.34875pt x 2669.975pt>
+<slike/dijagramKlasa.PNG, id=459, 2308.625pt x 3011.25pt>
 File: slike/dijagramKlasa.PNG Graphic file (type png)
 <use slike/dijagramKlasa.PNG>
 Package pdftex.def Info: slike/dijagramKlasa.PNG  used on input line 148.
-(pdftex.def)             Requested size: 435.6108pt x 464.76747pt.
+(pdftex.def)             Requested size: 435.6108pt x 568.19194pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2202,8 +2205,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.153 			\eject
-                <./slike/dijagramKlasa.PNG>]
+l.153 			\clearpage
+                    <./slike/dijagramKlasa.PNG>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2212,7 +2215,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[32]
+[32
+
+
+]
 <slike/dijagram_akt.PNG, id=473, 2127.95pt x 1927.2pt>
 File: slike/dijagram_akt.PNG Graphic file (type png)
 <use slike/dijagram_akt.PNG>
@@ -2441,8 +2447,8 @@ anged.
 (rerunfilecheck)             Checksum: B400BABF613DD36682E3DFEA3F6CD11D;4419.
  ) 
 Here is how much of TeX's memory you used:
- 29490 strings out of 474495
- 579910 string characters out of 5743934
+ 29491 strings out of 474495
+ 579917 string characters out of 5743934
  2094460 words of memory out of 5000000
  50970 multiletter control sequences out of 15000+600000
  617842 words of font info for 159 fonts, out of 8000000 for 9000
@@ -2452,6 +2458,10 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
+
+pdfTeX warning (dest): name{page.48} has been referenced but does not exist, re
+placed by a fixed one
+
 <C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/public/kpfonts/jkpbit
 8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/public/kpfonts
 /jkpbn8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/public/k
@@ -2459,9 +2469,9 @@ pfonts/jkpmit8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/kpfonts/jkpmn8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/kpfonts/jkpmnc.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fo
 nts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (47 pages, 1919105 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (47 pages, 2040365 bytes).
 PDF statistics:
- 659 PDF objects out of 1000 (max. 8388607)
- 207 named destinations out of 1000 (max. 500000)
+ 660 PDF objects out of 1000 (max. 8388607)
+ 208 named destinations out of 1000 (max. 500000)
  377 words of extra memory for PDF output out of 10000 (max. 10000000)
 
