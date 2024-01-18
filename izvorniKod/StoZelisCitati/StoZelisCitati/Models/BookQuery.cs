@@ -1,9 +1,9 @@
 ﻿namespace StoZelisCitati.Models;
 
 public record BookQuery(
-    string? Title = null,
-    int? YearFrom = null,
-    int? YearTo = null,
+    string? Title,
+    int? YearFrom,
+    int? YearTo,
     string? Author = null,
     string? Publisher = null,
     int? Edition = null,
@@ -13,5 +13,7 @@ public record BookQuery(
     string? Language = null,
     string? Availability = null,
     string? State = null,
+    int? PriceFrom = null,
+    int? PriceTo = null,
     string? Seller = null,
     int Page = 1);

@@ -1,4 +1,7 @@
-﻿@{
+﻿@using StoZelisCitati.Helpers
+@model string
+
+@{
     ViewData["Title"] = "New Title";
 }
 
@@ -9,7 +12,7 @@
 
 <div id="center" style="justify-content: center; height: 100%; width:100%;">
     <div id="new-pub">
-        <form id="pub-form" style="display:flex; flex-direction: column; padding-top: 30px" method="post" action="/add-title" enctype="multipart/form-data">
+        <form id="pub-form" style="display:flex; flex-direction: column; padding-top: 30px" enctype="multipart/form-data" hx-post="/add-title" hx-target="#error-message" hx-indicator="#ind">
             <label for="title">Naziv</label>
             <input type="text" class="in" id="title" name="title" required>
 
@@ -22,17 +25,14 @@
             <label for="publisher">Izdavač</label>
             <input type="text" class="in" id="publisher" name="publisher" required>
 
-            <label for="type-of-publisher">Kategorija izdavaca</label>
-            <input type="text" class="in" id="type-of-publisher" name="typeOfPublisher" required>
-
-            <label for="genre">žanr</label>
-            <select class="in" id="genre" name="genre">
-                <option value="komedija">Komedija</option>
-                <option value="akcija">Akcija</option>
-                <option value="drama">Drama</option>
-                <option value="sci-fi">Sci-fi</option>
-                <option value="avantura">Avantura</option>
+            <label for="type-of-publisher">Kategorija izdavača</label>
+            <select class="in" id="type-of-publisher" name="typeOfPublisher">
+                <option value="@PublisherType.Domestic">Domaći</option>
+                <option value="@PublisherType.Foreign">Strani</option>
             </select>
+
+            <label for="genre">Žanr</label>
+            <input type="text" class="in" id="genre" name="genre" required>
 
             <label for="year">Godina izdanja</label>
             <input type="number" class="in" id="year" name="year" required>
@@ -47,10 +47,17 @@
             <input type="text" class="in" id="language" name="language" required>
 
             <label for="availability">Dostupnost</label>
-            <input type="text" class="in" id="availability" name="availability" required>
-            
+            <select class="in" id="availability" name="availability">
+                <option value="@AvailabilityType.Croatia">Hrvatska</option>
+                <option value="@AvailabilityType.RelatedCountries">Srodne zemlje</option>
+                <option value="@AvailabilityType.ForeignCountries">Strane zemlje</option>
+            </select>
+
             <label for="cover-image">Slika korica</label>
             <input type="file" id="cover-image" class="in" name="coverImage" accept="image/*" required>
+
+            <img id="ind" src="/images/bars.svg" alt="loading indicator" class="htmx-indicator">
+            <p id="error-message"></p>
 
             <button id="pub-button" class="searchbtn" type="submit" form="pub-form">Dodaj naslov</button>
         </form>

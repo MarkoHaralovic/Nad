@@ -98,6 +98,14 @@ public class NpgsqlRepository
         await npgsqlConnection.ExecuteAsync(query,
             new DynamicParameters().Append(registerRequest, new {latitude, longitude}));
     }
+
+    public async Task<Book> GetBookWithId(int bookId)
+    {
+        string query = "select * from knjiga where id_knjiga = @bookId";
+
+        return (await npgsqlConnection.QuerySingleAsync<BookDb>(query, new {bookId}))
+            .ToDomainObject();
+    }
     
     public async Task<BookCover> GetBookCoverForBook(int bookId)
     {
@@ -107,7 +115,7 @@ public class NpgsqlRepository
             .ToDomainObject();
     }
 
-    public async Task<int> GetUserThatOwnsBook(int bookId)
+    public async Task<int> GetIdOfUserThatOwnsBook(int bookId)
     {
         string query = "select id_korisnik from knjiga where id_knjiga = @bookId";
         return await npgsqlConnection.QuerySingleAsync<int>(query, new {bookId});
@@ -216,6 +224,10 @@ public class NpgsqlRepository
             builder.Where("dostupnost = @availability", new {availability = bookQuery.Availability});
         if (bookQuery.State != null)
             builder.Where("stanje = @state", new {state = bookQuery.State});
+        if (bookQuery.PriceFrom != null)
+            builder.Where("cijena > @priceFrom", new {priceFrom = bookQuery.PriceFrom});
+        if (bookQuery.PriceTo != null)
+            builder.Where("cijena < @priceTo", new {priceTo = bookQuery.PriceTo});
         if (bookQuery.Seller != null)
             builder.Where("naziv_korisnika = @seller", new {seller = bookQuery.Seller});
 

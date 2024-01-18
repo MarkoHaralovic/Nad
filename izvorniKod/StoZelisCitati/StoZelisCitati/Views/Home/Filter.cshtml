@@ -92,6 +92,14 @@
                     </select>
                 </div>
                 <div class="inp">
+                    <label for="price-from" class="lb">Cijena od:</label>
+                    <input type="number" min="0" class="in" id="price-from" name="priceFrom" value="@Model.bookQuery.PriceFrom">
+                </div>
+                <div class="inp">
+                    <label for="price-to" class="lb">Cijena do:</label>
+                    <input type="number" class="in" id="price-to" name="priceTo" value="@Model.bookQuery.PriceTo">
+                </div>
+                <div class="inp">
                     <label for="seller" class="lb">Ponuditelj:</label>
                     <input type="text" class="in" id="seller" name="seller" value="@Model.bookQuery.Seller">
                 </div>

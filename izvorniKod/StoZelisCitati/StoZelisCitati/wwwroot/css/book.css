@@ -1,18 +1,7 @@
-* {
-    margin: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+
 
 body {
     background-color: white;
-}
-
-.header-container, #header {
-    background-color: rgb(75, 190, 250);
-    width: 100vw;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
 }
 
 #center {

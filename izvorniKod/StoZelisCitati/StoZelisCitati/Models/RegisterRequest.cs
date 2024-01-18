@@ -9,4 +9,7 @@ public record RegisterRequest(
     string PhoneNumber,
     string Address,
     string City,
-    string Country);
+    string Country)
+{
+    public string Country { get; set; } = Country;
+}

@@ -1,0 +1,80 @@
+﻿@model User
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/user.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+}
+
+@section ScriptsHead
+{
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+}
+
+<div id="center">
+    <div id="left">
+        <div id="pub-container">
+            <div id="o1" class="objava">
+                <div class="fot">
+                    <img width="100%" height="100%" src="/Nad/Nad/izvorniKod/public/images/traziLogo.png" alt="">
+                </div>
+                <div class="inf">
+                    <div class="pub-left">
+                        <div class="miniDiv"> naziv: knjiga </div>
+                        <div class="miniDiv"> autor: pisac </div>
+                    </div>
+                    <div class="pub-right">
+                        <div class="miniDiv"> žanr: komedija </div>
+                        <div class="miniDiv"> izdavac: dučan </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        <div id="user-container">
+            <div id="user-left">
+                <div id="gen-div" class="user-info">
+                    <h2>Korisničko ime:</h2>
+                    <p>@Model.Username</p>
+                </div>
+                <div id="name-div" class="user-info">
+                    <h2>Ime ponuditelja:</h2>
+                    <p>@Model.DisplayName</p>
+                </div>
+                <div class="user-info">
+                    <h2>Vrsta ponuditelja:</h2>
+                    <p>@Model.UserType</p>
+                </div>
+                <div id="email-div" class="user-info">
+                    <h2>Email:</h2>
+                    <p>@Model.Email</p>
+                </div>
+                <div id="phone-div" class="user-info">
+                    <h2>Mobitel:</h2>
+                    <p>@Model.PhoneNumber</p>
+                </div>
+                <div id="addy-div" class="user-info">
+                    <h2>Adresa:</h2>
+                    <p>@Model.Address, @Model.City, @Model.Country</p>
+                </div>
+            </div>
+            <div id="user-right">
+                <div id="map" style="width: 90%; height: 90%; margin-top: 3%; margin-left: 6%;">
+                    <script>
+                            var map = L.map('map').setView([@Model.Latitude, @Model.Longitude], 13);
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            }).addTo(map);
+
+                            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            }).addTo(map);
+                            
+                            L.marker([@Model.Latitude, @Model.Longitude]).addTo(map)
+                        </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
+using System.Text.Encodings.Web;
 using Geocoding;
 using Geocoding.Google;
 using Microsoft.AspNetCore.Authentication;
@@ -66,36 +67,59 @@ public class AccountController : Controller
         if (user != null)
             return Ok("Korisničko ime je zauzeto.");
         
-        if (registerRequest.UserType != UserHelper.Antiquarian &&
-            registerRequest.UserType != UserHelper.Middleman &&
-            registerRequest.UserType != UserHelper.Publisher)
+        if (registerRequest.UserType != UserType.Antiquarian &&
+            registerRequest.UserType != UserType.Middleman &&
+            registerRequest.UserType != UserType.Publisher)
         {
             return Ok("Izaberite jednu od punuđenih kategorija.");
         }
 
-        IGeocoder geocoder = new GoogleGeocoder {ApiKey = "AIzaSyDhmDNo6RQm3LO4JG_mjYWQFYkJhQjfgNY"};
-        List<Address> addresses = (await geocoder.GeocodeAsync(
-            registerRequest.Address, registerRequest.City, "", "", registerRequest.Country)).ToList();
+        
+        GoogleGeocoder geocoder = new GoogleGeocoder {ApiKey = "AIzaSyDhmDNo6RQm3LO4JG_mjYWQFYkJhQjfgNY"};
 
+        List<GoogleAddress> addresses =
+            (await geocoder.GeocodeAsync($"{registerRequest.Address} {registerRequest.City} {registerRequest.Country}"))
+            .ToList();
+        
         if (!addresses.Any())
             return Ok("Adresa nije pronađena.");
 
-        Address a = addresses.First();
+        GoogleAddress a = addresses.First();
+
+        registerRequest.Country = a[GoogleAddressType.Country]!.ShortName;
         
+        if (registerRequest.UserType == UserType.Antiquarian && registerRequest.Country != Country.Croatia)
+            return Ok("Antikvarijat mora biti u Hrvatskoj.");
+
+        if (registerRequest.UserType == UserType.Middleman && !Country.SerboCroatian.Contains(registerRequest.Country))
+            return Ok("Preprodavač mora biti u Hrvatskoj ili u srodnim zemljama");
+
         await npgsqlRepository.AddUser(registerRequest, a.Coordinates.Latitude, a.Coordinates.Longitude);
         
-        HttpContext.Response.Headers["HX-Redirect"] = "/account/registered";
+        HttpContext.Response.Headers["HX-Redirect"] = "/success";
         return Ok("Uspješna registracija");
     }
-    
-    [HttpGet("registered")]
-    public IActionResult Registered() => View();
 
-    [Authorize(Roles = UserHelper.Admin)]
+    [Authorize]
+    [HttpGet("profile")]
+    public async Task<IActionResult> UserProfile()
+    {
+        string? userName = User.FindFirstValue(ClaimTypes.Name);
+        if (userName == null)
+            return NotFound("User has no username claim.");
+        
+        User? user = await npgsqlRepository.GetUser(userName);
+        if (user == null)
+            return NotFound("User does not exist.");
+        
+        return View(user);
+    }
+
+    [Authorize(Roles = UserType.Admin)]
     [HttpGet("requests")]
     public async Task<IActionResult> RegistrationRequests() => View(await npgsqlRepository.GetUsers(false));
 
-    [Authorize(Roles = UserHelper.Admin)]
+    [Authorize(Roles = UserType.Admin)]
     [HttpDelete("{userId:int}")]
     public async Task<IActionResult> DeleteUser(int userId)
     {
@@ -103,7 +127,7 @@ public class AccountController : Controller
         return Ok();
     }
     
-    [Authorize(Roles = UserHelper.Admin)]
+    [Authorize(Roles = UserType.Admin)]
     [HttpPut("approve/{userId:int}")]
     public async Task<IActionResult> ApproveUser(int userId)
     {

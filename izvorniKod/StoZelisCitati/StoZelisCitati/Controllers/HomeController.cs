@@ -54,6 +54,14 @@ public class HomeController : Controller
         return File(cover.Image, cover.ImageType);
     }
 
+    [HttpGet("/book/{bookId:int}")]
+    public async Task<IActionResult> Book(int bookId)
+    {
+        Book book = await npgsqlRepository.GetBookWithId(bookId);
+        
+        return View(book);
+    }
+
     [Authorize]
     [HttpGet("/add-title")]
     public IActionResult AddBook() => View();
@@ -62,12 +70,19 @@ public class HomeController : Controller
     [HttpPost("/add-title")]
     public async Task<IActionResult> AddBook(AddBookRequest addBookRequest)
     {
+        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
+            return Ok("ID korisnika nije validan.");
+
+        string? userType = User.FindFirstValue(ClaimTypes.Role);
+        if (userType == null)
+            return Ok("Nije poznata vrsta korisnika.");
+
+        if (userType == UserType.Publisher && addBookRequest.Language != "Hrvatski")
+            return Ok("Izdavač može ponuditi samo knjige na Hrvatskom jeziku.");
+        
         using MemoryStream memoryStream = new MemoryStream();
         await addBookRequest.CoverImage.CopyToAsync(memoryStream);
         byte[] cover = memoryStream.ToArray();
-
-        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
-            return Unauthorized("Logged in user has invalid id.");
 
         using (TransactionScope transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
         {
@@ -77,7 +92,8 @@ public class HomeController : Controller
             
             transactionScope.Complete();
         }
-        return Redirect("/");
+        HttpContext.Response.Headers["HX-Redirect"] = "/success";
+        return Ok("Uspješno dodan naslov.");
     }
 
     [Authorize]
@@ -98,11 +114,14 @@ public class HomeController : Controller
         if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
             return Unauthorized("Logged in user has invalid id.");
 
-        if (userId != await npgsqlRepository.GetUserThatOwnsBook(addOfferRequest.TitleId))
+        if (userId != await npgsqlRepository.GetIdOfUserThatOwnsBook(addOfferRequest.TitleId))
             return Unauthorized($"Logged in user is not authorized to add offers to title with id {addOfferRequest.TitleId}");
 
         await npgsqlRepository.AddOffer(addOfferRequest);
         
         return Redirect("/");
     }
+
+    [HttpGet("/success")]
+    public IActionResult TransactionSuccessful() => View();
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@using StoZelisCitati.Helpers
+@{
     ViewData["Title"] = "Register";
 }
 
@@ -36,12 +37,12 @@
                 <input type="tel" class="input-class" id="phone-number" name="phoneNumber" required>
             </div>
             <div class="inputDiv">
-                <label for="user-type" class="category-label">Kategorija</label>
+                <label for="user-type" class="category-label">Kategorija ponuditelja</label>
                 <div class="category-div">
                     <select class="categories" id="user-type" name="userType" form="register-form">
-                        <option value="izdavač">Izdavač</option>
-                        <option value="preprodavač">Preprodavač</option>
-                        <option value="antikvarijat">Antikvarijat</option>
+                        <option value="@UserType.Publisher">Izdavač</option>
+                        <option value="@UserType.Middleman">Preprodavač</option>
+                        <option value="@UserType.Antiquarian">Antikvarijat</option>
                     </select>
                 </div>
             </div>

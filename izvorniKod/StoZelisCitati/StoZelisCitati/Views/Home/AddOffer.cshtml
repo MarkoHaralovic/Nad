@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Book>
+﻿@using StoZelisCitati.Helpers
+@model IEnumerable<Book>
 @{
     ViewData["Title"] = "New Offer";
 }
@@ -24,8 +25,8 @@
 
             <label for="title">Stanje</label>
             <select class="in" id="state" name="state">
-                <option value="novo">Novo</option>
-                <option value="novo">Polovno</option>
+                <option value="@StateType.New">Novo</option>
+                <option value="@StateType.Used">Polovno</option>
             </select>
 
             <label for="count">Broj primjeraka</label>

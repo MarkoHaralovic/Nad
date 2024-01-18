@@ -11,7 +11,4 @@ public static class DapperHelper
 
         return dynamicParameters;
     }
-
-    public static TOut Map<TIn, TOut>(this TIn obj, Func<TIn, TOut> map)
-        => map(obj);
 }

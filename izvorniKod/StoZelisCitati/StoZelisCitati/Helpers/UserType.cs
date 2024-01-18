@@ -1,6 +1,6 @@
 ﻿namespace StoZelisCitati.Helpers;
 
-public class UserHelper
+public static class UserType
 {
     public const string Admin = "admin";
     public const string Antiquarian = "antikvarijat";

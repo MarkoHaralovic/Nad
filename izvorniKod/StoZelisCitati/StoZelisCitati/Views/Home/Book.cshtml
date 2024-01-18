@@ -1,0 +1,56 @@
+﻿@model Book
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/book.css">
+}
+
+<div id="center">
+    <div class="profil">
+        <table class="info">
+            <tr>
+                <th>Naziv</th>
+                <td>@Model.Title</td>
+            </tr>
+            <tr>
+                <th>Autor</th>
+                <td>@Model.Author</td>
+            </tr>
+            <tr>
+                <th>Godina</th>
+                <td>@Model.YearOfPublishing</td>
+            </tr>
+            <tr>
+                <th>Broj izdanja</th>
+                <td>@Model.Edition</td>
+            </tr>
+            <tr>
+                <th>Izdavac</th>
+                <td>@Model.Publisher</td>
+            </tr>
+            <tr>
+                <th>Kategorija izdavača</th>
+                <td>@Model.TypeOfPublisher</td>
+            </tr>
+            <tr>
+                <th>Žanr</th>
+                <td>@Model.Genre</td>
+            </tr>
+            <tr>
+                <th>ISBN</th>
+                <td>@Model.Isbn</td>
+            </tr>
+            <tr>
+                <th>Jezik</th>
+                <td>@Model.Language</td>
+            </tr>
+            <tr>
+                <th>Dostupnost</th>
+                <td>@Model.Availability</td>
+            </tr>
+        </table>
+    </div>
+    <div class="image-container" style="margin-top:20px">
+        <img src="/image/@Model.Id" alt="book cover">
+    </div>
+</div>
