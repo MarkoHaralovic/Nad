@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "New Offer";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/main.css">
+}
+<div id="center" style="justify-content: center; height: 100%; width:100%;">
+    <div id="new-pub">
+        <form id="pub-form" style="display:flex; flex-direction: column; padding-top: 30px" method="post" action="/add-offer" enctype="multipart/form-data">
+
+            <label for="title-id">Naslov</label>
+            <select class="in" id="title-id" name="titleId">
+                @foreach (Book book in Model)
+                {
+                    <option value="@book.Id">@book.Title, @book.Author</option>
+                }
+            </select>
+
+            <label for="price">Cijena</label>
+            <input type="number" class="in" id="price" name="price" required>
+
+            <label for="title">Stanje</label>
+            <select class="in" id="state" name="state">
+                <option value="novo">Novo</option>
+                <option value="novo">Polovno</option>
+            </select>
+
+            <label for="count">Broj primjeraka</label>
+            <input type="number" class="in" id="count" name="count" required>
+
+            <button id="pub-button" class="searchbtn" type="submit" form="pub-form">Dodaj ponudu</button>
+        </form>
+    </div>
+</div>

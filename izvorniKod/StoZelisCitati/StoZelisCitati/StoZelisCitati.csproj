@@ -88,6 +88,11 @@
     </ItemGroup>
 
 
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Home\AddOffer.cshtml" />
+    </ItemGroup>
+
+
 
 
 

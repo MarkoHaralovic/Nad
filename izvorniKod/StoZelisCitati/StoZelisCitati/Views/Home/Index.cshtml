@@ -1,4 +1,6 @@
-﻿@{
+﻿@model bool
+
+@{
     ViewData["Title"] = "Home";
 }
 
@@ -32,6 +34,15 @@
         </form>
         <h3 id="map-text" style="padding-top: 10px">Lokacije ponuditelja</h3>
         <div id="map"></div>
-        <div id="rek"></div>
+        <div id="rek">
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <a href="/add-title">Novi naslov</a>
+                if (Model)
+                {
+                    <a href="/add-offer">Nova ponuda</a>
+                }
+            }
+        </div>
     </div>
 </div>

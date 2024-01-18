@@ -1,4 +1,5 @@
-﻿@model (BookQuery bookQuery, IEnumerable<BookListElementRecord> books, int pageCount)
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model (BookQuery bookQuery, IEnumerable<Book> books, int pageCount)
 @{
     ViewData["Title"] = "Book Post";
 
@@ -69,7 +70,7 @@
                 </div>
                 <div class="inp">
                     <label for="availability" class="lb">Dostupnost:</label>
-                    <select class="in" id="availability" name="availability" value="@Model.bookQuery.Availability">
+                    <select class="in" id="availability" name="availability">
                         @{
                             await RenderOptions(Model.bookQuery.Availability,
                                 (null, "Sve"),
@@ -81,7 +82,7 @@
                 </div>
                 <div class="inp">
                     <label for="state" class="lb">Stanje:</label>
-                    <select class="in" id="state" name="state" value="@Model.bookQuery.State">
+                    <select class="in" id="state" name="state">
                         @{
                             await RenderOptions(Model.bookQuery.State,
                                 (null, "Sve"),

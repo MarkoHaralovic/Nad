@@ -1,8 +1,8 @@
 ﻿using Dapper;
 using Npgsql;
-using NpgsqlTypes;
+using StoZelisCitati.Helpers;
 using StoZelisCitati.Models;
-using StoZelisCitati.Models.Dto;
+using StoZelisCitati.Models.Db;
 
 namespace StoZelisCitati.Misc;
 
@@ -14,42 +14,116 @@ public class NpgsqlRepository
         this.npgsqlConnection = npgsqlConnection;
     }
 
-    public async Task<IEnumerable<User>> GetUnapprovedUsers()
+    public async Task AddOffer(AddOfferRequest addOfferRequest)
     {
         string query = """
-                       select * from korisnik
-                       where odobren = false
+                       insert into ponuda
+                       values
+                       (
+                        default,
+                        @price,
+                        @state,
+                        @count,
+                        @titleId
+                       )
                        """;
 
-        return (await npgsqlConnection.QueryAsync<UserRecord>(query)).Select(x => x.ToDomainObject());
+        await npgsqlConnection.ExecuteAsync(query, addOfferRequest);
     }
-
-    public async Task AddUser(string username, string password, string displayName, string userType, string email,
-        string phoneNumber, string address, string city, string country, bool approved, double latitude, double longitude)
+    
+    public async Task AddBookCover(byte[] cover, string imageType, int titleId)
     {
-
+        string query = """
+                       insert into korice
+                       values
+                       (
+                        default,
+                        @cover,
+                        @titleId,
+                        @imageType
+                       )
+                       """;
+        
+        await npgsqlConnection.ExecuteAsync(query, new {cover, imageType, titleId});
+    }
+    
+    /// <returns>The id of the inserted title.</returns>
+    public async Task<int> AddBook(AddBookRequest addBookRequest, int userId)
+    {
+        string query = """
+                       insert into knjiga
+                       values
+                       (
+                        default,
+                        @author,
+                        @year,
+                        @publisher,
+                        @typeOfPublisher,
+                        @genre,
+                        @isbn,
+                        @edition,
+                        @description,
+                        @language,
+                        @availability,
+                        @userId,
+                        @title
+                       ) returning id_knjiga
+                       """;
+        
+        return await npgsqlConnection.QuerySingleAsync<int>(query,
+            new DynamicParameters().Append(addBookRequest, new{userId}));
+    }
+    
+    public async Task AddUser(RegisterRequest registerRequest, double latitude, double longitude)
+    {
         string query = """
                        insert into korisnik
                        values
                        (
-                               default,
-                               @username,
-                               @password,
-                               @displayName,
-                               @userType,
-                               @email,
-                               @phoneNumber,
-                               @address,
-                               @city,
-                               @country,
-                               @approved,
-                               point(@longitude, @latitude)
+                        default,
+                        @username,
+                        @password,
+                        @displayName,
+                        @userType,
+                        @email,
+                        @phoneNumber,
+                        @address,
+                        @city,
+                        @country,
+                        false,
+                        point(@longitude, @latitude)
                        )
                        """;
 
         await npgsqlConnection.ExecuteAsync(query,
-            new {username, password, displayName, userType, email, phoneNumber, address, city, country, approved,
-                longitude, latitude});
+            new DynamicParameters().Append(registerRequest, new {latitude, longitude}));
+    }
+    
+    public async Task<BookCover> GetBookCoverForBook(int bookId)
+    {
+        string query = "select * from korice where id_knjiga = @bookId";
+        
+        return (await npgsqlConnection.QuerySingleAsync<BookCoverDb>(query, new {bookId}))
+            .ToDomainObject();
+    }
+
+    public async Task<int> GetUserThatOwnsBook(int bookId)
+    {
+        string query = "select id_korisnik from knjiga where id_knjiga = @bookId";
+        return await npgsqlConnection.QuerySingleAsync<int>(query, new {bookId});
+    }
+
+    public async Task<int> GetNumberOfBooksBelongingToUser(int userId)
+    {
+        string query = "select count(*) from knjiga where id_korisnik = @userId";
+        return await npgsqlConnection.QuerySingleAsync<int>(query, new {userId});
+    }
+    public async Task<IEnumerable<Book>> GetBooksBelongingToUser(int userId)
+    {
+        string query = "select * from knjiga where id_korisnik = @userId";
+        
+        return (await npgsqlConnection.QueryAsync<BookDb>(query, new {userId}))
+            .Select(x => x.ToDomainObject());
     }
     
     public async Task ApproveUser(int userId)
@@ -81,42 +155,30 @@ public class NpgsqlRepository
                        where korisnicko_ime = @username
                        """;
 
-        UserRecord? user = await npgsqlConnection.QuerySingleOrDefaultAsync<UserRecord>(query, new {username});
-        return user?.ToDomainObject();
-    }
-
-    public async Task<IEnumerable<MapMarker>> GetMapMarkers()
-    {
-        string query = """
-                       select naziv_korisnika, koordinate
-                       from korisnik
-                       where odobren = true
-                       """;
-
-        IEnumerable<MapMarkerRecord> markers = await npgsqlConnection.QueryAsync<MapMarkerRecord>(query);
-        return markers.Select(x => x.ToDomainObject());
+        return (await npgsqlConnection.QuerySingleOrDefaultAsync<UserDb>(query, new {username}))
+            ?.ToDomainObject();
     }
     
-    public async Task<IEnumerable<Book>> GetBooksWithGenre(string genre)
+    public async Task<IEnumerable<User>> GetUsers(bool approved)
     {
         string query = """
                        select *
-                       from knjiga
-                       where zanr = @genre
+                       from korisnik
+                       where odobren = @approved
                        """;
-        return (await npgsqlConnection.QueryAsync<BookRecord>(query, new {genre}))
-            .Select(x => x.ToDomainObject());
-    }
 
-    //this should also return the page count
-    public async Task<(IEnumerable<BookListElementRecord> books, int pageCount)> FilterBooks(BookQuery bookQuery)
+        return (await npgsqlConnection.QueryAsync<UserDb>(query, new {approved}))
+            .Select(x => x.ToDomainObject());
+    } 
+    
+    public async Task<(IEnumerable<Book> books, int pageCount)> FilterBooks(BookQuery bookQuery)
     {
         int booksPerPage = 5;
         
         var builder = new SqlBuilder();
 
         string query = """
-                       select id_knjiga, naslov, autor, zanr, izdavac
+                       select knjiga.*
                        from korisnik natural join knjiga natural join ponuda
                        /**where**/
                        order by naslov, godina_izdavanja desc
@@ -157,11 +219,13 @@ public class NpgsqlRepository
         if (bookQuery.Seller != null)
             builder.Where("naziv_korisnika = @seller", new {seller = bookQuery.Seller});
 
-        IEnumerable<BookListElementRecord> books =
-            await npgsqlConnection.QueryAsync<BookListElementRecord>(selectTemplate.RawSql, selectTemplate.Parameters);
+        IEnumerable<Book> books =
+            (await npgsqlConnection.QueryAsync<BookDb>(selectTemplate.RawSql, selectTemplate.Parameters))
+            .Select(x => x.ToDomainObject());
 
         int count = await npgsqlConnection.QuerySingleAsync<int>(countTemplate.RawSql, countTemplate.Parameters);
         int pageCount = (int) Math.Ceiling(count / (decimal) booksPerPage);
+        
         return (books, pageCount);
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StoZelisCitati.Helpers;
 using StoZelisCitati.Misc;
+using StoZelisCitati.Models;
 using User = StoZelisCitati.Models.User;
 namespace StoZelisCitati.Controllers;
 
@@ -21,7 +22,7 @@ public class AccountController : Controller
     }
 
     [HttpGet("login")]
-    public async Task<IActionResult> Login() => View();
+    public IActionResult Login() => View();
 
     [HttpPost("login")]
     public async Task<IActionResult> Login([Required] string username, [Required] string password)
@@ -38,6 +39,7 @@ public class AccountController : Controller
         
         var identity = new ClaimsIdentity(new List<Claim>
         {
+            new(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new(ClaimTypes.Name, username),
             new(ClaimTypes.Role, user.UserType)
         }, "Cookies");
@@ -55,41 +57,44 @@ public class AccountController : Controller
     }
     
     [HttpGet("register")]
-    public async Task<IActionResult> Register() => View();
+    public IActionResult Register() => View();
 
     [HttpPost("register")]
-    public async Task<IActionResult> Register([Required] string username, [Required] string password,
-        [Required] string displayName, [Required] string userType, [Required] string email,
-        [Required] string phoneNumber, [Required] string address, [Required] string city, [Required] string country)
+    public async Task<IActionResult> Register(RegisterRequest registerRequest)
     {
-        User? user = await npgsqlRepository.GetUser(username);
+        User? user = await npgsqlRepository.GetUser(registerRequest.Username);
         if (user != null)
             return Ok("Korisničko ime je zauzeto.");
         
-        if (userType != UserHelper.Antiquarian && userType != UserHelper.Middleman && userType != UserHelper.Publisher)
+        if (registerRequest.UserType != UserHelper.Antiquarian &&
+            registerRequest.UserType != UserHelper.Middleman &&
+            registerRequest.UserType != UserHelper.Publisher)
+        {
             return Ok("Izaberite jednu od punuđenih kategorija.");
+        }
 
         IGeocoder geocoder = new GoogleGeocoder {ApiKey = "AIzaSyDhmDNo6RQm3LO4JG_mjYWQFYkJhQjfgNY"};
-        Address a = (await geocoder.GeocodeAsync(address, city, "", "", country)).First();
+        List<Address> addresses = (await geocoder.GeocodeAsync(
+            registerRequest.Address, registerRequest.City, "", "", registerRequest.Country)).ToList();
+
+        if (!addresses.Any())
+            return Ok("Adresa nije pronađena.");
+
+        Address a = addresses.First();
         
-        await npgsqlRepository.AddUser(username, password, displayName, userType,
-            email, phoneNumber, address, city, country, false, a.Coordinates.Latitude, a.Coordinates.Longitude);
+        await npgsqlRepository.AddUser(registerRequest, a.Coordinates.Latitude, a.Coordinates.Longitude);
         
         HttpContext.Response.Headers["HX-Redirect"] = "/account/registered";
         return Ok("Uspješna registracija");
     }
     
     [HttpGet("registered")]
-    public async Task<IActionResult> Registered() => View();
+    public IActionResult Registered() => View();
 
     [Authorize(Roles = UserHelper.Admin)]
     [HttpGet("requests")]
-    public async Task<IActionResult> RegistrationRequests()
-    {
-        IEnumerable<User> unapprovedUsers = await npgsqlRepository.GetUnapprovedUsers();
-        return View(unapprovedUsers.ToList());
-    }
-    
+    public async Task<IActionResult> RegistrationRequests() => View(await npgsqlRepository.GetUsers(false));
+
     [Authorize(Roles = UserHelper.Admin)]
     [HttpDelete("{userId:int}")]
     public async Task<IActionResult> DeleteUser(int userId)

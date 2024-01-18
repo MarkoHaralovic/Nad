@@ -1,16 +1,15 @@
 ﻿namespace StoZelisCitati.Models;
 
-public record Book(
-    int Id,
+public record AddBookRequest(
     string Title,
     string Author,
     string Isbn,
-    int YearOfPublishing,
     string Publisher,
     string TypeOfPublisher,
+    string Genre,
+    int Year,
     int Edition,
     string Description,
     string Language,
     string Availability,
-    int UserId,
-    string Genre);
+    IFormFile CoverImage);

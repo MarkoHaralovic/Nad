@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "New Title";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/main.css">
+}
+
+<div id="center" style="justify-content: center; height: 100%; width:100%;">
+    <div id="new-pub">
+        <form id="pub-form" style="display:flex; flex-direction: column; padding-top: 30px" method="post" action="/add-title" enctype="multipart/form-data">
+            <label for="title">Naziv</label>
+            <input type="text" class="in" id="title" name="title" required>
+
+            <label for="author">Autor</label>
+            <input type="text" class="in" id="author" name="author" required>
+
+            <label for="isbn">ISBN</label>
+            <input type="text" class="in" id="isbn" name="isbn" required>
+
+            <label for="publisher">Izdavač</label>
+            <input type="text" class="in" id="publisher" name="publisher" required>
+
+            <label for="type-of-publisher">Kategorija izdavaca</label>
+            <input type="text" class="in" id="type-of-publisher" name="typeOfPublisher" required>
+
+            <label for="genre">žanr</label>
+            <select class="in" id="genre" name="genre">
+                <option value="komedija">Komedija</option>
+                <option value="akcija">Akcija</option>
+                <option value="drama">Drama</option>
+                <option value="sci-fi">Sci-fi</option>
+                <option value="avantura">Avantura</option>
+            </select>
+
+            <label for="year">Godina izdanja</label>
+            <input type="number" class="in" id="year" name="year" required>
+
+            <label for="edition">Broj izdanja</label>
+            <input type="text" class="in" id="edition" name="edition" required>
+
+            <label for="description">Opis</label>
+            <input type="text" class="in" id="description" name="description" required>
+
+            <label for="language">Jezik</label>
+            <input type="text" class="in" id="language" name="language" required>
+
+            <label for="availability">Dostupnost</label>
+            <input type="text" class="in" id="availability" name="availability" required>
+            
+            <label for="cover-image">Slika korica</label>
+            <input type="file" id="cover-image" class="in" name="coverImage" accept="image/*" required>
+
+            <button id="pub-button" class="searchbtn" type="submit" form="pub-form">Dodaj naslov</button>
+        </form>
+    </div>
+</div>

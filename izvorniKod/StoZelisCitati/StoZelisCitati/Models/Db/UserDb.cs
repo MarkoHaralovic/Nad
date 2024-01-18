@@ -1,10 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using NpgsqlTypes;
-using StoZelisCitati.Helpers;
+﻿using NpgsqlTypes;
 
-namespace StoZelisCitati.Models.Dto;
+namespace StoZelisCitati.Models.Db;
 
-public record UserRecord(
+public record UserDb(
     int id_korisnik,
     string korisnicko_ime,
     string lozinka,
@@ -18,10 +16,8 @@ public record UserRecord(
     bool odobren,
     NpgsqlPoint koordinate)
 {
-    public User ToDomainObject()
-    {
-        return new User(
-            id_korisnik,
+    public User ToDomainObject() =>
+        new(id_korisnik,
             korisnicko_ime,
             lozinka,
             naziv_korisnika,
@@ -33,7 +29,5 @@ public record UserRecord(
             drzava,
             odobren,
             koordinate.Y,
-            koordinate.X
-        );
-    }
+            koordinate.X);
 }

@@ -1,7 +1,6 @@
 ﻿namespace StoZelisCitati.Models;
 
-public record User(
-    int Id,
+public record RegisterRequest(
     string Username,
     string Password,
     string DisplayName,
@@ -10,7 +9,4 @@ public record User(
     string PhoneNumber,
     string Address,
     string City,
-    string Country,
-    bool Approved,
-    double Latitude,
-    double Longitude);
+    string Country);

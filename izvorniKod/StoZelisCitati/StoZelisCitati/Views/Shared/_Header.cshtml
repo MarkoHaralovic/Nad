@@ -1,13 +1,7 @@
-﻿@model dynamic
-
-@{
-    var user = Context.User;
-}
-
-<div class="header-container">   
+﻿<div class="header-container">   
     <div id="header">
         <div id="logo" class="ot">
-            <a href="/" style="text-decoration: none; color: white;"> Logo </a> 
+            <a href="/" style="text-decoration: none; color: white;"> Logo </a>
         </div>
         <div id="krug" class="kr">
             <a href="/filter">
@@ -15,13 +9,13 @@
             </a>
         </div>
         <div id="header-right">
-            @if (user.Identity?.IsAuthenticated == true)
+            @if (User.Identity?.IsAuthenticated == true)
             {
                 <p>Logged in.</p>
                 <a href="/account/logout">Logout</a>
-                @if (user.IsInRole("admin"))
+                @if (User.IsInRole("admin"))
                 {
-                    <a href="/account/requests">Registration requests</a>
+                    <a href="/account/requests">Zahtjevi za registraciju</a>
                 }
             }
             else
