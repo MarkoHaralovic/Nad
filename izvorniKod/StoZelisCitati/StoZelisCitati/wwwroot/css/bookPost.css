@@ -63,20 +63,19 @@ body{
     height: 600px;
     border-radius: 4px;
     background-color: white;
-    display: flex;
     flex-direction: column;
     font-size: 55px;
     justify-content: center;
     align-items: center;
     display: none;
 }
+
 #listaTop{
 
     width: 100%;
     height: 600px;
     border-radius: 4px;
     background-color: white;
-    display: flex;
     flex-direction: column;
     font-size: 55px;
     justify-content: center;
@@ -101,17 +100,15 @@ body{
 }
 
 #rek{
- 
     width: 100%;
-    height: 200px; 
-    
+    height: 200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
-.reklame{
 
+.reklame{
     width: 105px;
     height: 80px;
     border-radius: 5px;
@@ -123,19 +120,18 @@ body{
     align-items: center;
     cursor: pointer;
 }
-.reklame:hover{
 
+.reklame:hover{
     background-color: blue;
 }
 
 #trazi{
-
     font-size: 18px;
     display: flex;
     flex-direction: column;
 }
-#btnTrazi{
 
+#btnTrazi{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,25 +145,16 @@ body{
     width: 140px;
 }
 #min{
-
     cursor: pointer;
-}
-#trazi{
-
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    
-    
 }
 
 .inp{
-
     margin-top: 5px;
     padding: 5px;
     display: flex;
     justify-content: space-between;
 }
+
 .in{
 
     background-color: white;
@@ -184,7 +171,7 @@ body{
 
     width: 50px;
 }
-.searchbtn{
+/*.searchbtn{
 
     width: 120px;
     height: 45px;
@@ -199,55 +186,8 @@ body{
     align-self: center;
     margin-top: 15px;
     cursor: pointer;
-}
-.objava{
+}*/
 
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    max-width: 580px;
-    height: 120px;
-    border: 3px solid white;
-    margin-top: 15px;
-    border-radius: 10px;
-    justify-content: space-between;
-    font-size: 18px;
-    color: white;
-    background-color: #0077B6;
-}
-.fot{
-
-    display: flex;
-    flex-direction: column;
-    width: 100px;
-    
-}
-.inf{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 70%;
-}
-.left{
-
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    height: 120px;
-    margin-left: 10px;
-    justify-content: space-around;
-}
-
-.rig{
-
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    height: 120px;
-    margin-left: 10px;
-    justify-content: space-around;
-}
 .obr{
 
     padding-right: 10px;
@@ -346,7 +286,6 @@ body{
 
     display: flex;
     margin-left: 30px;
-    justify-content: center;
     justify-content: space-between;
 }
 .le{
@@ -453,16 +392,11 @@ body{
 @media screen and (max-width: 870px) {
 
     #left{
-
         margin-left: 5px;
-        
-    
     }
     
     #right{
-
         margin-right: 5px;
-        
     }
     .objava{
     
@@ -470,11 +404,8 @@ body{
     }
 } 
 @media screen and (max-width: 740px) {
-
-
-    #miniTraz{
-        
     
+    #miniTraz{
         display: none;
     }
 
@@ -488,9 +419,8 @@ body{
    #listaTop{
     min-width: 300px;
     height: 300px;
-    }
+   }  
     .objava{
-    
         width: 90%;
     }
     .profil{
@@ -554,7 +484,15 @@ body{
         align-self: center;
     }
 
+    #filter-container {
+        order: 1;
+        width: 100%;
+    }
 
+    #pub-container {
+        order: 2;
+        width: 100%;
+    }
 }   
 @media screen and (max-width: 645px) {
 
