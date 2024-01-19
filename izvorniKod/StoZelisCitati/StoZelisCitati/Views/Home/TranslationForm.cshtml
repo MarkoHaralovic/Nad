@@ -5,8 +5,8 @@
 }
 
 <form hx-post="/translation-request" hx-swap="outerHTML">
-    <label for="user-id">Odaberi izdavača</label>
-    <select id="user-id" name="userId">
+    <label for="user-id" style="margin-left: 40px">Odaberi izdavača</label>
+    <select id="user-id" name="userId" class="searchbtn">
         @foreach (User user in Model.allPublishers)
         {
             <option value="@user.Id">@user.DisplayName</option>
@@ -14,5 +14,5 @@
     </select>
     <input type="hidden" name="bookId" value="@Model.bookId"/>
     
-    <input type="submit" value="Pošalji zahtjev"/>
+    <input class="searchbtn" type="submit" value="Pošalji zahtjev"/>
 </form>

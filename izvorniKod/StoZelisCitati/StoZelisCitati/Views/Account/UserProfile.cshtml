@@ -51,27 +51,27 @@
         <div id="user-container">
             <div id="user-left">
                 <div id="gen-div" class="user-info">
-                    <h2>Korisničko ime:</h2>
+                    <h3>Korisničko ime:</h3>
                     <p>@Model.user.Username</p>
                 </div>
                 <div id="name-div" class="user-info">
-                    <h2>Ime ponuditelja:</h2>
+                    <h3>Ime ponuditelja:</h3>
                     <p>@Model.user.DisplayName</p>
                 </div>
                 <div class="user-info">
-                    <h2>Vrsta ponuditelja:</h2>
+                    <h3>Vrsta ponuditelja:</h3>
                     <p>@Model.user.UserType</p>
                 </div>
                 <div id="email-div" class="user-info">
-                    <h2>Email:</h2>
+                    <h3>Email:</h3>
                     <p>@Model.user.Email</p>
                 </div>
                 <div id="phone-div" class="user-info">
-                    <h2>Mobitel:</h2>
+                    <h3>Mobitel:</h3>
                     <p>@Model.user.PhoneNumber</p>
                 </div>
                 <div id="addy-div" class="user-info">
-                    <h2>Adresa:</h2>
+                    <h3>Adresa:</h3>
                     <p>@Model.user.Address, @Model.user.City, @Model.user.Country</p>
                 </div>
                 @if (Model.authorized)
@@ -81,6 +81,25 @@
                             <button id="new-pub-btn" class="searchbtn">Novi naslov</button>
                         </a>
                     </div>
+                }
+
+            </div>
+            <div id="user-right">
+                <div id="map" style="">
+                    <script>
+                            var map = L.map('map').setView([@Model.user.Latitude, @Model.user.Longitude], 13);
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            }).addTo(map);
+
+                            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            }).addTo(map);
+                            
+                            L.marker([@Model.user.Latitude, @Model.user.Longitude]).addTo(map)
+                    </script>
+                </div>
+                <div id="translate-table" style="margin-top: 40px;">
                     @if (Model.translationRequests.Any())
                     {
                         <table>
@@ -102,22 +121,6 @@
                             }
                         </table>
                     }
-                }
-            </div>
-            <div id="user-right">
-                <div id="map" style="">
-                    <script>
-                            var map = L.map('map').setView([@Model.user.Latitude, @Model.user.Longitude], 13);
-                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            }).addTo(map);
-
-                            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            }).addTo(map);
-                            
-                            L.marker([@Model.user.Latitude, @Model.user.Longitude]).addTo(map)
-                    </script>
                 </div>
             </div>
         </div>

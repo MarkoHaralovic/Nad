@@ -91,11 +91,11 @@
 }
 
 .searchbtn {
-    background-color: #b9e5e8; /* Same as header background color */
-    border: 1px solid #ddd; /* Same as header border color */
-    border-radius: 5px; /* Same as header border radius */
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Same as header box shadow */
-    color: #4a505c; /* Same as user-btn color */
+    background-color: #b9e5e8;
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    color: #4a505c;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -113,15 +113,21 @@
 }
 
 .ot {
-    font-size: 35px;
     align-self: center;
     padding: 50px;
     color: white;
 }
 
+#logo-img {
+    padding-left: 10px;
+    max-width: 100%;
+    height: auto;
+    max-height: 101px;
+}
+
 #povecalo {
-    margin-top: 90px;
-    margin-left: 50px;
+    margin-top: 100px;
+    margin-left: 65px;
 }
 
 #center {
