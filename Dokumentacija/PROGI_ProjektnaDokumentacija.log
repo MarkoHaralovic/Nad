@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.22)  19 JAN 2024 21:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.22)  19 JAN 2024 21:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1534,6 +1534,11 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 39--39
 []\OT1/jkp/m/n/12 23.12.2023. 
  []
 
+
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 39--39
+[]\OT1/jkp/m/n/12 17.11.2023. 
+ []
+
 > Step: build the whole table.
 
 Overfull \hbox (6.59267pt too wide) in paragraph at lines 39--39
@@ -1611,7 +1616,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [2
 
 
-])
+]
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 39--39
+[]\OT1/jkp/m/n/12 17.11.2023. 
+ []
+
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2413,7 +2423,7 @@ anged.
 Here is how much of TeX's memory you used:
  29444 strings out of 474503
  568481 string characters out of 5756704
- 2091043 words of memory out of 5000000
+ 2090043 words of memory out of 5000000
  50628 multiletter control sequences out of 15000+600000
  618762 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2476,7 +2486,7 @@ dist/fonts/type1/public/kpfonts/jkpmit8a.pfb><c:/texlive/2023/texmf-dist/fonts/
 type1/public/kpfonts/jkpmite.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
 /kpfonts/jkpmn8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkp
 mnc.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (46 pages, 2371918 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (46 pages, 2372020 bytes).
 PDF statistics:
  674 PDF objects out of 1000 (max. 8388607)
  565 compressed objects within 6 object streams
