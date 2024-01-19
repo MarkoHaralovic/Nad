@@ -74,6 +74,22 @@ public class BookController : Controller
     }
 
     [Authorize]
+    [HttpDelete("offer/{offerId:int}")]
+    public async Task<IActionResult> DeleteOffer(int offerId)
+    {
+        int? ownerId = await npgsqlRepository.GetOwnerOfOffer(offerId);
+        if (ownerId == null)
+            return NotFound($"Ponuda sa id {offerId} nije pronađena.");
+
+        if (User.Id() != ownerId)
+            return Forbid("Korisnik nemože uređivati ovu ponudu.");
+
+        await npgsqlRepository.DeleteOffer(offerId);
+        
+        return Ok();
+    }
+
+    [Authorize]
     [HttpGet("offer/{offerId:int}/edit")]
     public async Task<IActionResult> EditOffer(int offerId)
     {

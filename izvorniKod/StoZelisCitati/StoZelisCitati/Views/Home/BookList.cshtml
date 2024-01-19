@@ -1,14 +1,14 @@
-﻿@model IEnumerable<Book>
+﻿@model IEnumerable<(Book, Offer)>
 
 @{
     Layout = null;
 }
 
 <div id="right">
-    @foreach (Book book in Model)
+    @foreach ((Book book, Offer offer) in Model)
     {
         <div id="o1" class="objava">
-            <div class="price">Price€</div>
+            <div class="price">@offer.State, @offer.Price€</div>
             <div class="fot">
                 <a href="/book/@book.Id">
                     <img height="120" src="book/@book.Id/image" alt="">

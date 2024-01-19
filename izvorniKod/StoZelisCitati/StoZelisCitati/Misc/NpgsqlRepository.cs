@@ -149,6 +149,15 @@ public class NpgsqlRepository
         await npgsqlConnection.ExecuteAsync(query, new {offerId, price, state, count});
     }
 
+    public async Task DeleteOffer(int offerId)
+    {
+        string query = """
+                       delete from ponuda where id_ponuda = @offerId
+                       """;
+
+        await npgsqlConnection.ExecuteAsync(query, new {offerId});
+    }
+
     /// <returns>the id of the user that posted the offer</returns>
     public async Task<int?> GetOwnerOfOffer(int offerId)
     {
@@ -265,7 +274,7 @@ public class NpgsqlRepository
             .Select(x => x.ToDomainObject());
     }
     
-    public async Task<(IEnumerable<Book> books, int pageCount)> FilterBooks(BookQuery bookQuery)
+    public async Task<(IEnumerable<Book> books, int pageCount)> FilterBooks2(BookQuery bookQuery)
     {
         int booksPerPage = 5;
         
@@ -320,6 +329,68 @@ public class NpgsqlRepository
         IEnumerable<Book> books =
             (await npgsqlConnection.QueryAsync<BookDb>(selectTemplate.RawSql, selectTemplate.Parameters))
             .Select(x => x.ToDomainObject());
+
+        int count = await npgsqlConnection.QuerySingleAsync<int>(countTemplate.RawSql, countTemplate.Parameters);
+        int pageCount = (int) Math.Ceiling(count / (decimal) booksPerPage);
+        
+        return (books, pageCount);
+    }
+    
+    public async Task<(IEnumerable<(Book, Offer)> books, int pageCount)> FilterBooks(BookQuery bookQuery)
+    {
+        int booksPerPage = 5;
+        
+        var builder = new SqlBuilder();
+
+        string query = """
+                       select knjiga.*, ponuda.*
+                       from korisnik natural join knjiga natural join ponuda
+                       /**where**/
+                       order by naslov, godina_izdavanja desc
+                       limit @booksPerPage
+                       offset @offset
+                       """;
+        
+        var selectTemplate = builder.AddTemplate(query,
+            new { offset = (bookQuery.Page - 1) * booksPerPage , booksPerPage });
+        
+        var countTemplate = builder
+            .AddTemplate("select count(*) from korisnik natural join knjiga natural join ponuda /**where**/");
+        
+        if (bookQuery.Title != null)
+            builder.Where("naslov = @title", new {title = bookQuery.Title});
+        if (bookQuery.YearFrom != null)
+            builder.Where("godina_izdavanja > @yearFrom", new {yearFrom = bookQuery.YearFrom});
+        if (bookQuery.YearTo != null)
+            builder.Where("godina_izdavanja < @yearTo", new {yearTo = bookQuery.YearTo});
+        if (bookQuery.Author != null)
+            builder.Where("autor = @author", new {author = bookQuery.Author});
+        if (bookQuery.Publisher != null)
+            builder.Where("izdavac = @publisher", new {publisher = bookQuery.Publisher});
+        if (bookQuery.Edition != null)
+            builder.Where("broj_izdanja = @edition", new {edition = bookQuery.Edition});
+        if (bookQuery.TypeOfPublisher != null)
+            builder.Where("kategorija_izdavaca = @pType", new {pType = bookQuery.TypeOfPublisher});
+        if (bookQuery.Genre != null)
+            builder.Where("zanr = @genre", new {genre = bookQuery.Genre});
+        if (bookQuery.Isbn != null)
+            builder.Where("isbn = @isbn", new {isbn = bookQuery.Isbn});
+        if (bookQuery.Language != null)
+            builder.Where("jezik = @language", new {language = bookQuery.Language});
+        if (bookQuery.Availability != null)
+            builder.Where("dostupnost = @availability", new {availability = bookQuery.Availability});
+        if (bookQuery.State != null)
+            builder.Where("stanje = @state", new {state = bookQuery.State});
+        if (bookQuery.PriceFrom != null)
+            builder.Where("cijena > @priceFrom", new {priceFrom = bookQuery.PriceFrom});
+        if (bookQuery.PriceTo != null)
+            builder.Where("cijena < @priceTo", new {priceTo = bookQuery.PriceTo});
+        if (bookQuery.Seller != null)
+            builder.Where("naziv_korisnika = @seller", new {seller = bookQuery.Seller});
+
+        IEnumerable<(Book, Offer)> books =
+            await npgsqlConnection.QueryAsync<BookDb, OfferDb, (Book, Offer)>(selectTemplate.RawSql,
+                (b, o) => (b.ToDomainObject(), o.ToDomainObject()), selectTemplate.Parameters, splitOn:"id_ponuda");
 
         int count = await npgsqlConnection.QuerySingleAsync<int>(countTemplate.RawSql, countTemplate.Parameters);
         int pageCount = (int) Math.Ceiling(count / (decimal) booksPerPage);

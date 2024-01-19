@@ -5,7 +5,7 @@
 }
 
 <form hx-post="/translation-request" hx-swap="outerHTML">
-    <label for="user-id">Odaberi </label>
+    <label for="user-id">Odaberi izdavača</label>
     <select id="user-id" name="userId">
         @foreach (User user in Model.allPublishers)
         {
