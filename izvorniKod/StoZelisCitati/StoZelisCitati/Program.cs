@@ -43,18 +43,18 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
-NpgsqlRepository repo = 
-new NpgsqlRepository(new NpgsqlConnection(builder.Configuration.GetConnectionString("Default")));
-
-int bookId = 3;
-string imagePath = "1984.jpg";
-    
-int? userId = await repo.GetOwnerOfBook(bookId)!;
-if (userId == null)
-    throw new Exception("book does not belong to user.");
-
-byte[] image = File.ReadAllBytes($"C:/Users/lovri/Downloads/{imagePath}");
-await repo.AddBookCover(image, "image/jpg", bookId);
+// NpgsqlRepository repo = 
+// new NpgsqlRepository(new NpgsqlConnection(builder.Configuration.GetConnectionString("Default")));
+//
+// int bookId = 3;
+// string imagePath = "1984.jpg";
+//     
+// int? userId = await repo.GetOwnerOfBook(bookId)!;
+// if (userId == null)
+//     throw new Exception("book does not belong to user.");
+//
+// byte[] image = File.ReadAllBytes($"C:/Users/lovri/Downloads/{imagePath}");
+// await repo.AddBookCover(image, "image/jpg", bookId);
 
 //
 // Dictionary<int, string> titleToFile = new()
