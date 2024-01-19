@@ -1,0 +1,134 @@
+
+
+body {
+    background-color: white;
+}
+
+#center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+    height: 100%;
+}
+
+.profil {
+    width: 500px;
+    height: 400px;
+    margin-left: 100px;
+    background-color: #e0f7fa;
+    border: 2px solid #669999;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.profil .foto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+table.info {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.info th, table.info td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table.info td {
+    color: black;
+}
+
+table.info th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+table.info tr:nth-child(even) {
+    background-color: #669999;
+}
+
+.image-container {
+    display: flex;
+    margin-right: 100px;
+    height: 405px;
+    margin-bottom: 15px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #669999; 
+    padding: 20px; 
+    border-radius: 5px; 
+}
+
+.image-container img {
+    transition: transform 0.3s ease-in-out;
+    margin:5px;
+    max-width: 100%; 
+    height: auto;
+    max-height: 100%;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 1250px) {
+
+    .profil {
+    
+        margin-left: 50px;
+    }
+    .image-container {
+    
+        margin-right: 50px;
+    }
+}
+@media screen and (max-width: 1140px) {
+
+    .profil {
+    
+        margin-left: 20px;
+    }
+    .image-container {
+    
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 1050px) {
+
+    #center{
+    
+        display: flex;
+        flex-direction: column;
+    }
+    .profil{
+    
+        width: 700px;
+    }
+    .image-container {
+    
+        margin-right: -20px;
+    }
+   
+}
+@media screen and (max-width: 800px) {
+
+    .profil{
+    
+        width: 400px;
+    }
+   
+}
