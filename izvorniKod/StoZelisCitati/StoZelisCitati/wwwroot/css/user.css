@@ -29,19 +29,25 @@
     width: 60%;
 }
 
+.objava {
+    overflow:scroll;
+    width: 80%;
+    margin-lefT:-30px;
+}
+
 .objava .extra .obr {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 5px;
 }
 
 .user-info {
     height: 25%;
 }
 
-#pub-container{
+/*#pub-container{
     padding-left: 20px;
-}
+}*/
 
 
 #new-pub {
@@ -77,6 +83,7 @@
     min-width: 500px;
     margin-top: 30px;
     height: 550px;
+    margin-left: -100px;
 }
 #center{
     display: flex;
@@ -97,7 +104,7 @@ td {
     border: 1px solid #669999;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1250px) {
 
     #left{
         margin-left: 3vw;
@@ -162,6 +169,13 @@ td {
         width:80vw;
     }
 }  
+
+@media screen and (max-width: 570px) {
+    .objava{
+        width:80vw;
+        margin-left:0;
+    }
+}
 
 @media screen and (max-width: 460px) {
     #translate-table{
