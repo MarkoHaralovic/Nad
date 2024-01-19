@@ -14,6 +14,18 @@ public class NpgsqlRepository
         this.npgsqlConnection = npgsqlConnection;
     }
 
+    public async Task AddTranslationRequest(int userId, int bookId)
+    {
+        string query = """
+                       insert into zahtjevi_za_prijevodom
+                       values (@bookId, @userId, 1)
+                       on conflict (id_knjiga, id_korisnik)
+                       do update set broj_zahtjeva = zahtjevi_za_prijevodom.broj_zahtjeva + 1
+                       """;
+
+        await npgsqlConnection.ExecuteAsync(query, new {bookId, userId});
+    }
+    
     public async Task AddOffer(AddOfferRequest addOfferRequest)
     {
         string query = """
@@ -99,26 +111,76 @@ public class NpgsqlRepository
             new DynamicParameters().Append(registerRequest, new {latitude, longitude}));
     }
 
-    public async Task<Book> GetBookWithId(int bookId)
+    public async Task<IEnumerable<TranslationRequest>> GetTranslationRequests(int userId)
+    {
+        string query = """
+                       select naslov, izdavac, broj_zahtjeva
+                       from zahtjevi_za_prijevodom join knjiga on zahtjevi_za_prijevodom.id_knjiga = knjiga.id_knjiga
+                       where zahtjevi_za_prijevodom.id_korisnik = @userId
+                       """;
+
+        return (await npgsqlConnection.QueryAsync<TranslationRequestDb>(query, new {userId}))
+            .Select(x => x.ToDomainObject());
+    }
+
+    public async Task<IEnumerable<Offer>> GetOffers(int bookId)
+    {
+        string query = "select * from ponuda where id_knjiga = @bookId";
+
+        return (await npgsqlConnection.QueryAsync<OfferDb>(query, new {bookId}))
+            .Select(x => x.ToDomainObject());
+    }
+
+    public async Task<Offer?> GetOffer(int offerId)
+    {
+        string query = "select * from ponuda where id_ponuda = @offerId";
+
+        return (await npgsqlConnection.QuerySingleOrDefaultAsync<OfferDb>(query, new {offerId}))
+            ?.ToDomainObject();
+    }
+
+    public async Task UpdateOffer(int offerId, double price, string state, int count)
+    {
+        string query = """
+                       update ponuda set cijena = @price, stanje = @state, broj_primjeraka = @count
+                       where id_ponuda = @offerId
+                       """;
+
+        await npgsqlConnection.ExecuteAsync(query, new {offerId, price, state, count});
+    }
+
+    /// <returns>the id of the user that posted the offer</returns>
+    public async Task<int?> GetOwnerOfOffer(int offerId)
+    {
+        string query = """
+                       select id_korisnik
+                       from ponuda natural join knjiga natural join korisnik
+                       where id_ponuda = @offerId
+                       """;
+
+        return await npgsqlConnection.QuerySingleOrDefaultAsync<int>(query, new {offerId});
+    }
+    
+    public async Task<Book?> GetBookWithId(int bookId)
     {
         string query = "select * from knjiga where id_knjiga = @bookId";
 
-        return (await npgsqlConnection.QuerySingleAsync<BookDb>(query, new {bookId}))
-            .ToDomainObject();
+        return (await npgsqlConnection.QuerySingleOrDefaultAsync<BookDb>(query, new {bookId}))
+            ?.ToDomainObject();
     }
     
-    public async Task<BookCover> GetBookCoverForBook(int bookId)
+    public async Task<BookCover?> GetBookCoverForBook(int bookId)
     {
         string query = "select * from korice where id_knjiga = @bookId";
         
-        return (await npgsqlConnection.QuerySingleAsync<BookCoverDb>(query, new {bookId}))
-            .ToDomainObject();
+        return (await npgsqlConnection.QuerySingleOrDefaultAsync<BookCoverDb>(query, new {bookId}))
+            ?.ToDomainObject();
     }
 
-    public async Task<int> GetIdOfUserThatOwnsBook(int bookId)
+    public async Task<int?> GetIdOfUserThatOwnsBook(int bookId)
     {
         string query = "select id_korisnik from knjiga where id_knjiga = @bookId";
-        return await npgsqlConnection.QuerySingleAsync<int>(query, new {bookId});
+        return await npgsqlConnection.QuerySingleOrDefaultAsync<int>(query, new {bookId});
     }
 
     public async Task<int> GetNumberOfBooksBelongingToUser(int userId)
@@ -167,6 +229,18 @@ public class NpgsqlRepository
             ?.ToDomainObject();
     }
     
+    public async Task<User?> GetUser(int userId)
+    {
+        string query = """
+                       select *
+                       from korisnik
+                       where id_korisnik = @userId
+                       """;
+
+        return (await npgsqlConnection.QuerySingleOrDefaultAsync<UserDb>(query, new {userId}))
+            ?.ToDomainObject();
+    }
+    
     public async Task<IEnumerable<User>> GetUsers(bool approved)
     {
         string query = """
@@ -177,7 +251,19 @@ public class NpgsqlRepository
 
         return (await npgsqlConnection.QueryAsync<UserDb>(query, new {approved}))
             .Select(x => x.ToDomainObject());
-    } 
+    }
+    
+    public async Task<IEnumerable<User>> GetUsers(string userType)
+    {
+        string query = """
+                       select *
+                       from korisnik
+                       where odobren = true and vrsta_korisnika = @userType
+                       """;
+
+        return (await npgsqlConnection.QueryAsync<UserDb>(query, new {userType}))
+            .Select(x => x.ToDomainObject());
+    }
     
     public async Task<(IEnumerable<Book> books, int pageCount)> FilterBooks(BookQuery bookQuery)
     {

@@ -89,6 +89,7 @@
 
 
     <ItemGroup>
+      <AdditionalFiles Include="Views\Book\Book.cshtml" />
       <AdditionalFiles Include="Views\Home\AddOffer.cshtml" />
       <AdditionalFiles Include="Views\Home\TransactionSuccessful.cshtml" />
     </ItemGroup>

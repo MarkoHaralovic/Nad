@@ -71,7 +71,7 @@ public class AccountController : Controller
             registerRequest.UserType != UserType.Middleman &&
             registerRequest.UserType != UserType.Publisher)
         {
-            return BadRequest("Izaberite jednu od punuđenih kategorija.");
+            return BadRequest("Odaberite jednu od punuđenih kategorija.");
         }
 
         GoogleGeocoder geocoder = new GoogleGeocoder {ApiKey = "AIzaSyDhmDNo6RQm3LO4JG_mjYWQFYkJhQjfgNY"};
@@ -102,15 +102,15 @@ public class AccountController : Controller
     [HttpGet("profile")]
     public async Task<IActionResult> UserProfile()
     {
-        string userName = User.FindFirstValue(ClaimTypes.Name)!;
-
-        User? user = await npgsqlRepository.GetUser(userName);
+        User? user = await npgsqlRepository.GetUser(User.Id());
         if (user == null)
-            return NotFound("User does not exist.");
+            return NotFound("Korisnik ne postoji.");
 
         IEnumerable<Book> books = await npgsqlRepository.GetBooksBelongingToUser(user.Id);
+
+        IEnumerable<TranslationRequest> translationRequests = await npgsqlRepository.GetTranslationRequests(user.Id);
         
-        return View((user, books));
+        return View((user, books, translationRequests));
     }
 
     [Authorize(Roles = UserType.Admin)]

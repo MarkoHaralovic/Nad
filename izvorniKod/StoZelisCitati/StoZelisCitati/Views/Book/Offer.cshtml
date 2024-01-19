@@ -1,0 +1,15 @@
+﻿@model (Offer offer, bool editPermissions)
+
+@{
+    Layout = null;
+}
+
+<div hx-target="this" hx-swap="outerHTML">
+    <div><label>Cijena</label>: @Model.offer.Price</div>
+    <div><label>Stanje</label>: @Model.offer.State</div>
+    <div><label>Količina</label>: @Model.offer.Count</div>
+    @if (Model.editPermissions)
+    {
+        <button hx-get="/book/offer/@Model.offer.Id/edit">Uredi</button>
+    }
+</div>

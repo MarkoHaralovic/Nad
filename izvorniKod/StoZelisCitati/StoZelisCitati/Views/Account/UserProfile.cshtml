@@ -1,4 +1,4 @@
-﻿@model (User user, IEnumerable<Book> books)
+﻿@model (User user, IEnumerable<Book> books, IEnumerable<TranslationRequest> translationRequests)
 
 @section Styles
 {
@@ -74,6 +74,40 @@
                     <h2>Adresa:</h2>
                     <p>@Model.user.Address, @Model.user.City, @Model.user.Country</p>
                 </div>
+                <div id="new-pub-btn-div" class="user-info">
+                    <a href="/add-title">
+                        <button id="new-pub-btn" class="searchbtn">Novi naslov</button>
+                    </a>
+                </div>
+                @if (Model.books.Any())
+                {
+                    <div id="new-pub-btn-div" class="user-info">
+                        <a href="/add-offer">
+                            <button id="new-pub-btn" class="searchbtn">Nova ponuda</button>
+                        </a>
+                    </div>
+                }
+                @if (Model.translationRequests.Any())
+                {
+                    <table>
+                        <tr>
+                            <th colspan="3">Zahtjevi za prijevodom</th>
+                        </tr>
+                        <tr>
+                            <th>Naslov strane knjige</th>
+                            <th>Strani izdavač</th>
+                            <th>Broj zahtjeva</th>
+                        </tr>
+                        @foreach (TranslationRequest translationRequest in Model.translationRequests)
+                        {
+                            <tr>
+                                <td>@translationRequest.Title</td>
+                                <td>@translationRequest.Publisher</td>
+                                <td>@translationRequest.Count</td>
+                            </tr>
+                        }
+                    </table>
+                }
             </div>
             <div id="user-right">
                 <div id="map" style="">

@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using System.Transactions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,16 +19,7 @@ public class HomeController : Controller
         this.npgsqlRepository = npgsqlRepository;
     }
 
-    public async Task<IActionResult> Index()
-    {
-        if (User.Identity?.IsAuthenticated != true)
-            return View(false);
-
-        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
-            return View(false);
-
-        return View(await npgsqlRepository.GetNumberOfBooksBelongingToUser(userId) != 0);
-    }
+    public IActionResult Index() => View();
 
     [HttpGet("/markers")]
     public async Task<ActionResult<IEnumerable<MapMarker>>> Markers()
@@ -48,20 +40,6 @@ public class HomeController : Controller
         return View((bookQuery, books, pageCount));
     }
 
-    [HttpGet("/image/{bookId:int}")]
-    public async Task<IActionResult> Image(int bookId)
-    {
-        BookCover cover = await npgsqlRepository.GetBookCoverForBook(bookId);
-        return File(cover.Image, cover.ImageType);
-    }
-
-    [HttpGet("/book/{bookId:int}")]
-    public async Task<IActionResult> Book(int bookId)
-    {
-        Book book = await npgsqlRepository.GetBookWithId(bookId);
-        return View(book);
-    }
-
     [Authorize]
     [HttpGet("/add-title")]
     public IActionResult AddBook() => View();
@@ -70,11 +48,7 @@ public class HomeController : Controller
     [HttpPost("/add-title")]
     public async Task<IActionResult> AddBook(AddBookRequest addBookRequest)
     {
-        int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-
-        string userType = User.FindFirstValue(ClaimTypes.Role)!;
-
-        if (userType == UserType.Publisher && addBookRequest.Language != "Hrvatski")
+        if (User.IsInRole(UserType.Publisher) && !Language.CroatianAliases.Contains(addBookRequest.Language))
             return UnprocessableEntity("Izdavač može ponuditi samo knjige na Hrvatskom jeziku.");
 
         using MemoryStream memoryStream = new MemoryStream();
@@ -83,7 +57,7 @@ public class HomeController : Controller
 
         using (TransactionScope transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
         {
-            int titleId = await npgsqlRepository.AddBook(addBookRequest, userId);
+            int titleId = await npgsqlRepository.AddBook(addBookRequest, User.Id());
 
             await npgsqlRepository.AddBookCover(cover, addBookRequest.CoverImage.ContentType, titleId);
 
@@ -96,9 +70,7 @@ public class HomeController : Controller
     [HttpGet("/add-offer")]
     public async Task<IActionResult> AddOffer()
     {
-        int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-
-        IEnumerable<Book> books = await npgsqlRepository.GetBooksBelongingToUser(userId);
+        IEnumerable<Book> books = await npgsqlRepository.GetBooksBelongingToUser(User.Id());
         return View(books);
     }
 
@@ -106,13 +78,39 @@ public class HomeController : Controller
     [HttpPost("/add-offer")]
     public async Task<IActionResult> AddOffer(AddOfferRequest addOfferRequest)
     {
-        int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-
-        if (userId != await npgsqlRepository.GetIdOfUserThatOwnsBook(addOfferRequest.TitleId))
+        int? ownerId = await npgsqlRepository.GetIdOfUserThatOwnsBook(addOfferRequest.TitleId);
+        if (ownerId == null)
+            return NotFound("Book does not exist.");
+        
+        if (User.Id() != ownerId)
             return Forbid($"Korisnik nije autoriziran objaviti ponudu za naslov {addOfferRequest.TitleId}.");
         
         await npgsqlRepository.AddOffer(addOfferRequest);
 
         return View("Success", ("Ponuda objavljena.", "/account/profile"));
+    }
+
+    [HttpGet("/translation-form/{bookId:int}")]
+    public async Task<IActionResult> TranslationForm(int bookId)
+    {
+        Book? book = await npgsqlRepository.GetBookWithId(bookId);
+        if (book == null)
+            return Ok("Knjiga ne postoji.");
+        
+        return View((bookId, await npgsqlRepository.GetUsers(UserType.Publisher)));
+    }
+
+    [HttpPost("translation-request")]
+    public async Task<IActionResult> RequestTranslation([Required] int userId, [Required] int bookId)
+    {
+        User? user = await npgsqlRepository.GetUser(userId);
+        if (user == null)
+            return Ok("Korisnik nije pronađen.");
+
+        if (user.UserType != UserType.Publisher)
+            return Ok("Korisnik nije izdavač.");
+        
+        await npgsqlRepository.AddTranslationRequest(userId, bookId);
+        return Ok("Zahtjev za prijevodom zabilježen.");
     }
 }

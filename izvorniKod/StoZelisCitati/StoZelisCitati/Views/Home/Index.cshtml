@@ -1,6 +1,4 @@
-﻿@model bool
-
-@{
+﻿@{
     ViewData["Title"] = "Home";
 }
 
@@ -34,15 +32,6 @@
         </form>
         <h3 id="map-text" style="padding-top: 10px">Lokacije ponuditelja</h3>
         <div id="map"></div>
-        <div id="rek">
-            @if (User.Identity?.IsAuthenticated == true)
-            {
-                <a href="/add-title" class="user-btn" style="padding:5px;border: 2px solid rgb(75, 190, 250); border-radius: 10px">Novi naslov</a>
-                if (Model)
-                {
-                    <a href="/add-offer">Nova ponuda</a>
-                }
-            }
-        </div>
+        <div id="rek"></div>
     </div>
 </div>
