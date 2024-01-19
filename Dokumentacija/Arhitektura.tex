@@ -48,7 +48,7 @@
 			email & VARCHAR	& e-mail korisnika		\\ \hline 
 			broj mobitela & INT	& korisnikov broj mobitela		\\ \hline 
 			adresa & VARCHAR	& adresa korisnika 		\\ \hline 
-			odobren & BOOLEAN	& govori nam je li korisnik odobren (registriran) u sustavu, tj. može li se ulogirati		\\ \hline 
+			odobren & BOOLEAN	& govori nam je li korisnik odobren (registriran) u sustavu, tj. može li se prijaviti		\\ \hline 
 			drzava & VARCHAR	& država u kojoj se nalazi korisnik 		\\ \hline 
 			grad & VARCHAR	& grad u kojem se nalazi korisnik 		\\ \hline 
 			koordinate & FLOAT	& geografske koordinate korisnika		\\ \hline 
@@ -141,7 +141,9 @@
 			
 		\section{Dijagram razreda}
 		
-			\raggedright{Paket Model preslikava bazu podataka u aplikaciji. Razred Book predstavlja knjigu koja je objavljena na stranici. Razred BookCover predstavlja naslovnicu knjige. Razred Offer predstavlja ponudu za neku knjigu. Razred User predstavlja registriranog korisnika koji može stvarati nove objave na stranici. Razredi UserType, PublisherType, Language, Country sadržavaju vrste atributa korisnika te njihovi atributi imaju predodređene vrijednosti. Razred RegisterRequest služi za dodavanje novog koisnika. Paket Controller sadrži klase NpgsqlRepository, AccountController, HomeController i BookController. U razredu AccountController nalaze se sve metode potrebne za prijavu ili registraciju korisnika. U klasi HomeController nalaze se metode potrebne za korištenje web-aplikacije. Razred BookController sadrži metode za upravljanje knjigama i njihovim ponudama. U razredu NpgsqlRepository nalaze se metode potrebne za upravljanje knjigama, korisnicima i prijevodima, npr. brisanje, dodavanje, ažuriranje ili dohvat.}\\
+			Paket \textit{Model} preslikava bazu podataka u aplikaciji. Razred \textit{Book} predstavlja knjigu koja je objavljena na stranici. Razred \textit{BookCover} predstavlja naslovnicu knjige. Razred \textit{Offer} predstavlja ponudu za neku knjigu. Razred \textit{User} predstavlja registriranog korisnika koji može stvarati nove objave na stranici. Razredi \textit{UserType}, \textit{PublisherType}, \textit{Language}, \textit{Country} sadrže vrste atributa korisnika te njihovi atributi imaju predodređene vrijednosti. Razred \textit{RegisterRequest} služi za dodavanje novog korisnika.\\
+				
+			Paket \textit{Controller} sadrži klase \textit{NpgsqlRepository}, \textit{AccountController}, \textit{HomeController} i \textit{BookController}. U razredu \textit{AccountController} nalaze se sve metode potrebne za prijavu ili registraciju korisnika. U klasi \textit{HomeController} nalaze se metode potrebne za korištenje web-aplikacije. Razred \textit{BookController} sadrži metode za upravljanje knjigama i njihovim ponudama. U razredu \textit{NpgsqlRepository} nalaze se metode potrebne za upravljanje knjigama, korisnicima i prijevodima, npr. brisanje, dodavanje, ažuriranje ili dohvat.\\
 			
 			\clearpage
 			
@@ -157,7 +159,11 @@
 		\section{Dijagram stanja}
 			
 			
-			\raggedright{Dijagram stanja objašnjava stanja u kojima se web stranica može nalaziti i kako se prelazi iz jednog stanja u drugo. Na slici se 							prikazuje stanja i prijelazi za registriranog korisnika. Za neregistriranog je uglavnom isto, samo što se mogu registrirai i ulogirati, ali  ne mogu pregledavati svoj račun. Sa glavne stranice korisnik može: pregledati svoj račun i od tamo pregledavati,dodavati i brisati objave, otići na traženje i filtriranje knjiga i odlogirati se sa svog računa. Kod tražilice se može otići na objavu, a kod objave na profil ponuditelja i obrnuto. U bilo kojem trenutku se može doći na početnu stranicu, stranicu za traženje i filtriranje i u bilo kojem trenutku je moguće napraviti registraciju, login i logout.} 
+			Dijagram stanja objašnjava stanja u kojima se web stranica može nalaziti i kako se prelazi iz jednog stanja u drugo.\\
+			Na slici se prikazuju stanja i prijelazi za registriranog korisnika. Za neregistriranog je uglavnom isto, samo što se mogu registrirati i prijavit, ali  ne mogu pregledavati svoj račun.\\
+			Sa glavne stranice korisnik može: pregledati svoj račun i od tamo pregledavati, dodavati i brisati objave, otići na traženje i filtriranje knjiga i odjaviti se iz svog računa.\\
+			Kod tražilice se može otići na objavu, a kod objave na profil ponuditelja i obrnuto. \\
+			U bilo kojem trenutku se može doći na početnu stranicu, stranicu za traženje i filtriranje i u bilo kojem trenutku je moguće napraviti registraciju, prijavu i odjavu.
 
            		\begin{figure}[h]
 				\centering
