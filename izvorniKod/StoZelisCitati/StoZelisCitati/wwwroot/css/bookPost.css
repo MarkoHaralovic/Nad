@@ -497,7 +497,8 @@ body{
 
 
 @media screen and (max-width: 645px) {
-
+    
+    
     #top{
         width: 100vw;
        }
@@ -518,7 +519,6 @@ body{
             flex-direction: row;
             justify-content: space-between;
             justify-self: center;
-            align-self: center;
         
         }
         #right{
@@ -552,14 +552,17 @@ body{
             margin-top: -50px;
         }
       
-} 
-@media screen and (max-width: 520px) {
+        .miniDiv{
+            font-size: 2vh;
+        }
+}
 
-    #povecalo{
+@media screen and (max-width: 500px) {
 
-        margin-top: 80px;
-        margin-left: 32px;
-    }  
-} 
+    #left{
+        margin-left: 0px;
+    }
+    
+}
 
 /* DIO ZA RESPOIVNI DIZAJN GORE, ako bude potrebno rasclaniti na vise css file*/

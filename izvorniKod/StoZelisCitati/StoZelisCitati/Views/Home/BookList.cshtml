@@ -8,7 +8,7 @@
     @foreach ((Book book, Offer offer) in Model)
     {
         <div id="o1" class="objava">
-            <div class="price">@offer.State, @offer.Price€</div>
+            <div class="price" style="border: 2px solid gray;">@offer.State, @offer.Price€</div>
             <div class="fot">
                 <a href="/book/@book.Id">
                     <img height="120" src="book/@book.Id/image" alt="">
