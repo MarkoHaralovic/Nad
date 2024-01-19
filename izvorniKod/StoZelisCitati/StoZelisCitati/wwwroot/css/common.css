@@ -130,6 +130,7 @@
 }
 
 .objava {
+    position:relative;
     overflow:hidden;
     display: flex;
     flex-direction: row;
@@ -156,6 +157,14 @@
 
 .objava .fot img {
     border-radius: 5px;
+}
+
+.price {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #333;
 }
 
 .left{
