@@ -85,20 +85,6 @@
 
             </div>
             <div id="user-right">
-                <div id="map" style="">
-                    <script>
-                            var map = L.map('map').setView([@Model.user.Latitude, @Model.user.Longitude], 13);
-                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            }).addTo(map);
-
-                            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            }).addTo(map);
-                            
-                            L.marker([@Model.user.Latitude, @Model.user.Longitude]).addTo(map)
-                    </script>
-                </div>
                 <div id="translate-table" style="margin-top: 40px;">
                     @if (Model.translationRequests.Any())
                     {
