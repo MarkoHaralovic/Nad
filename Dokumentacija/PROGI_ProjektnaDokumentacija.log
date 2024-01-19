@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  19 JAN 2024 13:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  19 JAN 2024 15:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2458,9 +2458,15 @@ L3 programming layer <2023-12-11>
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija.out' has not ch
-anged.
-(rerunfilecheck)             Checksum: B400BABF613DD36682E3DFEA3F6CD11D;4419.
+
+Package rerunfilecheck Warning: File `PROGI_ProjektnaDokumentacija.out' has cha
+nged.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `PROGI_ProjektnaDokumentacija.out':
+(rerunfilecheck)             Before: C6894A541A6F8E0E0CEF62DEA284626F;4445
+(rerunfilecheck)             After:  B400BABF613DD36682E3DFEA3F6CD11D;4419.
  ) 
 Here is how much of TeX's memory you used:
  29498 strings out of 474495
@@ -2482,7 +2488,7 @@ ublic/kpfonts/jkpmn8a.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/kpfonts/jkpmnc.pfb><C:/Users/niko1/AppData/Local/Programs/MiKTeX/fo
 nts/type1/public/kpfonts/jkpmne.pfb><C:/Users/niko1/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (47 pages, 2367296 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (47 pages, 2367306 bytes).
 PDF statistics:
  667 PDF objects out of 1000 (max. 8388607)
  207 named destinations out of 1000 (max. 500000)
