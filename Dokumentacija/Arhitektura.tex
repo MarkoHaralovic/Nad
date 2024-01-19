@@ -30,7 +30,7 @@
 		\subsection{Opis tablica}
 		
 		Ova tablica sadrži sve potrebne informacije o korisniku, kao što su:
-		korisničko ime, lozinku korisnika, korisnikovo ime i prezime, koja je vrsta korisnika, njegov e-mail, broj mobitela, stanje odobrenosti, adresu, grad i državu u kojoj se nalazi. Ona je u "One-to-Many" vezi s tablicom Knjiga preko svojeg ID-a.
+		korisničko ime, lozinku korisnika, korisnikovo ime i prezime, koja je vrsta korisnika, njegov e-mail, broj mobitela, stanje odobrenosti, adresu, grad, koordinate i državu u kojoj se nalazi. Ona je u "One-to-Many" vezi s tablicom Knjiga preko svojeg ID-a.
 		\begin{longtblr}[
 			label=none,
 			entry=none
@@ -51,6 +51,7 @@
 			odobren & BOOLEAN	& govori nam je li korisnik odobren (registriran) u sustavu, tj. može li se ulogirati		\\ \hline 
 			drzava & VARCHAR	& država u kojoj se nalazi korisnik 		\\ \hline 
 			grad & VARCHAR	& grad u kojem se nalazi korisnik 		\\ \hline 
+			koordinate & FLOAT	& geografske koordinate korisnika		\\ \hline 
 			
 			
 		\end{longtblr}
@@ -119,7 +120,8 @@
 			} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
 			\hline \SetCell[c=3]{c}{\textbf{Korica}}	 \\ \hline[3pt]
 			\SetCell{LightGreen}ID & INT	&  Jedinstveni identifikator korice u tablici	\\ \hline
-			slika	& BLOB & Slika korice (spremljeno u bazi u BLOB formatu)	\\ \hline 
+			slika	& BLOB & Slika korice (spremljeno u bazi u BLOB formatu)	\\ \hline
+			tip slike & VARCHAR & Sadrži vrstu slike (npr. "image/jpg")\\ \hline 
 			\SetCell{LightBlue} ID naslov	& INT &  Identifikator knjige iz tablice Knjiga  	\\ \hline 
 			
 		\end{longtblr}
