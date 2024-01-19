@@ -21,7 +21,7 @@
 \contentsline {section}{\numberline {5.2}Ispitivanje programskog rješenja}{35}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Dijagram razmještaja}{36}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Upute za puštanje u pogon}{37}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Zaključak i budući rad}{38}{chapter.6}%
-\contentsline {chapter}{Popis literature}{39}{chapter*.4}%
-\contentsline {chapter}{Indeks slika i dijagrama}{40}{chapter*.5}%
-\contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{41}{chapter*.6}%
+\contentsline {chapter}{\numberline {6}Zaključak i budući rad}{40}{chapter.6}%
+\contentsline {chapter}{Popis literature}{41}{chapter*.4}%
+\contentsline {chapter}{Indeks slika i dijagrama}{42}{chapter*.5}%
+\contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{43}{chapter*.6}%
