@@ -26,7 +26,7 @@ public class HomeController : Controller
     {
         IEnumerable<User> users = await npgsqlRepository.GetUsers(true);
 
-        return Ok(users.Select(x => new MapMarker(x.DisplayName, x.Latitude, x.Longitude)).ToList());
+        return Ok(users.Select(x => new MapMarker(x.Id, x.DisplayName, x.Latitude, x.Longitude)).ToList());
     }
 
     [HttpGet("/filter")]
@@ -64,30 +64,6 @@ public class HomeController : Controller
             transactionScope.Complete();
         }
         return View("Success", ("Naslov objavljen.", "/account/profile"));
-    }
-
-    [Authorize]
-    [HttpGet("/add-offer")]
-    public async Task<IActionResult> AddOffer()
-    {
-        IEnumerable<Book> books = await npgsqlRepository.GetBooksBelongingToUser(User.Id());
-        return View(books);
-    }
-
-    [Authorize]
-    [HttpPost("/add-offer")]
-    public async Task<IActionResult> AddOffer(AddOfferRequest addOfferRequest)
-    {
-        int? ownerId = await npgsqlRepository.GetIdOfUserThatOwnsBook(addOfferRequest.TitleId);
-        if (ownerId == null)
-            return NotFound("Book does not exist.");
-        
-        if (User.Id() != ownerId)
-            return Forbid($"Korisnik nije autoriziran objaviti ponudu za naslov {addOfferRequest.TitleId}.");
-        
-        await npgsqlRepository.AddOffer(addOfferRequest);
-
-        return View("Success", ("Ponuda objavljena.", "/account/profile"));
     }
 
     [HttpGet("/translation-form/{bookId:int}")]

@@ -1,3 +1,3 @@
 ﻿namespace StoZelisCitati.Models.Dto;
 
-public record MapMarker(string Name, double Latitude, double Longitude);
+public record MapMarker(int UserId, string DisplayName, double Latitude, double Longitude);

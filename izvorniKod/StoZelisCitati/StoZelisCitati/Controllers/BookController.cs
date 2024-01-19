@@ -67,12 +67,15 @@ public class BookController : Controller
         
         if (User.Id() != ownerId)
             return Forbid("Korisnik nemože uređivati ovu ponudu.");
+
+        if (state != StateType.New && state != StateType.Used)
+            return BadRequest("Stanje mora bit novo ili polovno.");
         
         await npgsqlRepository.UpdateOffer(offerId, price, state, count);
 
         return View("Offer", (await npgsqlRepository.GetOffer(offerId), true));
     }
-
+    
     [Authorize]
     [HttpDelete("offer/{offerId:int}")]
     public async Task<IActionResult> DeleteOffer(int offerId)
@@ -88,6 +91,24 @@ public class BookController : Controller
         
         return Ok();
     }
+    
+    [Authorize]
+    [HttpPost("offer")]
+    public async Task<IActionResult> AddOffer(AddOfferRequest addOfferRequest)
+    {
+        int? ownerId = await npgsqlRepository.GetIdOfUserThatOwnsBook(addOfferRequest.TitleId);
+        if (ownerId == null)
+            return NotFound("Book does not exist.");
+        
+        if (User.Id() != ownerId)
+            return Forbid($"Korisnik nije autoriziran objaviti ponudu za naslov {addOfferRequest.TitleId}.");
+        
+        Offer? offer = await npgsqlRepository.AddOffer(addOfferRequest);
+        if (offer == null)
+            return Conflict("Unable to insert offer.");
+        
+        return View("OfferWithButton", (offer, true));
+    }
 
     [Authorize]
     [HttpGet("offer/{offerId:int}/edit")]
@@ -98,5 +119,12 @@ public class BookController : Controller
             return NotFound("Ponuda nije pronađena.");
         
         return View(offer);
+    }
+    
+    [Authorize]
+    [HttpGet("offer/create/{bookId:int}")]
+    public async Task<IActionResult> CreateOffer(int bookId)
+    {
+        return View(bookId);
     }
 }

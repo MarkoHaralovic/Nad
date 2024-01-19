@@ -26,7 +26,7 @@ public class NpgsqlRepository
         await npgsqlConnection.ExecuteAsync(query, new {bookId, userId});
     }
     
-    public async Task AddOffer(AddOfferRequest addOfferRequest)
+    public async Task<Offer?> AddOffer(AddOfferRequest addOfferRequest)
     {
         string query = """
                        insert into ponuda
@@ -37,10 +37,11 @@ public class NpgsqlRepository
                         @state,
                         @count,
                         @titleId
-                       )
+                       ) returning *
                        """;
 
-        await npgsqlConnection.ExecuteAsync(query, addOfferRequest);
+        return (await npgsqlConnection.QuerySingleOrDefaultAsync<OfferDb>(query, addOfferRequest))
+            ?.ToDomainObject();
     }
     
     public async Task AddBookCover(byte[] cover, string imageType, int titleId)
@@ -346,7 +347,7 @@ public class NpgsqlRepository
                        select knjiga.*, ponuda.*
                        from korisnik natural join knjiga natural join ponuda
                        /**where**/
-                       order by naslov, godina_izdavanja desc
+                       /**orderby**/
                        limit @booksPerPage
                        offset @offset
                        """;
@@ -356,27 +357,71 @@ public class NpgsqlRepository
         
         var countTemplate = builder
             .AddTemplate("select count(*) from korisnik natural join knjiga natural join ponuda /**where**/");
-        
+
+        int LevenshteinBound(int searchLength) => Math.Max(searchLength / 2, 3);
+
+        List<string> levenSum = new();
         if (bookQuery.Title != null)
-            builder.Where("naslov = @title", new {title = bookQuery.Title});
+        {
+            int titleLen = bookQuery.Title.Length;
+            builder.Where("levenshtein(left(naslov, @titleLen), @title) <= @titleBound",
+                new {title = bookQuery.Title, titleLen, titleBound = LevenshteinBound(titleLen)});
+            levenSum.Add("levenshtein(left(naslov, @titleLen), @title)");
+        }
+        if (bookQuery.Author != null)
+        {
+            int authorLen = bookQuery.Author.Length;
+            builder.Where("levenshtein(left(autor, @authorLen), @author) <= @authorBound",
+                new {author = bookQuery.Author, authorLen, authorBound = LevenshteinBound(authorLen)});
+            levenSum.Add("levenshtein(left(autor, @authorLen), @author)");
+        }
+        if (bookQuery.Publisher != null)
+        {
+            int publisherLen = bookQuery.Publisher.Length;
+            builder.Where("levenshtein(left(izdavac, @publisherLen), @publisher) <= @publisherBound",
+                new {publisher = bookQuery.Publisher, publisherLen, publisherBound = LevenshteinBound(publisherLen)});
+            levenSum.Add("levenshtein(left(izdavac, @publisherLen), @publisher)");
+        }
+        if (bookQuery.Genre != null)
+        {
+            int genreLen = bookQuery.Genre.Length;
+            builder.Where("levenshtein(left(zanr, @genreLen), @genre) <= @genreBound",
+                new {genre = bookQuery.Genre, genreLen, genreBound = LevenshteinBound(genreLen)});
+            levenSum.Add("levenshtein(left(zanr, @genreLen), @genre)");
+        }
+        if (bookQuery.Isbn != null)
+        {
+            int isbnLen = bookQuery.Isbn.Length;
+            builder.Where("levenshtein(left(isbn, @isbnLen), @isbn) <= @isbnBound",
+                new {isbn = bookQuery.Isbn, isbnLen, isbnBound = LevenshteinBound(isbnLen)});
+            levenSum.Add("levenshtein(left(isbn, @isbnLen), @isbn)");
+        }
+        if (bookQuery.Language != null)
+        {
+            int languageLen = bookQuery.Language.Length;
+            builder.Where("levenshtein(left(jezik, @languageLen), @language) <= @languageBound",
+                new {language = bookQuery.Language, languageLen, languageBound = LevenshteinBound(languageLen)});
+            levenSum.Add("levenshtein(left(jezik, @languageLen), @language)");
+        }
+        if (bookQuery.Seller != null)
+        {
+            int sellerLen = bookQuery.Seller.Length;
+            builder.Where("levenshtein(left(naziv_korisnika, @sellerLen), @seller) <= @sellerBound",
+                new {seller = bookQuery.Seller, sellerLen, sellerBound = LevenshteinBound(sellerLen)});
+            levenSum.Add("levenshtein(left(naziv_korisnika, @sellerLen), @seller)");
+        }
+        if (levenSum.Count != 0)
+            builder.OrderBy(string.Join(" + ", levenSum));
+        
+        
         if (bookQuery.YearFrom != null)
             builder.Where("godina_izdavanja > @yearFrom", new {yearFrom = bookQuery.YearFrom});
         if (bookQuery.YearTo != null)
             builder.Where("godina_izdavanja < @yearTo", new {yearTo = bookQuery.YearTo});
-        if (bookQuery.Author != null)
-            builder.Where("autor = @author", new {author = bookQuery.Author});
-        if (bookQuery.Publisher != null)
-            builder.Where("izdavac = @publisher", new {publisher = bookQuery.Publisher});
         if (bookQuery.Edition != null)
             builder.Where("broj_izdanja = @edition", new {edition = bookQuery.Edition});
         if (bookQuery.TypeOfPublisher != null)
             builder.Where("kategorija_izdavaca = @pType", new {pType = bookQuery.TypeOfPublisher});
-        if (bookQuery.Genre != null)
-            builder.Where("zanr = @genre", new {genre = bookQuery.Genre});
-        if (bookQuery.Isbn != null)
-            builder.Where("isbn = @isbn", new {isbn = bookQuery.Isbn});
-        if (bookQuery.Language != null)
-            builder.Where("jezik = @language", new {language = bookQuery.Language});
         if (bookQuery.Availability != null)
             builder.Where("dostupnost = @availability", new {availability = bookQuery.Availability});
         if (bookQuery.State != null)
@@ -385,12 +430,13 @@ public class NpgsqlRepository
             builder.Where("cijena > @priceFrom", new {priceFrom = bookQuery.PriceFrom});
         if (bookQuery.PriceTo != null)
             builder.Where("cijena < @priceTo", new {priceTo = bookQuery.PriceTo});
-        if (bookQuery.Seller != null)
-            builder.Where("naziv_korisnika = @seller", new {seller = bookQuery.Seller});
-
-        IEnumerable<(Book, Offer)> books =
-            await npgsqlConnection.QueryAsync<BookDb, OfferDb, (Book, Offer)>(selectTemplate.RawSql,
-                (b, o) => (b.ToDomainObject(), o.ToDomainObject()), selectTemplate.Parameters, splitOn:"id_ponuda");
+        
+        
+        IEnumerable<(Book, Offer)> books = await npgsqlConnection.QueryAsync<BookDb, OfferDb, (Book, Offer)>(
+                selectTemplate.RawSql,
+                (b, o) => (b.ToDomainObject(), o.ToDomainObject()),
+                selectTemplate.Parameters,
+                splitOn:"id_ponuda");
 
         int count = await npgsqlConnection.QuerySingleAsync<int>(countTemplate.RawSql, countTemplate.Parameters);
         int pageCount = (int) Math.Ceiling(count / (decimal) booksPerPage);

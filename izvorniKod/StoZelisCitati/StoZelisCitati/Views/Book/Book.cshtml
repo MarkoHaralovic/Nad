@@ -51,27 +51,27 @@
             </tr>
         </table>
     </div>
-    <div class="button-container" style="margin-top:20px">
-        <button type="button" class="searchbtn">Zatraži prijevod (nereg korinik)</button>
-        <button type="button" class="searchbtn">Zatraži prijevod(izdavac)</button>
-        </div>
     <div class="image-container" style="margin-top:20px">
         <img src="/book/@Model.book.Id/image" alt="book cover">
     </div>
-    
 </div>
-@if (Model.book.TypeOfPublisher == PublisherType.Foreign && !Language.CroatianAliases.Contains(Model.book.Language))
-{
-    <div id="new-pub-btn-div" class="user-info">
-        <button hx-get="/translation-form/@Model.book.Id" hx-target="#new-pub-btn-div" hx-swap="outerHTML" id="new-pub-btn" class="searchbtn">Zatraži prijevod</button>
-    </div>
-}
-<h2>Ponude:</h2>
-@foreach (Offer offer in Model.offers)
-{
-    <div id="o1" class="objava">
-        <div class="inf">
-            @await Html.PartialAsync("Offer", (offer, @Model.editPermissions))
+<div id="offers" style="display: flex; flex-direction: column; align-items: center">
+    @if (Model.book.TypeOfPublisher == PublisherType.Foreign && !Language.CroatianAliases.Contains(Model.book.Language))
+    {
+        <div class="button-container" style="margin-top:20px">
+            <button hx-get="/translation-form/@Model.book.Id" hx-swap="outerHTML" class="searchbtn">Zatraži prijevod</button>
         </div>
+    }
+    <h2>Ponude:</h2>
+    @foreach (Offer offer in Model.offers)
+    {
+        <div id="o1" class="objava">
+            <div class="inf">
+                @await Html.PartialAsync("Offer", (offer, Model.editPermissions))
+            </div>
+        </div>
+    }
+    <div class="button-container" style="margin-top:20px">
+        <button hx-get="/book/offer/create/@Model.book.Id" hx-target="closest .button-container" hx-swap="outerHTML" class="searchbtn">Nova ponuda</button>
     </div>
-}
+</div>

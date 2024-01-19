@@ -12,6 +12,6 @@ fetch("/markers")
     .then(markers => {
         for (let marker of markers) {
             let leafletMarker = L.marker([marker.latitude, marker.longitude]).addTo(map);
-            leafletMarker.bindPopup(`<a href='/filter?seller=${marker.name}'>${marker.name}</a>`)
+            leafletMarker.bindPopup(`<a href='/account/profile/${marker.userId}'>${marker.displayName}</a>`)
         }        
     });

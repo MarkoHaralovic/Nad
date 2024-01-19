@@ -1,4 +1,5 @@
-﻿<div class="header-container">   
+﻿@using StoZelisCitati.Helpers
+<div class="header-container">   
     <div id="header">
         <div id="logo" class="ot">
             <a href="/" style="text-decoration: none; color: white;"> Logo </a>
@@ -11,7 +12,7 @@
         <div id="header-right">
             @if (User.Identity?.IsAuthenticated == true)
             {
-                <a href="/account/profile" class="user-btn"><p>My account</p></a>
+                <a href="/account/profile/@User.Id()" class="user-btn"><p>My account</p></a>
                 <a href="/account/logout" class="user-btn">Logout</a>
                 @if (User.IsInRole("admin"))
                 {

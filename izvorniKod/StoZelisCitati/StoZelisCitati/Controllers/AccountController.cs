@@ -97,20 +97,21 @@ public class AccountController : Controller
 
         return View("Success", ("Vaš zahtjev za registraciju će pregledati administrator.", "/"));
     }
-
-    [Authorize]
-    [HttpGet("profile")]
-    public async Task<IActionResult> UserProfile()
+    
+    [HttpGet("profile/{userId:int}")]
+    public async Task<IActionResult> UserProfile(int userId)
     {
-        User? user = await npgsqlRepository.GetUser(User.Id());
+        User? user = await npgsqlRepository.GetUser(userId);
         if (user == null)
             return NotFound("Korisnik ne postoji.");
 
         IEnumerable<Book> books = await npgsqlRepository.GetBooksBelongingToUser(user.Id);
 
         IEnumerable<TranslationRequest> translationRequests = await npgsqlRepository.GetTranslationRequests(user.Id);
+
+        bool authorized = User.TryGetId(out int? id) && id == userId;
         
-        return View((user, books, translationRequests));
+        return View((user, books, translationRequests, authorized));
     }
 
     [Authorize(Roles = UserType.Admin)]
