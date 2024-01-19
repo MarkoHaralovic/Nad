@@ -37,7 +37,7 @@
         <div id="rek">
             @if (User.Identity?.IsAuthenticated == true)
             {
-                <a href="/add-title">Novi naslov</a>
+                <a href="/add-title" class="user-btn" style="padding:5px;border: 2px solid rgb(75, 190, 250); border-radius: 10px">Novi naslov</a>
                 if (Model)
                 {
                     <a href="/add-offer">Nova ponuda</a>

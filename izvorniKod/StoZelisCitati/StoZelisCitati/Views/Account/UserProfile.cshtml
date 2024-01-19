@@ -18,16 +18,29 @@
             {
                 <div id="o1" class="objava">
                     <div class="fot">
-                        <img width="100%" height="100%" src="/image/@book.Id" alt="">
+                        <a href="/book/@book.Id">
+                            <img width="100%" height="100%" src="/image/@book.Id" alt="book cover">
+                        </a>
                     </div>
                     <div class="inf">
-                        <div class="pub-left">
-                            <div class="miniDiv"> naziv: @book.Title </div>
-                            <div class="miniDiv"> autor: @book.Author </div>
+                        <div class="left">
+                            <div class="miniDiv">
+                                <div class="book-elements">Naslov: @book.Title</div>
+                            </div>
+                            <div class="miniDiv">
+                                <div class="book-elements">Autor: @book.Author</div>
+                            </div>
                         </div>
-                        <div class="pub-right">
-                            <div class="miniDiv"> žanr: @book.Genre </div>
-                            <div class="miniDiv"> izdavac: @book.Publisher </div>
+                        <div class="rig">
+                            <div class="miniDiv">
+                                <div class="book-elements">Žanr: @book.Genre</div>
+                            </div>
+                            <div class="miniDiv">
+                                <div class="book-elements">Izdavač: @book.Publisher</div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <div class="obr"> x </div>
                         </div>
                     </div>
                 </div>
@@ -63,7 +76,7 @@
                 </div>
             </div>
             <div id="user-right">
-                <div id="map" style="width: 90%; height: 90%; margin-top: 3%; margin-left: 6%;">
+                <div id="map" style="">
                     <script>
                             var map = L.map('map').setView([@Model.user.Latitude, @Model.user.Longitude], 13);
                             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

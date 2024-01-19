@@ -102,15 +102,15 @@ public class AccountController : Controller
     [HttpGet("profile")]
     public async Task<IActionResult> UserProfile()
     {
-        string? userName = User.FindFirstValue(ClaimTypes.Name);
-        if (userName == null)
-            return NotFound("User has no username claim.");
+        string userName = User.FindFirstValue(ClaimTypes.Name)!;
 
         User? user = await npgsqlRepository.GetUser(userName);
         if (user == null)
             return NotFound("User does not exist.");
 
-        return View(user);
+        IEnumerable<Book> books = await npgsqlRepository.GetBooksBelongingToUser(user.Id);
+        
+        return View((user, books));
     }
 
     [Authorize(Roles = UserType.Admin)]

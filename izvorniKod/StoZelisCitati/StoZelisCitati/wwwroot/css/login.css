@@ -62,25 +62,3 @@ body {
     border-radius: 7px;
 }
 
-.buttons {
-    display:block;
-}
-
-.buttons button {
-    width: 150px;
-    height: 60px;
-    border-radius: 7px;
-    background-color: #4BBEFA;
-    color: white;
-    border: 2px solid white;
-    justify-content: center;
-    align-content: center;
-    justify-self: center;
-    align-self: center;
-    margin-top: 15px;
-
-    cursor: pointer;
-}
-.buttons button:hover{
-    background-color: blue;
-}
