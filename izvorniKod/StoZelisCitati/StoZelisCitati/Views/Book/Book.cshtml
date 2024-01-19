@@ -65,8 +65,8 @@
 <h2 style="margin-left: 100px">Ponude:</h2>
 @foreach (Offer offer in Model.offers)
 {
-    <div id="o1" class="objava" style="margin-left: 100px">
-        <div class="inf">
+    <div id="o1" class="objava" style="margin-left: 100px; max-width: 250px;">
+        <div class="inf" style="margin-left: 60px">
             @await Html.PartialAsync("Offer", (offer, @Model.editPermissions))
         </div>
     </div>
