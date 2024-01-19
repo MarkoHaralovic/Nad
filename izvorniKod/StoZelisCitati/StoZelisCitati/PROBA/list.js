@@ -20,7 +20,7 @@ let lis = function(broj){
                 <div class="inf">
                    <div class="left">
 
-                      <div class="miniName"> naziv: ime </div>
+                      <div class="miniName"> naziv:  ime </div>
                 
                       <div class="miniAut"> autor: pisac </div>
                 
@@ -82,8 +82,13 @@ function smanji() {
    naz.forEach(function(ime) {
    
       let str = ime.innerHTML;
-      //console.log(str.length);
-      if (str.length > 40) {
+      console.log(str.length);
+      if (str.length > 50) {
+
+         ime.style.fontSize = "11px";
+      } else if (str.length > 45) {
+         ime.style.fontSize = "12px";
+      } else if (str.length > 40) {
 
          ime.style.fontSize = "13px";
       } else if (str.length > 35) {
@@ -103,12 +108,15 @@ function smanji() {
       let str = auto.innerHTML;
       //console.log(str.length);
 
-      if (str.length > 40) {
-      
-         auto.style.fontSize = "13px";
+      if (str.length > 50) {
 
+         auto.style.fontSize = "11px";
+      } else if (str.length > 45) {
+         auto.style.fontSize = "12px";
+      } else if (str.length > 40) {
+
+         auto.style.fontSize = "13px";
       } else if (str.length > 35) {
-      
          auto.style.fontSize = "14px";
 
       } else if (str.length > 30) {
@@ -124,7 +132,14 @@ function smanji() {
       let str = izda.innerHTML;
       //console.log(str.length);
 
-      if (str.length > 40) {
+      if (str.length > 50) {
+
+         izda.style.fontSize = "11px"
+      } else if (str.length > 45) {
+      
+         izda.style.fontSize = "12px";
+
+      } else if (str.length > 40) {
       
          izda.style.fontSize = "13px";
 
