@@ -16,7 +16,7 @@
         <div id="pub-container">
             @foreach (Book book in Model.books)
             {
-                <div id="o1" class="objava">
+                <div id="o1" class="objava" >
                     <div class="fot">
                         <a href="/book/@book.Id">
                             <img width="100%" height="100%" src="/image/@book.Id" alt="book cover">
@@ -25,18 +25,18 @@
                     <div class="inf">
                         <div class="left">
                             <div class="miniDiv">
-                                <div class="book-elements">Naslov: @book.Title</div>
+                                <div><a class="book-elements">Naslov:</a> @book.Title</div>
                             </div>
                             <div class="miniDiv">
-                                <div class="book-elements">Autor: @book.Author</div>
+                                <div><a class="book-elements">Autor:</a> @book.Author</div>
                             </div>
                         </div>
                         <div class="rig">
                             <div class="miniDiv">
-                                <div class="book-elements">Žanr: @book.Genre</div>
+                                <div><a class="book-elements">Žanr:</a> @book.Genre</div>
                             </div>
                             <div class="miniDiv">
-                                <div class="book-elements">Izdavač: @book.Publisher</div>
+                                <div><a class="book-elements">Izdavač:</a> @book.Publisher</div>
                             </div>
                         </div>
                         <div class="extra">
@@ -47,8 +47,8 @@
             }
         </div>
     </div>
-    <div id="right">
-        <div id="user-container">
+    <div id="right" style="margin-left: 50px">
+        <div id="user-container" >
             <div id="user-left">
                 <div id="gen-div" class="user-info">
                     <h3>Korisničko ime:</h3>
