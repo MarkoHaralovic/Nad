@@ -203,62 +203,7 @@
 						
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC6 - Promjena podataka}}
-					\begin{packed_item}
-	
-						\item \textbf{Glavni sudionik: } Ponuditelj
-						\item  \textbf{Cilj:} Ponuditelj mijenja podatke svog korisničkog računa
-						\item  \textbf{Sudionici:} Baza podataka
-						\item  \textbf{Preduvjet:} - Ponuditelj je prijavljen
-						\item  \textbf{Opis osnovnog tijeka:}
-						
-						\item[] \begin{packed_enum}
-	
-							\item Ponuditelj bira opciju "Moj račun"
-							\item Ponuditelj bira opciju "Uredi račun"
-	                            				\item Ponuditelj mijenja podatke
-                            					\item Ponuditelj sprema izmjene
-                            					\item Baza podataka se ažurira
-						\end{packed_enum}
-						
-						\item  \textbf{Opis mogućih odstupanja:}
-						
-						\item[] \begin{packed_item}
-	
-							\item[2.a] Ponuditelj unosi podatke u krivom formatu ili su podaci već korišteni od strane drugih ponuditelja
-							\item[] \begin{packed_enum}
-								
-								\item Aplikacija obavještava da je došlo do greške i zašto
-								\item Ponuditelj opet pokušava promijeniti podatke ili odustaje
-							\end{packed_enum}
-
-                            				
-						\end{packed_item}
-					\end{packed_item}
-
-                    \noindent \underbar{\textbf{UC7 - Brisanje korisničkog računa}}
-					\begin{packed_item}
-	
-						\item \textbf{Glavni sudionik: } Ponuditelj
-						\item  \textbf{Cilj:} Ponuditelj briše svoj račun sa web stranice
-						\item  \textbf{Sudionici:} Baza podataka
-						\item  \textbf{Preduvjet:} - Ponuditelj ima izrađen korisnički račun
-						\item  \textbf{Opis osnovnog tijeka:}
-						
-						\item[] \begin{packed_enum}
-	
-							\item Ponuditelj bira opciju "Moj račun"
-                            					\item Ponuditelj bira opciju brisanja korisničkog računa
-							\item Aplikacija traži potvrdu brisanja
-                            					\item Ponuditelj potvrđuje brisanje korisničkog računa
-                            					\item Miču se podaci o računu iz baze podataka
-                            					\item Ponuditelj je vraćen na stranicu za upis
-						\end{packed_enum}
-						
-						\item  \textbf{Opis mogućih odstupanja: -}
-					\end{packed_item}
-
-                    \noindent \underbar{\textbf{UC8 - Dodavanje objave}}
+                    \noindent \underbar{\textbf{UC6 - Dodavanje objave}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -294,7 +239,7 @@
 						\end{packed_item}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC9 - Mijenjanje objave}}
+                    \noindent \underbar{\textbf{UC7 - Mijenjanje objave}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -331,7 +276,7 @@
 						\end{packed_item}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC10 - Brisanje objave}}
+                    \noindent \underbar{\textbf{UC8 - Brisanje objave}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Ponuditelj
@@ -352,7 +297,7 @@
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC11 - Pregled objave}}
+                    \noindent \underbar{\textbf{UC9 - Pregled objave}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Korisnik (registrirani i neregistrirani)
@@ -369,7 +314,7 @@
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC12 - Pregled profila ponuditelja}}
+                    \noindent \underbar{\textbf{UC10 - Pregled profila ponuditelja}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Korisnik
@@ -387,7 +332,7 @@
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC13 - Zahtjev od neregistriranog korisnika da se knjiga prevede}}
+                    \noindent \underbar{\textbf{UC11 - Zahtjev od neregistriranog korisnika da se knjiga prevede}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Neregistrirani korisnik
@@ -407,7 +352,7 @@
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC14 - Zahtjev stranom izdavaču za prijevod knjige}}
+                    \noindent \underbar{\textbf{UC12 - Zahtjev stranom izdavaču za prijevod knjige}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Izdavač
@@ -425,7 +370,7 @@
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC15 - Pretraživanje po lokaciji}}
+                    \noindent \underbar{\textbf{UC13 - Pretraživanje po lokaciji}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Korisnik
@@ -442,7 +387,7 @@
 						\item  \textbf{Opis mogućih odstupanja: -}
 					\end{packed_item}
 
-                    \noindent \underbar{\textbf{UC16 - Detaljna pretraga objava}}
+                    \noindent \underbar{\textbf{UC14 - Detaljna pretraga objava}}
 					\begin{packed_item}
 	
 						\item \textbf{Glavni sudionik: } Korisnik
@@ -454,7 +399,7 @@
 						\item[] \begin{packed_enum}
 	
 							\item Korisnik klikne na opciju pretraživanja objava
-							\item Korisnik ispunjava barem jedno od sljedećih polja: naziv knjige, naziv autora, godina izdanja, redni broj izdanja, kategorija izdavača, žanr knjige, ISBN, oznaka vrste knjige i ime ponuditelja
+							\item Korisnik ispunjava barem jedno od sljedećih polja za detaljniju pretragu: naziv knjige, naziv autora, cijena(od/do), , godina izdanja(od/do), redni broj izdanja, kategorija izdavača, žanr, ISBN, oznaka vrste knjige i ime ponuditelja
                             					\item Stranica izbacuje knjige koje se poklapaju sa upisanim karakteristikama
 						\end{packed_enum}
 						
@@ -494,7 +439,7 @@
 				
 			\subsection{Sekvencijski dijagrami}
 				
-				\textbf{Obrazac uporabe UC15 – Pretraživanje po lokaciji i UC13 – Zahtjev da se prevede knjiga}\\\\
+				\textbf{Obrazac uporabe UC13 – Pretraživanje po lokaciji i UC11 – Zahtjev da se prevede knjiga}\\\\
 				Neregistrirani korisnik šalje zahtjev za pregled karte ponuditelja knjiga. Poslužitelj dohvaća ponuditelje knjiga iz baze i vraća prikaz karte sa označenim adresama ponuditelja. Korisnik odabire ponuditelja koji je izdavač. Poslužitelj dohvaća podatke o odabranom ponuditelju iz baze. Vraća korisniku listu svih knjiga dotičnog ponuditelja. Korisnik dodatno filtrira ponudu knjiga po želji. Korisnik traži prijevod od izdavača. U bazi podataka povećava se broj zatraženih prijevoda za tu knjigu.\\
 				
 				\begin{figure}[h]
@@ -516,7 +461,7 @@
 				\end{figure}
 				\eject
 				
-				\textbf{Obrazac uporabe UC8 – Dodavanje objave knjige}\\\\
+				\textbf{Obrazac uporabe UC6 – Dodavanje objave knjige}\\\\
 				Ponuditelj odabire opciju za dodavanje nove objave. Poslužitelj mu otvara stranicu za dodavanje knjiga. Nakon što ponuditelj unese sve potrebne podatke u dobrom obliku, naslov se dodaje u bazu podataka te javlja ponuditelju da je knjiga uspješno dodana. Ako želi, ponuditelj može dodati primjerke tog naslova.\\
 				
 				\begin{figure}[h]
@@ -527,7 +472,7 @@
 				\end{figure}
 				\eject
 				
-				\textbf{Obrazac uporabe UC16 - Detaljna pretraga objava knjiga i UC11 - pregled objave}\\\\
+				\textbf{Obrazac uporabe UC14 - Detaljna pretraga objava knjiga i UC9 - pregled objave}\\\\
 				Neregistrirani korisnik odabire opciju pretraživanja objava, a poslužitelj mu vraća formu za pretragu. Korisnik unosi potrebne podatke koje poslužitelj uspoređuje s onima u bazi podataka. Ako postoji barem jedna takva knjiga, poslužitelj prikazuje listu knjiga koje odgovaraju podatcima koje je unio neregistrirani korisnik. Ako korisnik to želi, može detaljnije pregledati podatke o nekoj objavi knjige klikom na tu objavu. Poslužitelj dohvaća potrebne podatke iz baze i prikazuje ih korisniku.\\
 				
 				\begin{figure}[htbp]
