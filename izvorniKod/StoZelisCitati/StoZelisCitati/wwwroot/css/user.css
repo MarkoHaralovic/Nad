@@ -175,6 +175,10 @@ td {
         width:80vw;
         margin-left:0;
     }
+    
+    .miniDiv{
+        font-size:1.5vh;
+    }
 }
 
 @media screen and (max-width: 460px) {

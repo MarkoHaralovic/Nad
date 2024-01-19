@@ -567,7 +567,10 @@ body{
 
     #izd-div{
         display:none
-
+    }
+    
+    .miniDiv{
+        font-size: 1.5vh;
     }
 }
 
