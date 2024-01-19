@@ -38,7 +38,7 @@ body{
     width: 60vw;
     min-height: 550px;
     margin-top: 70px;
-    margin-right: 150px;
+    margin-right: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -241,7 +241,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 30%;
+    /*width: 30%;*/
 }
 .mid{
 
@@ -258,6 +258,10 @@ body{
     justify-content: space-evenly;
 
     width: 30%;
+}
+
+.objava {
+    height:110px;
 }
 
 .izdavaci{
@@ -403,7 +407,7 @@ body{
         font-size: 16px;
     }
 } 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 790px) {
     
     #miniTraz{
         display: none;
@@ -422,6 +426,7 @@ body{
    }  
     .objava{
         width: 90%;
+        overflow:scroll;
     }
     .profil{
     
@@ -449,8 +454,7 @@ body{
     }
     #trazi{
         margin-top: -50px;
-        
-        margin-left: 20%;
+        margin-left: 10%;
         
     }
     #right{
@@ -497,7 +501,8 @@ body{
 
 
 @media screen and (max-width: 645px) {
-
+    
+    
     #top{
         width: 100vw;
        }
@@ -518,7 +523,6 @@ body{
             flex-direction: row;
             justify-content: space-between;
             justify-self: center;
-            align-self: center;
         
         }
         #right{
@@ -552,14 +556,26 @@ body{
             margin-top: -50px;
         }
       
-} 
-@media screen and (max-width: 520px) {
+        .miniDiv{
+            font-size: 2vh;
+        }
+}
+@media screen and (max-width: 570px) {
+    #zanr-div{
+        display:none
+    }
 
-    #povecalo{
+    #izd-div{
+        display:none
 
-        margin-top: 80px;
-        margin-left: 32px;
-    }  
-} 
+    }
+}
+
+@media screen and (max-width: 400px) {
+    
+    #trazi {
+        margin-right: 30px;
+    }
+}
 
 /* DIO ZA RESPOIVNI DIZAJN GORE, ako bude potrebno rasclaniti na vise css file*/

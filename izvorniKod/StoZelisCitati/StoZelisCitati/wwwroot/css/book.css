@@ -132,3 +132,12 @@ table.info tr:nth-child(even) {
     }
    
 }
+
+@media screen and (max-width: 480px) {
+
+    .profil{
+
+        width: 80vw;
+    }
+
+}

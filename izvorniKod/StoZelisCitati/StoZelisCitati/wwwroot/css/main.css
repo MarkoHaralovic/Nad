@@ -519,4 +519,39 @@ body {
         }
 }
 
+@media screen and (max-width: 520px) {
+    #center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #map {
+        width: 80vw;
+        height: 400px
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #map {
+        margin-left:0;
+        margin-right:90px;
+    }
+    
+    #map-text{
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    #map {
+        margin-left:0;
+        margin-right:130px;
+    }
+    
+    #map-text{
+        margin-right: 100px;
+    }
+}
+
 /* DIO ZA RESPOIVNI DIZAJN GORE, ako bude potrebno rasclaniti na vise css file*/

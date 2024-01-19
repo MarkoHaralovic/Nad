@@ -1,4 +1,6 @@
-
+*{
+    font-size:2vh;
+}
 
 #right{
     width: 50vw;
@@ -27,13 +29,25 @@
     width: 60%;
 }
 
+.objava {
+    overflow:scroll;
+    width: 80%;
+    margin-lefT:-30px;
+}
+
+.objava .extra .obr {
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
 .user-info {
     height: 25%;
 }
 
-#pub-container{
+/*#pub-container{
     padding-left: 20px;
-}
+}*/
 
 
 #new-pub {
@@ -60,7 +74,6 @@
 }
 
 #left {
-    width: 35vw;
     min-width: 500px;
     margin-top: 50px;
 }
@@ -70,12 +83,12 @@
     min-width: 500px;
     margin-top: 30px;
     height: 550px;
+    margin-left: -100px;
 }
 #center{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
 
 #map {
@@ -83,7 +96,15 @@
     height: 100%;
 }
 
-@media screen and (max-width: 1000px) {
+th {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid #669999;
+}
+
+@media screen and (max-width: 1250px) {
 
     #left{
         margin-left: 3vw;
@@ -109,25 +130,67 @@
         display:flex;
         flex-direction: row;
     }
-}  
+    
+    .objava{
+        width:80vw;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #user-container {
+        flex-direction: column;
+    }
+    
+    .user-info {
+        margin: 10px;
+    }
+    
+    #user-left {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    
+    #map {
+        height: 200%;
+    }
+}
+
 @media screen and (max-width: 750px) {
 
     #left{
         margin-left: 2vw;
     }
-
-    #user-container {
-        margin-top: 5%;
-        margin-left: 5%;
-        border: 2px solid white;
-        background-color: white;
-        width: 400px;
-        height: 100%;
-        display:flex;
-        flex-direction: row;
-    }
     
     #map {
         padding-left:80px;
     }
+    
+    .objava{
+        width:80vw;
+    }
 }  
+
+@media screen and (max-width: 570px) {
+    .objava{
+        width:80vw;
+        margin-left:0;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    #translate-table{
+        margin-right: 40px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    #translate-table{
+        margin-right: 60px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #translate-table{
+        margin-right: 90px;
+    }
+}

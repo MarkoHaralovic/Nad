@@ -7,33 +7,35 @@
 <div id="right">
     @foreach ((Book book, Offer offer) in Model)
     {
-        <div id="o1" class="objava">
-            <div class="price">@offer.State, @offer.Price€</div>
-            <div class="fot">
-                <a href="/book/@book.Id">
-                    <img height="120" src="book/@book.Id/image" alt="">
-                </a>
-            </div>
-
-            <div class="inf">
-                <div class="left">
-                    <div class="miniDiv"> <a class="book-elements">Naslov:</a> @book.Title </div>
-
-                    <div class="miniDiv"> <a class="book-elements">Autor:</a> @book.Author </div>
-
-                </div>
-
-
-                <div class="rig">
-                    <div class="miniDiv"><a class="book-elements">Žanr</a>: @book.Genre </div>
-
-                    <div class="miniDiv"><a class="book-elements">Izdavač:</a> @book.Publisher </div>
-                </div>
-
-                <div class="extra">
-                    <div class="obr"> x </div>
-                </div>
-            </div>
-        </div>
+        <a href="/book/@book.Id">
+            <div id="o1" class="objava" >
+                        <div class="price" style="border: 2px solid gray;">@offer.State, @offer.Price€</div>
+                        <div class="fot">
+                            <a href="/book/@book.Id">
+                                <img height="120" src="book/@book.Id/image" alt="">
+                            </a>
+                        </div>
+            
+                        <div class="inf">
+                            <div class="left">
+                                <div class="miniDiv"> <a class="book-elements">Naslov:</a> @book.Title </div>
+            
+                                <div class="miniDiv"> <a class="book-elements">Autor:</a> @book.Author </div>
+            
+                            </div>
+            
+            
+                            <div class="rig">
+                                <div class="miniDiv" id="zanr-div"><a class="book-elements">Žanr</a>: @book.Genre </div>
+            
+                                <div class="miniDiv" id="izd-div"><a class="book-elements">Izdavač:</a> @book.Publisher </div>
+                            </div>
+            
+                            <div class="extra">
+                                <div class="obr"> x </div>
+                            </div>
+                        </div>
+                    </div>
+        </a>
     }
 </div>
