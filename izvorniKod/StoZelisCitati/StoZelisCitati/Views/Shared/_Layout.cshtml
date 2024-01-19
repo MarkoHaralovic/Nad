@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="/css/common.css">
     @await RenderSectionAsync("Styles", required:false)
     <script src="https://unpkg.com/htmx.org@1.9.8" integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/response-targets.js"></script>
     @await RenderSectionAsync("ScriptsHead", required:false)
     <title>@ViewData["Title"] - Što Želiš Čitati</title>
 </head>
-<body>
+<body hx-ext="response-targets">
     <div class="main">
         @await Html.PartialAsync("_Header")
         @RenderBody()

@@ -1,0 +1,10 @@
+﻿@model (string message, string redirectUrl)
+
+@{
+    Layout = null;
+}
+
+<div id="center-top">
+    <h1 id="map-text">@Model.message</h1>
+</div>
+<script>setTimeout(function () {window.location.href = '@Model.redirectUrl';}, 2000)</script>

@@ -12,7 +12,7 @@
 
 <div id="center" style="justify-content: center; height: 100%; width:100%;">
     <div id="new-pub">
-        <form id="pub-form" style="display:flex; flex-direction: column; padding-top: 30px" enctype="multipart/form-data" hx-post="/add-title" hx-target="#error-message" hx-indicator="#ind">
+        <form id="pub-form" hx-post="/add-title" hx-target="#center" hx-target-error="#error-message" hx-indicator="#ind" enctype="multipart/form-data" style="display:flex; flex-direction: column; padding-top: 30px">
             <label for="title">Naziv</label>
             <input type="text" class="in" id="title" name="title" required>
 

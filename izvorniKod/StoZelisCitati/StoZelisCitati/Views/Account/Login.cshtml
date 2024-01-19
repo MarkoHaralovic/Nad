@@ -14,7 +14,7 @@
 
 <div class="center-box">
     <div class="center">
-        <form hx-post="/account/login" hx-target="#error-message" hx-indicator="#ind" class="inputs" id="login-form">
+        <form hx-post="/account/login" hx-target=".center-box" hx-target-error="#error-message" hx-indicator="#ind" class="inputs" id="login-form">
             <div class="inputDiv">
                 <label for="username">Korisničko ime</label>
                 <input type="text" class="input-class" id="username" name="username" required>

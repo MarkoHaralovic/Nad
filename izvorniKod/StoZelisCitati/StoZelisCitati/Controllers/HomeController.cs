@@ -17,14 +17,15 @@ public class HomeController : Controller
     {
         this.npgsqlRepository = npgsqlRepository;
     }
+
     public async Task<IActionResult> Index()
     {
         if (User.Identity?.IsAuthenticated != true)
             return View(false);
-        
+
         if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
             return View(false);
-        
+
         return View(await npgsqlRepository.GetNumberOfBooksBelongingToUser(userId) != 0);
     }
 
@@ -32,7 +33,7 @@ public class HomeController : Controller
     public async Task<ActionResult<IEnumerable<MapMarker>>> Markers()
     {
         IEnumerable<User> users = await npgsqlRepository.GetUsers(true);
-        
+
         return Ok(users.Select(x => new MapMarker(x.DisplayName, x.Latitude, x.Longitude)).ToList());
     }
 
@@ -43,7 +44,7 @@ public class HomeController : Controller
 
         if (HttpContext.Request.PartialHtmx())
             return View("FilterPartial", (books, pageCount));
-        
+
         return View((bookQuery, books, pageCount));
     }
 
@@ -58,7 +59,6 @@ public class HomeController : Controller
     public async Task<IActionResult> Book(int bookId)
     {
         Book book = await npgsqlRepository.GetBookWithId(bookId);
-        
         return View(book);
     }
 
@@ -70,16 +70,13 @@ public class HomeController : Controller
     [HttpPost("/add-title")]
     public async Task<IActionResult> AddBook(AddBookRequest addBookRequest)
     {
-        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
-            return Ok("ID korisnika nije validan.");
+        int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
-        string? userType = User.FindFirstValue(ClaimTypes.Role);
-        if (userType == null)
-            return Ok("Nije poznata vrsta korisnika.");
+        string userType = User.FindFirstValue(ClaimTypes.Role)!;
 
         if (userType == UserType.Publisher && addBookRequest.Language != "Hrvatski")
-            return Ok("Izdavač može ponuditi samo knjige na Hrvatskom jeziku.");
-        
+            return UnprocessableEntity("Izdavač može ponuditi samo knjige na Hrvatskom jeziku.");
+
         using MemoryStream memoryStream = new MemoryStream();
         await addBookRequest.CoverImage.CopyToAsync(memoryStream);
         byte[] cover = memoryStream.ToArray();
@@ -89,19 +86,17 @@ public class HomeController : Controller
             int titleId = await npgsqlRepository.AddBook(addBookRequest, userId);
 
             await npgsqlRepository.AddBookCover(cover, addBookRequest.CoverImage.ContentType, titleId);
-            
+
             transactionScope.Complete();
         }
-        HttpContext.Response.Headers["HX-Redirect"] = "/success";
-        return Ok("Uspješno dodan naslov.");
+        return View("Success", ("Naslov objavljen.", "/account/profile"));
     }
 
     [Authorize]
     [HttpGet("/add-offer")]
     public async Task<IActionResult> AddOffer()
     {
-        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
-            return Unauthorized("Logged in user has invalid id.");
+        int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
         IEnumerable<Book> books = await npgsqlRepository.GetBooksBelongingToUser(userId);
         return View(books);
@@ -111,17 +106,13 @@ public class HomeController : Controller
     [HttpPost("/add-offer")]
     public async Task<IActionResult> AddOffer(AddOfferRequest addOfferRequest)
     {
-        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
-            return Unauthorized("Logged in user has invalid id.");
+        int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
         if (userId != await npgsqlRepository.GetIdOfUserThatOwnsBook(addOfferRequest.TitleId))
-            return Unauthorized($"Logged in user is not authorized to add offers to title with id {addOfferRequest.TitleId}");
-
-        await npgsqlRepository.AddOffer(addOfferRequest);
+            return Forbid($"Korisnik nije autoriziran objaviti ponudu za naslov {addOfferRequest.TitleId}.");
         
-        return Redirect("/");
-    }
+        await npgsqlRepository.AddOffer(addOfferRequest);
 
-    [HttpGet("/success")]
-    public IActionResult TransactionSuccessful() => View();
+        return View("Success", ("Ponuda objavljena.", "/account/profile"));
+    }
 }

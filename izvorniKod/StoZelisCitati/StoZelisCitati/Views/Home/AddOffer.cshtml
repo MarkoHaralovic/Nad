@@ -10,7 +10,7 @@
 }
 <div id="center" style="justify-content: center; height: 100%; width:100%;">
     <div id="new-pub">
-        <form id="pub-form" style="display:flex; flex-direction: column; padding-top: 30px" method="post" action="/add-offer" enctype="multipart/form-data">
+        <form hx-post="/add-offer" hx-target="#center" hx-error-message="#error-message" hx-indicator="#ind" id="pub-form" style="display:flex; flex-direction: column; padding-top: 30px" enctype="multipart/form-data">
 
             <label for="title-id">Naslov</label>
             <select class="in" id="title-id" name="titleId">
@@ -32,6 +32,9 @@
             <label for="count">Broj primjeraka</label>
             <input type="number" class="in" id="count" name="count" required>
 
+            <img id="ind" src="/images/bars.svg" alt="loading indicator" class="htmx-indicator">
+            <p id="error-message"></p>
+            
             <button id="pub-button" class="searchbtn" type="submit" form="pub-form">Dodaj ponudu</button>
         </form>
     </div>

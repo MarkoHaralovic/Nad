@@ -10,6 +10,7 @@ using StoZelisCitati.Helpers;
 using StoZelisCitati.Misc;
 using StoZelisCitati.Models;
 using User = StoZelisCitati.Models.User;
+
 namespace StoZelisCitati.Controllers;
 
 [Route("account")]
@@ -30,14 +31,14 @@ public class AccountController : Controller
     {
         User? user = await npgsqlRepository.GetUser(username);
         if (user == null)
-            return Ok("Nepostojeće korisničko ime.");
-        
+            return NotFound("Nepostojeće korisničko ime.");
+
         if (!user.Approved)
-            return Ok("Registracija još nije odobrena.");
+            return Conflict("Registracija još nije odobrena.");
 
         if (password != user.Password)
-            return Ok("Pogrešna lozinka.");
-        
+            return Conflict("Pogrešna lozinka.");
+
         var identity = new ClaimsIdentity(new List<Claim>
         {
             new(ClaimTypes.NameIdentifier, user.Id.ToString()),
@@ -46,8 +47,7 @@ public class AccountController : Controller
         }, "Cookies");
         await HttpContext.SignInAsync(new ClaimsPrincipal(identity));
 
-        HttpContext.Response.Headers["HX-Redirect"] = "/";
-        return Ok("Uspješna prijava.");
+        return View("Success", ("Login uspješan.", "/"));
     }
 
     [HttpGet("logout")]
@@ -56,7 +56,7 @@ public class AccountController : Controller
         await HttpContext.SignOutAsync();
         return Redirect("/");
     }
-    
+
     [HttpGet("register")]
     public IActionResult Register() => View();
 
@@ -65,39 +65,37 @@ public class AccountController : Controller
     {
         User? user = await npgsqlRepository.GetUser(registerRequest.Username);
         if (user != null)
-            return Ok("Korisničko ime je zauzeto.");
-        
+            return Conflict("Korisničko ime je zauzeto.");
+
         if (registerRequest.UserType != UserType.Antiquarian &&
             registerRequest.UserType != UserType.Middleman &&
             registerRequest.UserType != UserType.Publisher)
         {
-            return Ok("Izaberite jednu od punuđenih kategorija.");
+            return BadRequest("Izaberite jednu od punuđenih kategorija.");
         }
 
-        
         GoogleGeocoder geocoder = new GoogleGeocoder {ApiKey = "AIzaSyDhmDNo6RQm3LO4JG_mjYWQFYkJhQjfgNY"};
 
         List<GoogleAddress> addresses =
             (await geocoder.GeocodeAsync($"{registerRequest.Address} {registerRequest.City} {registerRequest.Country}"))
             .ToList();
-        
+
         if (!addresses.Any())
             return Ok("Adresa nije pronađena.");
 
         GoogleAddress a = addresses.First();
 
         registerRequest.Country = a[GoogleAddressType.Country]!.ShortName;
-        
+
         if (registerRequest.UserType == UserType.Antiquarian && registerRequest.Country != Country.Croatia)
-            return Ok("Antikvarijat mora biti u Hrvatskoj.");
+            return UnprocessableEntity("Antikvarijat mora biti u Hrvatskoj.");
 
         if (registerRequest.UserType == UserType.Middleman && !Country.SerboCroatian.Contains(registerRequest.Country))
-            return Ok("Preprodavač mora biti u Hrvatskoj ili u srodnim zemljama");
+            return UnprocessableEntity("Preprodavač mora biti u Hrvatskoj ili u srodnim zemljama");
 
         await npgsqlRepository.AddUser(registerRequest, a.Coordinates.Latitude, a.Coordinates.Longitude);
-        
-        HttpContext.Response.Headers["HX-Redirect"] = "/success";
-        return Ok("Uspješna registracija");
+
+        return View("Success", ("Vaš zahtjev za registraciju će pregledati administrator.", "/"));
     }
 
     [Authorize]
@@ -107,11 +105,11 @@ public class AccountController : Controller
         string? userName = User.FindFirstValue(ClaimTypes.Name);
         if (userName == null)
             return NotFound("User has no username claim.");
-        
+
         User? user = await npgsqlRepository.GetUser(userName);
         if (user == null)
             return NotFound("User does not exist.");
-        
+
         return View(user);
     }
 
@@ -126,7 +124,7 @@ public class AccountController : Controller
         await npgsqlRepository.DeleteUser(userId);
         return Ok();
     }
-    
+
     [Authorize(Roles = UserType.Admin)]
     [HttpPut("approve/{userId:int}")]
     public async Task<IActionResult> ApproveUser(int userId)
