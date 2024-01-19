@@ -187,7 +187,7 @@ public class NpgsqlRepository
             ?.ToDomainObject();
     }
 
-    public async Task<int?> GetIdOfUserThatOwnsBook(int bookId)
+    public async Task<int?> GetOwnerOfBook(int bookId)
     {
         string query = "select id_korisnik from knjiga where id_knjiga = @bookId";
         return await npgsqlConnection.QuerySingleOrDefaultAsync<int>(query, new {bookId});
@@ -198,12 +198,15 @@ public class NpgsqlRepository
         string query = "select count(*) from knjiga where id_korisnik = @userId";
         return await npgsqlConnection.QuerySingleAsync<int>(query, new {userId});
     }
-    public async Task<IEnumerable<Book>> GetBooksBelongingToUser(int userId)
+    public async Task<IEnumerable<(Book, Offer)>> GetBooksBelongingToUser(int userId)
     {
-        string query = "select * from knjiga where id_korisnik = @userId";
-        
-        return (await npgsqlConnection.QueryAsync<BookDb>(query, new {userId}))
-            .Select(x => x.ToDomainObject());
+        string query = "select * from knjiga natural join ponuda where id_korisnik = @userId";
+
+        return await npgsqlConnection.QueryAsync<BookDb, OfferDb, (Book, Offer)>(
+            query,
+            (b, o) => (b.ToDomainObject(), o.ToDomainObject()),
+            new {userId},
+            splitOn: "id_ponuda");
     }
     
     public async Task ApproveUser(int userId)

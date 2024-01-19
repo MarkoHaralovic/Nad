@@ -105,7 +105,7 @@ public class AccountController : Controller
         if (user == null)
             return NotFound("Korisnik ne postoji.");
 
-        IEnumerable<Book> books = await npgsqlRepository.GetBooksBelongingToUser(user.Id);
+        IEnumerable<(Book, Offer)> books = await npgsqlRepository.GetBooksBelongingToUser(user.Id);
 
         IEnumerable<TranslationRequest> translationRequests = await npgsqlRepository.GetTranslationRequests(user.Id);
 

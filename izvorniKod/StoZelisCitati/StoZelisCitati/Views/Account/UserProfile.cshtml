@@ -1,4 +1,4 @@
-﻿@model (User user, IEnumerable<Book> books, IEnumerable<TranslationRequest> translationRequests, bool authorized)
+﻿@model (User user, IEnumerable<(Book, Offer)> books, IEnumerable<TranslationRequest> translationRequests, bool authorized)
 
 @section Styles
 {
@@ -14,7 +14,7 @@
 <div id="center">
     <div id="left">
         <div id="pub-container">
-            @foreach (Book book in Model.books)
+            @foreach ((Book book, Offer offer) in Model.books)
             {
                 <div id="o1" class="objava">
                     <div class="fot">

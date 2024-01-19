@@ -1,6 +1,4 @@
-﻿using System.Security.Claims;
-using System.Transactions;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StoZelisCitati.Helpers;
 using StoZelisCitati.Misc;
@@ -50,7 +48,7 @@ public class BookController : Controller
         if (offer == null)
             return NotFound("Ponuda nije pronađena.");
 
-        await npgsqlRepository.GetIdOfUserThatOwnsBook(offer.BookId);
+        await npgsqlRepository.GetOwnerOfBook(offer.BookId);
         
         bool editPermissions = User.Id() == await npgsqlRepository.GetOwnerOfOffer(offerId);
         
@@ -96,7 +94,7 @@ public class BookController : Controller
     [HttpPost("offer")]
     public async Task<IActionResult> AddOffer(AddOfferRequest addOfferRequest)
     {
-        int? ownerId = await npgsqlRepository.GetIdOfUserThatOwnsBook(addOfferRequest.TitleId);
+        int? ownerId = await npgsqlRepository.GetOwnerOfBook(addOfferRequest.TitleId);
         if (ownerId == null)
             return NotFound("Book does not exist.");
         

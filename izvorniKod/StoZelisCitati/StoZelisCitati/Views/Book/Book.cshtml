@@ -71,7 +71,10 @@
             </div>
         </div>
     }
-    <div class="button-container" style="margin-top:20px">
-        <button hx-get="/book/offer/create/@Model.book.Id" hx-target="closest .button-container" hx-swap="outerHTML" class="searchbtn">Nova ponuda</button>
-    </div>
+    @if (Model.editPermissions)
+    {
+        <div class="button-container" style="margin-top:20px">
+            <button hx-get="/book/offer/create/@Model.book.Id" hx-target="closest .button-container" hx-swap="outerHTML" class="searchbtn">Nova ponuda</button>
+        </div>    
+    }
 </div>
