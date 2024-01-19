@@ -11,8 +11,8 @@
         <div id="header-right">
             @if (User.Identity?.IsAuthenticated == true)
             {
-                <a href="/account/profile" class="user-btn"><p>My account</p></a>
-                <a href="/account/logout" class="user-btn">Logout</a>
+                <a href="/account/profile" class="user-btn"><p>Moj račun</p></a>
+                <a href="/account/logout" class="user-btn">Odjava</a>
                 @if (User.IsInRole("admin"))
                 {
                     <a href="/account/requests">Zahtjevi za registraciju</a>
@@ -20,8 +20,8 @@
             }
             else
             {
-                <a href="/account/login" class="user-btn"><p>Login</p></a>
-                <a href="/account/register" class="user-btn">Register</a>
+                <a href="/account/login" class="user-btn"><p>Prijava</p></a>
+                <a href="/account/register" class="user-btn">Registracija</a>
             }
         </div>
     </div>
