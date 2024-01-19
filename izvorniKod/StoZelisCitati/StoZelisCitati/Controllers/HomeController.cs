@@ -32,7 +32,7 @@ public class HomeController : Controller
     [HttpGet("/filter")]
     public async Task<IActionResult> Filter(BookQuery bookQuery)
     {
-        (IEnumerable<Book> books, int pageCount) = await npgsqlRepository.FilterBooks(bookQuery);
+        (IEnumerable<(Book, Offer)> books, int pageCount) = await npgsqlRepository.FilterBooks(bookQuery);
 
         if (HttpContext.Request.PartialHtmx())
             return View("FilterPartial", (books, pageCount));

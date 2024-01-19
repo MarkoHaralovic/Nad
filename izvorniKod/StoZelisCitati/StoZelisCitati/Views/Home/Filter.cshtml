@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
-@model (BookQuery bookQuery, IEnumerable<Book> books, int pageCount)
+@model (BookQuery bookQuery, IEnumerable<(Book, Offer)> books, int pageCount)
 @{
     ViewData["Title"] = "Book Post";
 
