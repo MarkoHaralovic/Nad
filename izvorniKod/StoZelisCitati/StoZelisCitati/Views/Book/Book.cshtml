@@ -51,9 +51,14 @@
             </tr>
         </table>
     </div>
+    <div class="button-container" style="margin-top:20px">
+        <button type="button" class="searchbtn">Zatraži prijevod (nereg korinik)</button>
+        <button type="button" class="searchbtn">Zatraži prijevod(izdavac)</button>
+        </div>
     <div class="image-container" style="margin-top:20px">
         <img src="/book/@Model.book.Id/image" alt="book cover">
     </div>
+    
 </div>
 @if (Model.book.TypeOfPublisher == PublisherType.Foreign && !Language.CroatianAliases.Contains(Model.book.Language))
 {
