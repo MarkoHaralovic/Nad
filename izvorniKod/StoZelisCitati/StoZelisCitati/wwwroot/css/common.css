@@ -113,10 +113,16 @@
 }
 
 .ot {
-    font-size: 35px;
     align-self: center;
     padding: 50px;
     color: white;
+}
+
+#logo-img {
+    padding-left: 10px;
+    max-width: 100%;
+    height: auto;
+    max-height: 101px;
 }
 
 #povecalo {
