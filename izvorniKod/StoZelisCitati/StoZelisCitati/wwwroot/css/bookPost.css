@@ -456,7 +456,7 @@ body{
     #right{
 
         width: 80vw;
-        margin-top: 220px;
+        margin-top: 500px;
         margin-left: 0px;
         display: flex;
         justify-self: center;
@@ -493,7 +493,9 @@ body{
         order: 2;
         width: 100%;
     }
-}   
+}
+
+
 @media screen and (max-width: 645px) {
 
     #top{
@@ -522,7 +524,7 @@ body{
         #right{
     
             width: 80vw;
-            margin-top: 220px;
+            margin-top: 500px;
             margin-left: 20px;
             display: flex;
             justify-self: center;

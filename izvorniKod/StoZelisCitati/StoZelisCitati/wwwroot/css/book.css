@@ -63,14 +63,17 @@ table.info tr:nth-child(even) {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border: 2px solid #0077B6; /* Add a border */
-    padding: 20px; /* Add some padding */
-    border-radius: 5px; /* Optional: round the corners */
+    border: 2px solid #0077B6; 
+    padding: 20px; 
+    border-radius: 5px; 
 }
 
 .image-container img {
     transition: transform 0.3s ease-in-out;
     margin:5px;
+    max-width: 100%; 
+    height: auto;
+    max-height: 100%;
 }
 
 .image-container img:hover {
