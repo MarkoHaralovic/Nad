@@ -1,9 +1,0 @@
-C:\Users\lovri\AppData\Local\Temp\rider-publish10927748052880879739\StoZelisCitati.exe
-C:\Users\lovri\AppData\Local\Temp\rider-publish10927748052880879739\appsettings.Development.json
-C:\Users\lovri\AppData\Local\Temp\rider-publish10927748052880879739\appsettings.json
-C:\Users\lovri\AppData\Local\Temp\rider-publish10927748052880879739\StoZelisCitati.dll
-C:\Users\lovri\AppData\Local\Temp\rider-publish10927748052880879739\StoZelisCitati.deps.json
-C:\Users\lovri\AppData\Local\Temp\rider-publish10927748052880879739\StoZelisCitati.runtimeconfig.json
-C:\Users\lovri\AppData\Local\Temp\rider-publish10927748052880879739\StoZelisCitati.pdb
-C:\Users\lovri\AppData\Local\Temp\rider-publish10927748052880879739\Dapper.dll
-C:\Users\lovri\AppData\Local\Temp\rider-publish10927748052880879739\Npgsql.dll
