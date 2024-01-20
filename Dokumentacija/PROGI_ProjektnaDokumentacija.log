@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.22)  20 JAN 2024 00:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.22)  20 JAN 2024 01:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1534,16 +1534,6 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 23.12.2023. 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 Haralovi[]c
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 17.11.2023. 
- []
-
 > Step: build the whole table.
 
 Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
@@ -1621,17 +1611,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [2
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 Haralovi[]c
- []
-
-
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 40--40
-[]\OT1/jkp/m/n/12 17.11.2023. 
- []
-
-)
+])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.02403pt, for example:
@@ -2442,15 +2422,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
 [46]
-<slike/commits.png, id=613, 349.305pt x 525.965pt>
+<slike/commits.png, id=615, 524.96124pt x 648.4225pt>
 File: slike/commits.png Graphic file (type png)
 <use slike/commits.png>
 Package pdftex.def Info: slike/commits.png  used on input line 161.
-(pdftex.def)             Requested size: 435.6108pt x 655.96187pt.
-
-
-LaTeX Warning: Float too large for page by 26.73566pt on input line 164.
-
+(pdftex.def)             Requested size: 435.6108pt x 538.07181pt.
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2460,16 +2436,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
 
-[47]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.02403pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.02403pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.02403pt}.
-
-[48
+[47
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2498,8 +2465,8 @@ anged.
 (rerunfilecheck)             Checksum: 68BBE8A7423A122218BD67A99B02CA2D;4084.
  ) 
 Here is how much of TeX's memory you used:
- 29480 strings out of 474503
- 569100 string characters out of 5756704
+ 29479 strings out of 474503
+ 569093 string characters out of 5756704
  2091043 words of memory out of 5000000
  50652 multiletter control sequences out of 15000+600000
  618827 words of font info for 158 fonts, out of 8000000 for 9000
@@ -2564,10 +2531,10 @@ type1/public/kpfonts/jkpmite.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
 /kpfonts/jkpmn8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkp
 mnc.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/te
 xlive/2023/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (49 pages, 2421960 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (48 pages, 2443571 bytes).
 PDF statistics:
- 715 PDF objects out of 1000 (max. 8388607)
- 597 compressed objects within 6 object streams
- 217 named destinations out of 1000 (max. 500000)
+ 706 PDF objects out of 1000 (max. 8388607)
+ 589 compressed objects within 6 object streams
+ 216 named destinations out of 1000 (max. 500000)
  381 words of extra memory for PDF output out of 10000 (max. 10000000)
 
