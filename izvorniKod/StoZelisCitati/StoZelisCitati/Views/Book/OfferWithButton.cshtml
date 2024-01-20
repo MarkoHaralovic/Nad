@@ -1,0 +1,14 @@
+﻿@model (Offer offer, bool editPermissions)
+
+@{
+    ViewBag.Title = "title";
+    Layout = null;
+}
+<div id="o1" class="objava">
+    <div class="inf">
+        @await Html.PartialAsync("Offer", (Model.offer, Model.editPermissions))
+    </div>
+</div>
+<div class="button-container" style="margin-top:20px">
+    <button hx-get="/book/offer/create/@Model.offer.BookId" hx-target="closest .button-container" hx-swap="outerHTML" class="searchbtn">Nova ponuda</button>
+</div>

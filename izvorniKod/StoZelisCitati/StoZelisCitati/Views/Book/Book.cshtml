@@ -1,0 +1,80 @@
+﻿@using StoZelisCitati.Helpers
+@model (Book book, IEnumerable<Offer> offers, bool editPermissions)
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/book.css">
+}
+
+<div id="center">
+    <div class="profil">
+        <table class="info">
+            <tr>
+                <th>Naziv</th>
+                <td>@Model.book.Title</td>
+            </tr>
+            <tr>
+                <th>Autor</th>
+                <td>@Model.book.Author</td>
+            </tr>
+            <tr>
+                <th>Godina</th>
+                <td>@Model.book.YearOfPublishing</td>
+            </tr>
+            <tr>
+                <th>Broj izdanja</th>
+                <td>@Model.book.Edition</td>
+            </tr>
+            <tr>
+                <th>Izdavac</th>
+                <td>@Model.book.Publisher</td>
+            </tr>
+            <tr>
+                <th>Kategorija izdavača</th>
+                <td>@Model.book.TypeOfPublisher</td>
+            </tr>
+            <tr>
+                <th>Žanr</th>
+                <td>@Model.book.Genre</td>
+            </tr>
+            <tr>
+                <th>ISBN</th>
+                <td>@Model.book.Isbn</td>
+            </tr>
+            <tr>
+                <th>Jezik</th>
+                <td>@Model.book.Language</td>
+            </tr>
+            <tr>
+                <th>Dostupnost</th>
+                <td>@Model.book.Availability</td>
+            </tr>
+        </table>
+    </div>
+    <div class="image-container" style="margin-top:20px">
+        <img src="/book/@Model.book.Id/image" alt="book cover">
+    </div>
+</div>
+<div id="offers" style="display: flex; flex-direction: column; align-items: center">
+    @if (Model.book.TypeOfPublisher == PublisherType.Foreign && !Language.CroatianAliases.Contains(Model.book.Language))
+    {
+        <div class="button-container" style="margin-top:20px">
+            <button hx-get="/translation-form/@Model.book.Id" hx-swap="outerHTML" class="searchbtn">Zatraži prijevod</button>
+        </div>
+    }
+    <h2>Ponude:</h2>
+    @foreach (Offer offer in Model.offers)
+    {
+        <div id="o1" class="objava" style="width:20%;">
+            <div class="inf" style="">
+                @await Html.PartialAsync("Offer", (offer, Model.editPermissions))
+            </div>
+        </div>
+    }
+    @if (Model.editPermissions)
+    {
+        <div class="button-container" style="margin-top:20px">
+            <button hx-get="/book/offer/create/@Model.book.Id" hx-target="closest .button-container" hx-swap="outerHTML" class="searchbtn">Nova ponuda</button>
+        </div>    
+    }
+</div>

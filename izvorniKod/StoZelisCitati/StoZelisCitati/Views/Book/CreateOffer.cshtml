@@ -1,0 +1,39 @@
+﻿@using StoZelisCitati.Helpers
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model int
+
+@{
+    Layout = null;
+}
+
+<div id="o1" class="objava">
+    <div class="inf">
+        <form hx-post="/book/offer" hx-target="closest .objava" hx-swap="outerHTML" hx-target-error="#error-message">
+
+            <div>
+                <label for="price">Cijena</label>
+                <input type="number" id="price" name="price"> €
+            </div>
+
+            <div class="form-group">
+                <label for="state">Stanje</label>
+                <select id="state" name="state">
+                    <option value="@StateType.New">Novo</option>
+                    <option value="@StateType.Used">Polovno</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="count">Količina</label>
+                <input type="number" min="0" id="count" name="count">
+            </div>
+
+            <input type="hidden" name="titleId" value="@Model"/>
+
+            <button class="btn">Stvori</button>
+
+            <img id="ind" src="/images/bars.svg" alt="loading indicator" class="htmx-indicator">
+            <p id="error-message"></p>
+        </form>
+    </div>
+</div>

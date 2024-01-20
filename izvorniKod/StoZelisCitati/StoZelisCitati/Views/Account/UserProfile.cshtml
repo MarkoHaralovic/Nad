@@ -1,0 +1,114 @@
+﻿@model (User user, IEnumerable<(Book, Offer)> books, IEnumerable<TranslationRequest> translationRequests, bool authorized)
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/user.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+}
+
+@section ScriptsHead
+{
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+}
+
+<div id="center">
+    <div id="left">
+        <div id="pub-container">
+            @foreach ((Book book, Offer offer) in Model.books)
+            {
+                <div id="o1" class="objava" >
+                    <div class="fot">
+                        <a href="/book/@book.Id">
+                            <img width="100%" height="100%" src="/book/@book.Id/image" alt="book cover">
+                        </a>
+                    </div>
+                    <div class="inf">
+                        <div class="left">
+                            <div class="miniDiv">
+                                <a class="book-elements">Naslov:</a> @book.Title
+                            </div>
+                            <div class="miniDiv">
+                                <a class="book-elements">Autor:</a> @book.Author
+                            </div>
+                        </div>
+                        <div class="rig">
+                            <div class="miniDiv">
+                                <a class="book-elements">Žanr:</a> @book.Genre
+                            </div>
+                            <div class="miniDiv">
+                                <a class="book-elements">Izdavač:</a> @book.Publisher
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <div class="obr"> x </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div id="right" style="">
+        <div id="user-container" >
+            <div id="user-left">
+                <div id="gen-div" class="user-info">
+                    <h3>Korisničko ime:</h3>
+                    <p>@Model.user.Username</p>
+                </div>
+                <div id="name-div" class="user-info">
+                    <h3>Ime ponuditelja:</h3>
+                    <p>@Model.user.DisplayName</p>
+                </div>
+                <div class="user-info">
+                    <h3>Vrsta ponuditelja:</h3>
+                    <p>@Model.user.UserType</p>
+                </div>
+                <div id="email-div" class="user-info">
+                    <h3>Email:</h3>
+                    <p>@Model.user.Email</p>
+                </div>
+                <div id="phone-div" class="user-info">
+                    <h3>Mobitel:</h3>
+                    <p>@Model.user.PhoneNumber</p>
+                </div>
+                <div id="addy-div" class="user-info">
+                    <h3>Adresa:</h3>
+                    <p>@Model.user.Address, @Model.user.City, @Model.user.Country</p>
+                </div>
+                @if (Model.authorized)
+                {
+                    <div id="new-pub-btn-div" class="user-info">
+                        <a href="/add-title">
+                            <button id="new-pub-btn" class="searchbtn">Novi naslov</button>
+                        </a>
+                    </div>
+                }
+
+            </div>
+            <div id="user-right">
+                <div id="translate-table" style="margin-top: 40px;">
+                    @if (Model.translationRequests.Any())
+                    {
+                        <table>
+                            <tr>
+                                <th colspan="3">Zahtjevi za prijevodom</th>
+                            </tr>
+                            <tr>
+                                <th>Naslov strane knjige</th>
+                                <th>Strani izdavač</th>
+                                <th>Broj zahtjeva</th>
+                            </tr>
+                            @foreach (TranslationRequest translationRequest in Model.translationRequests)
+                            {
+                                <tr>
+                                    <td>@translationRequest.Title</td>
+                                    <td>@translationRequest.Publisher</td>
+                                    <td>@translationRequest.Count</td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

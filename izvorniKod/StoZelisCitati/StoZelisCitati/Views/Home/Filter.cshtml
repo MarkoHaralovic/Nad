@@ -1,0 +1,115 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model (BookQuery bookQuery, IEnumerable<(Book, Offer)> books, int pageCount)
+@{
+    ViewData["Title"] = "Book Post";
+
+    async Task RenderOptions(string? actualValue, params (string? value, string display)[] options)
+    {
+        @foreach ((string? value, string display) in options)
+        {
+            <option value="@(value ?? "")" selected=@(actualValue == value)>@display</option>
+        }
+    }
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/bookPost.css">
+}
+
+<div id="main">
+    <div id="left">
+        <div id="trazi">
+            <form hx-get="/filter" hx-target="#right" hx-swap="outerHTML" hx-push-url="true" hx-indicator="#ind" id="filter-form">
+                <div class="inp">
+                    <label for="title" class="lb">Naslov:</label>
+                    <input type="text" class="in" id="title" name="title" value="@Model.bookQuery.Title">
+                </div>
+                <div class="inp">
+                    <label for="year-from" class="lb">Godina od:</label>
+                    <input type="number" min="1500" max="@DateTime.Today.Year" class="in" id="year-from" name="yearFrom" value="@Model.bookQuery.YearFrom">
+                </div>
+                <div class="inp">
+                    <label for="year-to" class="lb">Godina do:</label>
+                    <input type="number" min="1500" max="@DateTime.Today.Year" class="in" id="year-to" name="yearTo" value="@Model.bookQuery.YearTo">
+                </div>
+                <div class="inp">
+                    <label for="author" class="lb">Autor:</label>
+                    <input type="text" class="in" id="author" name="author" value="@Model.bookQuery.Author">
+                </div>
+                <div class="inp">
+                    <label for="publisher" class="lb">Izdavač:</label>
+                    <input type="text" class="in" id="publisher" name="publisher" value="@Model.bookQuery.Publisher">
+                </div>
+                <div class="inp">
+                    <label for="edition" class="lb">Izdanje:</label>
+                    <input type="number" min="1" class="in" id="edition" name="edition" value="@Model.bookQuery.Edition">
+                </div>
+                <div class="inp">
+                    <label for="type-of-publisher" class="lb">Kategorija izdavača:</label>
+                    <select class="in" id="type-of-publisher" name="typeOfPublisher">
+                        @{
+                            await RenderOptions(Model.bookQuery.TypeOfPublisher,
+                                (null, "Sve"),
+                                ("domaci", "Domaći"),
+                                ("strani", "Strani"));
+                        }
+                    </select>
+                </div>
+                <div class="inp">
+                    <label for="genre" class="lb">Žanr:</label>
+                    <input type="text" class="in" id="genre" name="genre" value="@Model.bookQuery.Genre">
+                </div>
+                <div class="inp">
+                    <label for="isbn" class="lb">ISBN:</label>
+                    <input type="number" class="in" id="isbn" name="isbn" value="@Model.bookQuery.Isbn">
+                </div>
+                <div class="inp">
+                    <label for="language" class="lb">Jezik:</label>
+                    <input type="text" class="in" id="language" name="language" value="@Model.bookQuery.Language">
+                </div>
+                <div class="inp">
+                    <label for="availability" class="lb">Dostupnost:</label>
+                    <select class="in" id="availability" name="availability">
+                        @{
+                            await RenderOptions(Model.bookQuery.Availability,
+                                (null, "Sve"),
+                                ("hrvatska", "Hrvatska"),
+                                ("srodne zemlje", "Srodne Zemlje"),
+                                ("strane zemlje", "Strane zemlje"));
+                        }
+                    </select>
+                </div>
+                <div class="inp">
+                    <label for="state" class="lb">Stanje:</label>
+                    <select class="in" id="state" name="state">
+                        @{
+                            await RenderOptions(Model.bookQuery.State,
+                                (null, "Sve"),
+                                ("novo", "Novo"),
+                                ("polovno", "Polovno"));
+                        }
+                    </select>
+                </div>
+                <div class="inp">
+                    <label for="price-from" class="lb">Cijena od:</label>
+                    <input type="number" min="0" class="in" id="price-from" name="priceFrom" value="@Model.bookQuery.PriceFrom">
+                </div>
+                <div class="inp">
+                    <label for="price-to" class="lb">Cijena do:</label>
+                    <input type="number" class="in" id="price-to" name="priceTo" value="@Model.bookQuery.PriceTo">
+                </div>
+                <div class="inp">
+                    <label for="seller" class="lb">Ponuditelj:</label>
+                    <input type="text" class="in" id="seller" name="seller" value="@Model.bookQuery.Seller">
+                </div>
+                <div id="btnTrazi">
+                    <button class="searchbtn" type="submit" form="filter-form" name="page" value="1"> Traži </button>
+                </div>
+                <img id="ind" src="/images/bars.svg" alt="loading indicator" class="htmx-indicator">
+                @await Html.PartialAsync("PageButtons", Model.pageCount)
+            </form>
+        </div>
+    </div>
+    @await Html.PartialAsync("BookList", Model.books)
+</div>

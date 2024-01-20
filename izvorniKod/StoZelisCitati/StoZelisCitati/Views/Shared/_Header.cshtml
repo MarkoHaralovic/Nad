@@ -1,0 +1,29 @@
+﻿@using StoZelisCitati.Helpers
+<div class="header-container">   
+    <div id="header">
+        <div id="logo" >
+            <a href="/" style="text-decoration: none; color: white;"><img id="logo-img" src="~/images/logo.png" alt="" height="100"></a>
+        </div>
+        <div id="krug" class="kr">
+            <a href="/filter">
+                <img id="povecalo" src="/images/traziLogo.png" alt="" width="60px" height="60px" onclick="searchButtonClicked()">
+            </a>
+        </div>
+        <div id="header-right">
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <a href="/account/profile/@User.Id()" class="user-btn"><p>Moj račun</p></a>
+                <a href="/account/logout" class="user-btn">Odjava</a>
+                @if (User.IsInRole("admin"))
+                {
+                    <a href="/account/requests">Zahtjevi za registraciju</a>
+                }
+            }
+            else
+            {
+                <a href="/account/login" class="user-btn"><p>Prijava</p></a>
+                <a href="/account/register" class="user-btn">Registracija</a>
+            }
+        </div>
+    </div>
+</div>
